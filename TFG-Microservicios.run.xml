@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>plantilla_tfg_2017.bcf</file>
+      <file>TFG-Microservicios.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>plantilla_tfg_2017.bbl</file>
+      <file>TFG-Microservicios.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -67,19 +67,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>plantilla_tfg_2017</infile>
+      <infile>TFG-Microservicios</infile>
     </cmdline>
     <input>
-      <file>plantilla_tfg_2017.bcf</file>
+      <file>TFG-Microservicios.bcf</file>
     </input>
     <output>
-      <file>plantilla_tfg_2017.bbl</file>
+      <file>TFG-Microservicios.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>plantilla_tfg_2017.bbl</file>
+      <file>TFG-Microservicios.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>plantilla_tfg_2017.bcf</file>
+      <file>TFG-Microservicios.bcf</file>
     </requires>
     <requires type="editable">
       <file>bibliografia/bibliografia.bib</file>
