@@ -351,10 +351,49 @@ hmargin=3cm
 	% COMENZAR A ESCRIBIR EL TRABAJO
 	
 \section{ ¿Que es un Microservicio?}
-	Se trata de una aplicación pequeña totalmente independiente de desarrollar frente al conjunto. Esta aplicación tiene responsabilidad única, es decir, solo realiza una cosa y se puede ejecutar independientemente del resto. Ya que es una pequeña si falla algo es fácil encontrar el error y subsanarlo. Ademas al tener un servidor embebido es autoejecutable en cualquier contenedor de aplicaciones, por ejemplo Kubernetes, lo que facilita enormemente su despliegue.
+	La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
+	
+	Cada microservico es una aplicación pequeña totalmente independiente de desarrollar frente al conjunto. Este servicio tiene responsabilidad única, es decir, un único requisito funcional. Ya que este es pequeño, si falla algo es fácil encontrar el error y subsanarlo. 
+	
+	Ademas al tener un servidor embebido es autoejecutable en cualquier contenedor de aplicaciones, por ejemplo Kubernetes, lo que facilita enormemente su despliegue.
+	
+	Cada microservicio puede desarrollarse en un lenguaje de programación diferente, gracias a que las peticiones a estos servicios suele ser mediante protocolos ligeros, como HTTP, que son universales a todos los lenguajes de programación. También es fácilmente escalable, se le asignan mas recursos al microservicio que los necesite.
+	
+	Los expertos en la materia no se ponen de acuerdo en el tamaño que debe tener un microservicio. Sam Newman hace referencia en su libro "Building Microservices"(cita) al experto en microservicios Jon Eaves que el tiempo máximo para desarrollar un microservicio una persona serian dos semanas. Aunque esto es muy relativo, ya que en una empresa grande la funcionalidad que debe realizar cada microservicio no tiene porque ser pequeña, por lo que llevaría mas tiempo.
 	
 \section{Estado del arte}
-	Actualmente la arquitectura basada en microservicios es una realidad y las grandes empresas se están pasando a ella por sus grandes ventajas. Empresas como Netflix, Facebook, Amazon, PayPal, etc se han replanteado la arquitectura anteriormente usada ya que cada vez sus desarrollo eran mas grandes, por una arquitectura de microservicios, la cual es mas mantenible y mas fácil de desarrollar.
+	Actualmente la arquitectura basada en microservicios es una realidad y las grandes empresas tales como Netflix, Facebook, Amazon, PayPal se han replanteado la arquitectura que anteriormente usaban para decantarse por los microservicios debido a sus ventajas.
+
+	Rajest RV en su libro "Spring Microservices"(cita) nos muestra un gráfico en el que se ve como avanza el desarrollo de aplicaciones tradicionales frente a microservicios. "Los microservicios prometen más agilidad, velocidad de entrega y escala. En comparación con las aplicaciones monolíticas tradicionales."
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/desarrolloMonovsMicro}
+		\caption{}
+		\label{fig:desarrollomonovsmicro}
+	\end{figure}
+
+	Los microservicios han evolucionado tan rápido gracias al desarrollo de nuevas tecnologías. Por ejemplo la creación de bases de datos NOSQL no relacionales, la aparición de docker contenedores de aplicaciones ligeros y portables que facilitan enormemente los despliegues y el comienzo del desarrollo de aplicaciones en la nube. Todo ello unido ha desembocado en la creación de microservicios.
+	
+	Existen muchas razones por las cuales hacer el cambio o directamente empezar a desarrollar con esta arquitectura. 
+	- Los microservicios son mas rápidos y baratos de desarrollar que las antiguas aplicaciones monolíticas. 
+	- Es más fácil remplazar una parte de la aplicación global que en los sistemas antiguos. 
+	- No necesitas un servidor tipo tomcat donde desplegar la aplicación, ya que cada microserivcio cuenta con uno embebido.
+	- Se suelen desplegar en la nube en contenedores dockers por lo que no es necesaria una maquina física(servidor) 24h funcionando donde desplegar.
+	- Puedes desarrollar cada microservicio en un lenguaje de programación diferente, en función de las necesidades.
+	
+	Una metáfora que suele usarse para explicar los microservicios es un panal de abeja. Las abejas construyen el panal rellenado pequeñas celdas hexagonales, cada una independiente pero también integrada con las otras celdas. Esto  genera una estructura muy fuerte. Si una celda se daña no afecta a las demás, las abejas reconstruyen solo esa celda.
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/panalAbeja}
+		\caption{}
+		\label{fig:panalabeja}
+	\end{figure}
+	
+	
+	
+	
+
 
 %----------
 %	BIBLIOGRAFÍA
