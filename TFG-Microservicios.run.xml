@@ -41,10 +41,11 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>TFG-Microservicios.bcf</file>
+      <file>TFG-Microservicios.aux</file>
+      <file>TFG-Microservicios-blx.bib</file>
     </provides>
     <requires type="dynamic">
       <file>TFG-Microservicios.bbl</file>
@@ -52,6 +53,7 @@
     <requires type="static">
       <file>blx-dm.def</file>
       <file>blx-compat.def</file>
+      <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
       <file>standard.bbx</file>
       <file>numeric.bbx</file>
@@ -64,13 +66,14 @@
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">
-    <generic>biber</generic>
+    <generic>bibtex</generic>
     <cmdline>
-      <binary>biber</binary>
+      <binary>bibtex</binary>
+      <option>-min-crossrefs 2</option>
       <infile>TFG-Microservicios</infile>
     </cmdline>
     <input>
-      <file>TFG-Microservicios.bcf</file>
+      <file>TFG-Microservicios.aux</file>
     </input>
     <output>
       <file>TFG-Microservicios.bbl</file>
@@ -79,10 +82,14 @@
       <file>TFG-Microservicios.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>TFG-Microservicios.bcf</file>
+      <file>TFG-Microservicios.aux</file>
+      <file>TFG-Microservicios-blx.bib</file>
     </requires>
     <requires type="editable">
       <file>bibliografia/bibliografia.bib</file>
+    </requires>
+    <requires type="static">
+      <file>biblatex.bst</file>
     </requires>
   </external>
 </requests>

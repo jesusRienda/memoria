@@ -195,7 +195,7 @@ hmargin=3cm
 % También te recomendamos consultar la guía temática de la Biblioteca sobre citas bibliográficas: http://uc3m.libguides.com/guias_tematicas/citas_bibliograficas/inicio
 
 % CONFIGURACIÓN PARA LA BIBLIOGRAFÍA IEEE
-\usepackage[backend=biber, style=ieee, isbn=false,sortcites, maxbibnames=5, minbibnames=1]{biblatex} % Configuración para el estilo de citas de IEEE, recomendado para el área de ingeniería. "maxbibnames" indica que a partir de 5 autores trunque la lista el primero (minbibnames) y añada "et al." tal y como se utiliza en el estilo IEEE.
+\usepackage[backend=bibtex, style=ieee, isbn=false,sortcites, maxbibnames=5, minbibnames=1]{biblatex} % Configuración para el estilo de citas de IEEE, recomendado para el área de ingeniería. "maxbibnames" indica que a partir de 5 autores trunque la lista el primero (minbibnames) y añada "et al." tal y como se utiliza en el estilo IEEE.
 
 %CONFIGURACIÓN PARA LA BIBLIOGRAFÍA APA
 %\usepackage[style=apa, backend=biber, natbib=true, hyperref=true, uniquelist=false, sortcites]{biblatex}
@@ -350,6 +350,13 @@ hmargin=3cm
 
 	% COMENZAR A ESCRIBIR EL TRABAJO
 	
+	\section{Planteamiento del problema}
+	
+	\section{Solución propuesta}
+	
+	\section{Justificacion de la solucion}
+	
+	\section{Estado del arte}
 \section{ ¿Que es un Microservicio?}
 	La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
 	
@@ -364,7 +371,7 @@ hmargin=3cm
 \section{Estado del arte}
 	Actualmente la arquitectura basada en microservicios es una realidad y las grandes empresas tales como Netflix, Facebook, Amazon, PayPal se han replanteado la arquitectura que anteriormente usaban para decantarse por los microservicios debido a sus ventajas.
 
-	Rajest RV en su libro "Spring Microservices"(cita) nos muestra un gráfico en el que se ve como avanza el desarrollo de aplicaciones tradicionales frente a microservicios. "Los microservicios prometen más agilidad, velocidad de entrega y escala. En comparación con las aplicaciones monolíticas tradicionales."
+	Rajest RV en su libro "Spring Microservices"\cite{rv2016spring} nos muestra un gráfico en el que se ve como avanza el desarrollo de aplicaciones tradicionales frente a microservicios. "Los microservicios prometen más agilidad, velocidad de entrega y escala. En comparación con las aplicaciones monolíticas tradicionales."
 	
 	\begin{figure}
 		\centering
@@ -379,10 +386,10 @@ hmargin=3cm
 	- Los microservicios son mas rápidos y baratos de desarrollar que las antiguas aplicaciones monolíticas. 
 	- Es más fácil remplazar una parte de la aplicación global que en los sistemas antiguos. 
 	- No necesitas un servidor tipo tomcat donde desplegar la aplicación, ya que cada microserivcio cuenta con uno embebido.
-	- Se suelen desplegar en la nube en contenedores dockers por lo que no es necesaria una maquina física(servidor) 24h funcionando donde desplegar.
+	- Se suelen desplegar en la nube dentro de contenedores dockers por lo que no es necesaria una maquina física(servidor) 24 horas funcionando.
 	- Puedes desarrollar cada microservicio en un lenguaje de programación diferente, en función de las necesidades.
 	
-	Una metáfora que suele usarse para explicar los microservicios es un panal de abeja. Las abejas construyen el panal rellenado pequeñas celdas hexagonales, cada una independiente pero también integrada con las otras celdas. Esto  genera una estructura muy fuerte. Si una celda se daña no afecta a las demás, las abejas reconstruyen solo esa celda.
+	Una metáfora que suele usarse para explicar los microservicios es un panal de abeja. Las abejas construyen el panal rellenado pequeñas celdas hexagonales, cada una independiente pero también integrada con las otras. Esto genera una estructura muy fuerte. Si una celda se daña no afecta a las demás, las abejas reconstruyen solo esa celda.
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/panalAbeja}

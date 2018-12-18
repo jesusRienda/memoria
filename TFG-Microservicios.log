@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  16 DEC 2018 15:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  18 DEC 2018 19:25
 entering extended mode
 **./TFG-Microservicios.tex
 (TFG-Microservicios.tex
@@ -848,6 +848,18 @@ Package biblatex Info: ... file 'blx-compat.def' found.
 t.def"
 File: blx-compat.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
 )
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+
+("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\blx-bibte
+x.def"
+File: blx-bibtex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+
+
+Package biblatex Warning: Using fall-back BibTeX(8) backend:
+(biblatex)                functionality may be reduced/unavailable.
+
+)
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 
@@ -939,9 +951,9 @@ Package biblatex Info: ... file 'spanish.lbx' found.
 sh.lbx"
 File: spanish.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
 ) (TFG-Microservicios.aux
-LaTeX Info: Redefining \sptext on input line 27.
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
+LaTeX Info: Redefining \sptext on input line 30.
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
 )
 \openout1 = `TFG-Microservicios.aux'.
 
@@ -1089,22 +1101,31 @@ Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `TFG-Microservicios.bcf'.
+Package biblatex Info: Input encoding 'utf8' specified.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout4 = `TFG-Microservicios-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'TFG-Microservicios.bbl' found.
- (TFG-Microservicios.bbl)
+ (TFG-Microservicios.bbl
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with '7030212':
+(biblatex)                - Invalid format of field 'month'.
+
+)
 Package biblatex Info: Reference section=0 on input line 226.
 Package biblatex Info: Reference segment=0 on input line 226.
 LaTeX Font Info:    Try loading font information for T1+txss on input line 233.
 
-
-("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\t1txss.fd"
+ ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\t1txss.fd
+"
 File: t1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 11.39996pt on input line 233.
-<imagenes/Portada_Logo.png, id=18, 456.2865pt x 45.99pt>
+<imagenes/Portada_Logo.png, id=34, 456.2865pt x 45.99pt>
 File: imagenes/Portada_Logo.png Graphic file (type png)
 <use imagenes/Portada_Logo.png>
 Package pdftex.def Info: imagenes/Portada_Logo.png  used on input line 237.
@@ -1117,7 +1138,7 @@ LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 23.63593pt on input line 248.
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 19.70294pt on input line 252.
-<imagenes/creativecommons.png, id=20, 338.76563pt x 118.19156pt>
+<imagenes/creativecommons.png, id=36, 338.76563pt x 118.19156pt>
 File: imagenes/creativecommons.png Graphic file (type png)
 <use imagenes/creativecommons.png>
 Package pdftex.def Info: imagenes/creativecommons.png  used on input line 262.
@@ -1200,32 +1221,34 @@ LaTeX Info: Redefining \% on input line 2.
 
 ] [12]
 Cap\'{\i }tulo 1.
-<imagenes/desarrolloMonovsMicro.png, id=97, 216.81pt x 164.86594pt>
-File: imagenes/desarrolloMonovsMicro.png Graphic file (type png)
-<use imagenes/desarrolloMonovsMicro.png>
-Package pdftex.def Info: imagenes/desarrolloMonovsMicro.png  used on input line
- 369.
-(pdftex.def)             Requested size: 298.75264pt x 227.20578pt.
 [1
 
 
 ]
-<imagenes/panalAbeja.png, id=103, 278.54062pt x 164.86594pt>
+<imagenes/desarrolloMonovsMicro.png, id=131, 216.81pt x 164.86594pt>
+File: imagenes/desarrolloMonovsMicro.png Graphic file (type png)
+<use imagenes/desarrolloMonovsMicro.png>
+Package pdftex.def Info: imagenes/desarrolloMonovsMicro.png  used on input line
+ 378.
+(pdftex.def)             Requested size: 298.75264pt x 227.20578pt.
+<imagenes/panalAbeja.png, id=132, 278.54062pt x 164.86594pt>
 File: imagenes/panalAbeja.png Graphic file (type png)
 <use imagenes/panalAbeja.png>
-Package pdftex.def Info: imagenes/panalAbeja.png  used on input line 388.
+Package pdftex.def Info: imagenes/panalAbeja.png  used on input line 395.
 (pdftex.def)             Requested size: 298.75264pt x 176.83244pt.
  [2 <./imagenes/desarrolloMonovsMicro.png (PNG copy)>] [3 <./imagenes/panalAbej
 a.png (PNG copy)>]
-Package csquotes Info: Disabling multilingual quotes on input line 406.
+Package csquotes Info: Disabling multilingual quotes on input line 413.
 
 
 Package csquotes Warning: Quote style 'british/english' not defined.
-(csquotes)                Ignoring command on input line 406.
+(csquotes)                Ignoring command on input line 413.
 
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 414.
 
-LaTeX Warning: Empty bibliography on input line 407.
-
+("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
+File: t1txtt.fd 2000/12/15 v3.1
+)
 
 Package caption Warning: Unused \captionsetup[table] on input line 116.
 See the caption package documentation for explanation.
@@ -1234,41 +1257,60 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 187.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 421.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 421.
-(TFG-Microservicios.aux
-LaTeX Info: Redefining \sptext on input line 27.
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 428.
+[4
+
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 428.
+ (TFG-Microservicios.aux
+LaTeX Info: Redefining \sptext on input line 30.
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 421.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 421.
-Package rerunfilecheck Info: File `TFG-Microservicios.out' has not changed.
-(rerunfilecheck)             Checksum: 10A16D8EFE68F43E97402BD5396E72BF;207.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 428.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 428.
+
+
+Package rerunfilecheck Warning: File `TFG-Microservicios.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `TFG-Microservicios.out':
+(rerunfilecheck)             Before: 94E684CA0BD2B948CDF4CE33BC736E39;509
+(rerunfilecheck)             After:  B3E0CBD2FD893432CFBCD98A2C1532EF;567.
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+
 Package logreq Info: Writing requests to 'TFG-Microservicios.run.xml'.
 \openout1 = `TFG-Microservicios.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 421.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 428.
  ) 
 Here is how much of TeX's memory you used:
- 24695 strings out of 492970
- 383612 string characters out of 3126593
- 816798 words of memory out of 3000000
- 28212 multiletter control sequences out of 15000+200000
- 54803 words of font info for 82 fonts, out of 3000000 for 9000
+ 24996 strings out of 492970
+ 389445 string characters out of 3126593
+ 662219 words of memory out of 3000000
+ 28492 multiletter control sequences out of 15000+200000
+ 61185 words of font info for 89 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,11n,48p,959b,2063s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 }<C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/txfonts/r
-txsc.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helv
-etic/uhvb8a.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/u
-rw/helvetic/uhvr8a.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on TFG-Microservicios.pdf (15 pages, 145170 bytes).
+txsc.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/t
+xfonts/t1xtt.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+urw/helvetic/uhvb8a.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jesus/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jesus/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Jesus/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on TFG-Microservicios.pdf (16 pages, 170418 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 196 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 
