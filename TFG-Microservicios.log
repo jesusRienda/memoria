@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  18 DEC 2018 19:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  13 JAN 2019 19:53
 entering extended mode
 **./TFG-Microservicios.tex
 (TFG-Microservicios.tex
@@ -1125,7 +1125,7 @@ File: t1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 11.39996pt on input line 233.
-<imagenes/Portada_Logo.png, id=34, 456.2865pt x 45.99pt>
+<imagenes/Portada_Logo.png, id=38, 456.2865pt x 45.99pt>
 File: imagenes/Portada_Logo.png Graphic file (type png)
 <use imagenes/Portada_Logo.png>
 Package pdftex.def Info: imagenes/Portada_Logo.png  used on input line 237.
@@ -1138,7 +1138,7 @@ LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 23.63593pt on input line 248.
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 19.70294pt on input line 252.
-<imagenes/creativecommons.png, id=36, 338.76563pt x 118.19156pt>
+<imagenes/creativecommons.png, id=40, 338.76563pt x 118.19156pt>
 File: imagenes/creativecommons.png Graphic file (type png)
 <use imagenes/creativecommons.png>
 Package pdftex.def Info: imagenes/creativecommons.png  used on input line 262.
@@ -1225,26 +1225,26 @@ Cap\'{\i }tulo 1.
 
 
 ]
-<imagenes/desarrolloMonovsMicro.png, id=131, 216.81pt x 164.86594pt>
+<imagenes/desarrolloMonovsMicro.png, id=137, 216.81pt x 164.86594pt>
 File: imagenes/desarrolloMonovsMicro.png Graphic file (type png)
 <use imagenes/desarrolloMonovsMicro.png>
 Package pdftex.def Info: imagenes/desarrolloMonovsMicro.png  used on input line
- 378.
+ 381.
 (pdftex.def)             Requested size: 298.75264pt x 227.20578pt.
-<imagenes/panalAbeja.png, id=132, 278.54062pt x 164.86594pt>
+<imagenes/panalAbeja.png, id=138, 278.54062pt x 164.86594pt>
 File: imagenes/panalAbeja.png Graphic file (type png)
 <use imagenes/panalAbeja.png>
-Package pdftex.def Info: imagenes/panalAbeja.png  used on input line 395.
+Package pdftex.def Info: imagenes/panalAbeja.png  used on input line 398.
 (pdftex.def)             Requested size: 298.75264pt x 176.83244pt.
- [2 <./imagenes/desarrolloMonovsMicro.png (PNG copy)>] [3 <./imagenes/panalAbej
+ [2] [3 <./imagenes/desarrolloMonovsMicro.png (PNG copy)> <./imagenes/panalAbej
 a.png (PNG copy)>]
-Package csquotes Info: Disabling multilingual quotes on input line 413.
+Package csquotes Info: Disabling multilingual quotes on input line 416.
 
 
 Package csquotes Warning: Quote style 'british/english' not defined.
-(csquotes)                Ignoring command on input line 413.
+(csquotes)                Ignoring command on input line 416.
 
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 414.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 417.
 
 ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
 File: t1txtt.fd 2000/12/15 v3.1
@@ -1257,44 +1257,31 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 187.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 428.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 431.
 [4
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 428.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 431.
  (TFG-Microservicios.aux
 LaTeX Info: Redefining \sptext on input line 30.
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 428.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 428.
-
-
-Package rerunfilecheck Warning: File `TFG-Microservicios.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `TFG-Microservicios.out':
-(rerunfilecheck)             Before: 94E684CA0BD2B948CDF4CE33BC736E39;509
-(rerunfilecheck)             After:  B3E0CBD2FD893432CFBCD98A2C1532EF;567.
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 431.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 431.
+Package rerunfilecheck Info: File `TFG-Microservicios.out' has not changed.
+(rerunfilecheck)             Checksum: B3E0CBD2FD893432CFBCD98A2C1532EF;567.
 Package logreq Info: Writing requests to 'TFG-Microservicios.run.xml'.
 \openout1 = `TFG-Microservicios.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 428.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 431.
  ) 
 Here is how much of TeX's memory you used:
- 24996 strings out of 492970
- 389445 string characters out of 3126593
- 662219 words of memory out of 3000000
- 28492 multiletter control sequences out of 15000+200000
+ 24997 strings out of 492970
+ 389463 string characters out of 3126593
+ 663219 words of memory out of 3000000
+ 28493 multiletter control sequences out of 15000+200000
  61185 words of font info for 89 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,11n,48p,959b,2063s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1308,9 +1295,9 @@ urw/helvetic/uhvb8a.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts
 KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jesus/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Jesus/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TFG-Microservicios.pdf (16 pages, 170418 bytes).
+Output written on TFG-Microservicios.pdf (16 pages, 172331 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
+ 202 PDF objects out of 1000 (max. 8388607)
  32 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
