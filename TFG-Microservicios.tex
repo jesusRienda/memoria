@@ -356,9 +356,18 @@ hmargin=3cm
 	\section{Solución propuesta}
 	Para poder resolver nuestro problema usaremos un protocolo REST para la transferencia de datos entre el servicio y el cliente. El servicio web sera un microservicio desarrollado con Spring Boot. En cuanto a la base de datos utilizaremos una base de datos PostgreSQL.
 	\section{Justificacion de la solucion}
-	Para poder decidirnos sobre que arquitectura usar para el desarrollo de nuestra aplicación hemos tenido que investigar sobre las tecnologías existentes que pueden ayudarnos a solucionar el problema, las mas utilizadas son las arquitecturas monolíticas como SOA() y últimamente se usa mucho la arquitectura de microservicios.
-	Como necesitamos un alto grado de escalabilidad los microservicios gestionan mejor esta propiedad ya que directamente en el contenedor donde se despliegan cuenta con un balanceador de carga el cual distribuye el trafico a la maquina que mas recursos tenga disponible.
-	Para poder llegar a la decision de usar el protocolo REST hemos tenido que 
+	
+	La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
+	
+	Cada microservico es totalmente independiente de desarrollar frente al conjunto, lo cual nos viene genial ya que nuestra idea es realizar una pequeña aplicación que aceda a una base de datos y en un futuro ampliar a varias aplicaciones o incluso un frontal. Los microservicios nos permiten desarrollar cada una en un lenguaje de programación diferente.
+	
+	Al no disponer de una maquina donde desplegar la aplicación, es ideal que los microservicios lleven un servidor de despliegue(tomcat) embebido y así desplegar en la nube dentro de un contenedor de aplicaciones.
+	
+	Una vez desplegado en la nube decidimos que la comunicación sería mediante REST ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria GET, POST, PUT y DELETE.
+	
+	En cuanto a base de datos hemos elegido PostgreSQL ya que es open source y totalmente compatible con muchos lenguajes de programación, no solo con Java que es el caso de nuestra aplicación, sino que si en un futuro creamos otro microservicio con python y queremos reutilizar la base de datos esta nos servirá.
+	Ademas también es capaz de responder a muchas peticiones al mismo tiempo y no bloquearse y esto es totalmente esencial ya que como ya hemos dicho necesitamos alta disponibilidad.
+	 
 	\section{Estado del arte}
 \section{ ¿Que es un Microservicio?}
 	La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
