@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  19 JAN 2019 18:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  24 JAN 2019 21:57
 entering extended mode
 **./TFG-Microservicios.tex
 (TFG-Microservicios.tex
@@ -1111,7 +1111,7 @@ Package biblatex Info: ... file 'TFG-Microservicios.bbl' found.
  (TFG-Microservicios.bbl
 
 Package biblatex Warning: BibTeX reported the following issues
-(biblatex)                with '7030212':
+(biblatex)                with 'breveHistoria':
 (biblatex)                - Invalid format of field 'month'.
 
 )
@@ -1225,27 +1225,34 @@ Cap\'{\i }tulo 1.
 
 
 ]
-<imagenes/desarrolloMonovsMicro.png, id=137, 216.81pt x 164.86594pt>
+<imagenes/soavsmicroservicios.png, id=141, 455.45157pt x 310.91156pt>
+File: imagenes/soavsmicroservicios.png Graphic file (type png)
+<use imagenes/soavsmicroservicios.png>
+Package pdftex.def Info: imagenes/soavsmicroservicios.png  used on input line 3
+89.
+(pdftex.def)             Requested size: 298.75264pt x 203.94505pt.
+ [2 <./imagenes/soavsmicroservicios.png>]
+<imagenes/desarrolloMonovsMicro.png, id=149, 216.81pt x 164.86594pt>
 File: imagenes/desarrolloMonovsMicro.png Graphic file (type png)
 <use imagenes/desarrolloMonovsMicro.png>
 Package pdftex.def Info: imagenes/desarrolloMonovsMicro.png  used on input line
- 390.
+ 424.
 (pdftex.def)             Requested size: 298.75264pt x 227.20578pt.
- [2]
-<imagenes/panalAbeja.png, id=143, 278.54062pt x 164.86594pt>
+ [3]
+<imagenes/panalAbeja.png, id=155, 278.54062pt x 164.86594pt>
 File: imagenes/panalAbeja.png Graphic file (type png)
 <use imagenes/panalAbeja.png>
-Package pdftex.def Info: imagenes/panalAbeja.png  used on input line 407.
+Package pdftex.def Info: imagenes/panalAbeja.png  used on input line 441.
 (pdftex.def)             Requested size: 298.75264pt x 176.83244pt.
- [3 <./imagenes/desarrolloMonovsMicro.png (PNG copy)>] [4 <./imagenes/panalAbej
-a.png (PNG copy)>]
-Package csquotes Info: Disabling multilingual quotes on input line 425.
+ [4 <./imagenes/desarrolloMonovsMicro.png (PNG copy)> <./imagenes/panalAbeja.pn
+g (PNG copy)>]
+Package csquotes Info: Disabling multilingual quotes on input line 459.
 
 
 Package csquotes Warning: Quote style 'british/english' not defined.
-(csquotes)                Ignoring command on input line 425.
+(csquotes)                Ignoring command on input line 459.
 
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 426.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 460.
 
 ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
 File: t1txtt.fd 2000/12/15 v3.1
@@ -1258,32 +1265,32 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 187.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 440.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 474.
 [5
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 440.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 474.
  (TFG-Microservicios.aux
 LaTeX Info: Redefining \sptext on input line 30.
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 440.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 440.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 474.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 474.
 Package rerunfilecheck Info: File `TFG-Microservicios.out' has not changed.
-(rerunfilecheck)             Checksum: B3E0CBD2FD893432CFBCD98A2C1532EF;567.
+(rerunfilecheck)             Checksum: 3082211F84BB7501256EA002389B967A;567.
 Package logreq Info: Writing requests to 'TFG-Microservicios.run.xml'.
 \openout1 = `TFG-Microservicios.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 440.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 474.
  ) 
 Here is how much of TeX's memory you used:
- 24998 strings out of 492970
- 389469 string characters out of 3126593
+ 25003 strings out of 492970
+ 389497 string characters out of 3126593
  663219 words of memory out of 3000000
- 28493 multiletter control sequences out of 15000+200000
- 61185 words of font info for 89 fonts, out of 3000000 for 9000
+ 28498 multiletter control sequences out of 15000+200000
+ 58214 words of font info for 86 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,11n,48p,959b,2063s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
@@ -1296,9 +1303,9 @@ urw/helvetic/uhvb8a.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts
 KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jesus/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Jesus/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TFG-Microservicios.pdf (17 pages, 173642 bytes).
+Output written on TFG-Microservicios.pdf (17 pages, 205570 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 214 PDF objects out of 1000 (max. 8388607)
+ 34 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
 

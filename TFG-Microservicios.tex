@@ -365,10 +365,44 @@ hmargin=3cm
 	
 	Una vez desplegado en la nube decidimos que la comunicación sería mediante REST ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria GET, POST, PUT y DELETE.
 	
-	En cuanto a base de datos hemos elegido PostgreSQL ya que es open source y totalmente compatible con muchos lenguajes de programación, no solo con Java que es el caso de nuestra aplicación, sino que si en un futuro creamos otro microservicio con python y queremos reutilizar la base de datos esta nos servirá.
+	En cuanto a base de datos hemos elegido PostgreSQL ya que es open source y totalmente compatible con muchos lenguajes de programación, no solo con Java que es el caso de nuestra aplicación, sino que si en un futuro queremos creamos otro microservicio con python y reutilizar la base de datos está nos servirá.
 	Ademas también es capaz de responder a muchas peticiones al mismo tiempo y no bloquearse y esto es totalmente esencial ya que como ya hemos dicho necesitamos alta disponibilidad.
 	 
 	\section{Estado del arte}
+	
+	La primera vez que se menciono la palabra "microservicios" fue en 2011 en una conferencia sobre computación en la nube donde el Dr. Peter Rogers\cite{breveHistoria} se refirió a ello para describir la arquitectura que estaban usando grandes empresas como Netflix, Facebook, Amazon o PayPal. 
+
+	Pero antes de ello lo que existía era una arquitectura que se denomina monolítica la cual se desarrollaban todos los servicios que tu necesitabas para tu aplicación y se empaquetaban en un war el cual se desplegaba en un servidor de aplicaciones dentro de una maquina, esto lo podemos ver en la figura \ref{fig:soavsmicroservicios}.
+	
+	Todos los servicios tenían que estar desarrollados con el mismo lenguaje y no podías asignar mas recursos a uno de ellos sino que se lo asignabas a todo el conjunto, escalando el war en varias maquinas o varias replicas en la misma. Para ello necesitabas un balanceador de carga antes que decida a que maquina va a redirigir tu petición.
+	
+	Todo esto antes era mas que suficiente para las empresas, pero a día de hoy cuando una aplicación monolítica crece mucho es difícil de mantener y es complicado añadir nuevas funcionalidades, ya que cada linea que cambies tocara re desplegar, lo que en una empresa grande puede llevar bastante tiempo, que impide que el equipo de desarrollo siga avanzando.
+	
+	
+	
+
+
+
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/soavsmicroservicios}
+		\caption{Monolitica vs Microservicios}
+		\label{fig:soavsmicroservicios}
+	\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{ ¿Que es un Microservicio?}
 	La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
 	
