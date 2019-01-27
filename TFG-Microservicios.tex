@@ -369,20 +369,16 @@ hmargin=3cm
 	Ademas también es capaz de responder a muchas peticiones al mismo tiempo y no bloquearse y esto es totalmente esencial ya que como ya hemos dicho necesitamos alta disponibilidad.
 	 
 	\section{Estado del arte}
-	
-	La primera vez que se menciono la palabra "microservicios" fue en 2011 en una conferencia sobre computación en la nube donde el Dr. Peter Rogers\cite{breveHistoria} se refirió a ello para describir la arquitectura que estaban usando grandes empresas como Netflix, Facebook, Amazon o PayPal. 
 
-	Pero antes de ello lo que existía era una arquitectura que se denomina monolítica la cual se desarrollaban todos los servicios que tu necesitabas para tu aplicación y se empaquetaban en un war el cual se desplegaba en un servidor de aplicaciones dentro de una maquina, esto lo podemos ver en la figura \ref{fig:soavsmicroservicios}.
+	En la década de los 60 surgió lo que a dia de hoy conocemos como arquitectura de software, esta fue tomando cada vez mas interés hasta que en la década de 1980 se integro totalmente el diseño en el desarrollo de software. 
 	
-	Todos los servicios tenían que estar desarrollados con el mismo lenguaje y no podías asignar mas recursos a uno de ellos sino que se lo asignabas a todo el conjunto, escalando el war en varias maquinas o varias replicas en la misma. Para ello necesitabas un balanceador de carga antes que decida a que maquina va a redirigir tu petición.
+	Primero surgió la arquitectura orientada objetos mas adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrollo por primera vez SOA, arquitectura orientada a servicios. En ella se desarrollaban todos los servicios que tu necesitabas conjuntamente y se empaquetaban en un war el cual se desplegaba en un servidor de aplicaciones(tomcat) dentro de una maquina, esto lo podemos ver en la figura \ref{fig:soavsmicroservicios}.
 	
-	Todo esto antes era mas que suficiente para las empresas, pero a día de hoy cuando una aplicación monolítica crece mucho es difícil de mantener y es complicado añadir nuevas funcionalidades, ya que cada linea que cambies tocara re desplegar, lo que en una empresa grande puede llevar bastante tiempo, que impide que el equipo de desarrollo siga avanzando.
+	Todos los servicios tenían que estar desarrollados con el mismo lenguaje y no  podías asignar mas recursos a uno de ellos sino que se lo asignabas a todo el conjunto, escalando el war en varias maquinas o replicas en la misma. Para ello necesitabas un balanceador de carga antes que determine maquina va a atender tu petición.
 	
+	Todo esto antes era mas que suficiente para las empresas, pero a día de hoy cuando una aplicación monolítica(SOA) crece mucho es difícil mantener y es complicado añadir nuevas funcionalidades, ya que cada linea que cambies tocara redesplegar, lo que en una empresa grande puede llevar bastante tiempo, ya que en los despliegues normalmente están involucrados varios departamentos de la empresa como seguridad, operaciones, arquitectura y desarrollo, que impide al equipo seguir desarrollando. También es complicado encontrar el origen de algún error en el codigo.
 	
-	
-
-
-
+	La necesidad de resolver todos estos problemas desencadeno en la arquitectura de microservicios. La primera vez que se menciono la palabra "microservicios" fue en 2011 en una conferencia sobre computación en la nube donde el Dr. Peter Rogers\cite{breveHistoria} se refirió a ello para describir la arquitectura que estaban usando grandes empresas como Netflix, Facebook, Amazon o PayPal. 
 	
 	\begin{figure}
 		\centering
@@ -391,6 +387,7 @@ hmargin=3cm
 		\label{fig:soavsmicroservicios}
 	\end{figure}
 
+	
 
 
 
