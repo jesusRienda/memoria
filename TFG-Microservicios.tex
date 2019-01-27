@@ -374,74 +374,39 @@ hmargin=3cm
 	
 	Primero surgió la arquitectura orientada objetos mas adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrollo por primera vez SOA, arquitectura orientada a servicios. En ella se desarrollaban todos los servicios que tu necesitabas conjuntamente y se empaquetaban en un war el cual se desplegaba en un servidor de aplicaciones(tomcat) dentro de una maquina, esto lo podemos ver en la figura \ref{fig:soavsmicroservicios}.
 	
-	Todos los servicios tenían que estar desarrollados con el mismo lenguaje y no  podías asignar mas recursos a uno de ellos sino que se lo asignabas a todo el conjunto, escalando el war en varias maquinas o replicas en la misma. Para ello necesitabas un balanceador de carga antes que determine maquina va a atender tu petición.
-	
-	Todo esto antes era mas que suficiente para las empresas, pero a día de hoy cuando una aplicación monolítica(SOA) crece mucho es difícil mantener y es complicado añadir nuevas funcionalidades, ya que cada linea que cambies tocara redesplegar, lo que en una empresa grande puede llevar bastante tiempo, ya que en los despliegues normalmente están involucrados varios departamentos de la empresa como seguridad, operaciones, arquitectura y desarrollo, que impide al equipo seguir desarrollando. También es complicado encontrar el origen de algún error en el codigo.
-	
-	La necesidad de resolver todos estos problemas desencadeno en la arquitectura de microservicios. La primera vez que se menciono la palabra "microservicios" fue en 2011 en una conferencia sobre computación en la nube donde el Dr. Peter Rogers\cite{breveHistoria} se refirió a ello para describir la arquitectura que estaban usando grandes empresas como Netflix, Facebook, Amazon o PayPal. 
-	
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/soavsmicroservicios}
 		\caption{Monolitica vs Microservicios}
 		\label{fig:soavsmicroservicios}
 	\end{figure}
-
 	
-
-
-
-
-
-
-
-
-
-
-
-
-\section{ ¿Que es un Microservicio?}
-	La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
+	Todos los servicios tenían que estar desarrollados con el mismo lenguaje y no  podías asignar mas recursos a uno de ellos sino que se lo asignabas a todo el conjunto, escalando el war en varias maquinas o replicas en la misma. Para ello necesitabas un balanceador de carga antes que determine maquina va a atender tu petición.
 	
-	Cada microservico es una aplicación pequeña totalmente independiente de desarrollar frente al conjunto. Este servicio tiene responsabilidad única, es decir, un único requisito funcional. Ya que este es pequeño, si falla algo es fácil encontrar el error y subsanarlo. 
+	Todo esto antes era mas que suficiente para las empresas, pero a día de hoy cuando una aplicación monolítica(SOA) crece mucho es difícil mantener y es complicado añadir nuevas funcionalidades, ya que cada linea que cambies tocara redesplegar, lo que en una empresa grande puede llevar bastante tiempo, ya que en los despliegues normalmente están involucrados varios departamentos de la empresa como seguridad, operaciones, arquitectura y desarrollo, que impide al equipo seguir desarrollando. También es complicado encontrar el origen de algún error en el codigo.
 	
-	Ademas al tener un servidor embebido es autoejecutable en cualquier contenedor de aplicaciones, por ejemplo Kubernetes, lo que facilita enormemente su despliegue.
+	La necesidad de resolver todos estos problemas desencadeno en la arquitectura de microservicios. La primera vez que se menciono la palabra "microservicios" fue en 2011 en una conferencia sobre computación en la nube donde el Dr. Peter Rogers\cite{breveHistoria} se refirió a ello para describir la arquitectura que estaban usando grandes empresas como Netflix, Facebook, Amazon o PayPal. 
 	
-	Cada microservicio puede desarrollarse en un lenguaje de programación diferente, gracias a que las peticiones a estos servicios suele ser mediante protocolos ligeros, como HTTP, que son universales a todos los lenguajes de programación. También es fácilmente escalable, se le asignan mas recursos al microservicio que los necesite.
+	Los microservicios gestionan la complejidad granulando funcionalmente en un conjunto de servicios pequeños e independientes. Con esto se consigue que el equipo de desarrollo sea capaz de desarrollar varias funcionalidades a la vez sin tocar código de otra funcionalidad y desplegar cada modulo por separado tal y como se ve en la figura \ref{fig:soavsmicroservicios} que cada microservicio esta separado del resto, y puede o no tener una base de datos común.
 	
-	Los expertos en la materia no se ponen de acuerdo en el tamaño que debe tener un microservicio. Sam Newman hace referencia en su libro "Building Microservices"(cita) al experto en microservicios Jon Eaves que el tiempo máximo para desarrollar un microservicio una persona serian dos semanas. Aunque esto es muy relativo, ya que en una empresa grande la funcionalidad que debe realizar cada microservicio no tiene porque ser pequeña, por lo que llevaría mas tiempo.
+	El cambio mas notable respeto a SOA es que los equipos de desarrollo tienen una mayor responsabilidad, lo que se traduce en una gran facilidad, ya que ellos manejan todo el proceso de desarrollo, desligues en distintos entornos, gestión de contenedores de aplicaciones como Kubernetes, etc. Todo esto antes tenia que realizarlo otros departamentos de la empresa con el aumento de tiempos que suponía.
 	
-\section{Estado del arte}
-	Actualmente la arquitectura basada en microservicios es una realidad y las grandes empresas tales como Netflix, Facebook, Amazon, PayPal se han replanteado la arquitectura que anteriormente usaban para decantarse por los microservicios debido a sus ventajas.
-
-	Rajest RV en su libro "Spring Microservices"\cite{rv2016spring} nos muestra un gráfico en el que se ve como avanza el desarrollo de aplicaciones tradicionales frente a microservicios. "Los microservicios prometen más agilidad, velocidad de entrega y escala. En comparación con las aplicaciones monolíticas tradicionales."
+	Aunque la arquitectura de microservicios resuelve todos los problemas que presenta SOA y cada vez es mas popular, aun esta en su base de inicio como se menciona en el articulo\cite{Dragoni2017} y aun le queda mucho por mejorar y evolucionar.
+	
+	Rajest RV en su libro "Spring Microservices"\cite{rv2016spring} nos muestra un gráfico\ref{fig:desarrollomonovsmicro} en el que se ve como es mucho mas rapido y agil el desarrollo de aplicaciones con microservicios frente a tradicionales. "Los microservicios prometen más agilidad, velocidad de entrega y escala. En comparación con las aplicaciones monolíticas tradicionales."
 	
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/desarrolloMonovsMicro}
-		\caption{}
+		\caption{Evolucion desarrollo en microservicios vs SOA}
 		\label{fig:desarrollomonovsmicro}
 	\end{figure}
 
-	Los microservicios han evolucionado tan rápido gracias al desarrollo de nuevas tecnologías. Por ejemplo la creación de bases de datos NOSQL no relacionales, la aparición de docker contenedores de aplicaciones ligeros y portables que facilitan enormemente los despliegues y el comienzo del desarrollo de aplicaciones en la nube. Todo ello unido ha desembocado en la creación de microservicios.
+	En un futuro tienen que ir puliéndose problemas que tienen debido a estar poco restringidos, por ejemplo si cada microservicio lo desarrollas con un lenguaje diferente no esta del todo claro que los protocolos que uses en cada uno de comunicación sean totalmente compatibles. 
 	
-	Existen muchas razones por las cuales hacer el cambio o directamente empezar a desarrollar con esta arquitectura. 
-	- Los microservicios son mas rápidos y baratos de desarrollar que las antiguas aplicaciones monolíticas. 
-	- Es más fácil remplazar una parte de la aplicación global que en los sistemas antiguos. 
-	- No necesitas un servidor tipo tomcat donde desplegar la aplicación, ya que cada microserivcio cuenta con uno embebido.
-	- Se suelen desplegar en la nube dentro de contenedores dockers por lo que no es necesaria una maquina física(servidor) 24 horas funcionando.
-	- Puedes desarrollar cada microservicio en un lenguaje de programación diferente, en función de las necesidades.
+	En otro tema que tienen que mejorar es en la seguridad, ya que cuando tu descompones una aplicación en cientos de microservicios creas dificultad en la depuración, monitoreo, auditoría y análisis forense de toda la aplicación. Los atacantes podrían aprovechar esta complejidad para atacar.
 	
-	Una metáfora que suele usarse para explicar los microservicios es un panal de abeja. Las abejas construyen el panal rellenado pequeñas celdas hexagonales, cada una independiente pero también integrada con las otras. Esto genera una estructura muy fuerte. Si una celda se daña no afecta a las demás, las abejas reconstruyen solo esa celda.
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/panalAbeja}
-		\caption{}
-		\label{fig:panalabeja}
-	\end{figure}
-	
-	
-	
+	Lo que si es seguro es que han surgido para quedarse y que cada vez mas gente se esta pasando a ellos o simplemente empezando a desarrollar con ellos.
 	
 
 

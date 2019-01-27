@@ -39,6 +39,99 @@
     \warn{\item Invalid format of field 'month'}
   \endentry
 
+  \entry{Dragoni2017}{inbook}{}
+    \name{author}{7}{}{%
+      {{hash=DN}{%
+         family={Dragoni},
+         familyi={D\bibinitperiod},
+         given={Nicola},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Giallorenzo},
+         familyi={G\bibinitperiod},
+         given={Saverio},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LAL}{%
+         family={Lafuente},
+         familyi={L\bibinitperiod},
+         given={Alberto\bibnamedelima Lluch},
+         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Mazzara},
+         familyi={M\bibinitperiod},
+         given={Manuel},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MF}{%
+         family={Montesi},
+         familyi={M\bibinitperiod},
+         given={Fabrizio},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Mustafin},
+         familyi={M\bibinitperiod},
+         given={Ruslan},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Safina},
+         familyi={S\bibinitperiod},
+         given={Larisa},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=MM}{%
+         family={Mazzara},
+         familyi={M\bibinitperiod},
+         given={Manuel},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Meyer},
+         familyi={M\bibinitperiod},
+         given={Bertrand},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer International Publishing}%
+    }
+    \strng{namehash}{DNGSLAL+1}
+    \strng{fullhash}{DNGSLALMMMFMRSL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Microservices is an architectural style inspired by service-oriented
+  computing that has recently started gaining popularity. Before presenting the
+  current state of the art in the field, this chapter reviews the history of
+  software architecture, the reasons that led to the diffusion of objects and
+  services first, and microservices later. Finally, open problems and future
+  challenges are introduced. This survey primarily addresses newcomers to the
+  discipline, while offering an academic viewpoint on the topic. In addition,
+  we investigate some practical issues and point out a few potential
+  solutions.%
+    }
+    \field{booktitle}{Present and Ulterior Software Engineering}
+    \verb{doi}
+    \verb 10.1007/978-3-319-67425-4_12
+    \endverb
+    \field{isbn}{978-3-319-67425-4}
+    \field{pages}{195\bibrangedash 216}
+    \field{title}{Microservices: Yesterday, Today, and Tomorrow}
+    \verb{url}
+    \verb https://doi.org/10.1007/978-3-319-67425-4_12
+    \endverb
+    \list{location}{1}{%
+      {Cham}%
+    }
+    \field{year}{2017}
+  \endentry
+
   \entry{rv2016spring}{book}{}
     \name{author}{1}{}{%
       {{hash=RR}{%
