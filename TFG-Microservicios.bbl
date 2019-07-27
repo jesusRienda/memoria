@@ -17,6 +17,93 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
+  \entry{SoftwareEngineeringInstitute}{article}{}
+    \name{author}{1}{}{%
+      {{hash=ISE}{%
+         family={Institute},
+         familyi={I\bibinitperiod},
+         given={Software\bibnamedelima Engineering},
+         giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ISE1}
+    \strng{fullhash}{ISE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Software Architecture}
+    \verb{url}
+    \verb https://www.sei.cmu.edu/research-capabilities/all-work/display.cfm?cu
+    \verb stomel_datapageid_4050=21328
+    \endverb
+    \field{year}{2017}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{PatternLanguage}{book}{}
+    \name{author}{3}{}{%
+      {{hash=AC}{%
+         family={Alexander},
+         familyi={A\bibinitperiod},
+         given={Christopher},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=IS}{%
+         family={Ishikawa},
+         familyi={I\bibinitperiod},
+         given={Sara},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Silverstein},
+         familyi={S\bibinitperiod},
+         given={Murray},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Oxford University Press}%
+    }
+    \keyw{CERME-6-patterns CnE07 WLEFormativeEAssessment architecture
+  cal09-patterns campus cerme6 chais2007 design designapproaches designpatterns
+  eLPBookMor edid9 experiment jime08 mathgamespatterns mythesis oregon patterns
+  planning postdocapplication}
+    \strng{namehash}{ACISSM1}
+    \strng{fullhash}{ACISSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{Hardcover}
+    \field{isbn}{0195019199}
+    \field{title}{A Pattern Language: Towns, Buildings, Construction}
+    \field{year}{1977}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{gamma2002patrones}{book}{}
+    \name{author}{1}{}{%
+      {{hash=GE}{%
+         family={Gamma},
+         familyi={G\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Pearson Educaci{\'o}n}%
+    }
+    \strng{namehash}{GE1}
+    \strng{fullhash}{GE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{isbn}{9788478290598}
+    \field{series}{Addison-Wesley professional computing series}
+    \field{title}{Patrones de dise{\~n}o: elementos de software orientado a
+  objetos reutilizable}
+    \verb{url}
+    \verb https://books.google.es/books?id=gap\_AAAACAAJ
+    \endverb
+    \field{year}{2002}
+  \endentry
+
   \entry{breveHistoria}{article}{}
     \name{author}{1}{}{%
       {{hash=ML}{%

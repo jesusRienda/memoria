@@ -351,17 +351,32 @@ hmargin=3cm
 	% COMENZAR A ESCRIBIR EL TRABAJO
 	
 	\section{Planteamiento del problema}
-	Tenemos la necesidad almacenar información en una base de datos para posteriormente consultarla, actualizarla o crear nuevos registros. Por lo que necesitamos crear un servicio que al invocar nos devuelva los datos almacenados con un tratamiento especifico y un formato definido. Necesitamos que sea sencillo y simple para el cliente que va a consumir dicho servicio. 
-	Este servicio tendrá que tener una alta disponibilidad y escalarse cuando sea necesario para siempre tener unos tiempos de respuesta bajos.
+	Contamos con datos reales sobre listas de reproducción de Spotify en formato json los cuales contienen información de cada lista y las canciones que contiene.
+	Por otra parte tenemos datos de usuarios con las canciones que escuchan.
+	
+
+		Necesitamos almacenar estos datos en una base de datos para posteriormente consultarla, actualizarla o crear nuevos registros. 
+		Podríamos actuar directamente sobre la base de datos con un cliente pero no seria admisible para un usuario final. 
+		Por tanto tendremos que crear un programa el cual haga las consultas a la bbdd y devuelva los datos en un formato optimo para mostrarlos por pantalla.
+		Para ello Por lo que necesitamos crear un programa que al invocar nos devuelva los datos almacenados con un tratamiento especifico y un formato definido. Necesitamos que sea sencillo y simple para el cliente que va a consumir dicho servicio. 
+		Por ejemplo uno de los tratamiento necesarios sería filtrar las listas en función de las canciones que escuche cada usuario, si ha escuchado mas de 3 canciones de una, deberíamos devolverla.
+		
+		Este programa tendrá que tener una alta disponibilidad y escalarse cuando sea necesario para siempre tener unos tiempos de respuesta bajos. Ya que existe una gran cantidad de personas que van a consumir el programa al mismo tiempo en determinadas franjas horarias.
+		
 	\section{Solución propuesta}
-	Para poder resolver nuestro problema usaremos un protocolo REST para la transferencia de datos entre servicio y cliente. El servicio web sera un microservicio desarrollado con Spring Boot. En cuanto a la base de datos utilizaremos PostgreSQL.
-	\section{Justificacion de la solucion}
+	Para la solución de nuestro problema vamos a necesitar productos de distintos proveedores, ya que cada pequeña parte del programa la gestiona un software diferente.
+	
+	Uno de los puntos mas importantes a decidir seria que base de datos usar, en este caso usaremos CosmosDB.
+	Como pieza de software que se comunique con la bbdd, trate lso datos y los devuelva crearemos un servicio web mediante la arquitectura de microservicios desarrollado en java con el framework Spring Boot.
+	Como protocolo para la transferencia de datos usaremos REST apoyándonos en sus verbos GET, POST, PUT y DELETE.
+	
+	\section{Justificación de la solución}
 	
 	La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
 	
 	Cada microservico es totalmente independiente de desarrollar frente al conjunto, lo cual nos viene genial ya que nuestra idea es realizar una pequeña aplicación que aceda a una base de datos y en un futuro ampliar a varias aplicaciones o incluso un frontal. Los microservicios nos permiten desarrollar cada una en un lenguaje de programación diferente.
 	
-	Al no disponer de una maquina donde desplegar la aplicación, es ideal que los microservicios lleven un servidor de despliegue(tomcat) embebido y así desplegar en la nube dentro de un contenedor de aplicaciones(Kubernetes).
+	Al no disponer de una maquina donde desplegar la aplicación, es ideal que los microservicios lleven un servidor de despliegue(tomcat) embebido y así desplegar en la nube dentro de un contenedor de aplicaciones(Dockers).
 	
 	Una vez desplegado en la nube decidimos que la comunicación sería mediante REST ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria GET, POST, PUT y DELETE.
 	
@@ -371,6 +386,43 @@ hmargin=3cm
 	\section{Estado del arte}
 
 	En la década de los 60 surgió lo que a día de hoy conocemos como arquitectura de software, esta fue tomando cada vez mas interés hasta que en la década de 1980 se integro totalmente el diseño en el desarrollo de software. 
+	
+	El Instituto de Ingeniera de Software la define como:
+	"La arquitectura de software es una representación del sistema que ayuda a comprender cómo se comportará un programa. 
+	
+	La arquitectura del software sirve como modelo tanto para el sistema como para el proyecto que lo desarrolla. La arquitectura es la principal portadora de cualidades del sistema, como el rendimiento, la modificabilidad y la seguridad, ninguna de las cuales se puede lograr sin una visión arquitectónica unificadora. La arquitectura es un artefacto para el análisis temprano para asegurar que un enfoque de diseño proporcionará un sistema aceptable. Al construir una arquitectura efectiva, puede identificar los riesgos de diseño y mitigarlos al inicio del proceso de desarrollo."\cite{SoftwareEngineeringInstitute}. 
+	
+	El sistema se divide en elementos de software también llamados módulos, con propiedades y relaciones existentes entre ellos. Las propiedades de estos elementos pueden ser de dos tipos, internas y externas.
+	
+	Las \textbf{propiedades internas}  son aquellas que definen el módulo, es decir, el lenguaje en el que está desarrollado y todos los detalles de la implementación de este como pueden ser:
+	
+	- Entidades dinámicas en tiempo de ejecución como objetos e hilos.
+	
+	- Entidades lógicas en tiempo de desarrollo como clases y módulos.
+	
+	- Entidades físicas como nodos o carpetas.	
+	
+	Las \textbf{propiedades externas} son los contratos que existen entre módulos y que permiten a otros módulos establecer dependencias/conexiones entre ellos. Es de vital importancia que las interfaces que definen los contratos estén bien definidas para la perfecta integración de los elementos.
+	
+	Es necesario dividir los requerimientos en módulos con los que va a contar el sistema, sus propiedades y como se relacionan entre si. Por ejemplo en la figura \ref{fig:microservices} podemos ver una estructura de un sistema basado en microservicios donde aparecen bases de datos que serian un modulo donde habría que definir sus propiedades, tablas, colecciones de datos, etc; cada microservicio es un modulo del sistema donde habría que definir un api en el que indicar la entrada y salida del modulo; por ultimo tendríamos el modulo de presentación UI(Interfaz de usuario).
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/monolithic-vs-microservices}
+		\caption{}
+		\label{fig:microservices}
+	\end{figure}
+	
+	 En el momento de diseño de una arquitectura existen dos formas de actuar, diseñar una arquitectura nueva o buscar soluciones a nuestro problema. Si elegimos la segunda opción existen patrones de diseño, son una forma reutilizable para resolver los problemas comunes. Estos provienen de la arquitectura civil concretamente del libro "A pattern language" \cite{PatternLanguage}, en él se nombran los patrones para que con hacer referencia a su nombre cualquier arquitecto sea capaz de entender que solución se ha usado. Sin embargo en la arquitectura de software no aparecieron hasta 1994 en un libro que ha día de hoy sigue siendo referencia\cite{gamma2002patrones}.
+	 
+	 Los patrones en el libro \cite{gamma2002patrones} se dividen en función del problema a resolver:
+	 
+	 - Patrones creacionales
+	 
+	 - Patrones estructurales
+	 
+	 - Patrones de comportamiento
+	  
+	
 	
 	Primero surgió la arquitectura orientada objetos mas adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrollo por primera vez SOA, arquitectura orientada a servicios. En ella se desarrollaban todos los servicios que tu necesitas conjuntamente y se empaquetan en un war el cual se despliega en un servidor de aplicaciones(tomcat) dentro de una maquina, esto lo podemos ver en la figura \ref{fig:soavsmicroservicios}.
 	
