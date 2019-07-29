@@ -404,7 +404,7 @@ hmargin=3cm
 	
 	Las \textbf{propiedades externas} son los contratos que existen entre módulos y que permiten a otros módulos establecer dependencias/conexiones entre ellos. Es de vital importancia que las interfaces que definen los contratos estén bien definidas para la perfecta integración de los elementos.
 	
-	Es necesario dividir los requerimientos en módulos con los que va a contar el sistema, sus propiedades y como se relacionan entre si. Por ejemplo en la figura \ref{fig:microservices} podemos ver una estructura de un sistema basado en microservicios donde aparecen bases de datos que serian un modulo donde habría que definir sus propiedades, tablas, colecciones de datos, etc; cada microservicio es un modulo del sistema donde habría que definir un api en el que indicar la entrada y salida del modulo; por ultimo tendríamos el modulo de presentación UI(Interfaz de usuario).
+	Es necesario dividir los requerimientos con los que va a contar el sistema en módulos y definir sus propiedades y como se relacionan entre si. Por ejemplo en la figura \ref{fig:microservices} podemos ver la estructura de un sistema basado en microservicios donde aparecen bases de datos, que serian un modulo donde habría que definir sus propiedades, tablas, colecciones de datos, etc; para cada microservicio habría que definir un api en el que se indique la entrada y salida del modulo, el lenguaje en el que se va a desarrollar...; por ultimo tendríamos un módulo de presentación UI(Interfaz de usuario).
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/monolithic-vs-microservices}
@@ -412,17 +412,48 @@ hmargin=3cm
 		\label{fig:microservices}
 	\end{figure}
 	
-	 En el momento de diseño de una arquitectura existen dos formas de actuar, diseñar una arquitectura nueva o buscar soluciones a nuestro problema. Si elegimos la segunda opción existen patrones de diseño, son una forma reutilizable para resolver los problemas comunes. Estos provienen de la arquitectura civil concretamente del libro "A pattern language" \cite{PatternLanguage}, en él se nombran los patrones para que con hacer referencia a su nombre cualquier arquitecto sea capaz de entender que solución se ha usado. Sin embargo en la arquitectura de software no aparecieron hasta 1994 en un libro que ha día de hoy sigue siendo referencia\cite{gamma2002patrones}.
+	 En el momento de diseño de una arquitectura existen dos formas de actuar, diseñar una arquitectura desde cero o buscar soluciones ya propuestas a nuestro problema. Si elegimos la segunda opción existen patrones de diseño y frameworks.
 	 
-	 Los patrones en el libro \cite{gamma2002patrones} se dividen en función del problema a resolver:
+	 Los patrones son una forma reutilizable de resolver problemas comunes. Los primeros definidos en arquitectura civil se encuentran en el libro "A pattern language" \cite{PatternLanguage}, en él se describen los patrones con un nombre, de tal manera que con hacer referencia a este, cualquier arquitecto será capaz de entender que solución se está usando sin tener que entrar en detalles. Sin embargo en la arquitectura de software no aparecieron hasta 1994 en un libro que a día de hoy sigue siendo un modelo de referencia\cite{gamma2002patrones}.
 	 
-	 - Patrones creacionales
+	 Los patrones definidos en el libro \cite{gamma2002patrones} se dividen en función del problema a resolver:
 	 
-	 - Patrones estructurales
-	 
-	 - Patrones de comportamiento
-	  
-	
+	 \begin{itemize}
+	 	\item Patrones creacionales: estos son los utilizados para facilitar la creación de nuevos objetos. Los más conocidos son:	 	
+	 	\begin{itemize}
+	 		\item Abstract Factory: Contiene una interfaz que otorga la creación de objetos relacionados, sin tener que especificar cuáles son las implementaciones concretas.
+	 		\item Factory Method: Contiene un método de creación que delega en las subclases la implementación de dicho método.
+	 		\item Builder: Con un mismo proceso de construcción nos sirve para crear diferentes representaciones, separando la creación de un objeto complejo de su estructura.
+	 		\item Singleton: Solo se permite la creación de una instancia de una clase en nuestro programa y se proporciona un acceso global a el.
+	 		\item Prototype: Un objeto se crea a partir de la clonación de otro objeto, es decir se crea basandose en unas "plantillas"
+	 	\end{itemize}
+ 	\item Patrones estructurales: estos nos facilitan la modelización de nuestro software, definiendo la forma en que las clases se relacionan entre si. Los más conocidos son:
+ 	\begin{itemize}
+ 		\item Adapter: Mediante un objeto intermedio, se pueden comunicar dos clases con distinta interfaz. 
+ 		\item Bridge: Se crea un puente entre la abtracción y la implementación, para puedan evolucionar independientemente.
+ 		\item Composite: Sirve para crear objetos contenidos en un arbol, donde todos los elementos emplean una misma interfaz.
+ 		\item Decorator: Se añade funcionalidad extra a un objeto (de forma dinámica o estática) sin cambiar su comportamiento.
+ 		\item Facade: Objeto que crea una interfaz para poder trabajar con otra parte más compleja. Un ejemplo podría ser crear una fachada para trabajar con una librería externa.
+ 		\item Flyweight: Para ahorrar memoria, gran cantidad de objetos comparten un objeto con las mismas propiedades.
+ 		\item Proxy: Clase que funciona como interfaz destinada a cualquier otra cosa: conexión a Internet, archivo en disco, etc.
+ 	\end{itemize}
+ 	\item Patrones de comportamiento: Se usan para gestionar algoritmos, relaciones y responsabilidades entre objetos. Los más conocidos son: 
+ 	\begin{itemize}
+ 		\item Command: Objetos que necesitan para ejecutarse, contener una acción y sus parámetros. 
+ 		\item Chain of responsibility: Permite pasar solicitudes a lo largo de una cadena de receptores. Al recibir una solicitud, cada controlador decide procesar la solicitud o pasarla al siguiente de la cadena.
+ 		\item Interpreter: Define una representación y el mecanismo para poder evaluar una gramática. El árbol de sintaxis del lenguaje se modela mediante el patrón \textbf{Composite}.
+ 		\item Iterator: Nos permite movernos por los elementos de forma secuencial sin necesidad de conocer su implementación.
+ 		\item Mediator: Objeto que contiene un conjunto de objetos que interactúan y se comunican entre sí.
+ 		\item Memento: Permite restaurar un objeto a un estado anterior.
+ 		\item Observer: Objetos que pueden unirse a una serie de eventos que otro objeto va a producir para estar informados cuando esto cambie.
+ 		\item State: Modifica el comportamiento de un objeto en el tiempo de ejecución.
+ 		\item Strategy: Selecciona el algoritmo que ejecuta ciertas acciones en tiempo de ejecución.
+ 		\item Template Method: Nos permite conocer la forma del algoritmo.
+ 		\item Visitor: Separa el algoritmo de la estructura de datos que se utilizará a la hora de ejecutarlo. Por lo que se pueden añadir nuevas opciones sin tener que ser modificadas.
+ 	\end{itemize}
+	 \end{itemize}
+ 
+ Otra opcion para no diseñar nuestra arquitectura desde cero sería usar frameworks lo cual implica poca implementacion ya que 
 	
 	Primero surgió la arquitectura orientada objetos mas adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrollo por primera vez SOA, arquitectura orientada a servicios. En ella se desarrollaban todos los servicios que tu necesitas conjuntamente y se empaquetan en un war el cual se despliega en un servidor de aplicaciones(tomcat) dentro de una maquina, esto lo podemos ver en la figura \ref{fig:soavsmicroservicios}.
 	
