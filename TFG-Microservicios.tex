@@ -383,7 +383,7 @@ hmargin=3cm
 	En cuanto a base de datos hemos elegido PostgreSQL ya que es open source y totalmente compatible con muchos lenguajes de programación, no solo con Java que es el caso de nuestra aplicación, sino que si en un futuro queremos creamos otro microservicio con python sería posible reutilizar la base de datos.
 	Ademas también es capaz de responder a gran cantidad peticiones en un mismo instante y no bloquearse, esto es totalmente esencial ya que necesitamos alta disponibilidad.
 	 
-	\section{Estado del arte}
+	\chapter{Estado del arte}
 
 	En la década de los 60 surgió lo que a día de hoy conocemos como arquitectura de software, esta fue tomando cada vez mas interés hasta que en la década de 1980 se integro totalmente el diseño en el desarrollo de software. 
 	
@@ -411,7 +411,8 @@ hmargin=3cm
 		\caption{}
 		\label{fig:microservices}
 	\end{figure}
-	
+
+	\section{Patrones de diseño}
 	 En el momento de diseño de una arquitectura existen dos formas de actuar, diseñar una arquitectura desde cero o buscar soluciones ya propuestas a nuestro problema. Si elegimos la segunda opción existen patrones de diseño y frameworks.
 	 
 	 Los patrones son una forma reutilizable de resolver problemas comunes. Los primeros definidos en arquitectura civil se encuentran en el libro "A pattern language" \cite{PatternLanguage}, en él se describen los patrones con un nombre, de tal manera que con hacer referencia a este, cualquier arquitecto será capaz de entender que solución se está usando sin tener que entrar en detalles. Sin embargo en la arquitectura de software no aparecieron hasta 1994 en un libro que a día de hoy sigue siendo un modelo de referencia\cite{gamma2002patrones}.
@@ -452,8 +453,48 @@ hmargin=3cm
  		\item Visitor: Separa el algoritmo de la estructura de datos que se utilizará a la hora de ejecutarlo. Por lo que se pueden añadir nuevas opciones sin tener que ser modificadas.
  	\end{itemize}
 	 \end{itemize}
+ \section{Patrones de arquitectura}
+ Por otra parte tambien existen los patrones arquitectonicos o arquetipos, los cuales tienen un nivel superior de abstraccion(explicar). Estos al igual que los patrones de diseño, solucionan problemas recurrentes de una forma reutilizable.
  
- Otra opcion para no diseñar nuestra arquitectura desde cero sería usar frameworks lo cual implica poca implementacion ya que 
+ Los patrones de arquitectura mas usados son:
+ 	\begin{itemize}
+ 	\item Programación por capas: Se utiliza para estructurar programas que pueden descomponerse en subtareas. Normalmente cuenta con tres capas, en una de ellas se implementa la lógica de negocio, en otra los datos y en otra la presentación de los datos ya tratados. Es uno de los arquetipos mas usados a día de hoy.
+ 	\item Cliente-servidor: Este patrón consta de dos partes: un servidor y múltiples clientes, el servidor será el que de servicio a diversos componentes del cliente y los clientes solicitarán servicio al servidor. En esta arquitectura se separan las capas en varias maquinas físicas, normalmente se utiliza 2 o 3 niveles. Si utilizáramos dos niveles tendríamos la capa de presentación en una maquina del cliente y el tratado de los datos con la base de datos en otra máquina. En la de 3 niveles se pondría cada capa en un servidor diferente con la mejora de escalabilidad.
+ 	\item Arquitectura orientada a servicios: Es la que da soporte a los requerimentos del negocio mediante la creación de servicios. Un servicio corresponde a un requerimento funcional del negocio, por ejemplo: 
+ 	Un cliente necesita saber el stock de un determinado producto, por lo que se crea un servicio que consulte en la base de datos la cantidad de producto disponible.
+ 	\item Arquitectura de microservicios: Utilizada para crear aplicaciones usando un conjunto de pequeños servicios, los cuales se comunican entre sí pero se ejecutan de forma individual.
+ 	\item Pipeline: Utilizado para organizar sistemas que procesan una sucesión de datos. Estos datos pasan a través de tuberías (que son combinación de comandos que se ejecutan de forma simultanea, donde el resultado de la primera se envía de entrada para el siguiente). Las tuberías se usan para almacenar datos en buffer o para la sincronización de estos.
+ 	\item Arquitectura en pizarra: Se utiliza para la resolución de problemas de los cuales se desconoce su estrategia. Está formado por tres componentes:
+ 	\begin{itemize}
+ 		\item \textbf{Pizarra:} memoria que contiene todos los objetos. 
+ 		\item \textbf{Fuente de conocimiento:} son módulos especializados. 
+ 		\item \textbf{Componente de control:} encargado de seleccionar y ejecutar los módulos.
+ 	\end{itemize}
+ 	\item Arquitectura dirigida por eventos: Maneja principalmente los eventos y está formado por cuatro componentes que son: fuente de evento , escucha de evento , canal y bus de evento.
+ 	\item Peer-to-peer: Se llama pares a las componentes individuales y estos pueden funcionar como servidor, dando servicio a otros pares, o como cliente, pidiendo servicio a otros pares.
+ 	\item Modelo Vista Controlador: Divide un programa interactivo en tres partes:
+ 		\begin{itemize}
+ 			\item \textbf{Modelo:} está formado por los datos básicos y contiene la funcionalidad del programa. 
+ 			\item \textbf{Vista:} maneja la visualización de la información. 
+ 			\item \textbf{Controlador:} encargado de controlar la entrada (teclado y ratón) del usuario e informar al modelo y la vista de los cambios de acuerdo a los requerimentos.
+ 		\end{itemize}
+ 	Permite desacoplar los componentes y reutilizar código más eficiente. 
+ \end{itemize}
+
+\section{Frameworks}
+ Otra opción para no diseñar nuestra arquitectura desde cero sería usar frameworks, son estructuras de software ya implementadas mediante las que un programador puede apoyarse para desarrollar un proyecto propio. Estos frameworks están implementados siguiendo los patrones de sotfware y los patrones de arquitectura, suelen incluir ficheros de configuración, librerías.
+ 
+ Existen frameworks de prácticamente todos los lenguajes de programación, con ellos te olvidas de crear una arquitectura tal y como hemos visto hasta ahora y solo tienes que implementar los requisitos funcionales de tu producto, eso si es importante valorar y elegir el framework que se adapta a tu problema.
+ 
+ Uno de los framework de java mas popular de los últimos tiempos es Spring, este surgió en 2003 de la mano de Rod Johnson, la idea del framework es agilizar y estandarizar la creación de proyectos de una misma arquitectura. 
+ 
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[width=0.7\linewidth]{imagenes/the-future-of-web-frameworks-11-728}
+ 	\caption{Historia de los Web Frameworks}
+ 	\label{fig:webFrameworks}
+ \end{figure}
+ 
 	
 	Primero surgió la arquitectura orientada objetos mas adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrollo por primera vez SOA, arquitectura orientada a servicios. En ella se desarrollaban todos los servicios que tu necesitas conjuntamente y se empaquetan en un war el cual se despliega en un servidor de aplicaciones(tomcat) dentro de una maquina, esto lo podemos ver en la figura \ref{fig:soavsmicroservicios}.
 	
