@@ -482,19 +482,33 @@ hmargin=3cm
  \end{itemize}
 
 \section{Frameworks}
- Otra opción para no diseñar nuestra arquitectura desde cero sería usar frameworks, son estructuras de software ya implementadas mediante las que un programador puede apoyarse para desarrollar un proyecto propio. Estos frameworks están implementados siguiendo los patrones de sotfware y los patrones de arquitectura, suelen incluir ficheros de configuración, librerías.
+ Otra opción para no tener que diseñar una arquitectura desde cero sería la utilización de frameworks. Estos son estructuras de software ya implementadas en las que un programador puede apoyarse para desarrollar un proyecto propio. Los frameworks están implementados y siguen tanto los patrones de sotfware como los patrones de arquitectura y suelen incluir ficheros de configuración, librerías, etc.
  
- Existen frameworks de prácticamente todos los lenguajes de programación, con ellos te olvidas de crear una arquitectura tal y como hemos visto hasta ahora y solo tienes que implementar los requisitos funcionales de tu producto, eso si es importante valorar y elegir el framework que se adapta a tu problema.
+ Existen frameworks para prácticamente todos los lenguajes de programación, con ellos solo se implementarían los requisitos funcionales del producto, eso sí, es importante valorar y elegir el framework que mejor se adapta al problema que vas a resolver.
  
- Uno de los framework de java mas popular de los últimos tiempos es Spring, este surgió en 2003 de la mano de Rod Johnson, la idea del framework es agilizar y estandarizar la creación de proyectos de una misma arquitectura. 
- 
- \begin{figure}
+  \begin{figure}
  	\centering
  	\includegraphics[width=0.7\linewidth]{imagenes/the-future-of-web-frameworks-11-728}
  	\caption{Historia de los Web Frameworks}
  	\label{fig:webFrameworks}
  \end{figure}
+
+ Uno de los framework de java mas popular de los últimos tiempos es Spring, este surgió en 2003 de la mano de Rod Johnson, la idea del framework es agilizar y estandarizar la creación de proyectos de una misma arquitectura. 
  
+ Stripes es un framework de java nacido en 2004 basado en la arquitectura MVC(Modelo vista controlador) el cual permite gracias a las anotaciones poder configurar el modelo. Es mas ligero que Struts  orientado para java y para la misma arquitectura, este surgio en 2001 y es uno de los mas famosos.
+ 
+ Existen framework de otros lenguajes de programación como es el caso del novedoso Angular lanzado en septiembre de 2016. Este framework esta basado en typescript y esta orientado a desarrollo del front end de aplicaciones web. Este framework es propietario de Google aunque es de código libre.
+ 
+ Otro framework para el desarrollo de frontend es React contiene  una serie de librerias de javascript para construir aplicaciones web mas fácilmente. 
+ 
+ Un framework bastante novedoso y con una gran utilidad es Ionic surgió en 2013, siempre ha ido de la mano de angular desde AngularJs hasta las ultimas versiones de angular. Este esta creado para el desarrollo de aplicaciones híbridas, es decir que no solo consigas una pagina web de un negocio por ejemplo sino que mediante el wrapeo que ofrece Ionic se puedan instalar en los smartphones sin tener el cuenta el sistema operativo de estos.
+ 
+Por otra parte existen bastantes que se basan en java y ofrecen una arquitectura de microservicios estos son:
+
+ \begin{itemize}
+ 	\item Spring Boot:  
+
+ \end{itemize}
 	
 	Primero surgió la arquitectura orientada objetos mas adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrollo por primera vez SOA, arquitectura orientada a servicios. En ella se desarrollaban todos los servicios que tu necesitas conjuntamente y se empaquetan en un war el cual se despliega en un servidor de aplicaciones(tomcat) dentro de una maquina, esto lo podemos ver en la figura \ref{fig:soavsmicroservicios}.
 	
