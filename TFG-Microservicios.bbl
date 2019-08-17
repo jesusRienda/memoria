@@ -104,6 +104,15 @@
     \field{year}{2002}
   \endentry
 
+  \entry{AppHibridas}{article}{}
+    \field{labeltitlesource}{title}
+    \field{title}{APLICACIONES HÍBRIDAS: ¿QUÉ SON Y CÓMO USARLAS?}
+    \verb{url}
+    \verb https://www.nextu.com/blog/aplicaciones-hibridas-que-son-y-como-usarl
+    \verb as/
+    \endverb
+  \endentry
+
   \entry{breveHistoria}{article}{}
     \name{author}{1}{}{%
       {{hash=ML}{%

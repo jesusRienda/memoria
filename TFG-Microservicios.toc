@@ -17,5 +17,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Frameworks}{7}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{11}{figure.caption.9}
+\contentsline {subsection}{\numberline {2.3.1}Frameworks de java para microservicios}{8}{subsection.2.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}SOA vs Microservicios}{9}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{12}{figure.caption.9}
 \contentsfinish 
