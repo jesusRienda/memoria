@@ -369,19 +369,6 @@ hmargin=3cm
 	Uno de los puntos mas importantes a decidir seria que base de datos usar, en este caso usaremos CosmosDB.
 	Como pieza de software que se comunique con la bbdd, trate lso datos y los devuelva crearemos un servicio web mediante la arquitectura de microservicios desarrollado en java con el framework Spring Boot.
 	Como protocolo para la transferencia de datos usaremos REST apoyándonos en sus verbos GET, POST, PUT y DELETE.
-	
-	\section{Justificación de la solución}
-	
-	La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
-	
-	Cada microservico es totalmente independiente de desarrollar frente al conjunto, lo cual nos viene genial ya que nuestra idea es realizar una pequeña aplicación que aceda a una base de datos y en un futuro ampliar a varias aplicaciones o incluso un frontal. Los microservicios nos permiten desarrollar cada una en un lenguaje de programación diferente.
-	
-	Al no disponer de una maquina donde desplegar la aplicación, es ideal que los microservicios lleven un servidor de despliegue(tomcat) embebido y así desplegar en la nube dentro de un contenedor de aplicaciones(Dockers).
-	
-	Una vez desplegado en la nube decidimos que la comunicación sería mediante REST ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria GET, POST, PUT y DELETE.
-	
-	En cuanto a base de datos hemos elegido PostgreSQL ya que es open source y totalmente compatible con muchos lenguajes de programación, no solo con Java que es el caso de nuestra aplicación, sino que si en un futuro queremos creamos otro microservicio con python sería posible reutilizar la base de datos.
-	Ademas también es capaz de responder a gran cantidad peticiones en un mismo instante y no bloquearse, esto es totalmente esencial ya que necesitamos alta disponibilidad.
 	 
 	\chapter{Estado del arte}
 
@@ -514,17 +501,6 @@ hmargin=3cm
  	\item Dropwizard
  	\item Eclipse MicroProfile
  	\item Helidon
- 	\item Jersey
- 	\item Payara Micro
- 	\item Play
- 	\item Restlet
- 	\item Spark
- 	\item Squash
- 	\item Swagger
- 	\item Telepresence
- 	\item WildFly Thorntail
- 	\item Zipkin  
-
  \end{itemize}
 
 	-Cricket: Es un framework para implementación de arquitectura dirigida por eventos. Contiene un servidor http incorporado, serialización de Java a json automática, gestión de usuarios y accesos, bases de datos integradas como h2 y un planificador de eventos. Con todo ello se puede construir una aplicación fácilmente.
@@ -533,42 +509,170 @@ hmargin=3cm
 
 	-Eclipse MicroProfile se lanzo en 2016 pero no fue hasta junio de 2018 cuando consiguió cubrir todas las necesidades de la arquitectura. Cuenta al igual que spring con una web donde obtener un arquetipo de la aplicacion con las dependencias que tu añadas.
 	
-	\section{SOA vs Microservicios}
-	Primero surgió la arquitectura orientada objetos mas adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrollo por primera vez SOA, arquitectura orientada a servicios. En ella se desarrollaban todos los servicios que tu necesitas conjuntamente y se empaquetan en un war el cual se despliega en un servidor de aplicaciones(tomcat) dentro de una maquina, esto lo podemos ver en la figura \ref{fig:soavsmicroservicios}.
-	
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/soavsmicroservicios}
-		\caption{Arquitectura Monolítica frente Microservicios}
-		\label{fig:soavsmicroservicios}
-	\end{figure}
-	
-	Todos los servicios tenían que estar desarrollados con el mismo lenguaje y no  podías asignar mas recursos a uno de ellos sino que se lo asignabas a todo el conjunto, escalando el war en varias maquinas o replicas en la misma. Para ello necesitabas un balanceador de carga antes que determine maquina va a atender tu petición.
-	
-	Todo esto antes era mas que suficiente para las empresas, pero a día de hoy cuando una aplicación monolítica(SOA) crece mucho es difícil mantener y es complicado añadir nuevas funcionalidades, ya que cada linea modificada implica re-desplegar toda la aplicación, lo que en una empresa grande puede llevar bastante tiempo, ya que en los despliegues normalmente están involucrados varios departamentos de la empresa como seguridad, operaciones, arquitectura y desarrollo, que impide al equipo seguir desarrollando. También es complicado encontrar el origen de algún error en el código.
-	
-	La necesidad de resolver todos estos problemas desencadeno en la arquitectura de microservicios. La primera vez que se menciono la palabra "microservicios" fue en 2011 en una conferencia sobre computación en la nube donde el Dr. Peter Rogers\cite{breveHistoria} se refirió a ello para describir la arquitectura que estaban usando grandes empresas como Netflix, Facebook, Amazon o PayPal. 
-	
-	Los microservicios gestionan la complejidad granulando funcionalmente en un conjunto de servicios pequeños e independientes. Con esto se consigue que el equipo de desarrollo sea capaz de desarrollar varias funcionalidades a la vez sin tocar código de otra funcionalidad y desplegar cada modulo por separado tal y como se ve en la figura \ref{fig:soavsmicroservicios} donde cada microservicio esta separado del resto, y puede o no tener una base de datos común.
-	
-	El cambio mas notable respeto a SOA es que los equipos de desarrollo tienen una mayor responsabilidad, lo que se traduce en una gran facilidad, ya que ellos manejan todo el proceso de desarrollo, desligues en distintos entornos, gestión de contenedores como Kubernetes, etc. Todo esto antes tenían que realizarlo otros departamentos de la empresa con el aumento de tiempos que suponía.
-	
-	Aunque la arquitectura de microservicios resuelve todos los problemas que presenta SOA y cada vez es mas popular, aun esta en su base de inicio como se menciona en el articulo\cite{Dragoni2017} y aun le queda mucho por mejorar y evolucionar.
-	
-	Rajest RV en su libro "Spring Microservices"\cite{rv2016spring} nos muestra un gráfico\ref{fig:desarrollomonovsmicro} en el que se ve como es mucho mas rápido y ágil el desarrollo de aplicaciones con microservicios frente a tradicionales. "Los microservicios prometen más agilidad, velocidad de entrega y escala. En comparación con las aplicaciones monolíticas tradicionales."
-	
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/desarrolloMonovsMicro}
-		\caption{Eficiencia microservicios frente SOA}
-		\label{fig:desarrollomonovsmicro}
-	\end{figure}
+	\section{Bases de datos}
+	En el proceso de diseño de una arquitectura otro módulo fundamental es el almacenamiento de los datos que vamos a utilizar, para ello usamos las bases de datos.
 
-	En un futuro se deberían solucionar problemas debidos a estar poco restringidos, por ejemplo si cada microservicio lo desarrollas con un lenguaje diferente no esta del todo claro que los protocolos que uses en cada uno de comunicación sean totalmente compatibles. 
+	Estas se pueden definir como un conjunto de información relacionada que se encuentra agrupada ó estructurada.
 	
-	En otro tema que tienen que mejorar es en la seguridad, ya que cuando tu descompones una aplicación en cientos de microservicios creas dificultad en la depuración, monitoreo, auditoría y análisis forense de toda la aplicación. Los atacantes podrían aprovechar esta complejidad para atacar.
+	El concepto de bases de datos ha estado siempre ligado a la informática, estas son sistemas formados por grupos de datos almacenados en discos, que permiten la consulta, modificación y borrado de los mismos. Se crearon para poder almacenar grandes cantidades de información. 
 	
-	Lo que si es seguro es que han surgido para quedarse y que cada vez mas gente se esta pasando a ellos.
+	En la década de los 70, Edgar Frank Codd, científico informático inglés conocido por sus participación en la teoría de bases de datos relacionales, definió el modelo relacional  a través de su artículo “Un modelo relacional de datos para grandes bancos de datos compartidos”\cite{RelationalModel}.
+	
+	Larry Ellison, basándose en el trabajo de Edgar F. Codd, creó el “Relational Software System” más conocido como Oracle Corporation, el sistema de gestión de bases de datos relacional más conocido actualmente.
+	
+	En la década de los 80 se desarrolló SQL (Structured Query Language) un lenguaje de acceso a bases de datos relacionales que permite realizar consultas y cambios de forma sencilla. En los 90 se actualizó SQL y se agregaron: expresiones regulares, consultas recursivas, triggers y algunas características orientadas a objetos.
+	
+	En la actualidad, las tres grandes compañías que dominan el mercado de las bases de datos son IBM, Microsoft y Oracle. En el campo de internet, la compañía que más información genera es Google.
+	
+	No fue hasta la década de los 2000 cuando surgieron las bases de datos no relacionales(NoSQL) que son las que no contienen un identificador para relacionar un conjunto de datos con otro. La información se organiza en documentos y es útil cuando no tenemos claro lo que se va a almacenar.
+	
+	La más exitosa en bases de datos no relacionales es MongoDB seguida por Redis, Elasticsearch y Cassandra.
+	
+	\subsection{Pros y contras bases de datos relacionales}
+	Ventajas:
+	 \begin{itemize}
+		\item Existe gran variedad de información para poder realizar cualquier tipo de desarrollo o consulta, gracias a sus años de madurez.
+		\item Asegura que la información no se va a completar si a mitad de una operación realizada en base de datos ocurre un problema.
+		\item Tiene los estándares bien definidos.
+		\item Es sencillo a la hora de programar operaciones.
+	\end{itemize}
+	Inconvenientes:
+		 \begin{itemize}
+		\item Estas bases de datos tienden a crecer demasiado por lo que aumenta el tiempo de respuesta.
+		\item	Se tendrá que reestructurar la base de datos de una empresa debido a que esta realice algún cambio en sus sistemas informáticos.
+		\item 	No garantizan el buen funcionamiento si el sistema operativo donde se va a instalar no cumplen con los requerimientos mínimos.
+	\end{itemize}
+
+	\subsection{Pros y contras bases de datos no relacionales}
+		Ventajas:
+	\begin{itemize}
+		\item Adaptabilidad para crecimientos o cambios a la hora de almacenar la información, si se necesita un nuevo campo en la base, se agrega sobre el documento y el sistema sigue operando sin tener que añadir nuevas configuraciones.
+		\item Crecimiento horizontal. Si la actuación de los servidores disminuye durante la operación, existe la posibilidad de instalar nuevos nodos que distribuyen la carga de trabajo, de ahí, crecimiento horizontal.
+		\item No es necesario contar con servidores con gran cantidad de recursos disponibles para realizar operaciones, si no que pueden empezar con un número de recursos limitado y dependiendo de las necesidades ir creciendo sin tener que detener las operaciones.
+		\item Cuenta con un algoritmo interno que reformule las consultas de los usuarios o de las aplicaciones programadas para no sobrecargar a los servidores.
+	\end{itemize}
+	Inconvenientes:
+	\begin{itemize}
+		\item Como no nos garantiza que si la operación falla se complete la información, esta en ocasiones es inconsistente.
+		\item	Dado que es un modelo bastante nuevo, se necesitan conocimientos elevados en el uso de esta herramienta, ya que las operaciones son limitadas.
+		\item 	No tiene un estándar de lenguaje definido.
+		\item 	No contiene una interfaz gráfica por lo que es necesario hacer todo mediante consola.
+	\end{itemize}
+
+\section{Microservicios}
+
+Una “arquitectura de microservicios” es útil para desarrollar una aplicación software dividiéndola en una serie de pequeños servicios, los cuales se ejecutan de forma independiente y se comunican entre sí, por ejemplo, a través de peticiones HTTP a sus API.
+
+Tiene que haber un número mínimo de servicios encargados de gestionar los procesos en común. Cada microservicio es pequeño y se corresponde con un área de la aplicación. Cada uno es independiente, pudiéndose programar en lenguajes diferentes y su código debe poder ser implementado para que no afecte a los demás.
+
+No hay un tamaño definido para cada microservicio, ni cómo se tiene dividir la aplicación pero el autor Jon Eaves caracteriza un microservicio como “algo que a nivel de código podría ser reescrito en dos semanas”.
+\subsection{Pros y contras de los microservicios}
+Ventajas:
+\begin{itemize}
+	\item Concede a los desarrolladores la libertad de implementar y desplegar los servicios de forma independiente.
+	\item Los microservicios se pueden desarrollar con un equipo de trabajo mínimo.
+	\item Para los diferentes módulos, existe la posibilidad de utilizar lenguajes diferentes.
+	\item Con el uso de contenedores el desarrollo y despliegue de la app es mucho más rápido.
+\end{itemize}
+Inconvenientes:
+\begin{itemize}
+	\item Las pruebas pueden resultar complicados debido al despliegue distribuido.
+	\item Con un gran número de servicios se puede dar lugar a grandes bloques de información para gestionar.
+	\item Si contamos con un gran número de servicios, a la hora de integrarlos y gestionarlos puede resultar muy complicado.
+	\item Esta tecnología suele incurrir en un alto consumo de memoria.
+	\item Fragmentar una aplicación en diferentes microservicios puede llevar muchas horas de planificación.
+\end{itemize}
+
+\subsection{Ejemplos de empresas que utilizan microservicios}
+
+Para poder contemplar hasta dónde ha llegado la arquitectura de microservicios observamos algunas grandes marcas que lo han implementado. Webs de aplicaciones a gran escala han decidido utilizar los microservicios en vistas de productos mucho más simples, efectivos y rápidos. Encontramos estas compañías:
+\begin{itemize}
+	\item \textbf{Netflix:} Esta plataforma tiene una arquitectura generalizada que desde hace un par de años se pasó a los microservicios. A diario recibe una media de mil millones de llamadas a sus diferentes servicios y es capaz de adaptarse a más de 800 tipos de dispositivos mediante su API de streaming de vídeo.
+	\item \textbf{Amazon:} No tiene soporte para tantos dispositivos como Netflix, pero tampoco es algo fundamental en su sector. Se cambió hace tres años a la arquitectura de microservicios siendo una de las primeras compañías que la implementan en producción. No hay cifra aproximada de la cantidad de solicitudes que pueden recibir a diario, pero no son pocas. 
+	\item \textbf{Ebay:} Es una de las empresas con mayor visión de futuro, siendo pionera en la adopción de tecnologías como Docker. Su aplicación principal comprende varios servicios autónomos, y cada uno ejecutará la lógica propia de cada área.
+\end{itemize}
+
+
+\section{SOA vs Microservicios}
+
+Primero surgió la arquitectura orientada objetos y más adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrolló por primera vez SOA (Service Oriented Architecture) “arquitectura orientada a servicios”. Con esta se desarrollaban todos los servicios necesarios y se empaquetaban en un WAR (Web Application Archive) para poder desplegarse en un servidor de aplicaciones, como tomcat, que se encontraba dentro de una máquina. Esto puede verse en la figura \ref{fig:soavsmicroservicios}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/soavsmicroservicios}
+	\caption{Arquitectura Monolítica frente Microservicios}
+	\label{fig:soavsmicroservicios}
+\end{figure}
+
+Todos estos servicios tenían que estar implementados en el mismo lenguaje y no se les podía asignar más recursos a cada uno de ellos. Era asignado a todo el conjunto, dividiendo el WAR en varias máquinas o réplicas de la misma. Para ello se necesitaba un balanceador de carga que determinaba que máquina iba a atender la petición.
+
+
+Todo esto era suficiente para las empresas. A día de hoy cuando una aplicación monolítica (SOA) crece demasiado es difícil mantenerla y añadir nuevas funcionalidades, ya que cada línea modificada implica re-desplegar toda la aplicación, lo que puede llevar mucho tiempo pues en los despliegues están involucrados varios departamentos de la empresa que impide al equipo seguir desarrollando. También es complicado encontrar el origen de algún error en el código.
+
+La necesidad por resolver todos estos problemas desembocó en la arquitectura de microservicios. La primera vez que se mencionó la palabra "microservicios" fue en 2011 en una conferencia sobre computación en la nube, donde el Dr. Peter Rogers\cite{breveHistoria} se refirió a ello para describir la arquitectura que estaban usando grandes empresas como Netflix, Facebook, Amazon o PayPal. 
+
+Los microservicios gestionan la complejidad granulando funcionalmente en un conjunto de servicios pequeños e independientes. Con esto se consigue que el equipo de desarrollo sea capaz de implementar varias funcionalidades a la vez, sin tocar el código de otra  funcionalidad y desplegar cada módulo por separado tal y como se ve en la figura 2.3 donde cada microservicio está separado del resto, y puede o no tener una base de datos común.
+
+El cambio más notable respeto a SOA es que los equipos de desarrollo tienen una mayor responsabilidad, lo que se traduce en una gran facilidad, ya que manejan todo lo siguiente:  proceso de desarrollo, desligues en distintos entornos, gestión de contenedores como Kubernetes, etc. Todo esto antes se tenía que realizar en otros departamentos de la empresa aumentando tiempos de producción. La arquitectura de microservicios resuelve todos los problemas que presenta SOA y cada vez es más popular, pero aún está en su base de inicio como se menciona en el articulo\cite{Dragoni2017} y aun le queda mucho por mejorar y evolucionar.
+ 
+ 
+ 
+Rajest RV en su libro "Spring Microservices"\cite{rv2016spring} nos muestra el gráfico \ref{fig:desarrollomonovsmicro} en el que se observa como es más rápido y ágil el desarrollo de aplicaciones con microservicios frente a aplicaciones tradicionales. Menciona que, "Los microservicios prometen más agilidad, velocidad de entrega y escala. En comparación con las aplicaciones monolíticas tradicionales." 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/desarrolloMonovsMicro}
+	\caption{Eficiencia microservicios frente SOA}
+	\label{fig:desarrollomonovsmicro}
+\end{figure}
+
+En un futuro se deberían solucionar problemas debidos a estar poco restringidos, por ejemplo si cada microservicio se desarrollara con un lenguaje diferente no estaría del todo claro los protocolos que se usan en cada uno de ellos y de que la comunicación sea totalmente compatibles. 
+
+Otro aspecto a mejorar es la seguridad, ya que cuando se descompone una aplicación en cientos de microservicios aparecen dificultades en la depuración, monitoreo, auditoría y análisis forense de toda la aplicación. Los atacantes podrían aprovechar esta complejidad para atacar. 
+
+Lo que sí es seguro es que han surgido para quedarse y cada vez más empresas están empezando a utilizar los microservicios.
+
+
+\subsection{Ejemplo de visión monolítica vs visión de microservicio}
+
+
+
+Accedemos a una página web de una tienda para realizar compras. Hay un servidor que está ejecutando el código de la aplicación y de vez en cuando se conecta a una base de datos para recuperar información.
+Cuando un usuario compra un producto vía web, se mostrarán los productos disponibles. La aplicación responderá según haya sido programada y mostrará el inventario, pagos o envíos esta información se empaqueta en un único archivo ejecutable. De ahí nombrarlo como arquitectura monolítica.
+Si se realiza un cambio en cualquiera de los módulos, se tendrá que subir a producción un código nuevo aunque los otros módulos no hayan sido modificados. 
+Pero si la aplicación no es compleja, la subida será sencilla ya que en este caso tenemos un solo archivo ejecutable.
+En el caso de microservicios, en vez de tener un único ejecutable, cada componente del sistema es un único servicio que se comunicará con los otros a través de llamadas.
+Contamos con una interfaz web en la que interactúan los usuarios y por debajo los servicios de pagos, inventario y envíos.
+Con respecto a la visión monolítica tenemos:
+– Los microservicio pueden desplegarse de manera independiente: si realizamos un cambio en uno de los módulos, no se verán afectados los otros módulos y solo tendremos que subir ese módulo.
+– Es fácil de entender y dividir, pues las secciones del negocio están bien separadas.
+– Cada microservicio es multifuncional: tiene una parte de base de datos, de backend y es independiente de los demás. 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/monolithic}
+	\caption{}
+	\label{fig:monolithic}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/microservices}
+	\caption{}
+	\label{fig:microservicesGrafic}
+\end{figure}
+
+
+\chapter{Justificación de la solución}
+
+La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
+
+Cada microservico es totalmente independiente de desarrollar frente al conjunto, lo cual nos viene genial ya que nuestra idea es realizar una pequeña aplicación que aceda a una base de datos y en un futuro ampliar a varias aplicaciones o incluso un frontal. Los microservicios nos permiten desarrollar cada una en un lenguaje de programación diferente.
+
+Al no disponer de una maquina donde desplegar la aplicación, es ideal que los microservicios lleven un servidor de despliegue(tomcat) embebido y así desplegar en la nube dentro de un contenedor de aplicaciones(Dockers).
+
+Una vez desplegado en la nube decidimos que la comunicación sería mediante REST ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria GET, POST, PUT y DELETE.
+
+En cuanto a base de datos hemos elegido PostgreSQL ya que es open source y totalmente compatible con muchos lenguajes de programación, no solo con Java que es el caso de nuestra aplicación, sino que si en un futuro queremos creamos otro microservicio con python sería posible reutilizar la base de datos.
+Ademas también es capaz de responder a gran cantidad peticiones en un mismo instante y no bloquearse, esto es totalmente esencial ya que necesitamos alta disponibilidad.	
 	
 
 
