@@ -349,6 +349,10 @@ hmargin=3cm
 \chapter{Introducción}
 
 	% COMENZAR A ESCRIBIR EL TRABAJO
+	El mundo de la tecnología se basa en tendencias, hoy en día los microservicios están de moda, gracias a grandes compañias como Amazon, Ebay, Twitter, Paypal, Netflix, etc. Pero realmente es una tecnología que ha surgido gracias a la aparición de la nube(cloud) donde todas estas empresas se están llevando sus software
+	
+	En la nube no necesitas servidores físicos, con el mantenimiento y la inversión que esto supone, sino que solo pagas por los recursos que necesitas en cada momento. Esto es una gran revolución para la informática, te permite gestionar los picos de actividad sin perder servicio.
+	
 	
 	\section{Planteamiento del problema}
 	Contamos con datos reales sobre listas de reproducción de Spotify en formato json los cuales contienen información de cada lista y las canciones que contiene.
@@ -356,18 +360,18 @@ hmargin=3cm
 	
 
 		Necesitamos almacenar estos datos en una base de datos para posteriormente consultarla, actualizarla o crear nuevos registros. 
-		Podríamos actuar directamente sobre la base de datos con un cliente pero no seria admisible para un usuario final. 
-		Por tanto tendremos que crear un programa el cual haga las consultas a la bbdd y devuelva los datos en un formato optimo para mostrarlos por pantalla.
+		Podríamos actuar directamente sobre la base de datos pero no seria admisible para un usuario final. 
+		Por tanto tendremos que crear un programa el cual haga las consultas a la bbdd y devuelva los datos validados en un formato optimo para mostrarlos por pantalla.
 		Para ello Por lo que necesitamos crear un programa que al invocar nos devuelva los datos almacenados con un tratamiento especifico y un formato definido. Necesitamos que sea sencillo y simple para el cliente que va a consumir dicho servicio. 
-		Por ejemplo uno de los tratamiento necesarios sería filtrar las listas en función de las canciones que escuche cada usuario, si ha escuchado mas de 3 canciones de una, deberíamos devolverla.
+		Por ejemplo uno de los tratamiento necesarios sería filtrar las listas en función de las canciones que escuche cada usuario, si ha escuchado mas de 3 canciones de una lista, deberíamos devolverla.
 		
-		Este programa tendrá que tener una alta disponibilidad y escalarse cuando sea necesario para siempre tener unos tiempos de respuesta bajos. Ya que existe una gran cantidad de personas que van a consumir el programa al mismo tiempo en determinadas franjas horarias.
+		Este programa tendrá que tener una alta disponibilidad y escalarse cuando sea necesario para siempre tener unos tiempos de respuesta bajos. Ya que existe una gran cantidad de personas que van a consumir el programa al mismo tiempo coincidiendo con el lanzamiento de nuevas listas.
 		
 	\section{Solución propuesta}
 	Para la solución de nuestro problema vamos a necesitar productos de distintos proveedores, ya que cada pequeña parte del programa la gestiona un software diferente.
 	
 	Uno de los puntos mas importantes a decidir seria que base de datos usar, en este caso usaremos CosmosDB.
-	Como pieza de software que se comunique con la bbdd, trate lso datos y los devuelva crearemos un servicio web mediante la arquitectura de microservicios desarrollado en java con el framework Spring Boot.
+	Como pieza de software que se comunique con la bbdd, trate los datos y los devuelva crearemos un servicio web mediante la arquitectura de microservicios desarrollado en java con el framework Spring Boot.
 	Como protocolo para la transferencia de datos usaremos REST apoyándonos en sus verbos GET, POST, PUT y DELETE.
 	 
 	\chapter{Estado del arte}
@@ -493,21 +497,15 @@ hmargin=3cm
  Ionic surgió en 2013, siempre ha ido de la mano con Angular, desde AngularJs hasta las ultimas versiones del mismo. Ionic está diseñado para desarrollar aplicaciones híbridas, según este articulo de next-u \cite{AppHibridas} "Las aplicaciones híbridas son aplicaciones móviles diseñadas en un lenguaje de programación web (HTML5, CSS o JavaScript), junto con un framework (Cordova) que permite adaptar la vista web a cualquier vista de un dispositivo móvil. Es decir, no son más que una aplicación construida para ser utilizada o implementada en distintos sistemas operativos móviles evitándonos la tarea de crear una aplicación para cada sistema operativo."
  
  \subsection{Frameworks de java para microservicios}
- Por otra parte existen bastantes que se basan en java y ofrecen una arquitectura de microservicios estos son:
+ Por otra parte existen bastantes que se basan en java y ofrecen una arquitectura de microservicios, estan han surgido de las grandes empresas del sector como Oracle, Spring, Eclipse estos son:
 
  \begin{itemize}
- 	\item Spring Boot:
- 	\item Cricket
- 	\item Dropwizard
- 	\item Eclipse MicroProfile
- 	\item Helidon
+ 	\item Spring Boot: Es una capa de personalización sobre el famoso framework Spring, la cual ofrece un arquetipo de un microservicio básico, ampliable fácilmente con poco desarrollo. Por ejemplo Gustavo Peiretti en el articulo \cite{StrategySpringBoot}, propone una implementación de un patrón strategy desarrollado con Spring Boot.
+ 	\item Cricket: Es un framework para implementación de arquitectura dirigida por eventos. Contiene un servidor http incorporado, serialización de Java a json automática, gestión de usuarios y accesos, bases de datos integradas como h2 y un planificador de eventos. Con todo ello se puede construir una aplicación fácilmente.
+ 	\item Dropwizard: Es un framework para arquitectura de microservicios por capas, para utilizar este solo es necesario importarlo en la aplicación y usar todas las librerias que este incluye.
+ 	\item Eclipse MicroProfile: En junio de 2018 consiguió cubrir todas las necesidades de la arquitectura. Cuenta al igual que Spring con una web donde obtener un arquetipo de la aplicación con las dependencias que se necesiten.
+ 	\item Helidon: Es de las ultimas incorporaciones en la arquitectura. Pertenece a la compañía Oracle la cual lo utilizó internamente bajo el nombre "Java for Cloud" y que finalmente se ha liberado para todo el publico. 
  \end{itemize}
-
-	-Cricket: Es un framework para implementación de arquitectura dirigida por eventos. Contiene un servidor http incorporado, serialización de Java a json automática, gestión de usuarios y accesos, bases de datos integradas como h2 y un planificador de eventos. Con todo ello se puede construir una aplicación fácilmente.
-
-	-Dropwizard: Es un framework para arquitectura de microservicios por capas, para utilizar este solo es necesario importarlo en tu aplicación y usar todas las librerias que este incluye.
-
-	-Eclipse MicroProfile se lanzo en 2016 pero no fue hasta junio de 2018 cuando consiguió cubrir todas las necesidades de la arquitectura. Cuenta al igual que spring con una web donde obtener un arquetipo de la aplicacion con las dependencias que tu añadas.
 	
 	\section{Bases de datos}
 	En el proceso de diseño de una arquitectura otro módulo fundamental es el almacenamiento de los datos que vamos a utilizar, para ello usamos las bases de datos.
@@ -563,9 +561,10 @@ hmargin=3cm
 
 Una “arquitectura de microservicios” es útil para desarrollar una aplicación software dividiéndola en una serie de pequeños servicios, los cuales se ejecutan de forma independiente y se comunican entre sí, por ejemplo, a través de peticiones HTTP a sus API.
 
-Tiene que haber un número mínimo de servicios encargados de gestionar los procesos en común. Cada microservicio es pequeño y se corresponde con un área de la aplicación. Cada uno es independiente, pudiéndose programar en lenguajes diferentes y su código debe poder ser implementado para que no afecte a los demás.
+Tiene que haber un número mínimo de servicios encargados de gestionar los procesos en común. Cada microservicio es pequeño y se corresponde con un área de la aplicación. Cada uno es independiente, pudiéndose programar en lenguajes diferentes y su código debe poder ser implementado sin que afecte a los demás.
 
-No hay un tamaño definido para cada microservicio, ni cómo se tiene dividir la aplicación pero el autor Jon Eaves caracteriza un microservicio como “algo que a nivel de código podría ser reescrito en dos semanas”.
+Cada microservicio no tiene definido ni el tamaño, ni cómo se tiene dividir la aplicación pero en el libro "Building Microservices", \cite{BuildingMicroservices}se caracteriza un microservicio como “algo que a nivel de código podría ser reescrito en dos semanas”.
+
 \subsection{Pros y contras de los microservicios}
 Ventajas:
 \begin{itemize}
@@ -592,6 +591,19 @@ Para poder contemplar hasta dónde ha llegado la arquitectura de microservicios 
 	\item \textbf{Ebay:} Es una de las empresas con mayor visión de futuro, siendo pionera en la adopción de tecnologías como Docker. Su aplicación principal comprende varios servicios autónomos, y cada uno ejecutará la lógica propia de cada área.
 \end{itemize}
 
+
+\chapter{Justificación de la solución}
+
+La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
+
+Cada microservico es totalmente independiente de desarrollar frente al conjunto, lo cual nos viene genial ya que nuestra idea es realizar una pequeña aplicación que aceda a una base de datos y en un futuro ampliar a varias aplicaciones o incluso un frontal. Los microservicios nos permiten desarrollar cada una en un lenguaje de programación diferente.
+
+Al no disponer de una maquina donde desplegar la aplicación, es ideal que los microservicios lleven un servidor de despliegue(tomcat) embebido y así desplegar en la nube dentro de un contenedor de aplicaciones(Dockers).
+
+Una vez desplegado en la nube decidimos que la comunicación sería mediante REST ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria GET, POST, PUT y DELETE.
+
+En cuanto a base de datos hemos elegido PostgreSQL ya que es open source y totalmente compatible con muchos lenguajes de programación, no solo con Java que es el caso de nuestra aplicación, sino que si en un futuro queremos creamos otro microservicio con python sería posible reutilizar la base de datos.
+Ademas también es capaz de responder a gran cantidad peticiones en un mismo instante y no bloquearse, esto es totalmente esencial ya que necesitamos alta disponibilidad.
 
 \section{SOA vs Microservicios}
 
@@ -661,18 +673,7 @@ Con respecto a la visión monolítica tenemos:
 \end{figure}
 
 
-\chapter{Justificación de la solución}
-
-La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
-
-Cada microservico es totalmente independiente de desarrollar frente al conjunto, lo cual nos viene genial ya que nuestra idea es realizar una pequeña aplicación que aceda a una base de datos y en un futuro ampliar a varias aplicaciones o incluso un frontal. Los microservicios nos permiten desarrollar cada una en un lenguaje de programación diferente.
-
-Al no disponer de una maquina donde desplegar la aplicación, es ideal que los microservicios lleven un servidor de despliegue(tomcat) embebido y así desplegar en la nube dentro de un contenedor de aplicaciones(Dockers).
-
-Una vez desplegado en la nube decidimos que la comunicación sería mediante REST ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria GET, POST, PUT y DELETE.
-
-En cuanto a base de datos hemos elegido PostgreSQL ya que es open source y totalmente compatible con muchos lenguajes de programación, no solo con Java que es el caso de nuestra aplicación, sino que si en un futuro queremos creamos otro microservicio con python sería posible reutilizar la base de datos.
-Ademas también es capaz de responder a gran cantidad peticiones en un mismo instante y no bloquearse, esto es totalmente esencial ya que necesitamos alta disponibilidad.	
+	
 	
 
 

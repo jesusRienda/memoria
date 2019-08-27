@@ -113,6 +113,90 @@
     \endverb
   \endentry
 
+  \entry{StrategySpringBoot}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PG}{%
+         family={Peiretti},
+         familyi={P\bibinitperiod},
+         given={Gustavo},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PG1}
+    \strng{fullhash}{PG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Strategy Pattern con Spring Boot}
+    \verb{url}
+    \verb https://experto.dev/strategy-pattern-spring-boot/
+    \endverb
+    \field{year}{2017}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{RelationalModel}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CEF}{%
+         family={Codd},
+         familyi={C\bibinitperiod},
+         given={Edgar\bibnamedelima Frank},
+         giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \keyw{composition, consistency, data bank, data base, data integrity, data
+  organization, data structure, derivability, hierarchies of data, join,
+  networks of data, predicate calculus, redundancy, relations, retrieval
+  language, security}
+    \strng{namehash}{CEF1}
+    \strng{fullhash}{CEF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1145/357980.358007
+    \endverb
+    \field{issn}{0001-0782}
+    \field{number}{1}
+    \field{pages}{64\bibrangedash 69}
+    \field{title}{A Relational Model of Data for Large Shared Data Banks}
+    \verb{url}
+    \verb http://doi.acm.org/10.1145/357980.358007
+    \endverb
+    \field{volume}{26}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{Commun. ACM}
+    \field{month}{01}
+    \field{year}{1983}
+  \endentry
+
+  \entry{BuildingMicroservices}{book}{}
+    \name{author}{1}{}{%
+      {{hash=NS}{%
+         family={Newman},
+         familyi={N\bibinitperiod},
+         given={Sam},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {O'Reilly Media}%
+    }
+    \strng{namehash}{NS1}
+    \strng{fullhash}{NS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{1st}
+    \field{isbn}{978-1491950357}
+    \field{pages}{280}
+    \field{title}{Building Microservices: Designing Fine-Grained Systems}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{breveHistoria}{article}{}
     \name{author}{1}{}{%
       {{hash=ML}{%
@@ -250,45 +334,6 @@
     \verb https://books.google.es/books?id=pwNwDQAAQBAJ
     \endverb
     \field{year}{2016}
-  \endentry
-
-  \entry{RelationalModel}{article}{}
-    \name{author}{1}{}{%
-      {{hash=CEF}{%
-         family={Codd},
-         familyi={C\bibinitperiod},
-         given={Edgar\bibnamedelima Frank},
-         giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {ACM}%
-    }
-    \keyw{composition, consistency, data bank, data base, data integrity, data
-  organization, data structure, derivability, hierarchies of data, join,
-  networks of data, predicate calculus, redundancy, relations, retrieval
-  language, security}
-    \strng{namehash}{CEF1}
-    \strng{fullhash}{CEF1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \verb{doi}
-    \verb 10.1145/357980.358007
-    \endverb
-    \field{issn}{0001-0782}
-    \field{number}{1}
-    \field{pages}{64\bibrangedash 69}
-    \field{title}{A Relational Model of Data for Large Shared Data Banks}
-    \verb{url}
-    \verb http://doi.acm.org/10.1145/357980.358007
-    \endverb
-    \field{volume}{26}
-    \list{location}{1}{%
-      {New York, NY, USA}%
-    }
-    \field{journaltitle}{Commun. ACM}
-    \field{month}{01}
-    \field{year}{1983}
   \endentry
 \enddatalist
 \endinput
