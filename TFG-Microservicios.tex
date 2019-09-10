@@ -366,6 +366,8 @@ hmargin=3cm
 		Por ejemplo uno de los tratamiento necesarios sería filtrar las listas en función de las canciones que escuche cada usuario, si ha escuchado mas de 3 canciones de una lista, deberíamos devolverla.
 		
 		Este programa tendrá que tener una alta disponibilidad y escalarse cuando sea necesario para siempre tener unos tiempos de respuesta bajos. Ya que existe una gran cantidad de personas que van a consumir el programa al mismo tiempo coincidiendo con el lanzamiento de nuevas listas.
+	
+	\section{Objetivos}
 		
 	\section{Solución propuesta}
 	Para la solución de nuestro problema vamos a necesitar productos de distintos proveedores, ya que cada pequeña parte del programa la gestiona un software diferente.
@@ -373,6 +375,8 @@ hmargin=3cm
 	Uno de los puntos mas importantes a decidir seria que base de datos usar, en este caso usaremos CosmosDB.
 	Como pieza de software que se comunique con la bbdd, trate los datos y los devuelva crearemos un servicio web mediante la arquitectura de microservicios desarrollado en java con el framework Spring Boot.
 	Como protocolo para la transferencia de datos usaremos REST apoyándonos en sus verbos GET, POST, PUT y DELETE.
+	
+
 	 
 	\chapter{Estado del arte}
 
@@ -672,8 +676,56 @@ Con respecto a la visión monolítica tenemos:
 	\label{fig:microservicesGrafic}
 \end{figure}
 
+\chapter{Desarrollo de la aplicación}
 
-	
+El primer paso para desarrollar nuestra aplicación es tener un IDE (Entorno de Desarrollo Integrado) instalado, en este caso usamos Eclipse.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/arquetipo}
+	\caption{Ejemplo configuración arquetipo}
+	\label{fig:arquetipo}
+\end{figure}
+
+Una vez que tenemos Eclipse instalado nos dirigimos a la web https://start.spring.io/ para obtener un arquetipo de una aplicación usando el framework Spring Boot. Como observamos en la figura \ref{fig:arquetipo} elegimos Maven para el control de dependencias, escogemos java como lenguaje y por ultimo las dependencias que queremos incluir, MongoDB, Spring Web, Lombok y nos faltaría las dependencias de swagger pero esta web no las proporciona así que posteriormente las añadiremos.
+
+Importamos en Eclipse como proyecto Maven y al compilar se descargaran todas las dependencias incluidas en el fichero pom.xml, es el momento de añadir las dependencias de swagger que vamos a necesitar.
+
+Creamos un repositorio en github (https://github.com/jesusRienda/microservicio) para poder guardar lo que tenemos hasta ahora. Es recomendable subir al repositorio cada poco tiempo y agrupando una funcionalidad para poder volver a un commit concreto y resolver errores.
+
+El arquetipo contiene una clase App la cual hay que ejecutar para levantar el microservicio en local, para hacerlo al tener una dependencia de MongoDb tenemos que establecer la conexión con la BBDD.
+
+ Existen dos opciones: descargar mongo embebido y levantar una base de datos local o nuestro caso, crear en azure una instancia de CosmosDb (capa de personalización sobre Mongo) y configurar el microservicio para que apunte a esa base de datos. Para esta configuración creamos una clase java llamada MongoDbConfig y mediante la anotación @Value obtenemos de application.properties la conexión a cosmos y el nombre de la BBDD. Una vez hecho esto ya podemos levantar el microservicio.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/estructuramicroservicio}
+	\caption{Estructura microservicio}
+	\label{fig:estructura-microservicio}
+\end{figure}
+
+ Lo siguiente es crear las tres capas que vamos a utilizar, la capa de persistence, donde se definen las querys, la capa de service donde se implementa la lógica de negocio y la capa controller donde se implementan los verbos http mediante los que se va a llamar al servicio. En la figura \ref{fig:estructura-microservicio} se puede ver la estructura de capas que hemos utilizado.
+ 
+ Una buena práctica a la hora de programar en capas es que los objetos de la capa de persistencia no deben exponerse a la capa de presentación. Por ello hemos creado unos objetos Bean que son: ListaBean, UsuarioBean y CancionBean, estos objetos sirven para mapear el contenido de la BBDD, es decir en la base de datos guardamos un json el cual se transforma en una lista de estos objetos.
+ Para las querys hemos utilizado el framework Spring Data, hemos creado una interfaz por colección en BBDD y dicha interfaz tiene que extender de MongoRepository, solo por ello tiene todos los métodos más usados como: dame todos los elementos, cuenta cuantos elementos hay, inserta un elemento, inserta muchos elementos, actualiza un elemento. etc. Ademas de ello si en la interfaz definimos un método teniendo en cuenta la sintaxis de Spring Data también funcionará. Por ejemplo en ListasDAO hemos creado el siguiente método:
+ 
+ 	List<ListaBean> findByTracksTrackUriIn(List<String> trackUris);
+ 
+ Si lo analizamos vemos que recibe una lista de String y devuelve una lista de ListaBean, el nombre del método define que es lo que va a devolver, find busca dentro del atributo Tracks del ListaBean en el atributo TrackUri que coincida con la lista que entra por parámetro.
+ 
+ Una vez tenemos los métodos necesarios en la capa de persistencia pasamos a la capa de servicio en la que vamos a crear una interfaz con los métodos que vamos a exponer a la capa de presentación y una implementación de esa interfaz. Nuevamente tenemos una interfaz para listas de reproducción y otra para usuarios. En la de usuarios es importante anotar la clase con @Service y los datos a los que vayamos a llamar con @Autowire para que se instancien.
+ 
+ En esta capa se llaman a los métodos necesarios de la capa anterior y además puedes llamar a métodos de un servicio diferente, por ejemplo si llamas al método de listas y le pasas un idUsuario tienes que  llamar al servicio de usuarios para que te devuelva las canciones de este usuario y así poder filtrar en las listas por esas canciones, además tiene que hacer el mapeo entre los objetos beans y los objetos DTO (Data Transfer Objet), que son los que se exponen en la salida.
+ 
+ La capa de presentación es la encargada de serializar un json a un objeto y en función del recurso, llamar a un service u otro. En ella se definen los recursos y los verbos de la petición. 
+ 
+
+ 
+ 
+ 
+ 
+ 
 	
 
 
