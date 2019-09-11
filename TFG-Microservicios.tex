@@ -357,26 +357,30 @@ hmargin=3cm
 	\section{Planteamiento del problema}
 	Contamos con datos reales sobre listas de reproducción de Spotify en formato json los cuales contienen información de cada lista y las canciones que contiene.
 	Por otra parte tenemos datos de usuarios con las canciones que escuchan.
-	
 
-		Necesitamos almacenar estos datos en una base de datos para posteriormente consultarla, actualizarla o crear nuevos registros. 
-		Podríamos actuar directamente sobre la base de datos pero no seria admisible para un usuario final. 
-		Por tanto tendremos que crear un programa el cual haga las consultas a la bbdd y devuelva los datos validados en un formato optimo para mostrarlos por pantalla.
-		Para ello Por lo que necesitamos crear un programa que al invocar nos devuelva los datos almacenados con un tratamiento especifico y un formato definido. Necesitamos que sea sencillo y simple para el cliente que va a consumir dicho servicio. 
-		Por ejemplo uno de los tratamiento necesarios sería filtrar las listas en función de las canciones que escuche cada usuario, si ha escuchado mas de 3 canciones de una lista, deberíamos devolverla.
+	Necesitamos almacenar estos datos en una base de datos para posteriormente consultarla, actualizarla o crear nuevos registros. 
+	Podríamos actuar directamente sobre la base de datos pero no seria admisible para un usuario final. 
+	Por tanto tendremos que crear un programa el cual haga las consultas a la bbdd y devuelva los datos validados en un formato optimo para mostrarlos por pantalla.
+	Para ello Por lo que necesitamos crear un programa que al invocar nos devuelva los datos almacenados con un tratamiento especifico y un formato definido. Necesitamos que sea sencillo y simple para el cliente que va a consumir dicho servicio. 
+	Por ejemplo uno de los tratamiento necesarios sería filtrar las listas en función de las canciones que escuche cada usuario, si ha escuchado mas de 3 canciones de una lista, deberíamos devolverla.
 		
-		Este programa tendrá que tener una alta disponibilidad y escalarse cuando sea necesario para siempre tener unos tiempos de respuesta bajos. Ya que existe una gran cantidad de personas que van a consumir el programa al mismo tiempo coincidiendo con el lanzamiento de nuevas listas.
+	Este programa tendrá que tener una alta disponibilidad y escalarse cuando sea necesario para siempre tener unos tiempos de respuesta bajos. Ya que existe una gran cantidad de personas que van a consumir el programa al mismo tiempo coincidiendo con el lanzamiento de nuevas listas.
 	
 	\section{Objetivos}
 		
+	Diseñar una arquitectura de software adecuada para el problema, que sea capaz de soportar una gran cantidad de peticiones simultaneas sin dejar sin servicio a nadie.
+	
+	Crear y rellenar una base datos con los ficheros de listas con los que contamos.
+	
+	Implementar un microservicio que al pasarle un usuario y un numero de canciones a coincidir devuelva las listas de reproducción que contengan al menos el numero de canciones que coincidan con las escuchadas por el usuario.
+	
+	Dockerizar la aplicación para desplegarla en azure.
+		
 	\section{Solución propuesta}
-	Para la solución de nuestro problema vamos a necesitar productos de distintos proveedores, ya que cada pequeña parte del programa la gestiona un software diferente.
-	
-	Uno de los puntos mas importantes a decidir seria que base de datos usar, en este caso usaremos CosmosDB.
-	Como pieza de software que se comunique con la bbdd, trate los datos y los devuelva crearemos un servicio web mediante la arquitectura de microservicios desarrollado en java con el framework Spring Boot.
-	Como protocolo para la transferencia de datos usaremos REST apoyándonos en sus verbos GET, POST, PUT y DELETE.
-	
-
+	Como solución a nuestro problema vamos a diseñar una arquitectura de microservicios.
+	Para ello implementamos un microservicio el cual, se va a desarrollar con java mediante el framework Spring Boot.
+	La BBDD estará almacenada en Azure y sera CosmosDB
+	Para llamar al microservicio creado utilizaremos Swagger.
 	 
 	\chapter{Estado del arte}
 
@@ -408,7 +412,7 @@ hmargin=3cm
 	\end{figure}
 
 	\section{Patrones de diseño}
-	 En el momento de diseño de una arquitectura existen dos formas de actuar, diseñar una arquitectura desde cero o buscar soluciones ya propuestas a nuestro problema. Si elegimos la segunda opción existen patrones de diseño y frameworks.
+	 En el momento de diseño de una arquitectura existen dos formas de actuar, diseñar una arquitectura desde cero o buscar soluciones ya propuestas a nuestro problema. Si elegimos la segunda opción existen patrones de diseño, patrones arquitectónicos y frameworks.
 	 
 	 Los patrones son una forma reutilizable de resolver problemas comunes. Los primeros definidos en arquitectura civil se encuentran en el libro "A pattern language" \cite{PatternLanguage}, en él se describen los patrones con un nombre, de tal manera que con hacer referencia a este, cualquier arquitecto será capaz de entender que solución se está usando sin tener que entrar en detalles. Sin embargo en la arquitectura de software no aparecieron hasta 1994 en un libro que a día de hoy sigue siendo un modelo de referencia\cite{gamma2002patrones}.
 	 
@@ -576,6 +580,7 @@ Ventajas:
 	\item Los microservicios se pueden desarrollar con un equipo de trabajo mínimo.
 	\item Para los diferentes módulos, existe la posibilidad de utilizar lenguajes diferentes.
 	\item Con el uso de contenedores el desarrollo y despliegue de la app es mucho más rápido.
+	\item Son fácilmente escalables.
 \end{itemize}
 Inconvenientes:
 \begin{itemize}
@@ -598,16 +603,22 @@ Para poder contemplar hasta dónde ha llegado la arquitectura de microservicios 
 
 \chapter{Justificación de la solución}
 
-La arquitectura de microservicios pretende dividir una aplicación compleja en pequeños servicios que solo realicen una función especifica y se comuniquen entre ellos para formar la aplicación final.
+Analizando los requisitos que tenemos nos quedaríamos con 3 tipos de arquitecturas a usar, una seria la arquitectura en capas, otra la arquitectura orientada a servicios(SOA) y por ultimo la arquitectura de microservicios. 
 
-Cada microservico es totalmente independiente de desarrollar frente al conjunto, lo cual nos viene genial ya que nuestra idea es realizar una pequeña aplicación que aceda a una base de datos y en un futuro ampliar a varias aplicaciones o incluso un frontal. Los microservicios nos permiten desarrollar cada una en un lenguaje de programación diferente.
+Con cualquiera de ellas podríamos montar un servicio que hiciera lo que nosotros necesitamos, sin embargo la única que ofrece escalabilidad y alta disponibilidad es la arquitectura de microservicios. Ademas se adapta perfectamente a la filosofía de la arquitectura, ya que cada servicio tiene que ser pequeño.
 
-Al no disponer de una maquina donde desplegar la aplicación, es ideal que los microservicios lleven un servidor de despliegue(tomcat) embebido y así desplegar en la nube dentro de un contenedor de aplicaciones(Dockers).
+TODO: Se reducen gastos por no tener que tener un servidor fisico
+TODO: Justificar tecnologias utilizadsas en el desarrollo del microservicio: Java, Spring Boot,Swagger, Lombok, Http Rest
 
-Una vez desplegado en la nube decidimos que la comunicación sería mediante REST ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria GET, POST, PUT y DELETE.
+Por otra parte para la base de datos ya que tenemos los datos en formato json lo ideal es una BBDD noSQL para guardar directamente el json sin tener que hacer una conversion a tablas. Ademas es adaptable a cambios para que sea mas mantenible y puede establecerse en la nube al igual que el microservicio para que la comunicación sea muy rápida. Al estar en la nube se adapta fácilmente a los requisitos de cada momento. Por ejemplo si en una campaña se necesita realizar muchas consultas a base de datos se puede ampliar los núcleos de esta para que responda más rápido.
 
-En cuanto a base de datos hemos elegido PostgreSQL ya que es open source y totalmente compatible con muchos lenguajes de programación, no solo con Java que es el caso de nuestra aplicación, sino que si en un futuro queremos creamos otro microservicio con python sería posible reutilizar la base de datos.
-Ademas también es capaz de responder a gran cantidad peticiones en un mismo instante y no bloquearse, esto es totalmente esencial ya que necesitamos alta disponibilidad.
+Por tanto elegimos MongoDB como BBDD, pero como estamos usando azure se llama CosmosDB, la única diferencia es que se establece una capa de personalización para que sea mas rápida y limitar el número de accesos en función a lo que se tenga contratado. También está preparada para trabajar con un número elevado de datos sin saturarse.
+
+
+
+
+/*Una vez desplegado en la nube decidimos que la comunicación sería mediante REST ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria GET, POST, PUT y DELETE.*/
+
 
 \section{SOA vs Microservicios}
 
@@ -719,9 +730,6 @@ El arquetipo contiene una clase App la cual hay que ejecutar para levantar el mi
  En esta capa se llaman a los métodos necesarios de la capa anterior y además puedes llamar a métodos de un servicio diferente, por ejemplo si llamas al método de listas y le pasas un idUsuario tienes que  llamar al servicio de usuarios para que te devuelva las canciones de este usuario y así poder filtrar en las listas por esas canciones, además tiene que hacer el mapeo entre los objetos beans y los objetos DTO (Data Transfer Objet), que son los que se exponen en la salida.
  
  La capa de presentación es la encargada de serializar un json a un objeto y en función del recurso, llamar a un service u otro. En ella se definen los recursos y los verbos de la petición. 
- 
-
- 
  
  
  

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  10 SEP 2019 20:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  11 SEP 2019 21:35
 entering extended mode
 **./TFG-Microservicios.tex
 (TFG-Microservicios.tex
@@ -1250,26 +1250,26 @@ Cap\'{\i }tulo 2.
 File: imagenes/monolithic-vs-microservices.png Graphic file (type png)
 <use imagenes/monolithic-vs-microservices.png>
 Package pdftex.def Info: imagenes/monolithic-vs-microservices.png  used on inpu
-t line 405.
+t line 409.
 (pdftex.def)             Requested size: 298.75264pt x 251.14261pt.
 [3
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 420.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 424.
 
 
 ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\omstxr.fd"
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 420.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 424.
  [4 <./imagenes/monolithic-vs-microservices.png>] [5] [6]
 <imagenes/the-future-of-web-frameworks-11-728.jpg, id=269, 730.73pt x 548.0475p
 t>
 File: imagenes/the-future-of-web-frameworks-11-728.jpg Graphic file (type jpg)
 <use imagenes/the-future-of-web-frameworks-11-728.jpg>
 Package pdftex.def Info: imagenes/the-future-of-web-frameworks-11-728.jpg  used
- on input line 486.
+ on input line 490.
 (pdftex.def)             Requested size: 298.75264pt x 224.06537pt.
  [7] [8 <./imagenes/the-future-of-web-frameworks-11-728.jpg>] [9] [10] [11] [12
 ]
@@ -1278,26 +1278,26 @@ Cap\'{\i }tulo 3.
 File: imagenes/soavsmicroservicios.png Graphic file (type png)
 <use imagenes/soavsmicroservicios.png>
 Package pdftex.def Info: imagenes/soavsmicroservicios.png  used on input line 6
-18.
+29.
 (pdftex.def)             Requested size: 298.75264pt x 203.94505pt.
 [13
 
 ] [14 <./imagenes/soavsmicroservicios.png>]
-<imagenes/desarrolloMonovsMicro.png, id=322, 216.81pt x 164.86594pt>
+<imagenes/desarrolloMonovsMicro.png, id=320, 216.81pt x 164.86594pt>
 File: imagenes/desarrolloMonovsMicro.png Graphic file (type png)
 <use imagenes/desarrolloMonovsMicro.png>
 Package pdftex.def Info: imagenes/desarrolloMonovsMicro.png  used on input line
- 640.
+ 651.
 (pdftex.def)             Requested size: 298.75264pt x 227.20578pt.
-<imagenes/monolithic.png, id=323, 499.8675pt x 372.39125pt>
+<imagenes/monolithic.png, id=321, 499.8675pt x 372.39125pt>
 File: imagenes/monolithic.png Graphic file (type png)
 <use imagenes/monolithic.png>
-Package pdftex.def Info: imagenes/monolithic.png  used on input line 668.
+Package pdftex.def Info: imagenes/monolithic.png  used on input line 679.
 (pdftex.def)             Requested size: 298.75264pt x 222.57277pt.
-<imagenes/microservices.png, id=324, 398.48875pt x 332.24126pt>
+<imagenes/microservices.png, id=322, 398.48875pt x 332.24126pt>
 File: imagenes/microservices.png Graphic file (type png)
 <use imagenes/microservices.png>
-Package pdftex.def Info: imagenes/microservices.png  used on input line 674.
+Package pdftex.def Info: imagenes/microservices.png  used on input line 685.
 (pdftex.def)             Requested size: 298.75264pt x 249.09413pt.
  [15 <./imagenes/desarrolloMonovsMicro.png (PNG copy)>] [16 <./imagenes/monolit
 hic.png>] [17 <./imagenes/microservices.png>]
@@ -1305,32 +1305,32 @@ Cap\'{\i }tulo 4.
 <imagenes/arquetipo.png, id=339, 952.30782pt x 667.74469pt>
 File: imagenes/arquetipo.png Graphic file (type png)
 <use imagenes/arquetipo.png>
-Package pdftex.def Info: imagenes/arquetipo.png  used on input line 685.
+Package pdftex.def Info: imagenes/arquetipo.png  used on input line 696.
 (pdftex.def)             Requested size: 298.75264pt x 209.48482pt.
 <imagenes/estructuramicroservicio.png, id=341, 250.68657pt x 598.48593pt>
 File: imagenes/estructuramicroservicio.png Graphic file (type png)
 <use imagenes/estructuramicroservicio.png>
 Package pdftex.def Info: imagenes/estructuramicroservicio.png  used on input li
-ne 703.
+ne 714.
 (pdftex.def)             Requested size: 298.75264pt x 713.32123pt.
 
-LaTeX Warning: Float too large for page by 36.17805pt on input line 706.
+LaTeX Warning: Float too large for page by 36.17805pt on input line 717.
 
 [18
 
 ] [19 <./imagenes/arquetipo.png>] [20 <./imagenes/estructuramicroservicio.png>]
-Package csquotes Info: Disabling multilingual quotes on input line 740.
+Package csquotes Info: Disabling multilingual quotes on input line 748.
 
 
 Package csquotes Warning: Quote style 'british/english' not defined.
-(csquotes)                Ignoring command on input line 740.
+(csquotes)                Ignoring command on input line 748.
 
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 741.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 749.
 
 ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
 File: t1txtt.fd 2000/12/15 v3.1
 )
-Overfull \hbox (6.26534pt too wide) in paragraph at lines 742--742
+Overfull \hbox (6.26534pt too wide) in paragraph at lines 750--750
 []\T1/txr/m/n/12 S. New-man, \T1/txr/m/it/12 Buil-ding Mi-cro-ser-vi-ces: De-si
 g-ning Fine-Grained Sys-tems\T1/txr/m/n/12 , 1st. O'Reilly
  []
@@ -1343,25 +1343,25 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 187.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 755.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 763.
 [21
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 755.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 763.
  (TFG-Microservicios.aux
 LaTeX Info: Redefining \sptext on input line 30.
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 755.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 755.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 763.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 763.
 Package rerunfilecheck Info: File `TFG-Microservicios.out' has not changed.
 (rerunfilecheck)             Checksum: 69991CD4E41066FC900D6F3E3CB3DC0A;1647.
 Package logreq Info: Writing requests to 'TFG-Microservicios.run.xml'.
 \openout1 = `TFG-Microservicios.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 755.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 763.
  ) 
 Here is how much of TeX's memory you used:
  25165 strings out of 492970
@@ -1383,7 +1383,7 @@ rams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jesus/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jesus/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Jesus/App
 Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TFG-Microservicios.pdf (33 pages, 525860 bytes).
+Output written on TFG-Microservicios.pdf (33 pages, 526795 bytes).
 PDF statistics:
  444 PDF objects out of 1000 (max. 8388607)
  75 named destinations out of 1000 (max. 500000)
