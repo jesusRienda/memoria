@@ -381,7 +381,9 @@ hmargin=3cm
 	Para ello implementamos un microservicio el cual, se va a desarrollar con java mediante el framework Spring Boot.
 	La BBDD estará almacenada en Azure y sera CosmosDB
 	Para llamar al microservicio creado utilizaremos Swagger.
-	 
+	
+	\section{Estructura trabajo}
+	//TODO:
 	\chapter{Estado del arte}
 
 	En la década de los 60 surgió lo que a día de hoy conocemos como arquitectura de software, esta fue tomando cada vez mas interés hasta que en la década de 1980 se integro totalmente el diseño en el desarrollo de software. 
@@ -605,23 +607,26 @@ Para poder contemplar hasta dónde ha llegado la arquitectura de microservicios 
 
 Analizando los requisitos que tenemos nos quedaríamos con 3 tipos de arquitecturas a usar, una seria la arquitectura en capas, otra la arquitectura orientada a servicios(SOA) y por ultimo la arquitectura de microservicios. 
 
-Con cualquiera de ellas podríamos montar un servicio que hiciera lo que nosotros necesitamos, sin embargo la única que ofrece escalabilidad y alta disponibilidad es la arquitectura de microservicios. Ademas se adapta perfectamente a la filosofía de la arquitectura, ya que cada servicio tiene que ser pequeño.
+Con cualquiera de ellas podríamos montar un servicio que hiciera lo que nosotros necesitamos, sin embargo la única que ofrece escalabilidad y alta disponibilidad es la arquitectura de microservicios. Ademas se adapta perfectamente a la filosofía de la arquitectura, ya que cada servicio tiene que ser pequeño. Al estar en la nube no necesitamos servidores físicos, contratas en cada momento lo que necesitas y se reducen gastos.
 
-TODO: Se reducen gastos por no tener que tener un servidor fisico
-TODO: Justificar tecnologias utilizadsas en el desarrollo del microservicio: Java, Spring Boot,Swagger, Lombok, Http Rest
+Para el desarrollo de la aplicación hemos elegido Spring Boot como framework de microservicios, tiene web para descargar un arquetipo, incluye todas las ventajas de Spring para el desarrollo en capas, que también vamos a necesitar y ademas es el más utilizado a día de hoy, por lo que es el que más soporte tiene.
+
+Para la gestión de dependencias elegimos Maven ya que es el mas rodado y totalmente dirigido para java. Este nos va a empaquetar la aplicación en un jar compilandola y añadiendo las dependencias que necesite.
+
+Vamos a utilizar Lombok para evitar código repetitivo en las clases, como getter, setter y constructores. Mediante anotaciones conseguimos todo esto en tiempo de ejecución. Ademas también nos ofrece una implementación del patrón de diseño builder.
+
+La comunicación con el microservicio va a ser mediante REST, ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria PUT, GET, POST, y DELETE.
+
+Todo servicio Rest necesita un documento(API) donde se describa la entrada salida de él, en este caso vamos a utilizar anotaciones de Swagger para que este documento se autogenere, ademas nos ofrece la posibilidad de llamar a traves de él, que es mas visual que una llamada por Postman(programa para realizar llamadas rest) por ejemplo.
+
+//TODO: insertar imagen swagger
 
 Por otra parte para la base de datos ya que tenemos los datos en formato json lo ideal es una BBDD noSQL para guardar directamente el json sin tener que hacer una conversion a tablas. Ademas es adaptable a cambios para que sea mas mantenible y puede establecerse en la nube al igual que el microservicio para que la comunicación sea muy rápida. Al estar en la nube se adapta fácilmente a los requisitos de cada momento. Por ejemplo si en una campaña se necesita realizar muchas consultas a base de datos se puede ampliar los núcleos de esta para que responda más rápido.
 
 Por tanto elegimos MongoDB como BBDD, pero como estamos usando azure se llama CosmosDB, la única diferencia es que se establece una capa de personalización para que sea mas rápida y limitar el número de accesos en función a lo que se tenga contratado. También está preparada para trabajar con un número elevado de datos sin saturarse.
 
-
-
-
-/*Una vez desplegado en la nube decidimos que la comunicación sería mediante REST ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria GET, POST, PUT y DELETE.*/
-
-
-\section{SOA vs Microservicios}
-
+\chapter{SOA vs Microservicios}
+//TODO: ver donde meter este capitulo
 Primero surgió la arquitectura orientada objetos y más adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrolló por primera vez SOA (Service Oriented Architecture) “arquitectura orientada a servicios”. Con esta se desarrollaban todos los servicios necesarios y se empaquetaban en un WAR (Web Application Archive) para poder desplegarse en un servidor de aplicaciones, como tomcat, que se encontraba dentro de una máquina. Esto puede verse en la figura \ref{fig:soavsmicroservicios}.
 
 \begin{figure}
@@ -660,7 +665,7 @@ Otro aspecto a mejorar es la seguridad, ya que cuando se descompone una aplicaci
 Lo que sí es seguro es que han surgido para quedarse y cada vez más empresas están empezando a utilizar los microservicios.
 
 
-\subsection{Ejemplo de visión monolítica vs visión de microservicio}
+\section{Ejemplo de visión monolítica vs visión de microservicio}
 
 
 
@@ -689,6 +694,7 @@ Con respecto a la visión monolítica tenemos:
 
 \chapter{Desarrollo de la aplicación}
 
+//TODO: explicar mas en detalle con imagenes
 El primer paso para desarrollar nuestra aplicación es tener un IDE (Entorno de Desarrollo Integrado) instalado, en este caso usamos Eclipse.
 
 \begin{figure}
@@ -731,12 +737,45 @@ El arquetipo contiene una clase App la cual hay que ejecutar para levantar el mi
  
  La capa de presentación es la encargada de serializar un json a un objeto y en función del recurso, llamar a un service u otro. En ella se definen los recursos y los verbos de la petición. 
  
+\chapter{Implantación de la aplicación} 
+ //TODO:
  
- 
- 
-	
+\chapter{Marco regulador}
 
+No existen leyes que apliquen en el desarrollo de un microservicio, prácticamente todos los software que se utilizan son de código libre. Sin embargo si has de tratar con datos de clientes reales, como es nuestro caso hay que tener en cuenta dos leyes:
+\begin{itemize}
+	\item Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales \cite{LeyProteccion}: En la ley Orgánica 3/2018, de 5 de diciembre, se establen los principios de la protección datos personales: exactitud, confidencialidad, consentimiento.  Ya que vamos almacenar datos de los usuarios, es necesario que cuando se cree un frontal que llame al servicio de insertar usuarios, antes se de consentimiento al uso de sus datos personales siempre bajo la ley. Ademas estos datos hay que almacenarlos cifrados.
+	\item Ley General de Telecomunicaciones \cite{LeyComunicaciones}: En la ley 9/2014, de 9 de mayo, se estable en el articulo 43 que debemos cifrar toda la información que viaje mediante redes de comunicación. 
+\end{itemize}
 
+Por otra parte existen lo que se denomina buenas practicas en el desarrollo, son consejos para que el código sea mas limpio, legible, eficiente y mantenible. Estas buenas practicas se pueden controlar a través de herramientas de calidad de código como Sonar.
+
+\chapter{Entorno socio-económico}	
+
+\section{Presupuesto}
+En este punto vamos a calcular los costes del proyecto. Desde los costes de diseño, implementación hasta los recursos necesarios.
+
+\subsection{Mano de obra}
+
+Para este proyecto necesitamos a un arquitecto de sistemas para realizar el diseño de la arquitectura que vamos a realizar, también necesitamos a un desarrollador para la implementación.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|l|l|l|l|l|}
+			\hline
+			Empleo & Salario anual(euros) & Coste Hora(euros) & Horas & Total \\
+			\hline \hline
+			Arquitecto de sistemas & 45000 & 23,44 & 100 & 2344 \\ \hline
+			Desarrollador web & 30000 & 15,63 & 150 & 2344,5 \\ \hline
+		\end{tabular}
+		\caption{Coste personal diseño y desarrollo.}
+		\label{costePersonal}
+	\end{center}
+\end{table}
+
+\chapter{Conclusiones}
+//TODO:
+\section{Trabajos futuros}
 %----------
 %	BIBLIOGRAFÍA
 %----------	
@@ -757,6 +796,7 @@ El arquetipo contiene una clase App la cual hay que ejecutar para levantar el mi
 % Si tu trabajo incluye anexos, puedes descomentar las siguientes líneas
 %\chapter* {Anexo x}
 %\pagenumbering{gobble} % Las páginas de los anexos no se numeran
+
 
 
 

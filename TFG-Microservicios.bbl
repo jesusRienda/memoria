@@ -335,5 +335,52 @@
     \endverb
     \field{year}{2016}
   \endentry
+
+  \entry{LeyProteccion}{article}{}
+    \name{author}{1}{}{%
+      {{hash=dEJ}{%
+         prefix={del},
+         prefixi={d\bibinitperiod},
+         family={Estado},
+         familyi={E\bibinitperiod},
+         given={Jefatura},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EJd1}
+    \strng{fullhash}{EJd1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Ley Orgánica 3/2018, de 5 de diciembre, de Protección de
+  Datos Personales y garantía de los derechos digitales.}
+    \verb{url}
+    \verb https://www.boe.es/eli/es/lo/2018/12/05/3
+    \endverb
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{LeyComunicaciones}{article}{}
+    \name{author}{1}{}{%
+      {{hash=dEJ}{%
+         prefix={del},
+         prefixi={d\bibinitperiod},
+         family={Estado},
+         familyi={E\bibinitperiod},
+         given={Jefatura},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EJd1}
+    \strng{fullhash}{EJd1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Ley 9/2014, de 9 de mayo, General de Telecomunicaciones.}
+    \verb{url}
+    \verb https://www.boe.es/eli/es/l/2014/05/09/9
+    \endverb
+    \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
 \enddatalist
 \endinput
