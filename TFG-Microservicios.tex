@@ -383,7 +383,20 @@ hmargin=3cm
 	Para llamar al microservicio creado utilizaremos Swagger.
 	
 	\section{Estructura trabajo}
-	//TODO:
+	Este trabajo está estructurado de la siguiente forma:
+	
+	\begin{itemize}
+		\item \textbf{Capítulo 1: Introducción.} En este capítulo se explica el problema, los objetivos del trabajo y la solución propuesta.
+		\item  \textbf{Capítulo 2: Estado del arte.}  En este capítulo se analiza el estado a día de hoy del diseño de aplicaciones desde cero y en profundidad de microservicios.
+		\item  \textbf{Capitulo 3: Justificación de la solución.} Según lo visto en el capitulo anterior analizamos que es lo que más nos conviene para nuestros requerimientos.
+		\item  \textbf{Capitulo 4: SOA vs microservicios.} 
+		\item  \textbf{Capitulo 5: Desarrollo de la aplicación.} Explicación desde cero de como crear y desarrollar el microservicio. 
+		\item  \textbf{Capitulo 6: Implantacón de la aplicación.} Pasos a seguir para poder implantar la aplicación en un entorno empresarial.
+		\item  \textbf{Capitulo 7: Marco regulador.} Regulación existente en el ámbito de los microservicios.
+		\item  \textbf{Capitulo 8: Entorno socio-económico.}
+		\item  \textbf{Capitulo 9: Conclusiones.} Aquí describimos las conclusiones sacadas a raiz de la realizacion del trabajo y los posibles tareas a realizar en un futuro.
+	\end{itemize}
+
 	\chapter{Estado del arte}
 
 	En la década de los 60 surgió lo que a día de hoy conocemos como arquitectura de software, esta fue tomando cada vez mas interés hasta que en la década de 1980 se integro totalmente el diseño en el desarrollo de software. 
@@ -619,7 +632,14 @@ La comunicación con el microservicio va a ser mediante REST, ya que es un proto
 
 Todo servicio Rest necesita un documento(API) donde se describa la entrada salida de él, en este caso vamos a utilizar anotaciones de Swagger para que este documento se autogenere, ademas nos ofrece la posibilidad de llamar a traves de él, que es mas visual que una llamada por Postman(programa para realizar llamadas rest) por ejemplo.
 
-//TODO: insertar imagen swagger
+En la figura \ref{fig:capturaswagger} vemos los métodos a los que podemos llamar y dentro de los métodos tenemos la entrada salida y una descripción de que hace cada uno.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/CapturaSwagger}
+	\caption{Api en swagger}
+	\label{fig:capturaswagger}
+\end{figure}
+
 
 Por otra parte para la base de datos ya que tenemos los datos en formato json lo ideal es una BBDD noSQL para guardar directamente el json sin tener que hacer una conversion a tablas. Ademas es adaptable a cambios para que sea mas mantenible y puede establecerse en la nube al igual que el microservicio para que la comunicación sea muy rápida. Al estar en la nube se adapta fácilmente a los requisitos de cada momento. Por ejemplo si en una campaña se necesita realizar muchas consultas a base de datos se puede ampliar los núcleos de esta para que responda más rápido.
 
@@ -757,22 +777,26 @@ En este punto vamos a calcular los costes del proyecto. Desde los costes de dise
 
 \subsection{Mano de obra}
 
-Para este proyecto necesitamos a un arquitecto de sistemas para realizar el diseño de la arquitectura que vamos a realizar, también necesitamos a un desarrollador para la implementación.
+Para este proyecto necesitamos a un arquitecto de sistemas para realizar el diseño de la arquitectura que vamos a utilizar, también necesitamos a un desarrollador para la implementación.
+
+El coste por hora se ha calculado dividiendo el salario bruto anual entre 12 meses, el mensual entre 4 semanas y este entre 40 horas semanales.
 
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|}
 			\hline
-			Empleo & Salario anual(euros) & Coste Hora(euros) & Horas & Total \\
+			Empleo & Salario anual(euros) & Coste Hora(euros) & Horas & Total(euros) \\
 			\hline \hline
-			Arquitecto de sistemas & 45000 & 23,44 & 100 & 2344 \\ \hline
-			Desarrollador web & 30000 & 15,63 & 150 & 2344,5 \\ \hline
+			Arquitecto de sistemas & 45000 & 23,44 & 150 & 3516 \\ \hline
+			Desarrollador web & 28000 & 14,58 & 100 & 1458,33 \\ \hline
+			Mano de obra total & & & & 4974,33 \\ \hline
 		\end{tabular}
 		\caption{Coste personal diseño y desarrollo.}
 		\label{costePersonal}
 	\end{center}
 \end{table}
-
+\subsection{Servicios}
+Hemos necesitado recurrir a una nube de desarrollo donde almacenar nuestra base de datos y para ello hemos utilizado Microssof Azure
 \chapter{Conclusiones}
 //TODO:
 \section{Trabajos futuros}
