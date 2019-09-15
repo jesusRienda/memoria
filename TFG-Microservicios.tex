@@ -616,37 +616,9 @@ Para poder contemplar hasta dónde ha llegado la arquitectura de microservicios 
 \end{itemize}
 
 
-\chapter{Justificación de la solución}
-
-Analizando los requisitos que tenemos nos quedaríamos con 3 tipos de arquitecturas a usar, una seria la arquitectura en capas, otra la arquitectura orientada a servicios(SOA) y por ultimo la arquitectura de microservicios. 
-
-Con cualquiera de ellas podríamos montar un servicio que hiciera lo que nosotros necesitamos, sin embargo la única que ofrece escalabilidad y alta disponibilidad es la arquitectura de microservicios. Ademas se adapta perfectamente a la filosofía de la arquitectura, ya que cada servicio tiene que ser pequeño. Al estar en la nube no necesitamos servidores físicos, contratas en cada momento lo que necesitas y se reducen gastos.
-
-Para el desarrollo de la aplicación hemos elegido Spring Boot como framework de microservicios, tiene web para descargar un arquetipo, incluye todas las ventajas de Spring para el desarrollo en capas, que también vamos a necesitar y ademas es el más utilizado a día de hoy, por lo que es el que más soporte tiene.
-
-Para la gestión de dependencias elegimos Maven ya que es el mas rodado y totalmente dirigido para java. Este nos va a empaquetar la aplicación en un jar compilandola y añadiendo las dependencias que necesite.
-
-Vamos a utilizar Lombok para evitar código repetitivo en las clases, como getter, setter y constructores. Mediante anotaciones conseguimos todo esto en tiempo de ejecución. Ademas también nos ofrece una implementación del patrón de diseño builder.
-
-La comunicación con el microservicio va a ser mediante REST, ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria PUT, GET, POST, y DELETE.
-
-Todo servicio Rest necesita un documento(API) donde se describa la entrada salida de él, en este caso vamos a utilizar anotaciones de Swagger para que este documento se autogenere, ademas nos ofrece la posibilidad de llamar a traves de él, que es mas visual que una llamada por Postman(programa para realizar llamadas rest) por ejemplo.
-
-En la figura \ref{fig:capturaswagger} vemos los métodos a los que podemos llamar y dentro de los métodos tenemos la entrada salida y una descripción de que hace cada uno.
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/CapturaSwagger}
-	\caption{Api en swagger}
-	\label{fig:capturaswagger}
-\end{figure}
 
 
-Por otra parte para la base de datos ya que tenemos los datos en formato json lo ideal es una BBDD noSQL para guardar directamente el json sin tener que hacer una conversion a tablas. Ademas es adaptable a cambios para que sea mas mantenible y puede establecerse en la nube al igual que el microservicio para que la comunicación sea muy rápida. Al estar en la nube se adapta fácilmente a los requisitos de cada momento. Por ejemplo si en una campaña se necesita realizar muchas consultas a base de datos se puede ampliar los núcleos de esta para que responda más rápido.
-
-Por tanto elegimos MongoDB como BBDD, pero como estamos usando azure se llama CosmosDB, la única diferencia es que se establece una capa de personalización para que sea mas rápida y limitar el número de accesos en función a lo que se tenga contratado. También está preparada para trabajar con un número elevado de datos sin saturarse.
-
-\chapter{SOA vs Microservicios}
-//TODO: ver donde meter este capitulo
+\section{Comparación de SOA con Microservicios}
 Primero surgió la arquitectura orientada objetos y más adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrolló por primera vez SOA (Service Oriented Architecture) “arquitectura orientada a servicios”. Con esta se desarrollaban todos los servicios necesarios y se empaquetaban en un WAR (Web Application Archive) para poder desplegarse en un servidor de aplicaciones, como tomcat, que se encontraba dentro de una máquina. Esto puede verse en la figura \ref{fig:soavsmicroservicios}.
 
 \begin{figure}
@@ -685,9 +657,7 @@ Otro aspecto a mejorar es la seguridad, ya que cuando se descompone una aplicaci
 Lo que sí es seguro es que han surgido para quedarse y cada vez más empresas están empezando a utilizar los microservicios.
 
 
-\section{Ejemplo de visión monolítica vs visión de microservicio}
-
-
+\subsection{Ejemplo de visión monolítica vs visión de microservicio}
 
 Accedemos a una página web de una tienda para realizar compras. Hay un servidor que está ejecutando el código de la aplicación y de vez en cuando se conecta a una base de datos para recuperar información.
 Cuando un usuario compra un producto vía web, se mostrarán los productos disponibles. La aplicación responderá según haya sido programada y mostrará el inventario, pagos o envíos esta información se empaqueta en un único archivo ejecutable. De ahí nombrarlo como arquitectura monolítica.
@@ -711,6 +681,36 @@ Con respecto a la visión monolítica tenemos:
 	\caption{}
 	\label{fig:microservicesGrafic}
 \end{figure}
+
+
+\chapter{Justificación de la solución}
+
+Analizando los requisitos que tenemos nos quedaríamos con 3 tipos de arquitecturas a usar, una seria la arquitectura en capas, otra la arquitectura orientada a servicios(SOA) y por ultimo la arquitectura de microservicios. 
+
+Con cualquiera de ellas podríamos montar un servicio que hiciera lo que nosotros necesitamos, sin embargo la única que ofrece escalabilidad y alta disponibilidad es la arquitectura de microservicios. Ademas se adapta perfectamente a la filosofía de la arquitectura, ya que cada servicio tiene que ser pequeño. Al estar en la nube no necesitamos servidores físicos, contratas en cada momento lo que necesitas y se reducen gastos.
+
+Para el desarrollo de la aplicación hemos elegido Spring Boot como framework de microservicios, tiene web para descargar un arquetipo, incluye todas las ventajas de Spring para el desarrollo en capas, que también vamos a necesitar y ademas es el más utilizado a día de hoy, por lo que es el que más soporte tiene.
+
+Para la gestión de dependencias elegimos Maven ya que es el mas rodado y totalmente dirigido para java. Este nos va a empaquetar la aplicación en un jar compilandola y añadiendo las dependencias que necesite.
+
+Vamos a utilizar Lombok para evitar código repetitivo en las clases, como getter, setter y constructores. Mediante anotaciones conseguimos todo esto en tiempo de ejecución. Ademas también nos ofrece una implementación del patrón de diseño builder.
+
+La comunicación con el microservicio va a ser mediante REST, ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria PUT, GET, POST, y DELETE.
+
+Todo servicio Rest necesita un documento(API) donde se describa la entrada salida de él, en este caso vamos a utilizar anotaciones de Swagger para que este documento se autogenere, ademas nos ofrece la posibilidad de llamar a traves de él, que es mas visual que una llamada por Postman(programa para realizar llamadas rest) por ejemplo.
+
+En la figura \ref{fig:capturaswagger} vemos los métodos a los que podemos llamar y dentro de los métodos tenemos la entrada salida y una descripción de que hace cada uno.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/CapturaSwagger}
+	\caption{Api en swagger}
+	\label{fig:capturaswagger}
+\end{figure}
+
+
+Por otra parte para la base de datos ya que tenemos los datos en formato json lo ideal es una BBDD noSQL para guardar directamente el json sin tener que hacer una conversion a tablas. Ademas es adaptable a cambios para que sea mas mantenible y puede establecerse en la nube al igual que el microservicio para que la comunicación sea muy rápida. Al estar en la nube se adapta fácilmente a los requisitos de cada momento. Por ejemplo si en una campaña se necesita realizar muchas consultas a base de datos se puede ampliar los núcleos de esta para que responda más rápido.
+
+Por tanto elegimos MongoDB como BBDD, pero como estamos usando azure se llama CosmosDB, la única diferencia es que se establece una capa de personalización para que sea mas rápida y limitar el número de accesos en función a lo que se tenga contratado. También está preparada para trabajar con un número elevado de datos sin saturarse.
 
 \chapter{Desarrollo de la aplicación}
 
@@ -835,6 +835,10 @@ Recopilando los presupuestos de mano de obra y servicios utilizados, el coste to
 		\label{costeTotal}
 	\end{center}
 \end{table}
+
+\section{Impacto socio-económico}
+
+Uno de los objetivos de desarrollar aplicaciones con microservicios es que estas sean fácilmente mantenibles y que puedan evolucionar según las necesidades de la sociedad. 
 
 \chapter{Conclusiones}
 //TODO:
