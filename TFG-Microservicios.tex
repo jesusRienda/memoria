@@ -757,7 +757,7 @@ El arquetipo contiene una clase App la cual hay que ejecutar para levantar el mi
  
  La capa de presentación es la encargada de serializar un json a un objeto y en función del recurso, llamar a un service u otro. En ella se definen los recursos y los verbos de la petición. 
  
-\chapter{Implantación de la aplicación} 
+\chapter{Despliegue de la aplicación} 
  //TODO:
  
 \chapter{Marco regulador}
@@ -773,33 +773,101 @@ Por otra parte existen lo que se denomina buenas practicas en el desarrollo, son
 \chapter{Entorno socio-económico}	
 
 \section{Presupuesto}
-En este punto vamos a calcular los costes del proyecto. Desde los costes de diseño, implementación hasta los recursos necesarios.
+En este punto vamos a calcular los costes del proyecto. Desde los costes de diseño e implementación hasta los recursos necesarios.
 
 \subsection{Mano de obra}
 
-Para este proyecto necesitamos a un arquitecto de sistemas para realizar el diseño de la arquitectura que vamos a utilizar, también necesitamos a un desarrollador para la implementación.
-
-El coste por hora se ha calculado dividiendo el salario bruto anual entre 12 meses, el mensual entre 4 semanas y este entre 40 horas semanales.
+El proyecto se ha desarrollado durante 8 meses con un total de 300 horas empleadas.
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l|l|l|l|l|}
+		\begin{tabular}{|c|c|r|}
 			\hline
-			Empleo & Salario anual(euros) & Coste Hora(euros) & Horas & Total(euros) \\
+			Coste/Hora(euros) & Horas & Total(euros) \\
 			\hline \hline
-			Arquitecto de sistemas & 45000 & 23,44 & 150 & 3516 \\ \hline
-			Desarrollador web & 28000 & 14,58 & 100 & 1458,33 \\ \hline
-			Mano de obra total & & & & 4974,33 \\ \hline
+			15 & 300 & 4500 \\ \hline
+		
 		\end{tabular}
-		\caption{Coste personal diseño y desarrollo.}
+		\caption{Coste personal.}		
 		\label{costePersonal}
 	\end{center}
 \end{table}
+
+Si este proyecto se desarrollara en una empresa, contaría con un arquitecto de sistemas que realice el diseño de la arquitectura y con un desarrollador para la implementación.
+
 \subsection{Servicios}
-Hemos necesitado recurrir a una nube de desarrollo donde almacenar nuestra base de datos y para ello hemos utilizado Microssof Azure
+Hemos necesitado recurrir a una nube de desarrollo donde almacenar nuestra base de datos y para ello hemos utilizado Microssof Azure. A continuación se muestra el presupuesto que nos ofrece este proveedor para tener una BBDD en la nube con alta disponibilidad. Cuando el servicio afronte menos número de peticiones se reducirá el coste. Al contratar estos servicios, el proveedor nos ofrece soporte gratuito.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|l|l|r|}
+			\hline
+			Tipo de servicio & Descripción & Coste estimado(euros) \\
+			\hline \hline
+			Azure Cosmos DB & Escritura de una sola región - Europa Occidental; & 534,67 \\ 
+			 &  Pago por uso; 100 x 100 RU x 730 Horas; & \\
+			 & 50 GB de almacenamiento & \\ \hline
+			Total mensual &  & 534,67 \\ \hline
+			
+		\end{tabular}
+		\caption{Costes Microsoft Azure.}
+		\label{costeAzure}
+	\end{center}
+\end{table}
+
+Para trabajos futuros sería necesario contratar Azure Kubernetes Service (AKS) para poder gestionar los contenedores donde se desplegaría cada microservicio. Esto nos supondría un aumento de 87,6 Euros mensuales.
+
+\subsection{Coste total}
+
+Recopilando los presupuestos de mano de obra y servicios utilizados, el coste total de este proyecto sería el siguiente.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|l|r|}
+			\hline
+			Concepto & Total(euros) \\
+			\hline \hline
+			Mano de obra & 4500 \\ \hline
+			Servicios & 1069,34 \\ \hline \hline
+			Total & 5569,34 \\ \hline					
+		\end{tabular}
+		\caption{Costes Totales.}
+		\label{costeTotal}
+	\end{center}
+\end{table}
+
 \chapter{Conclusiones}
 //TODO:
 \section{Trabajos futuros}
+
+A continuación explicaremos los posibles trabajos futuros que podrían implementarse para mejorar o complementar nuestra aplicación.
+
+\textbf{Aplicación Web}
+
+Se podría desarrollar una aplicación web para visualizar los datos de formas más amigable.
+
+\textbf{Nuevas funcionalidades}
+
+Añadir nuevas funcionalidades sobre los datos existentes, como por ejemplo un recomendador de listas.
+
+\textbf{Integración continua}
+
+Se podría añadir la aplicación a un circuito de integración continua para su utilización en una empresa.
+Pasaría por este circuito cada vez que se hiciera un cambio en una rama de git:
+\begin{itemize}
+	\item Compilación con test del código.
+	\item Validación de la calidad del código con una aplicación como por ejemplo Sonar.
+\end{itemize}
+
+Este tipo de circuitos se suelen realizar mediante la herramienta Jenkins
+
+\textbf{Dockerización}
+
+Por otra parte se podría dockerizar (contenerizar) la aplicación para poder integrarla en un contenedor y desplegar el contenedor en la nube.
+
+\textbf{Gestión de contenedores}
+
+Incluir un gestor de contenedores en Azure para gestionar el escalado y otras configuraciones de las aplicaciones que tengamos dockerizadas.
 %----------
 %	BIBLIOGRAFÍA
 %----------	
