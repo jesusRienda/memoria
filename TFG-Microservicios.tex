@@ -374,8 +374,7 @@ hmargin=3cm
 	
 	Implementar un microservicio que al pasarle un usuario y un numero de canciones a coincidir devuelva las listas de reproducción que contengan al menos el numero de canciones que coincidan con las escuchadas por el usuario.
 	
-	Dockerizar la aplicación para desplegarla en azure.
-		
+	
 	\section{Solución propuesta}
 	Como solución a nuestro problema vamos a diseñar una arquitectura de microservicios.
 	Para ello implementamos un microservicio el cual, se va a desarrollar con java mediante el framework Spring Boot.
@@ -388,13 +387,13 @@ hmargin=3cm
 	\begin{itemize}
 		\item \textbf{Capítulo 1: Introducción.} En este capítulo se explica el problema, los objetivos del trabajo y la solución propuesta.
 		\item  \textbf{Capítulo 2: Estado del arte.}  En este capítulo se analiza el estado a día de hoy del diseño de aplicaciones desde cero y en profundidad de microservicios.
-		\item  \textbf{Capitulo 3: Justificación de la solución.} Según lo visto en el capitulo anterior analizamos que es lo que más nos conviene para nuestros requerimientos.
-		\item  \textbf{Capitulo 4: SOA vs microservicios.} 
-		\item  \textbf{Capitulo 5: Desarrollo de la aplicación.} Explicación desde cero de como crear y desarrollar el microservicio. 
-		\item  \textbf{Capitulo 6: Implantacón de la aplicación.} Pasos a seguir para poder implantar la aplicación en un entorno empresarial.
-		\item  \textbf{Capitulo 7: Marco regulador.} Regulación existente en el ámbito de los microservicios.
-		\item  \textbf{Capitulo 8: Entorno socio-económico.}
-		\item  \textbf{Capitulo 9: Conclusiones.} Aquí describimos las conclusiones sacadas a raiz de la realizacion del trabajo y los posibles tareas a realizar en un futuro.
+		\item  \textbf{Capítulo 3: Justificación de la solución.} Según lo visto en el capitulo anterior analizamos que es lo que más nos conviene para nuestros requerimientos.
+		\item  \textbf{Capítulo 4: Desarrollo de la aplicación.} Explicación desde cero de como crear y desarrollar el microservicio. 
+		\item  \textbf{Capítulo 5: Implantación de la aplicación.} Pasos a seguir para poder implantar la aplicación en un entorno empresarial.
+		\item  \textbf{Capítulo 6: Marco regulador.} Regulación existente en el ámbito de los microservicios.
+		\item  \textbf{Capítulo 7: Entorno socio-económico.} En este punto se muestra el coste total que tendría el proyecto y el impacto que tiene.
+		\item  \textbf{Capítulo 8: Conclusiones.} Aquí describimos las conclusiones sacadas a raíz de la realización del trabajo y las posibles tareas a realizar en un futuro.
+		\item  \textbf{Anexo I: Despliegue de la aplicación} En este anexo se realiza un tutorial para desplegar nuestra aplicación en local.
 	\end{itemize}
 
 	\chapter{Estado del arte}
@@ -757,12 +756,9 @@ El arquetipo contiene una clase App la cual hay que ejecutar para levantar el mi
  
  La capa de presentación es la encargada de serializar un json a un objeto y en función del recurso, llamar a un service u otro. En ella se definen los recursos y los verbos de la petición. 
  
-\chapter{Despliegue de la aplicación} 
- //TODO:
- 
 \chapter{Marco regulador}
 
-No existen leyes que apliquen en el desarrollo de un microservicio, prácticamente todos los software que se utilizan son de código libre. Sin embargo si has de tratar con datos de clientes reales, como es nuestro caso hay que tener en cuenta dos leyes:
+No existen leyes que se apliquen en el desarrollo de un microservicio, prácticamente todos los software que se utilizan son de código libre. Sin embargo si se ha de tratar con datos de clientes reales hay que tener en cuenta dos leyes:
 \begin{itemize}
 	\item Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales \cite{LeyProteccion}: En la ley Orgánica 3/2018, de 5 de diciembre, se establen los principios de la protección datos personales: exactitud, confidencialidad, consentimiento.  Ya que vamos almacenar datos de los usuarios, es necesario que cuando se cree un frontal que llame al servicio de insertar usuarios, antes se de consentimiento al uso de sus datos personales siempre bajo la ley. Ademas estos datos hay que almacenarlos cifrados.
 	\item Ley General de Telecomunicaciones \cite{LeyComunicaciones}: En la ley 9/2014, de 9 de mayo, se estable en el articulo 43 que debemos cifrar toda la información que viaje mediante redes de comunicación. 
@@ -838,10 +834,22 @@ Recopilando los presupuestos de mano de obra y servicios utilizados, el coste to
 
 \section{Impacto socio-económico}
 
-Uno de los objetivos de desarrollar aplicaciones con microservicios es que estas sean fácilmente mantenibles y que puedan evolucionar según las necesidades de la sociedad. 
+Uno de los objetivos de desarrollar aplicaciones con microservicios es que estas sean fácilmente mantenibles y que puedan evolucionar según las necesidades de la sociedad.
+
+Una de las ventajas de implantar los microservicios en la nube es la mejor utilización de los recursos disponibles (energía, servidores) ya que permite aprovechar estos al máximo de una manera eficiente y ademas  se centraliza la ubicación de las maquinas en granjas de servidores, las cuales intentan abastecerse con tecnologías renovables.
+
+Anteriormente, cuando esperabas un numero grande de peticiones era necesario adquirir un gran número de servidores para poder dar servicio al pico de trabajo, esto suponía que una vez pasado el pico tenías una serie de recursos sin utilizar, esto lo solucionan los microservicios en la nube.
+
+Por otra parte, un inconveniente de esto es que para una aplicación pequeña que va a contar con mucho tráfico de datos, el coste es mucho mayor en la nube que teniendo un par de servidores.
 
 \chapter{Conclusiones}
-//TODO:
+
+Hemos conseguido cumplir el objetivo de diseñar una arquitectura capaz de recibir multitud de peticiones.
+
+Para la base de datos elegimos una en la nube, aunque esta es la mejor opción, nos hemos dado cuenta que es muy caro para una pequeña aplicación ya que cobran por uso y almacenamiento. Sin embargo si que hemos podido ver que para el problema que teníamos, la base de datos elegida es ideal.
+
+Implementar el microservicio ha sido una tarea de investigación ya que todas las tecnologías utilizadas son bastante novedosas y es complicado encontrar información al respecto. Pero gracias a ello hemos conseguido una aplicación limpia y fácilmente mantenible.
+
 \section{Trabajos futuros}
 
 A continuación explicaremos los posibles trabajos futuros que podrían implementarse para mejorar o complementar nuestra aplicación.
@@ -872,6 +880,49 @@ Por otra parte se podría dockerizar (contenerizar) la aplicación para poder in
 \textbf{Gestión de contenedores}
 
 Incluir un gestor de contenedores en Azure para gestionar el escalado y otras configuraciones de las aplicaciones que tengamos dockerizadas.
+
+\chapter{ANEXO I: Despliegue de la aplicación}
+
+Para el despliegue de la aplicación en local lo primero es compilar el código mediante maven. Para ello vamos a la ventana Run Configuration en Eclipse y creamos un nuevo Maven build como vemos en la figura \ref{fig:cleaninstallmaven}. En base directory hay que poner lo que se muestra en la figura \ref{fig:cleaninstallmaven},  en goals vamos a poner clean install para limpiar primero el proyecto y luego compilar, en user settings se puede dejar por defecto si todas las dependencias son de internet o configurar un setting personal donde se establezca a que repositorio ir a buscar las dependencias necesarias en maven runtine se puede utilizar el embebido en eclipse o una versión que nosotros descarguemos.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/cleanInstallMAven}
+	\caption{Configuración compilación mediante Maven}
+	\label{fig:cleaninstallmaven}
+\end{figure}
+
+En la pestaña de JRE es importante seleccionar java 8 o superior y es necesario incluir la JDK y no la JRE como se ve en la figura \ref{fig:jremaven}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/jreMaven}
+	\caption{Configuracion JRE proyecto}
+	\label{fig:jremaven}
+\end{figure}
+
+Una vez se tiene todo esto seleccionado se procede a dar a run, se compilara la aplicación desde cero y se pasaran las clases de test que existan, una vez esto pase se va a generar un jar de la aplicación compilada. Este jar se ubica en la carpeta target.
+
+Para levantar la aplicación es necesario tener la base de datos a la que se va a conectar levantada.
+
+De nuevo en la pantalla Run Configuration pero esta vez creamos una nueva configuracion de Java Application como se muestra en la figura \ref{fig:configuraciondespliegue}. En project se selecciona la raiz del proyecto y en main class seleccionamos nuestra clase ListasMsApplication.java que es la que contiene el main. Al dar a run se va a desplegar la aplicación. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/configuracionDespliegue}
+	\caption{}
+	\label{fig:configuraciondespliegue}
+\end{figure}
+
+Para acceder a ella se accede desde http://localhost:8080 y se añade el recurso al que quieras acceder, si es un recurso get se puede acceder desde un navegador, sino hay que hacerlo mediante swagger o postman. Todos los recursos están creados en las clases controller.
+
+Ademas de los recursos creados por nosotros, se crean dos recursos de swagger que son /swagger-ui.html\ref{fig:capturaswagger} y /v2/api-docs; el primero es la parte visual de swagger y la segunda es el fichero .yml con el cual se genera la parte visual de swagger.
+
+
+
+
+
+
 %----------
 %	BIBLIOGRAFÍA
 %----------	
