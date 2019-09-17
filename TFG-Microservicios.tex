@@ -277,10 +277,14 @@ hmargin=3cm
 \thispagestyle{plain}
 \setcounter{page}{3}
 	
-	% ESCRIBIR EL RESUMEN AQUÍ
+	En este trabajo fin de grado se ha realizado un estudio sobre las posibilidades existentes en el desarrollo de aplicaciones web. Desde el desarrollo partiendo de cero hasta el uso de software de terceros como son los framework para facilitar el desarrollo y centrarse en la funcionalidad.
+	
+	Para el correcto diseño de nuestra arquitectura ha sido necesario descomponer e investigar cada integrante de esta. Por una parte se ha investigado sobre los patrones de diseño existentes y sus funcionalidades, también sobre tipos de arquitecturas, framework y ademas sobre las bases de datos.
+	
+	Para afianzar todo lo desarrollado en este trabajo se ha implementado un microservicio basado en listas de reproducción de Spotify. Utilizando para ello las ultimas tecnologías de desarrollo como Spring Boot, Spring Data y una base de datos muy potente como MongoDB. Este microservicio hace de intermediario con la base de datos, filtrando por ejemplo las listas de reproducción que contienen canciones que ha escuchado un usuario.
 	
 	\textbf{Palabras clave:}
-	% Escribir las palabras clave aquí
+	Microservicio, aplicaciones web, SOA, API, Swagger, MongoDb, Lombok, Spring Boot
 	
 	\vfill
 \end{abstract}
@@ -349,7 +353,7 @@ hmargin=3cm
 \chapter{Introducción}
 
 	% COMENZAR A ESCRIBIR EL TRABAJO
-	El mundo de la tecnología se basa en tendencias, hoy en día los microservicios están de moda, gracias a grandes compañias como Amazon, Ebay, Twitter, Paypal, Netflix, etc. Pero realmente es una tecnología que ha surgido gracias a la aparición de la nube(cloud) donde todas estas empresas se están llevando sus software
+	El mundo de la tecnología se basa en tendencias, hoy en día los microservicios están de moda, gracias a grandes compañías como Amazon, Ebay, Twitter, Paypal, Netflix, etc. Pero realmente es una tecnología que ha surgido gracias a la aparición de la nube(cloud) donde todas estas empresas se están llevando sus software
 	
 	En la nube no necesitas servidores físicos, con el mantenimiento y la inversión que esto supone, sino que solo pagas por los recursos que necesitas en cada momento. Esto es una gran revolución para la informática, te permite gestionar los picos de actividad sin perder servicio.
 	
@@ -387,13 +391,14 @@ hmargin=3cm
 	\begin{itemize}
 		\item \textbf{Capítulo 1: Introducción.} En este capítulo se explica el problema, los objetivos del trabajo y la solución propuesta.
 		\item  \textbf{Capítulo 2: Estado del arte.}  En este capítulo se analiza el estado a día de hoy del diseño de aplicaciones desde cero y en profundidad de microservicios.
-		\item  \textbf{Capítulo 3: Justificación de la solución.} Según lo visto en el capitulo anterior analizamos que es lo que más nos conviene para nuestros requerimientos.
+		\item  \textbf{Capítulo 3: Justificación de la solución.} Según lo visto en el capítulo anterior analizamos que es lo que más nos conviene para nuestros requerimientos.
 		\item  \textbf{Capítulo 4: Desarrollo de la aplicación.} Explicación desde cero de como crear y desarrollar el microservicio. 
 		\item  \textbf{Capítulo 5: Implantación de la aplicación.} Pasos a seguir para poder implantar la aplicación en un entorno empresarial.
 		\item  \textbf{Capítulo 6: Marco regulador.} Regulación existente en el ámbito de los microservicios.
 		\item  \textbf{Capítulo 7: Entorno socio-económico.} En este punto se muestra el coste total que tendría el proyecto y el impacto que tiene.
 		\item  \textbf{Capítulo 8: Conclusiones.} Aquí describimos las conclusiones sacadas a raíz de la realización del trabajo y las posibles tareas a realizar en un futuro.
 		\item  \textbf{Anexo I: Despliegue de la aplicación} En este anexo se realiza un tutorial para desplegar nuestra aplicación en local.
+		\item  \textbf{Anexo II: Descripción API microservicio} En este anexo se detallan los recursos y servicios creados en nuestra aplicación.
 	\end{itemize}
 
 	\chapter{Estado del arte}
@@ -417,11 +422,11 @@ hmargin=3cm
 	
 	Las \textbf{propiedades externas} son los contratos que existen entre módulos y que permiten a otros módulos establecer dependencias/conexiones entre ellos. Es de vital importancia que las interfaces que definen los contratos estén bien definidas para la perfecta integración de los elementos.
 	
-	Es necesario dividir los requerimientos con los que va a contar el sistema en módulos y definir sus propiedades y como se relacionan entre si. Por ejemplo en la figura \ref{fig:microservices} podemos ver la estructura de un sistema basado en microservicios donde aparecen bases de datos, que serian un modulo donde habría que definir sus propiedades, tablas, colecciones de datos, etc; para cada microservicio habría que definir un api en el que se indique la entrada y salida del modulo, el lenguaje en el que se va a desarrollar...; por ultimo tendríamos un módulo de presentación UI(Interfaz de usuario).
+	Es necesario dividir los requerimientos con los que va a contar el sistema en módulos y definir sus propiedades y como se relacionan entre si. Por ejemplo en la figura \ref{fig:microservices} podemos ver la estructura de un sistema basado en microservicios donde aparecen bases de datos, que serian un modulo donde habría que definir sus propiedades, tablas, colecciones de datos, etc; para cada microservicio habría que definir un API(Interfaz de programación de aplicaciones) en el que se indique la entrada y salida del modulo, el lenguaje en el que se va a desarrollar...; por ultimo tendríamos un módulo de presentación UI(Interfaz de usuario).
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/monolithic-vs-microservices}
-		\caption{}
+		\caption{Estructura arquitectura microservicios}
 		\label{fig:microservices}
 	\end{figure}
 
@@ -671,13 +676,13 @@ Con respecto a la visión monolítica tenemos:
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{imagenes/monolithic}
-	\caption{}
+	\caption{Ejemplo de arquitectura monolitica(SOA)}
 	\label{fig:monolithic}
 \end{figure}
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{imagenes/microservices}
-	\caption{}
+	\caption{Ejemplo arquitectura microservicios}
 	\label{fig:microservicesGrafic}
 \end{figure}
 
@@ -702,7 +707,7 @@ En la figura \ref{fig:capturaswagger} vemos los métodos a los que podemos llama
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{imagenes/CapturaSwagger}
-	\caption{Api en swagger}
+	\caption{API en swagger}
 	\label{fig:capturaswagger}
 \end{figure}
 
@@ -713,7 +718,6 @@ Por tanto elegimos MongoDB como BBDD, pero como estamos usando azure se llama Co
 
 \chapter{Desarrollo de la aplicación}
 
-//TODO: explicar mas en detalle con imagenes
 El primer paso para desarrollar nuestra aplicación es tener un IDE (Entorno de Desarrollo Integrado) instalado, en este caso usamos Eclipse.
 
 \begin{figure}
@@ -727,11 +731,37 @@ Una vez que tenemos Eclipse instalado nos dirigimos a la web https://start.sprin
 
 Importamos en Eclipse como proyecto Maven y al compilar se descargaran todas las dependencias incluidas en el fichero pom.xml, es el momento de añadir las dependencias de swagger que vamos a necesitar.
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/dependenciasSwagger}
+	\caption{Dependencias Swagger necesarias}
+	\label{fig:dependenciasswagger}
+\end{figure}
+
+Swagger es un software para diseñar, documentar y consumir servicios Rest. En la figura \ref{fig:dependenciasswagger} podemos ver las dependencias necesarias para poder utilizarlo, la primera dependencia es para poder utilizar anotacciones de Swagger, y las dos siguientes son para que al desplegar la aplicación incorpore un recurso donde visualizar el documento Swagger de nuestro código y poder hacer llamadas a nuestros servicios, este documento lo vemos en la figura \ref{fig:capturaswagger}
+
+Para configurar Swagger es necesario añadir la clase de configuración de la figura \ref{fig:cofingswagger}. Con la anotacción @EnableSwagger2 habilitamos la generación del dominio antes citado. En el método que tenemos configuramos de que paquete queremos que nos cree el API.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/cofingSwagger}
+	\caption{Clase configuración Swagger}
+	\label{fig:cofingswagger}
+\end{figure}
+
+
 Creamos un repositorio en github (https://github.com/jesusRienda/microservicio) para poder guardar lo que tenemos hasta ahora. Es recomendable subir al repositorio cada poco tiempo y agrupando una funcionalidad para poder volver a un commit concreto y resolver errores.
 
 El arquetipo contiene una clase App la cual hay que ejecutar para levantar el microservicio en local, para hacerlo al tener una dependencia de MongoDb tenemos que establecer la conexión con la BBDD.
 
- Existen dos opciones: descargar mongo embebido y levantar una base de datos local o nuestro caso, crear en azure una instancia de CosmosDb (capa de personalización sobre Mongo) y configurar el microservicio para que apunte a esa base de datos. Para esta configuración creamos una clase java llamada MongoDbConfig y mediante la anotación @Value obtenemos de application.properties la conexión a cosmos y el nombre de la BBDD. Una vez hecho esto ya podemos levantar el microservicio.
+ Existen dos opciones: descargar mongo embebido y levantar una base de datos local o nuestro caso, crear en azure una instancia de CosmosDb (capa de personalización sobre Mongo) y configurar el microservicio para que apunte a esa base de datos. Para esta configuración creamos una clase java llamada MongoDbConfig y mediante la anotación @Value obtenemos de application.properties la conexión a cosmos y el nombre de la BBDD. Una vez hecho esto ya podemos levantar el microservicio. Esta clase de configuración la podemos ver en la figura \ref{fig:configmongo}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/configMongo}
+	\caption{Clase de configuración MongoDB}
+	\label{fig:configmongo}
+\end{figure}
 
 
 \begin{figure}
@@ -897,7 +927,7 @@ En la pestaña de JRE es importante seleccionar java 8 o superior y es necesario
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{imagenes/jreMaven}
-	\caption{Configuracion JRE proyecto}
+	\caption{Configuración JRE proyecto}
 	\label{fig:jremaven}
 \end{figure}
 
@@ -905,12 +935,12 @@ Una vez se tiene todo esto seleccionado se procede a dar a run, se compilara la 
 
 Para levantar la aplicación es necesario tener la base de datos a la que se va a conectar levantada.
 
-De nuevo en la pantalla Run Configuration pero esta vez creamos una nueva configuracion de Java Application como se muestra en la figura \ref{fig:configuraciondespliegue}. En project se selecciona la raiz del proyecto y en main class seleccionamos nuestra clase ListasMsApplication.java que es la que contiene el main. Al dar a run se va a desplegar la aplicación. 
+De nuevo en la pantalla Run Configuration pero esta vez creamos una nueva configuración de Java Application como se muestra en la figura \ref{fig:configuraciondespliegue}. En project se selecciona la raiz del proyecto y en main class seleccionamos nuestra clase ListasMsApplication.java que es la que contiene el main. Al dar a run se va a desplegar la aplicación. 
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{imagenes/configuracionDespliegue}
-	\caption{}
+	\caption{Configuración Run despliegue}
 	\label{fig:configuraciondespliegue}
 \end{figure}
 
@@ -918,10 +948,57 @@ Para acceder a ella se accede desde http://localhost:8080 y se añade el recurso
 
 Ademas de los recursos creados por nosotros, se crean dos recursos de swagger que son /swagger-ui.html\ref{fig:capturaswagger} y /v2/api-docs; el primero es la parte visual de swagger y la segunda es el fichero .yml con el cual se genera la parte visual de swagger.
 
+\chapter{ANEXO II: Descripción API microservicio}
+
+Hemos desarrollado una serie de servicios en cada controlador, estos pueden verse en las figuras \ref{fig:controllerlistas} y \ref{fig:controllerusuarios}. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/controllerListas}
+	\caption{Recursos disponibles dentro del controller Listas}
+	\label{fig:controllerlistas}
+\end{figure}
 
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/controllerUsuarios}
+	\caption{Recursos disponibles dentro del controller Usuarios}
+	\label{fig:controllerusuarios}
+\end{figure}
+
+En el controlador de listas hemos creado un recurso /listas al que es posible acceder mediante el verbo Post  y que su funcion es almacenar en BBDD una lista de reproducción nueva. El json de entrada necesario es el de la figura \ref{fig:jsonlista}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/jsonLista}
+	\caption{Json ejemplo lista reproducción}
+	\label{fig:jsonlista}
+\end{figure}
 
 
+Este corresponde a una lista de reproducción con una única canción. Los campos que aparecen son los proporcionados por Spotify, simplemente se han renombrado para evitar el uso de barra baja.
+
+AL llamar al servicio con el json creara un nuevo documento en BBDD.
+
+En el recurso /listas/\{userId\} mediante el verbo Get, al pasarle el id de usuario y un numero de canciones a coincidir, nos devuelve un listado en formato json con las listas de reproducción en las que el usuario tiene al menos el numero antes indicado de canciones en común con la lista.
+
+Por ultimo en este controlador hemos añadido un recurso /listas/batch su función es la misma que la de /listas pero en la entrada recibe una lista de listas de reproducción y las da de alta en BBDD.
+
+
+En el controlador de usuarios hemos creado el recurso /usuarios al que es posible acceder mediante el verbo Get y nos devuelve un json con todos los usuarios dados de alta en BBDD.
+
+Hemos creado otro recurso en /usuarios esta vez con verbo Put para crear un usuario con las canciones que ha escuchado en BBDD. El json de entrada sería el de la figura \ref{fig:jsonusuario}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/jsonUsuario}
+	\caption{Json ejemplo usuario}
+	\label{fig:jsonusuario}
+\end{figure}
+
+
+Por ultimo hemos creado un recurso /usuarios/\{userId\} con verbo Get el cual al pasarle el id de usuario nos devuelve ese usuario con las canciones que ha escuchado.
 
 %----------
 %	BIBLIOGRAFÍA

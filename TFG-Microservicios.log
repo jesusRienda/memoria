@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  16 SEP 2019 21:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  18 SEP 2019 00:00
 entering extended mode
 **./TFG-Microservicios.tex
 (TFG-Microservicios.tex
@@ -1155,7 +1155,7 @@ File: t1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 11.39996pt on input line 233.
-<imagenes/Portada_Logo.png, id=130, 456.2865pt x 45.99pt>
+<imagenes/Portada_Logo.png, id=134, 456.2865pt x 45.99pt>
 File: imagenes/Portada_Logo.png Graphic file (type png)
 <use imagenes/Portada_Logo.png>
 Package pdftex.def Info: imagenes/Portada_Logo.png  used on input line 237.
@@ -1168,7 +1168,7 @@ LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 23.63593pt on input line 248.
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 19.70294pt on input line 252.
-<imagenes/creativecommons.png, id=132, 338.76563pt x 118.19156pt>
+<imagenes/creativecommons.png, id=136, 338.76563pt x 118.19156pt>
 File: imagenes/creativecommons.png Graphic file (type png)
 <use imagenes/creativecommons.png>
 Package pdftex.def Info: imagenes/creativecommons.png  used on input line 262.
@@ -1191,7 +1191,7 @@ l.276 \begin{abstract}
 identifier (name{page.I}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.295 \chapter
+l.299 \chapter
               *{Dedicatoria} [1] [5
 
 ] [6] (TFG-Microservicios.toc
@@ -1256,138 +1256,182 @@ Cap\'{\i }tulo 1.
 
 ] [2]
 Cap\'{\i }tulo 2.
-<imagenes/monolithic-vs-microservices.png, id=346, 481.8pt x 405.01312pt>
+<imagenes/monolithic-vs-microservices.png, id=374, 481.8pt x 405.01312pt>
 File: imagenes/monolithic-vs-microservices.png Graphic file (type png)
 <use imagenes/monolithic-vs-microservices.png>
 Package pdftex.def Info: imagenes/monolithic-vs-microservices.png  used on inpu
-t line 423.
+t line 428.
 (pdftex.def)             Requested size: 298.75264pt x 251.14261pt.
 [3
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 438.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 443.
 
 
 ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\omstxr.fd"
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 438.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 443.
  [4 <./imagenes/monolithic-vs-microservices.png>] [5] [6]
-<imagenes/the-future-of-web-frameworks-11-728.jpg, id=372, 730.73pt x 548.0475p
+<imagenes/the-future-of-web-frameworks-11-728.jpg, id=400, 730.73pt x 548.0475p
 t>
 File: imagenes/the-future-of-web-frameworks-11-728.jpg Graphic file (type jpg)
 <use imagenes/the-future-of-web-frameworks-11-728.jpg>
 Package pdftex.def Info: imagenes/the-future-of-web-frameworks-11-728.jpg  used
- on input line 504.
+ on input line 509.
 (pdftex.def)             Requested size: 298.75264pt x 224.06537pt.
  [7] [8 <./imagenes/the-future-of-web-frameworks-11-728.jpg>] [9] [10] [11] [12
 ]
-<imagenes/soavsmicroservicios.png, id=407, 455.45157pt x 310.91156pt>
+<imagenes/soavsmicroservicios.png, id=435, 455.45157pt x 310.91156pt>
 File: imagenes/soavsmicroservicios.png Graphic file (type png)
 <use imagenes/soavsmicroservicios.png>
 Package pdftex.def Info: imagenes/soavsmicroservicios.png  used on input line 6
-25.
+30.
 (pdftex.def)             Requested size: 298.75264pt x 203.94505pt.
  [13 <./imagenes/soavsmicroservicios.png>]
-<imagenes/desarrolloMonovsMicro.png, id=418, 216.81pt x 164.86594pt>
+<imagenes/desarrolloMonovsMicro.png, id=446, 216.81pt x 164.86594pt>
 File: imagenes/desarrolloMonovsMicro.png Graphic file (type png)
 <use imagenes/desarrolloMonovsMicro.png>
 Package pdftex.def Info: imagenes/desarrolloMonovsMicro.png  used on input line
- 647.
+ 652.
 (pdftex.def)             Requested size: 298.75264pt x 227.20578pt.
  [14 <./imagenes/desarrolloMonovsMicro.png (PNG copy)>]
-<imagenes/monolithic.png, id=425, 499.8675pt x 372.39125pt>
+<imagenes/monolithic.png, id=453, 499.8675pt x 372.39125pt>
 File: imagenes/monolithic.png Graphic file (type png)
 <use imagenes/monolithic.png>
-Package pdftex.def Info: imagenes/monolithic.png  used on input line 673.
+Package pdftex.def Info: imagenes/monolithic.png  used on input line 678.
 (pdftex.def)             Requested size: 298.75264pt x 222.57277pt.
-<imagenes/microservices.png, id=426, 398.48875pt x 332.24126pt>
+<imagenes/microservices.png, id=454, 398.48875pt x 332.24126pt>
 File: imagenes/microservices.png Graphic file (type png)
 <use imagenes/microservices.png>
-Package pdftex.def Info: imagenes/microservices.png  used on input line 679.
+Package pdftex.def Info: imagenes/microservices.png  used on input line 684.
 (pdftex.def)             Requested size: 298.75264pt x 249.09413pt.
 
 [15 <./imagenes/monolithic.png>] [16 <./imagenes/microservices.png>]
 Cap\'{\i }tulo 3.
-<imagenes/CapturaSwagger.png, id=438, 998.9822pt x 578.16pt>
+<imagenes/CapturaSwagger.png, id=466, 998.9822pt x 578.16pt>
 File: imagenes/CapturaSwagger.png Graphic file (type png)
 <use imagenes/CapturaSwagger.png>
-Package pdftex.def Info: imagenes/CapturaSwagger.png  used on input line 704.
+Package pdftex.def Info: imagenes/CapturaSwagger.png  used on input line 709.
 (pdftex.def)             Requested size: 298.75264pt x 172.90237pt.
 [17
 
 ] [18 <./imagenes/CapturaSwagger.png>]
 Cap\'{\i }tulo 4.
-<imagenes/arquetipo.png, id=449, 952.30782pt x 667.74469pt>
+<imagenes/arquetipo.png, id=477, 952.30782pt x 667.74469pt>
 File: imagenes/arquetipo.png Graphic file (type png)
 <use imagenes/arquetipo.png>
-Package pdftex.def Info: imagenes/arquetipo.png  used on input line 721.
+Package pdftex.def Info: imagenes/arquetipo.png  used on input line 725.
 (pdftex.def)             Requested size: 298.75264pt x 209.48482pt.
-<imagenes/estructuramicroservicio.png, id=451, 250.68657pt x 598.48593pt>
+<imagenes/dependenciasSwagger.png, id=479, 298.86656pt x 171.64125pt>
+File: imagenes/dependenciasSwagger.png Graphic file (type png)
+<use imagenes/dependenciasSwagger.png>
+Package pdftex.def Info: imagenes/dependenciasSwagger.png  used on input line 7
+36.
+(pdftex.def)             Requested size: 298.75264pt x 171.58842pt.
+<imagenes/cofingSwagger.png, id=483, 418.56375pt x 276.28218pt>
+File: imagenes/cofingSwagger.png Graphic file (type png)
+<use imagenes/cofingSwagger.png>
+Package pdftex.def Info: imagenes/cofingSwagger.png  used on input line 747.
+(pdftex.def)             Requested size: 298.75264pt x 197.19456pt.
+<imagenes/configMongo.png, id=485, 558.58687pt x 296.60812pt>
+File: imagenes/configMongo.png Graphic file (type png)
+<use imagenes/configMongo.png>
+Package pdftex.def Info: imagenes/configMongo.png  used on input line 761.
+(pdftex.def)             Requested size: 298.75264pt x 158.64078pt.
+<imagenes/estructuramicroservicio.png, id=486, 250.68657pt x 598.48593pt>
 File: imagenes/estructuramicroservicio.png Graphic file (type png)
 <use imagenes/estructuramicroservicio.png>
 Package pdftex.def Info: imagenes/estructuramicroservicio.png  used on input li
-ne 739.
+ne 769.
 (pdftex.def)             Requested size: 298.75264pt x 713.32123pt.
 
-LaTeX Warning: Float too large for page by 36.17805pt on input line 742.
+LaTeX Warning: Float too large for page by 36.17805pt on input line 772.
 
 [19
 
-] [20 <./imagenes/arquetipo.png>] [21 <./imagenes/estructuramicroservicio.png>]
-
+] [20 <./imagenes/arquetipo.png> <./imagenes/dependenciasSwagger.png> <./imagen
+es/cofingSwagger.png>] [21 <./imagenes/configMongo.png>] [22 <./imagenes/estruc
+turamicroservicio.png>] [23]
 Cap\'{\i }tulo 5.
-[22
+[24
 
 ]
 Cap\'{\i }tulo 6.
 
-Overfull \hbox (45.8807pt too wide) in paragraph at lines 799--809
+Overfull \hbox (45.8807pt too wide) in paragraph at lines 829--839
  [] 
  []
 
-[23
-
-] [24]
-Cap\'{\i }tulo 7.
 [25
 
 ] [26]
+Cap\'{\i }tulo 7.
+[27
+
+] [28]
 Cap\'{\i }tulo 8.
-<imagenes/cleanInstallMAven.png, id=494, 690.32906pt x 523.20468pt>
+<imagenes/cleanInstallMAven.png, id=540, 690.32906pt x 523.20468pt>
 File: imagenes/cleanInstallMAven.png Graphic file (type png)
 <use imagenes/cleanInstallMAven.png>
-Package pdftex.def Info: imagenes/cleanInstallMAven.png  used on input line 890
+Package pdftex.def Info: imagenes/cleanInstallMAven.png  used on input line 920
 .
 (pdftex.def)             Requested size: 298.75264pt x 226.4266pt.
-<imagenes/jreMaven.png, id=496, 518.6878pt x 122.70844pt>
+<imagenes/jreMaven.png, id=542, 518.6878pt x 122.70844pt>
 File: imagenes/jreMaven.png Graphic file (type png)
 <use imagenes/jreMaven.png>
-Package pdftex.def Info: imagenes/jreMaven.png  used on input line 899.
+Package pdftex.def Info: imagenes/jreMaven.png  used on input line 929.
 (pdftex.def)             Requested size: 298.75264pt x 70.68037pt.
-<imagenes/configuracionDespliegue.png, id=498, 691.08188pt x 519.44063pt>
+<imagenes/configuracionDespliegue.png, id=544, 691.08188pt x 519.44063pt>
 File: imagenes/configuracionDespliegue.png Graphic file (type png)
 <use imagenes/configuracionDespliegue.png>
 Package pdftex.def Info: imagenes/configuracionDespliegue.png  used on input li
-ne 912.
+ne 942.
 (pdftex.def)             Requested size: 298.75264pt x 224.55194pt.
-[27
+[29
 
-] [28 <./imagenes/cleanInstallMAven.png> <./imagenes/jreMaven.png> <./imagenes/
+] [30 <./imagenes/cleanInstallMAven.png> <./imagenes/jreMaven.png> <./imagenes/
 configuracionDespliegue.png>]
-Package csquotes Info: Disabling multilingual quotes on input line 934.
+Cap\'{\i }tulo 9.
+<imagenes/controllerListas.png, id=560, 396.7322pt x 201.75375pt>
+File: imagenes/controllerListas.png Graphic file (type png)
+<use imagenes/controllerListas.png>
+Package pdftex.def Info: imagenes/controllerListas.png  used on input line 957.
+
+(pdftex.def)             Requested size: 298.75264pt x 151.93063pt.
+<imagenes/controllerUsuarios.png, id=561, 335.75438pt x 202.50656pt>
+File: imagenes/controllerUsuarios.png Graphic file (type png)
+<use imagenes/controllerUsuarios.png>
+Package pdftex.def Info: imagenes/controllerUsuarios.png  used on input line 96
+5.
+(pdftex.def)             Requested size: 298.75264pt x 180.19008pt.
+<imagenes/jsonLista.png, id=563, 401.24907pt x 295.1025pt>
+File: imagenes/jsonLista.png Graphic file (type png)
+<use imagenes/jsonLista.png>
+Package pdftex.def Info: imagenes/jsonLista.png  used on input line 974.
+(pdftex.def)             Requested size: 298.75264pt x 219.73228pt.
+<imagenes/jsonUsuario.png, id=565, 413.29407pt x 214.55156pt>
+File: imagenes/jsonUsuario.png Graphic file (type png)
+<use imagenes/jsonUsuario.png>
+Package pdftex.def Info: imagenes/jsonUsuario.png  used on input line 995.
+(pdftex.def)             Requested size: 298.75264pt x 155.09247pt.
+[31
+
+ <./imagenes/controllerListas.png>] [32 <./imagenes/controllerUsuarios.png> <./
+imagenes/jsonLista.png> <./imagenes/jsonUsuario.png>]
+Package csquotes Info: Disabling multilingual quotes on input line 1011.
 
 
 Package csquotes Warning: Quote style 'british/english' not defined.
-(csquotes)                Ignoring command on input line 934.
+(csquotes)                Ignoring command on input line 1011.
 
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 935.
-
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 1012
+.
 ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
 File: t1txtt.fd 2000/12/15 v3.1
 )
-Overfull \hbox (6.26534pt too wide) in paragraph at lines 936--936
+Overfull \hbox (6.26534pt too wide) in paragraph at lines 1013--1013
 []\T1/txr/m/n/12 S. New-man, \T1/txr/m/it/12 Buil-ding Mi-cro-ser-vi-ces: De-si
 g-ning Fine-Grained Sys-tems\T1/txr/m/n/12 , 1st. O'Reilly
  []
@@ -1396,31 +1440,32 @@ g-ning Fine-Grained Sys-tems\T1/txr/m/n/12 , 1st. O'Reilly
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 187.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 950.
-[29
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1027.
+[33
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 950.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1027.
  (TFG-Microservicios.aux
 LaTeX Info: Redefining \sptext on input line 30.
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 950.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 950.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1027.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1027.
+
 Package rerunfilecheck Info: File `TFG-Microservicios.out' has not changed.
-(rerunfilecheck)             Checksum: 8505931F5C837F07FEBE3619227C8257;2411.
+(rerunfilecheck)             Checksum: 14A43FD1A1033A3B590D1393D20C79A7;2502.
 Package logreq Info: Writing requests to 'TFG-Microservicios.run.xml'.
 \openout1 = `TFG-Microservicios.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 950.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1027.
  ) 
 Here is how much of TeX's memory you used:
- 25238 strings out of 492970
- 394817 string characters out of 3126593
+ 25293 strings out of 492970
+ 396133 string characters out of 3126593
  666219 words of memory out of 3000000
- 28646 multiletter control sequences out of 15000+200000
+ 28682 multiletter control sequences out of 15000+200000
  64156 words of font info for 92 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,12n,48p,959b,3820s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1436,9 +1481,9 @@ rams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jesus/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jesus/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Jesus/App
 Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TFG-Microservicios.pdf (42 pages, 675398 bytes).
+Output written on TFG-Microservicios.pdf (46 pages, 764293 bytes).
 PDF statistics:
- 606 PDF objects out of 1000 (max. 8388607)
- 104 named destinations out of 1000 (max. 500000)
- 331 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 676 PDF objects out of 1000 (max. 8388607)
+ 116 named destinations out of 1000 (max. 500000)
+ 374 words of extra memory for PDF output out of 10000 (max. 10000000)
 
