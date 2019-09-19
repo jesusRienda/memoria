@@ -350,57 +350,110 @@ hmargin=3cm
 \clearpage
 \pagenumbering{arabic} % numeración con múmeros arábigos para el resto de la publicación	
 
-\chapter{Introducción}
-
+\chapter{Resumen}
+\section{Introducción}
 	% COMENZAR A ESCRIBIR EL TRABAJO
 	El mundo de la tecnología se basa en tendencias, hoy en día los microservicios están de moda, gracias a grandes compañías como Amazon, Ebay, Twitter, Paypal, Netflix, etc. Pero realmente es una tecnología que ha surgido gracias a la aparición de la nube(cloud) donde todas estas empresas se están llevando sus software
 	
 	En la nube no necesitas servidores físicos, con el mantenimiento y la inversión que esto supone, sino que solo pagas por los recursos que necesitas en cada momento. Esto es una gran revolución para la informática, te permite gestionar los picos de actividad sin perder servicio.
 	
 	
-	\section{Planteamiento del problema}
-	Contamos con datos reales sobre listas de reproducción de Spotify en formato json los cuales contienen información de cada lista y las canciones que contiene.
-	Por otra parte tenemos datos de usuarios con las canciones que escuchan.
+	\subsection{Planteamiento del problema}
+	Contamos con datos reales de Spotify que contienen información de las listas de reproducción.
+	Tenemos también datos de usuarios con sus canciones.
 
-	Necesitamos almacenar estos datos en una base de datos para posteriormente consultarla, actualizarla o crear nuevos registros. 
-	Podríamos actuar directamente sobre la base de datos pero no seria admisible para un usuario final. 
-	Por tanto tendremos que crear un programa el cual haga las consultas a la bbdd y devuelva los datos validados en un formato optimo para mostrarlos por pantalla.
-	Para ello Por lo que necesitamos crear un programa que al invocar nos devuelva los datos almacenados con un tratamiento especifico y un formato definido. Necesitamos que sea sencillo y simple para el cliente que va a consumir dicho servicio. 
-	Por ejemplo uno de los tratamiento necesarios sería filtrar las listas en función de las canciones que escuche cada usuario, si ha escuchado mas de 3 canciones de una lista, deberíamos devolverla.
+	Necesitamos una base de datos donde almacenar todos los parámetros y vamos a crear un programa para realizar las consultas.	
 		
-	Este programa tendrá que tener una alta disponibilidad y escalarse cuando sea necesario para siempre tener unos tiempos de respuesta bajos. Ya que existe una gran cantidad de personas que van a consumir el programa al mismo tiempo coincidiendo con el lanzamiento de nuevas listas.
-	
-	\section{Objetivos}
+	Este programa contará con tiempos de respuesta bajos ya que podrán consultarlo muchas personas a la vez.
 		
-	Diseñar una arquitectura de software adecuada para el problema, que sea capaz de soportar una gran cantidad de peticiones simultaneas sin dejar sin servicio a nadie.
+	\subsection{Objetivos}
+		
+	Diseñar una arquitectura de software adecuada para el problema.
 	
-	Crear y rellenar una base datos con los ficheros de listas con los que contamos.
+	Crear una base datos con los ficheros de listas.
 	
-	Implementar un microservicio que al pasarle un usuario y un numero de canciones a coincidir devuelva las listas de reproducción que contengan al menos el numero de canciones que coincidan con las escuchadas por el usuario.
+	Implementar un microservicio.
 	
 	
-	\section{Solución propuesta}
+	\subsection{Solución propuesta}
 	Como solución a nuestro problema vamos a diseñar una arquitectura de microservicios.
-	Para ello implementamos un microservicio el cual, se va a desarrollar con java mediante el framework Spring Boot.
+	Implementamos un microservicio con java mediante el framework Spring Boot y para llamar a este utilizaremos Swagger.
 	La BBDD estará almacenada en Azure y sera CosmosDB
-	Para llamar al microservicio creado utilizaremos Swagger.
+	\section{Estado del arte}
 	
-	\section{Estructura trabajo}
-	Este trabajo está estructurado de la siguiente forma:
+	\section{Justificación de la solución}
 	
+	
+	Elegimos arquitectura de microservicios ya que ofrecen escalabilidad y alta disponibilidad.
+	
+	Para el desarrollo elegimos Spring Boot que cuenta con las ventajas de Sprint y es el framework que mejor se adapta a nuestro proyecto ya que es el más antiguo y de mayor uso.
+	
+	Para el desarrollo elegimos Spring Boot, no solo nos aporta ventajas de cualquier framwork de microservicios sino que también tenemos todas la funcionalidades de Spring como la conexión con base de datos y la arquitectura en capas.
+	
+	Para la gestión de dependencias elegimos Maven ya que esta dirigido para java y nos va a empaquetar la aplicación.
+	
+	Utilizamos Lombok para evitar código repetitivo. Ademas ofrece una implementación del patrón de diseño builder.
+	
+	La comunicación con el microservicio va a ser mediante REST, protocolo simple y eficaz para realizar las distintas operaciones.
+	
+	Todo servicio REST necesita un documento(API) donde se describa la entrada salida de él, en este caso vamos a utilizar anotaciones de 
+	
+	Utilizamos Swagger para autogenerar el documento API en el que se definen las entradas y salidas de todos los servicios desarrollados.
+	
+	Para almacenar los datos con los que contamos la mejor opción es MongoDB, con esta no es necesario adaptar los datos ya que se guardan con el formato actual. Para que sea más eficiente pondremos nuestra BBDD en la nube y utilizaremos CosmosDB.
+	
+	
+	\section{Desarrollo de la aplicación}
+	
+	\section{Marco regulador}
+	
+	No existen leyes que se apliquen en el desarrollo de un microservicio. Sin embargo si se trata con datos reales hay que tener en cuenta dos leyes:
 	\begin{itemize}
-		\item \textbf{Capítulo 1: Introducción.} En este capítulo se explica el problema, los objetivos del trabajo y la solución propuesta.
-		\item  \textbf{Capítulo 2: Estado del arte.}  En este capítulo se analiza el estado a día de hoy del diseño de aplicaciones desde cero y en profundidad de microservicios.
-		\item  \textbf{Capítulo 3: Justificación de la solución.} Según lo visto en el capítulo anterior analizamos que es lo que más nos conviene para nuestros requerimientos.
-		\item  \textbf{Capítulo 4: Desarrollo de la aplicación.} Explicación desde cero de como crear y desarrollar el microservicio. 
-		\item  \textbf{Capítulo 5: Implantación de la aplicación.} Pasos a seguir para poder implantar la aplicación en un entorno empresarial.
-		\item  \textbf{Capítulo 6: Marco regulador.} Regulación existente en el ámbito de los microservicios.
-		\item  \textbf{Capítulo 7: Entorno socio-económico.} En este punto se muestra el coste total que tendría el proyecto y el impacto que tiene.
-		\item  \textbf{Capítulo 8: Conclusiones.} Aquí describimos las conclusiones sacadas a raíz de la realización del trabajo y las posibles tareas a realizar en un futuro.
-		\item  \textbf{Anexo I: Despliegue de la aplicación} En este anexo se realiza un tutorial para desplegar nuestra aplicación en local.
-		\item  \textbf{Anexo II: Descripción API microservicio} En este anexo se detallan los recursos y servicios creados en nuestra aplicación.
+		\item Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales.
+		\item Ley General de Telecomunicaciones.
 	\end{itemize}
-
+	
+	
+	\section{Entorno socio-económico}	
+	
+	\subsection{Presupuesto}
+	
+	
+	El proyecto se ha desarrollado durante 8 meses con un total de 300 horas empleadas lo que nos supone un total de 4500 euros. 
+	Los servicios contratados son Azure CosmosDB que nos supone un total de 1069,34 euros.
+	En los costes totales del proyecto sumamos la mano de obra y los servicios contratados y nos saldría un total de 5569,34 euros.
+	
+	
+	\subsection{Impacto socio-económico}
+	
+	Uno de los objetivos de desarrollar aplicaciones con microservicios es que estas sean fácilmente mantenibles y que puedan evolucionar según las necesidades de la sociedad.
+	
+	Una de las ventajas de implantar los microservicios en la nube es la mejor utilización de los recursos disponibles para aprovecharlos de manera eficiente abasteciéndose con tecnologías renovables.
+	
+	Cuando se esperaba un numero grande de peticiones era necesario un gran número de servidores que suponía recursos sin utilizar una vez dado el servicio, esto lo solucionan los microservicios en la nube.
+	
+	Un inconveniente de esto es para una aplicación pequeña el coste es más elevado.
+	
+	\section{Conclusiones}
+	
+	Hemos cumplido el objetivo de diseñar una arquitectura capaz de recibir multitud de peticiones.
+	
+	Para la base de datos elegimos una en la nube, aunque esta es la mejor opción, nos hemos dado cuenta que es muy caro para una pequeña aplicación ya que cobran por uso y almacenamiento. Sin embargo si que hemos podido ver que para el problema que teníamos, la base de datos elegida es ideal.
+	
+	Implementar el microservicio ha sido una tarea de investigación ya que todas las tecnologías utilizadas son bastante novedosas y es complicado encontrar información al respecto. Pero gracias a ello hemos conseguido una aplicación limpia y fácilmente mantenible.
+	
+	\subsection{Trabajos futuros}
+	
+	Posibles trabajos futuros que podrían mejorar o complementar nuestra aplicación.
+	
+	-Desarrollar una aplicación web para visualizar los datos.
+	
+	-Añadir nuevas funcionalidades sobre los datos existentes.
+	
+	-Dockerizar (contenerizar) la aplicación para integrarla en un contenedor y desplegarlo en la nube.
+	
+	-Incluir un gestor de contenedores en Azure para gestionar el escalado y otras configuraciones de las aplicaciones que tengamos dockerizadas.
+	
 	\chapter{Estado del arte}
 
 	En la década de los 60 surgió lo que a día de hoy conocemos como arquitectura de software, esta fue tomando cada vez mas interés hasta que en la década de 1980 se integro totalmente el diseño en el desarrollo de software. 
@@ -689,43 +742,29 @@ Con respecto a la visión monolítica tenemos:
 
 \chapter{Justificación de la solución}
 
-Analizando los requisitos que tenemos nos quedaríamos con 3 tipos de arquitecturas a usar, una seria la arquitectura en capas, otra la arquitectura orientada a servicios(SOA) y por ultimo la arquitectura de microservicios. 
 
-Con cualquiera de ellas podríamos montar un servicio que hiciera lo que nosotros necesitamos, sin embargo la única que ofrece escalabilidad y alta disponibilidad es la arquitectura de microservicios. Ademas se adapta perfectamente a la filosofía de la arquitectura, ya que cada servicio tiene que ser pequeño. Al estar en la nube no necesitamos servidores físicos, contratas en cada momento lo que necesitas y se reducen gastos.
+Elegimos arquitectura de microservicios ya que ofrecen escalabilidad y alta disponibilidad.
 
-Para el desarrollo de la aplicación hemos elegido Spring Boot como framework de microservicios, tiene web para descargar un arquetipo, incluye todas las ventajas de Spring para el desarrollo en capas, que también vamos a necesitar y ademas es el más utilizado a día de hoy, por lo que es el que más soporte tiene.
+Para el desarrollo elegimos Spring Boot que cuenta con las ventajas de Sprint y es el framework que mejor se adapta a nuestro proyecto ya que es el más antiguo y de mayor uso.
 
-Para la gestión de dependencias elegimos Maven ya que es el mas rodado y totalmente dirigido para java. Este nos va a empaquetar la aplicación en un jar compilandola y añadiendo las dependencias que necesite.
+Para el desarrollo elegimos Spring Boot, no solo nos aporta ventajas de cualquier framwork de microservicios sino que también tenemos todas la funcionalidades de Spring como la conexión con base de datos y la arquitectura en capas.
 
-Vamos a utilizar Lombok para evitar código repetitivo en las clases, como getter, setter y constructores. Mediante anotaciones conseguimos todo esto en tiempo de ejecución. Ademas también nos ofrece una implementación del patrón de diseño builder.
+Para la gestión de dependencias elegimos Maven ya que esta dirigido para java y nos va a empaquetar la aplicación.
 
-La comunicación con el microservicio va a ser mediante REST, ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria PUT, GET, POST, y DELETE.
+Utilizamos Lombok para evitar código repetitivo. Ademas ofrece una implementación del patrón de diseño builder.
 
-Todo servicio Rest necesita un documento(API) donde se describa la entrada salida de él, en este caso vamos a utilizar anotaciones de Swagger para que este documento se autogenere, ademas nos ofrece la posibilidad de llamar a traves de él, que es mas visual que una llamada por Postman(programa para realizar llamadas rest) por ejemplo.
+La comunicación con el microservicio va a ser mediante REST, protocolo simple y eficaz para realizar las distintas operaciones.
 
-En la figura \ref{fig:capturaswagger} vemos los métodos a los que podemos llamar y dentro de los métodos tenemos la entrada salida y una descripción de que hace cada uno.
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/CapturaSwagger}
-	\caption{API en swagger}
-	\label{fig:capturaswagger}
-\end{figure}
+Todo servicio REST necesita un documento(API) donde se describa la entrada salida de él, en este caso vamos a utilizar anotaciones de 
 
+Utilizamos Swagger para autogenerar el documento API en el que se definen las entradas y salidas de todos los servicios desarrollados.
 
-Por otra parte para la base de datos ya que tenemos los datos en formato json lo ideal es una BBDD noSQL para guardar directamente el json sin tener que hacer una conversion a tablas. Ademas es adaptable a cambios para que sea mas mantenible y puede establecerse en la nube al igual que el microservicio para que la comunicación sea muy rápida. Al estar en la nube se adapta fácilmente a los requisitos de cada momento. Por ejemplo si en una campaña se necesita realizar muchas consultas a base de datos se puede ampliar los núcleos de esta para que responda más rápido.
+Para almacenar los datos con los que contamos la mejor opción es MongoDB, con esta no es necesario adaptar los datos ya que se guardan con el formato actual. Para que sea más eficiente pondremos nuestra BBDD en la nube y utilizaremos CosmosDB.
 
-Por tanto elegimos MongoDB como BBDD, pero como estamos usando azure se llama CosmosDB, la única diferencia es que se establece una capa de personalización para que sea mas rápida y limitar el número de accesos en función a lo que se tenga contratado. También está preparada para trabajar con un número elevado de datos sin saturarse.
 
 \chapter{Desarrollo de la aplicación}
 
 El primer paso para desarrollar nuestra aplicación es tener un IDE (Entorno de Desarrollo Integrado) instalado, en este caso usamos Eclipse.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/arquetipo}
-	\caption{Ejemplo configuración arquetipo}
-	\label{fig:arquetipo}
-\end{figure}
 
 Una vez que tenemos Eclipse instalado nos dirigimos a la web https://start.spring.io/ para obtener un arquetipo de una aplicación usando el framework Spring Boot. Como observamos en la figura \ref{fig:arquetipo} elegimos Maven para el control de dependencias, escogemos java como lenguaje y por ultimo las dependencias que queremos incluir, MongoDB, Spring Web, Lombok y nos faltaría las dependencias de swagger pero esta web no las proporciona así que posteriormente las añadiremos.
 
@@ -788,93 +827,36 @@ El arquetipo contiene una clase App la cual hay que ejecutar para levantar el mi
  
 \chapter{Marco regulador}
 
-No existen leyes que se apliquen en el desarrollo de un microservicio, prácticamente todos los software que se utilizan son de código libre. Sin embargo si se ha de tratar con datos de clientes reales hay que tener en cuenta dos leyes:
+No existen leyes que se apliquen en el desarrollo de un microservicio. Sin embargo si se trata con datos reales hay que tener en cuenta dos leyes:
 \begin{itemize}
-	\item Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales \cite{LeyProteccion}: En la ley Orgánica 3/2018, de 5 de diciembre, se establen los principios de la protección datos personales: exactitud, confidencialidad, consentimiento.  Ya que vamos almacenar datos de los usuarios, es necesario que cuando se cree un frontal que llame al servicio de insertar usuarios, antes se de consentimiento al uso de sus datos personales siempre bajo la ley. Ademas estos datos hay que almacenarlos cifrados.
-	\item Ley General de Telecomunicaciones \cite{LeyComunicaciones}: En la ley 9/2014, de 9 de mayo, se estable en el articulo 43 que debemos cifrar toda la información que viaje mediante redes de comunicación. 
+	\item Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales.
+	\item Ley General de Telecomunicaciones.
 \end{itemize}
 
-Por otra parte existen lo que se denomina buenas practicas en el desarrollo, son consejos para que el código sea mas limpio, legible, eficiente y mantenible. Estas buenas practicas se pueden controlar a través de herramientas de calidad de código como Sonar.
 
 \chapter{Entorno socio-económico}	
 
 \section{Presupuesto}
-En este punto vamos a calcular los costes del proyecto. Desde los costes de diseño e implementación hasta los recursos necesarios.
 
-\subsection{Mano de obra}
 
-El proyecto se ha desarrollado durante 8 meses con un total de 300 horas empleadas.
+El proyecto se ha desarrollado durante 8 meses con un total de 300 horas empleadas lo que nos supone un total de 4500 euros. 
+Los servicios contratados son Azure CosmosDB que nos supone un total de 1069,34 euros.
+En los costes totales del proyecto sumamos la mano de obra y los servicios contratados y nos saldría un total de 5569,34 euros.
 
-\begin{table}[H]
-	\begin{center}
-		\begin{tabular}{|c|c|r|}
-			\hline
-			Coste/Hora(euros) & Horas & Total(euros) \\
-			\hline \hline
-			15 & 300 & 4500 \\ \hline
-		
-		\end{tabular}
-		\caption{Coste personal.}		
-		\label{costePersonal}
-	\end{center}
-\end{table}
-
-Si este proyecto se desarrollara en una empresa, contaría con un arquitecto de sistemas que realice el diseño de la arquitectura y con un desarrollador para la implementación.
-
-\subsection{Servicios}
-Hemos necesitado recurrir a una nube de desarrollo donde almacenar nuestra base de datos y para ello hemos utilizado Microssof Azure. A continuación se muestra el presupuesto que nos ofrece este proveedor para tener una BBDD en la nube con alta disponibilidad. Cuando el servicio afronte menos número de peticiones se reducirá el coste. Al contratar estos servicios, el proveedor nos ofrece soporte gratuito.
-
-\begin{table}[H]
-	\begin{center}
-		\begin{tabular}{|l|l|r|}
-			\hline
-			Tipo de servicio & Descripción & Coste estimado(euros) \\
-			\hline \hline
-			Azure Cosmos DB & Escritura de una sola región - Europa Occidental; & 534,67 \\ 
-			 &  Pago por uso; 100 x 100 RU x 730 Horas; & \\
-			 & 50 GB de almacenamiento & \\ \hline
-			Total mensual &  & 534,67 \\ \hline
-			
-		\end{tabular}
-		\caption{Costes Microsoft Azure.}
-		\label{costeAzure}
-	\end{center}
-\end{table}
-
-Para trabajos futuros sería necesario contratar Azure Kubernetes Service (AKS) para poder gestionar los contenedores donde se desplegaría cada microservicio. Esto nos supondría un aumento de 87,6 Euros mensuales.
-
-\subsection{Coste total}
-
-Recopilando los presupuestos de mano de obra y servicios utilizados, el coste total de este proyecto sería el siguiente.
-
-\begin{table}[H]
-	\begin{center}
-		\begin{tabular}{|l|r|}
-			\hline
-			Concepto & Total(euros) \\
-			\hline \hline
-			Mano de obra & 4500 \\ \hline
-			Servicios & 1069,34 \\ \hline \hline
-			Total & 5569,34 \\ \hline					
-		\end{tabular}
-		\caption{Costes Totales.}
-		\label{costeTotal}
-	\end{center}
-\end{table}
 
 \section{Impacto socio-económico}
 
 Uno de los objetivos de desarrollar aplicaciones con microservicios es que estas sean fácilmente mantenibles y que puedan evolucionar según las necesidades de la sociedad.
 
-Una de las ventajas de implantar los microservicios en la nube es la mejor utilización de los recursos disponibles (energía, servidores) ya que permite aprovechar estos al máximo de una manera eficiente y ademas  se centraliza la ubicación de las maquinas en granjas de servidores, las cuales intentan abastecerse con tecnologías renovables.
+Una de las ventajas de implantar los microservicios en la nube es la mejor utilización de los recursos disponibles para aprovecharlos de manera eficiente abasteciéndose con tecnologías renovables.
 
-Anteriormente, cuando esperabas un numero grande de peticiones era necesario adquirir un gran número de servidores para poder dar servicio al pico de trabajo, esto suponía que una vez pasado el pico tenías una serie de recursos sin utilizar, esto lo solucionan los microservicios en la nube.
+Cuando se esperaba un numero grande de peticiones era necesario un gran número de servidores que suponía recursos sin utilizar una vez dado el servicio, esto lo solucionan los microservicios en la nube.
 
-Por otra parte, un inconveniente de esto es que para una aplicación pequeña que va a contar con mucho tráfico de datos, el coste es mucho mayor en la nube que teniendo un par de servidores.
+Un inconveniente de esto es para una aplicación pequeña el coste es más elevado.
 
 \chapter{Conclusiones}
 
-Hemos conseguido cumplir el objetivo de diseñar una arquitectura capaz de recibir multitud de peticiones.
+Hemos cumplido el objetivo de diseñar una arquitectura capaz de recibir multitud de peticiones.
 
 Para la base de datos elegimos una en la nube, aunque esta es la mejor opción, nos hemos dado cuenta que es muy caro para una pequeña aplicación ya que cobran por uso y almacenamiento. Sin embargo si que hemos podido ver que para el problema que teníamos, la base de datos elegida es ideal.
 
@@ -882,123 +864,17 @@ Implementar el microservicio ha sido una tarea de investigación ya que todas la
 
 \section{Trabajos futuros}
 
-A continuación explicaremos los posibles trabajos futuros que podrían implementarse para mejorar o complementar nuestra aplicación.
+Posibles trabajos futuros que podrían mejorar o complementar nuestra aplicación.
 
-\textbf{Aplicación Web}
+-Desarrollar una aplicación web para visualizar los datos.
 
-Se podría desarrollar una aplicación web para visualizar los datos de formas más amigable.
+-Añadir nuevas funcionalidades sobre los datos existentes.
 
-\textbf{Nuevas funcionalidades}
+-Dockerizar (contenerizar) la aplicación para integrarla en un contenedor y desplegarlo en la nube.
 
-Añadir nuevas funcionalidades sobre los datos existentes, como por ejemplo un recomendador de listas.
-
-\textbf{Integración continua}
-
-Se podría añadir la aplicación a un circuito de integración continua para su utilización en una empresa.
-Pasaría por este circuito cada vez que se hiciera un cambio en una rama de git:
-\begin{itemize}
-	\item Compilación con test del código.
-	\item Validación de la calidad del código con una aplicación como por ejemplo Sonar.
-\end{itemize}
-
-Este tipo de circuitos se suelen realizar mediante la herramienta Jenkins
-
-\textbf{Dockerización}
-
-Por otra parte se podría dockerizar (contenerizar) la aplicación para poder integrarla en un contenedor y desplegar el contenedor en la nube.
-
-\textbf{Gestión de contenedores}
-
-Incluir un gestor de contenedores en Azure para gestionar el escalado y otras configuraciones de las aplicaciones que tengamos dockerizadas.
-
-\chapter{ANEXO I: Despliegue de la aplicación}
-
-Para el despliegue de la aplicación en local lo primero es compilar el código mediante maven. Para ello vamos a la ventana Run Configuration en Eclipse y creamos un nuevo Maven build como vemos en la figura \ref{fig:cleaninstallmaven}. En base directory hay que poner lo que se muestra en la figura \ref{fig:cleaninstallmaven},  en goals vamos a poner clean install para limpiar primero el proyecto y luego compilar, en user settings se puede dejar por defecto si todas las dependencias son de internet o configurar un setting personal donde se establezca a que repositorio ir a buscar las dependencias necesarias en maven runtine se puede utilizar el embebido en eclipse o una versión que nosotros descarguemos.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/cleanInstallMAven}
-	\caption{Configuración compilación mediante Maven}
-	\label{fig:cleaninstallmaven}
-\end{figure}
-
-En la pestaña de JRE es importante seleccionar java 8 o superior y es necesario incluir la JDK y no la JRE como se ve en la figura \ref{fig:jremaven}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/jreMaven}
-	\caption{Configuración JRE proyecto}
-	\label{fig:jremaven}
-\end{figure}
-
-Una vez se tiene todo esto seleccionado se procede a dar a run, se compilara la aplicación desde cero y se pasaran las clases de test que existan, una vez esto pase se va a generar un jar de la aplicación compilada. Este jar se ubica en la carpeta target.
-
-Para levantar la aplicación es necesario tener la base de datos a la que se va a conectar levantada.
-
-De nuevo en la pantalla Run Configuration pero esta vez creamos una nueva configuración de Java Application como se muestra en la figura \ref{fig:configuraciondespliegue}. En project se selecciona la raiz del proyecto y en main class seleccionamos nuestra clase ListasMsApplication.java que es la que contiene el main. Al dar a run se va a desplegar la aplicación. 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/configuracionDespliegue}
-	\caption{Configuración Run despliegue}
-	\label{fig:configuraciondespliegue}
-\end{figure}
-
-Para acceder a ella se accede desde http://localhost:8080 y se añade el recurso al que quieras acceder, si es un recurso get se puede acceder desde un navegador, sino hay que hacerlo mediante swagger o postman. Todos los recursos están creados en las clases controller.
-
-Ademas de los recursos creados por nosotros, se crean dos recursos de swagger que son /swagger-ui.html\ref{fig:capturaswagger} y /v2/api-docs; el primero es la parte visual de swagger y la segunda es el fichero .yml con el cual se genera la parte visual de swagger.
-
-\chapter{ANEXO II: Descripción API microservicio}
-
-Hemos desarrollado una serie de servicios en cada controlador, estos pueden verse en las figuras \ref{fig:controllerlistas} y \ref{fig:controllerusuarios}. 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/controllerListas}
-	\caption{Recursos disponibles dentro del controller Listas}
-	\label{fig:controllerlistas}
-\end{figure}
+-Incluir un gestor de contenedores en Azure para gestionar el escalado y otras configuraciones de las aplicaciones que tengamos dockerizadas.
 
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/controllerUsuarios}
-	\caption{Recursos disponibles dentro del controller Usuarios}
-	\label{fig:controllerusuarios}
-\end{figure}
-
-En el controlador de listas hemos creado un recurso /listas al que es posible acceder mediante el verbo Post  y que su funcion es almacenar en BBDD una lista de reproducción nueva. El json de entrada necesario es el de la figura \ref{fig:jsonlista}.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/jsonLista}
-	\caption{Json ejemplo lista reproducción}
-	\label{fig:jsonlista}
-\end{figure}
-
-
-Este corresponde a una lista de reproducción con una única canción. Los campos que aparecen son los proporcionados por Spotify, simplemente se han renombrado para evitar el uso de barra baja.
-
-AL llamar al servicio con el json creara un nuevo documento en BBDD.
-
-En el recurso /listas/\{userId\} mediante el verbo Get, al pasarle el id de usuario y un numero de canciones a coincidir, nos devuelve un listado en formato json con las listas de reproducción en las que el usuario tiene al menos el numero antes indicado de canciones en común con la lista.
-
-Por ultimo en este controlador hemos añadido un recurso /listas/batch su función es la misma que la de /listas pero en la entrada recibe una lista de listas de reproducción y las da de alta en BBDD.
-
-
-En el controlador de usuarios hemos creado el recurso /usuarios al que es posible acceder mediante el verbo Get y nos devuelve un json con todos los usuarios dados de alta en BBDD.
-
-Hemos creado otro recurso en /usuarios esta vez con verbo Put para crear un usuario con las canciones que ha escuchado en BBDD. El json de entrada sería el de la figura \ref{fig:jsonusuario}.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/jsonUsuario}
-	\caption{Json ejemplo usuario}
-	\label{fig:jsonusuario}
-\end{figure}
-
-
-Por ultimo hemos creado un recurso /usuarios/\{userId\} con verbo Get el cual al pasarle el id de usuario nos devuelve ese usuario con las canciones que ha escuchado.
 
 %----------
 %	BIBLIOGRAFÍA

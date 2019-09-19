@@ -5,55 +5,33 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Estructura arquitectura microservicios\relax }}{4}{figure.caption.6}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Estructura arquitectura microservicios\relax }}{6}{figure.caption.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Historia de los Web Frameworks\relax }}{8}{figure.caption.7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Historia de los Web Frameworks\relax }}{10}{figure.caption.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Arquitectura Monol\IeC {\'\i }tica frente Microservicios\relax }}{13}{figure.caption.8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Arquitectura Monol\IeC {\'\i }tica frente Microservicios\relax }}{15}{figure.caption.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Eficiencia microservicios frente SOA\relax }}{14}{figure.caption.9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Eficiencia microservicios frente SOA\relax }}{16}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Ejemplo de arquitectura monolitica(SOA)\relax }}{15}{figure.caption.10}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ejemplo de arquitectura monolitica(SOA)\relax }}{17}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Ejemplo arquitectura microservicios\relax }}{16}{figure.caption.11}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces API en swagger\relax }}{18}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Ejemplo arquitectura microservicios\relax }}{18}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Ejemplo configuraci\IeC {\'o}n arquetipo\relax }}{20}{figure.caption.13}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Dependencias Swagger necesarias\relax }}{20}{figure.caption.14}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Dependencias Swagger necesarias\relax }}{20}{figure.caption.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Clase configuraci\IeC {\'o}n Swagger\relax }}{20}{figure.caption.15}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Clase configuraci\IeC {\'o}n Swagger\relax }}{21}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Clase de configuraci\IeC {\'o}n MongoDB\relax }}{21}{figure.caption.16}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Clase de configuraci\IeC {\'o}n MongoDB\relax }}{21}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Estructura microservicio\relax }}{22}{figure.caption.17}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Estructura microservicio\relax }}{22}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Configuraci\IeC {\'o}n compilaci\IeC {\'o}n mediante Maven\relax }}{30}{figure.caption.21}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Configuraci\IeC {\'o}n JRE proyecto\relax }}{30}{figure.caption.22}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Configuraci\IeC {\'o}n Run despliegue\relax }}{30}{figure.caption.23}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Recursos disponibles dentro del controller Listas\relax }}{31}{figure.caption.24}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Recursos disponibles dentro del controller Usuarios\relax }}{32}{figure.caption.25}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Json ejemplo lista reproducci\IeC {\'o}n\relax }}{32}{figure.caption.26}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Json ejemplo usuario\relax }}{32}{figure.caption.27}
 \contentsfinish 
