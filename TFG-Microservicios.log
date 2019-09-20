@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  19 SEP 2019 21:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  20 SEP 2019 20:49
 entering extended mode
 **./TFG-Microservicios.tex
 (TFG-Microservicios.tex
@@ -1209,27 +1209,27 @@ LaTeX Info: Redefining \% on input line 2.
 LaTeX Info: Redefining \sptext on input line 2.
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 8.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 6.
 
 ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\ot1txr.fd"
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 8.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 6.
  ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\utxsya.fd
 "
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 8.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 6.
 
 ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\utxsyb.fd"
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 8.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 6.
  ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\utxmia.fd
 "
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 8.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 6.
 
 ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\utxsyc.fd"
 File: utxsyc.fd 2000/12/15 v3.1
@@ -1255,127 +1255,31 @@ Cap\'{\i }tulo 1.
 
 
 ] [2] [3] [4]
-Cap\'{\i }tulo 2.
-<imagenes/monolithic-vs-microservices.png, id=374, 481.8pt x 405.01312pt>
-File: imagenes/monolithic-vs-microservices.png Graphic file (type png)
-<use imagenes/monolithic-vs-microservices.png>
-Package pdftex.def Info: imagenes/monolithic-vs-microservices.png  used on inpu
-t line 481.
-(pdftex.def)             Requested size: 298.75264pt x 251.14261pt.
-[5
-
-]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 496.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 503.
 
 
 ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\omstxr.fd"
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 496.
- [6 <./imagenes/monolithic-vs-microservices.png>] [7] [8]
-<imagenes/the-future-of-web-frameworks-11-728.jpg, id=400, 730.73pt x 548.0475p
-t>
-File: imagenes/the-future-of-web-frameworks-11-728.jpg Graphic file (type jpg)
-<use imagenes/the-future-of-web-frameworks-11-728.jpg>
-Package pdftex.def Info: imagenes/the-future-of-web-frameworks-11-728.jpg  used
- on input line 562.
-(pdftex.def)             Requested size: 298.75264pt x 224.06537pt.
- [9] [10 <./imagenes/the-future-of-web-frameworks-11-728.jpg>] [11] [12] [13] [
-14]
-<imagenes/soavsmicroservicios.png, id=435, 455.45157pt x 310.91156pt>
-File: imagenes/soavsmicroservicios.png Graphic file (type png)
-<use imagenes/soavsmicroservicios.png>
-Package pdftex.def Info: imagenes/soavsmicroservicios.png  used on input line 6
-83.
-(pdftex.def)             Requested size: 298.75264pt x 203.94505pt.
- [15 <./imagenes/soavsmicroservicios.png>]
-<imagenes/desarrolloMonovsMicro.png, id=446, 216.81pt x 164.86594pt>
-File: imagenes/desarrolloMonovsMicro.png Graphic file (type png)
-<use imagenes/desarrolloMonovsMicro.png>
-Package pdftex.def Info: imagenes/desarrolloMonovsMicro.png  used on input line
- 705.
-(pdftex.def)             Requested size: 298.75264pt x 227.20578pt.
- [16 <./imagenes/desarrolloMonovsMicro.png (PNG copy)>]
-<imagenes/monolithic.png, id=453, 499.8675pt x 372.39125pt>
-File: imagenes/monolithic.png Graphic file (type png)
-<use imagenes/monolithic.png>
-Package pdftex.def Info: imagenes/monolithic.png  used on input line 731.
-(pdftex.def)             Requested size: 298.75264pt x 222.57277pt.
-<imagenes/microservices.png, id=454, 398.48875pt x 332.24126pt>
-File: imagenes/microservices.png Graphic file (type png)
-<use imagenes/microservices.png>
-Package pdftex.def Info: imagenes/microservices.png  used on input line 737.
-(pdftex.def)             Requested size: 298.75264pt x 249.09413pt.
-[17 <./imagenes/monolithic.png>] [18 <./imagenes/microservices.png>]
-Cap\'{\i }tulo 3.
-[19
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 503.
+ [5] [6] [7] [8]
+Cap\'{\i }tulo 2.
+[9
 
 ]
-Cap\'{\i }tulo 4.
-
-LaTeX Warning: Reference `fig:arquetipo' on page 20 undefined on input line 769
-.
-
-<imagenes/dependenciasSwagger.png, id=470, 298.86656pt x 171.64125pt>
-File: imagenes/dependenciasSwagger.png Graphic file (type png)
-<use imagenes/dependenciasSwagger.png>
-Package pdftex.def Info: imagenes/dependenciasSwagger.png  used on input line 7
-75.
-(pdftex.def)             Requested size: 298.75264pt x 171.58842pt.
-
-LaTeX Warning: Reference `fig:capturaswagger' on page 20 undefined on input lin
-e 780.
-
-<imagenes/cofingSwagger.png, id=473, 418.56375pt x 276.28218pt>
-File: imagenes/cofingSwagger.png Graphic file (type png)
-<use imagenes/cofingSwagger.png>
-Package pdftex.def Info: imagenes/cofingSwagger.png  used on input line 786.
-(pdftex.def)             Requested size: 298.75264pt x 197.19456pt.
-[20
-
- <./imagenes/dependenciasSwagger.png>]
-<imagenes/configMongo.png, id=480, 558.58687pt x 296.60812pt>
-File: imagenes/configMongo.png Graphic file (type png)
-<use imagenes/configMongo.png>
-Package pdftex.def Info: imagenes/configMongo.png  used on input line 800.
-(pdftex.def)             Requested size: 298.75264pt x 158.64078pt.
-<imagenes/estructuramicroservicio.png, id=481, 250.68657pt x 598.48593pt>
-File: imagenes/estructuramicroservicio.png Graphic file (type png)
-<use imagenes/estructuramicroservicio.png>
-Package pdftex.def Info: imagenes/estructuramicroservicio.png  used on input li
-ne 808.
-(pdftex.def)             Requested size: 298.75264pt x 713.32123pt.
-
-
-LaTeX Warning: Float too large for page by 36.17805pt on input line 811.
-
-[21 <./imagenes/cofingSwagger.png> <./imagenes/configMongo.png>] [22 <./imagene
-s/estructuramicroservicio.png>] [23]
-Cap\'{\i }tulo 5.
-[24
-
-]
-Cap\'{\i }tulo 6.
-[25
-
-]
-Cap\'{\i }tulo 7.
-[26
-
-]
-Package csquotes Info: Disabling multilingual quotes on input line 887.
+Package csquotes Info: Disabling multilingual quotes on input line 634.
 
 
 Package csquotes Warning: Quote style 'british/english' not defined.
-(csquotes)                Ignoring command on input line 887.
+(csquotes)                Ignoring command on input line 634.
 
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 888.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 635.
 
 ("C:\Users\Jesus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
 File: t1txtt.fd 2000/12/15 v3.1
 )
-Overfull \hbox (6.26534pt too wide) in paragraph at lines 889--889
+Overfull \hbox (6.26534pt too wide) in paragraph at lines 636--636
 []\T1/txr/m/n/12 S. New-man, \T1/txr/m/it/12 Buil-ding Mi-cro-ser-vi-ces: De-si
 g-ning Fine-Grained Sys-tems\T1/txr/m/n/12 , 1st. O'Reilly
  []
@@ -1388,53 +1292,115 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 187.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 903.
-[27
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 650.
+[10
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 903.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 650.
  (TFG-Microservicios.aux
 LaTeX Info: Redefining \sptext on input line 30.
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 903.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 903.
-Package rerunfilecheck Info: File `TFG-Microservicios.out' has not changed.
-(rerunfilecheck)             Checksum: 20E190788F55790ABD4C124716EEBD61;2789.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 650.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 650.
 
+
+Package rerunfilecheck Warning: File `TFG-Microservicios.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `TFG-Microservicios.out':
+(rerunfilecheck)             Before: 8A41176E6E77CB8242B861A2F823934F;2827
+(rerunfilecheck)             After:  BCF449C6169B2197552021DE5E914792;2129.
 
 LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                TFG-Microservicios
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'TFG-Microservicios.run.xml'.
 \openout1 = `TFG-Microservicios.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 903.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 650.
  ) 
 Here is how much of TeX's memory you used:
- 25225 strings out of 492970
- 394488 string characters out of 3126593
+ 25127 strings out of 492970
+ 392277 string characters out of 3126593
  666219 words of memory out of 3000000
- 28637 multiletter control sequences out of 15000+200000
- 64156 words of font info for 92 fonts, out of 3000000 for 9000
+ 28574 multiletter control sequences out of 15000+200000
+ 58214 words of font info for 86 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,12n,48p,959b,3820s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
-}<C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/txfonts/r
-txr.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/tx
-fonts/rtxsc.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/txfonts/t1xtt.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/txfonts/txsy.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Jesus/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jesus/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jesus/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jesus/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Jesus/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TFG-Microservicios.pdf (40 pages, 542536 bytes).
+pdfTeX warning (dest): name{figure.caption.13} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.12} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.11} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.10} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.9} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.8} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.7} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.6} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.6.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.6} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{section.5.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.5.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.5} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.4} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.3} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.1.12.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.1.12} has been referenced but does not exis
+t, replaced by a fixed one
+
+{C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<
+C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/txfonts/rtx
+r.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/txfo
+nts/rtxsc.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/txfonts/t1xtt.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/txfonts/txsy.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Jesus/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jesus/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jesus/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jesus/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Jesus/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on TFG-Microservicios.pdf (23 pages, 216042 bytes).
 PDF statistics:
- 607 PDF objects out of 1000 (max. 8388607)
- 102 named destinations out of 1000 (max. 500000)
- 361 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 490 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
+ 311 words of extra memory for PDF output out of 10000 (max. 10000000)
 

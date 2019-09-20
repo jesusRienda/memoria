@@ -29,47 +29,29 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.7.1}Trabajos futuros}{3}{subsection.1.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Estado del arte}{5}{chapter.2}
+\contentsline {section}{\numberline {1.8}Estado del arte}{4}{section.1.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Patrones de dise\IeC {\~n}o}{6}{section.2.1}
+\contentsline {subsection}{\numberline {1.8.1}Patrones de dise\IeC {\~n}o}{4}{subsection.1.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Patrones de arquitectura}{8}{section.2.2}
+\contentsline {subsection}{\numberline {1.8.2}Patrones de arquitectura}{5}{subsection.1.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Frameworks}{9}{section.2.3}
+\contentsline {section}{\numberline {1.9}Frameworks}{6}{section.1.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Frameworks de java para microservicios}{10}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {1.9.1}Frameworks de java para microservicios}{6}{subsection.1.9.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Bases de datos}{11}{section.2.4}
+\contentsline {section}{\numberline {1.10}Bases de datos}{6}{section.1.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Pros y contras bases de datos relacionales}{12}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {1.10.1}Pros y contras bases de datos relacionales}{7}{subsection.1.10.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}Pros y contras bases de datos no relacionales}{12}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {1.10.2}Pros y contras bases de datos no relacionales}{7}{subsection.1.10.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Microservicios}{13}{section.2.5}
+\contentsline {section}{\numberline {1.11}Microservicios}{8}{section.1.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.1}Pros y contras de los microservicios}{13}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {1.11.1}Pros y contras de los microservicios}{8}{subsection.1.11.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}Ejemplos de empresas que utilizan microservicios}{14}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {1.11.2}Ejemplos de empresas que utilizan microservicios}{8}{subsection.1.11.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Comparaci\IeC {\'o}n de SOA con Microservicios}{15}{section.2.6}
+\contentsline {chapter}{\numberline {2}Desarrollo de la aplicaci\IeC {\'o}n}{9}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.1}Ejemplo de visi\IeC {\'o}n monol\IeC {\'\i }tica vs visi\IeC {\'o}n de microservicio}{17}{subsection.2.6.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Justificaci\IeC {\'o}n de la soluci\IeC {\'o}n}{19}{chapter.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Desarrollo de la aplicaci\IeC {\'o}n}{20}{chapter.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Marco regulador}{24}{chapter.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Entorno socio-econ\IeC {\'o}mico}{25}{chapter.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Presupuesto}{25}{section.6.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Impacto socio-econ\IeC {\'o}mico}{25}{section.6.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusiones}{26}{chapter.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Trabajos futuros}{26}{section.7.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{27}{section.7.1}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{10}{chapter.2}
 \contentsfinish 
