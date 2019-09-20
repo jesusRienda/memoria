@@ -253,7 +253,7 @@ hmargin=3cm
 			\vspace*{1cm}
 		\begin{Large}
 			Tutor/es\\
-			Carmen Pelaez Moreno\\
+			Carmen Peláez Moreno\\
 			Leganés, 2019\\
 		\end{Large}
 	\end{center}
@@ -277,11 +277,11 @@ hmargin=3cm
 \thispagestyle{plain}
 \setcounter{page}{3}
 	
-	En este trabajo fin de grado se ha realizado un estudio sobre las posibilidades existentes en el desarrollo de aplicaciones web. Desde el desarrollo partiendo de cero hasta el uso de software de terceros como son los framework para facilitar el desarrollo y centrarse en la funcionalidad.
+	En este trabajo fin de grado se ha realizado un estudio sobre las posibilidades existentes en el desarrollo de aplicaciones web, desde el diseño partiendo de cero hasta el uso de software de terceros como son los frameworks que facilitan el desarrollo y se centran en la funcionalidad.
 	
-	Para el correcto diseño de nuestra arquitectura ha sido necesario descomponer e investigar cada integrante de esta. Por una parte se ha investigado sobre los patrones de diseño existentes y sus funcionalidades, también sobre tipos de arquitecturas, framework y ademas sobre las bases de datos.
+	Para el correcto diseño de nuestra arquitectura ha sido necesario descomponer e investigar cada integrante de esta. Por una parte se ha investigado sobre los patrones de diseño existentes y sus funcionalidades, también sobre tipos de arquitecturas, framework y además sobre las bases de datos.
 	
-	Para afianzar todo lo desarrollado en este trabajo se ha implementado un microservicio basado en listas de reproducción de Spotify. Utilizando para ello las ultimas tecnologías de desarrollo como Spring Boot, Spring Data y una base de datos muy potente como MongoDB. Este microservicio hace de intermediario con la base de datos, filtrando por ejemplo las listas de reproducción que contienen canciones que ha escuchado un usuario.
+	Para afianzar todo lo desarrollado en este trabajo se ha implementado un microservicio basado en listas de reproducción de Spotify, utilizando para ello las ultimas tecnologías de desarrollo como Spring Boot, Spring Data y una base de datos muy potente como MongoDB. Este microservicio hace de intermediario con la base de datos filtrando, por ejemplo, las listas de reproducción que contienen canciones que ha escuchado un usuario.
 	
 	\textbf{Palabras clave:}
 	Microservicio, aplicaciones web, SOA, API, Swagger, MongoDb, Lombok, Spring Boot
@@ -353,62 +353,61 @@ hmargin=3cm
 \chapter{Introducción}
 
 	% COMENZAR A ESCRIBIR EL TRABAJO
-	El mundo de la tecnología se basa en tendencias, hoy en día los microservicios están de moda, gracias a grandes compañías como Amazon, Ebay, Twitter, Paypal, Netflix, etc. Pero realmente es una tecnología que ha surgido gracias a la aparición de la nube(cloud) donde todas estas empresas se están llevando sus software
+	El mundo de la tecnología se basa en tendencias, hoy en día los microservicios están de moda gracias a grandes compañías como Amazon, Ebay, Twitter, Paypal, Netflix, pero realmente ha surgido debido a la aparición de la nube(cloud) donde todas estas empresas se están llevando sus software.
 	
-	En la nube no necesitas servidores físicos, con el mantenimiento y la inversión que esto supone, sino que solo pagas por los recursos que necesitas en cada momento. Esto es una gran revolución para la informática, te permite gestionar los picos de actividad sin perder servicio.
+	En la nube no se necesitan servidores físicos con el mantenimiento y la inversión que esto supone, sino que solo se paga por los recursos que se necesitan en cada momento. Esto ha sido una gran revolución para la informática, ya que te permite gestionar los picos de actividad sin perder servicio.
 	
 	
 	\section{Planteamiento del problema}
-	Contamos con datos reales sobre listas de reproducción de Spotify en formato json los cuales contienen información de cada lista y las canciones que contiene.
+	Contamos con datos reales sobre listas de reproducción de Spotify en formato json, estos contienen información de cada una de las listas y de las canciones que contiene.
 	Por otra parte tenemos datos de usuarios con las canciones que escuchan.
 
 	Necesitamos almacenar estos datos en una base de datos para posteriormente consultarla, actualizarla o crear nuevos registros. 
-	Podríamos actuar directamente sobre la base de datos pero no seria admisible para un usuario final. 
-	Por tanto tendremos que crear un programa el cual haga las consultas a la bbdd y devuelva los datos validados en un formato optimo para mostrarlos por pantalla.
-	Para ello Por lo que necesitamos crear un programa que al invocar nos devuelva los datos almacenados con un tratamiento especifico y un formato definido. Necesitamos que sea sencillo y simple para el cliente que va a consumir dicho servicio. 
-	Por ejemplo uno de los tratamiento necesarios sería filtrar las listas en función de las canciones que escuche cada usuario, si ha escuchado mas de 3 canciones de una lista, deberíamos devolverla.
+	Podríamos actuar directamente sobre la base de datos pero no seria admisible para un usuario final, ya que este no tiene por qué tener conocimientos técnicos sobre el lenguaje de gestión de la base de datos.
+	Por tanto tendremos que crear un programa que haga las consultas a la base de datos y devuelva los datos validados en un formato óptimo para mostrarlos por pantalla. Al invocarlo, nos devolverá los datos almacenados con un tratamiento específico y un formato definido. Necesitamos que sea sencillo y simple para el cliente que va a consumir dicho servicio. 
+	Por ejemplo uno de los tratamientos necesarios sería filtrar las listas en función de las canciones que escuche cada usuario, si ha escuchado más de 3 canciones de una lista, deberíamos devolver dicha lista.
 		
-	Este programa tendrá que tener una alta disponibilidad y escalarse cuando sea necesario para siempre tener unos tiempos de respuesta bajos. Ya que existe una gran cantidad de personas que van a consumir el programa al mismo tiempo coincidiendo con el lanzamiento de nuevas listas.
+	Este programa tendrá que tener una alta disponibilidad y escalarse cuando sea necesario para siempre tener unos tiempos de respuesta bajos, ya que existe la posibilidad de que gran cantidad de personas consuman el programa al mismo tiempo coincidiendo con el lanzamiento de nuevas listas.
 	
 	\section{Objetivos}
 		
-	Diseñar una arquitectura de software adecuada para el problema, que sea capaz de soportar una gran cantidad de peticiones simultaneas sin dejar sin servicio a nadie.
+	Diseñar una arquitectura de software adecuada para el problema que sea capaz de soportar una gran cantidad de peticiones simultaneas sin dejar de dar servicio a nadie.
 	
 	Crear y rellenar una base datos con los ficheros de listas con los que contamos.
 	
-	Implementar un microservicio que al pasarle un usuario y un numero de canciones a coincidir devuelva las listas de reproducción que contengan al menos el numero de canciones que coincidan con las escuchadas por el usuario.
+	Implementar un microservicio que al enviarle un usuario y un número de canciones a coincidir, devuelva las listas de reproducción que contengan, al menos, el número de canciones que coincidan con las escuchadas por el usuario.
 	
 	
 	\section{Solución propuesta}
 	Como solución a nuestro problema vamos a diseñar una arquitectura de microservicios.
-	Para ello implementamos un microservicio el cual, se va a desarrollar con java mediante el framework Spring Boot.
-	La BBDD estará almacenada en Azure y sera CosmosDB
+	Para ello implementamos un microservicio que se va a desarrollar con java mediante el framework Spring Boot.
+	La base de datos estará almacenada en Azure y será CosmosDB.
 	Para llamar al microservicio creado utilizaremos Swagger.
 	
 	\section{Estructura trabajo}
 	Este trabajo está estructurado de la siguiente forma:
 	
 	\begin{itemize}
-		\item \textbf{Capítulo 1: Introducción.} En este capítulo se explica el problema, los objetivos del trabajo y la solución propuesta.
+		\item \textbf{Capítulo 1: Introducción.} En este capítulo se explica el problema al que nos enfrentamos, los objetivos que tiene que cumplir el trabajo y la solución propuesta a dicho problema.
 		\item  \textbf{Capítulo 2: Estado del arte.}  En este capítulo se analiza el estado a día de hoy del diseño de aplicaciones desde cero y en profundidad de microservicios.
-		\item  \textbf{Capítulo 3: Justificación de la solución.} Según lo visto en el capítulo anterior analizamos que es lo que más nos conviene para nuestros requerimientos.
-		\item  \textbf{Capítulo 4: Desarrollo de la aplicación.} Explicación desde cero de como crear y desarrollar el microservicio. 
-		\item  \textbf{Capítulo 5: Implantación de la aplicación.} Pasos a seguir para poder implantar la aplicación en un entorno empresarial.
-		\item  \textbf{Capítulo 6: Marco regulador.} Regulación existente en el ámbito de los microservicios.
-		\item  \textbf{Capítulo 7: Entorno socio-económico.} En este punto se muestra el coste total que tendría el proyecto y el impacto que tiene.
-		\item  \textbf{Capítulo 8: Conclusiones.} Aquí describimos las conclusiones sacadas a raíz de la realización del trabajo y las posibles tareas a realizar en un futuro.
-		\item  \textbf{Anexo I: Despliegue de la aplicación} En este anexo se realiza un tutorial para desplegar nuestra aplicación en local.
-		\item  \textbf{Anexo II: Descripción API microservicio} En este anexo se detallan los recursos y servicios creados en nuestra aplicación.
+		\item  \textbf{Capítulo 3: Justificación de la solución.} En este capítulo se analiza que es lo que más conveniente para nuestros requerimientos según lo estudiado en los capítulos anteriores.
+		\item  \textbf{Capítulo 4: Desarrollo de la aplicación.} En este capítulo explicamos desde cero como ha sido desarrollado el microservicio, detallando los programas y configuraciones que se han utilizado durante el proceso. 
+		\item  \textbf{Capítulo 5: Descripción API microservicio} En este capítulo se detallan los recursos y servicios que hemos creado en nuestra aplicación.
+		\item  \textbf{Capítulo 6: Despliegue de la aplicación} En este capítulo vamos a explicar mediante un tutorial como desplegar nuestra aplicación en local.
+		\item  \textbf{Capítulo 7: Marco regulador.} En este capítulo detallamos la regulación existente en el ámbito de los microservicios, mencionando las leyes a cumplir en casos específicos.
+		\item  \textbf{Capítulo 8: Entorno socio-económico.} En este capítulo recreamos el coste total que tendría el proyecto y el impacto que este supondría para la sociedad.
+		\item  \textbf{Capítulo 9: Conclusiones.} En este capítulo describimos las conclusiones sacadas a raíz de la realización del trabajo y las posibles tareas a realizar en un futuro.
+
 	\end{itemize}
 
 	\chapter{Estado del arte}
 
-	En la década de los 60 surgió lo que a día de hoy conocemos como arquitectura de software, esta fue tomando cada vez mas interés hasta que en la década de 1980 se integro totalmente el diseño en el desarrollo de software. 
+	En la década de los 60 surgió lo que a día de hoy conocemos como arquitectura de software, esta fue tomando cada vez más interés hasta que en la década de 1980 se integró totalmente el diseño en el desarrollo de software. 
 	
 	El Instituto de Ingeniera de Software la define como:
-	"La arquitectura de software es una representación del sistema que ayuda a comprender cómo se comportará un programa. 
+	"La arquitectura de software es una representación del sistema que ayuda a comprender cómo se comportará un programa."
 	
-	La arquitectura del software sirve como modelo tanto para el sistema como para el proyecto que lo desarrolla. La arquitectura es la principal portadora de cualidades del sistema, como el rendimiento, la modificabilidad y la seguridad, ninguna de las cuales se puede lograr sin una visión arquitectónica unificadora. La arquitectura es un artefacto para el análisis temprano para asegurar que un enfoque de diseño proporcionará un sistema aceptable. Al construir una arquitectura efectiva, puede identificar los riesgos de diseño y mitigarlos al inicio del proceso de desarrollo."\cite{SoftwareEngineeringInstitute}. 
+	La arquitectura de software sirve como modelo tanto para el sistema como para el proyecto que lo desarrolla. La arquitectura es la principal portadora de cualidades del sistema, como el rendimiento, la modificabilidad y la seguridad, ninguna de las cuales se puede lograr sin una visión arquitectónica unificadora. La arquitectura es un artefacto para el análisis temprano para asegurar que un enfoque de diseño proporcionará un sistema aceptable. Al construir una arquitectura efectiva, puede identificar los riesgos de diseño y mitigarlos al inicio del proceso de desarrollo."\cite{SoftwareEngineeringInstitute}. 
 	
 	El sistema se divide en elementos de software también llamados módulos, con propiedades y relaciones existentes entre ellos. Las propiedades de estos elementos pueden ser de dos tipos, internas y externas.
 	
@@ -422,7 +421,7 @@ hmargin=3cm
 	
 	Las \textbf{propiedades externas} son los contratos que existen entre módulos y que permiten a otros módulos establecer dependencias/conexiones entre ellos. Es de vital importancia que las interfaces que definen los contratos estén bien definidas para la perfecta integración de los elementos.
 	
-	Es necesario dividir los requerimientos con los que va a contar el sistema en módulos y definir sus propiedades y como se relacionan entre si. Por ejemplo en la figura \ref{fig:microservices} podemos ver la estructura de un sistema basado en microservicios donde aparecen bases de datos, que serian un modulo donde habría que definir sus propiedades, tablas, colecciones de datos, etc; para cada microservicio habría que definir un API(Interfaz de programación de aplicaciones) en el que se indique la entrada y salida del modulo, el lenguaje en el que se va a desarrollar...; por ultimo tendríamos un módulo de presentación UI(Interfaz de usuario).
+	Es necesario dividir los requerimientos con los que va a contar el sistema en módulos y definir sus propiedades y como se relacionan entre sí. Por ejemplo en la figura \ref{fig:microservices} podemos ver la estructura de un sistema basado en microservicios donde aparecen bases de datos, que serian un módulo donde habría que definir sus propiedades, tablas, colecciones de datos, etc; para cada microservicio habría que definir un API en el que se indique la entrada y salida del modulo, el lenguaje en el que se va a desarrollar...; por ultimo tendríamos un módulo de presentación UI(Interfaz de usuario).
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/monolithic-vs-microservices}
@@ -431,28 +430,28 @@ hmargin=3cm
 	\end{figure}
 
 	\section{Patrones de diseño}
-	 En el momento de diseño de una arquitectura existen dos formas de actuar, diseñar una arquitectura desde cero o buscar soluciones ya propuestas a nuestro problema. Si elegimos la segunda opción existen patrones de diseño, patrones arquitectónicos y frameworks.
+	 En el momento de diseñar una arquitectura existen dos formas de actuar, diseñar una arquitectura desde cero o buscar soluciones ya propuestas a nuestro problema. Si elegimos la segunda opción existen patrones de diseño, patrones arquitectónicos y frameworks.
 	 
-	 Los patrones son una forma reutilizable de resolver problemas comunes. Los primeros definidos en arquitectura civil se encuentran en el libro "A pattern language" \cite{PatternLanguage}, en él se describen los patrones con un nombre, de tal manera que con hacer referencia a este, cualquier arquitecto será capaz de entender que solución se está usando sin tener que entrar en detalles. Sin embargo en la arquitectura de software no aparecieron hasta 1994 en un libro que a día de hoy sigue siendo un modelo de referencia\cite{gamma2002patrones}.
+	 Los patrones son una forma reutilizable de resolver problemas comunes. Los primeros definidos en arquitectura civil se encuentran en el libro “A pattern language” \cite{PatternLanguage}, en él se describen los patrones con un nombre, de tal manera que con hacer referencia a este, cualquier arquitecto será capaz de entender que solución se está usando sin tener que entrar en detalles. Sin embargo en la arquitectura de software no aparecieron hasta 1994 en un libro que a día de hoy sigue siendo un modelo de referencia\cite{gamma2002patrones}.
 	 
 	 Los patrones definidos en el libro \cite{gamma2002patrones} se dividen en función del problema a resolver:
 	 
 	 \begin{itemize}
-	 	\item Patrones creacionales: estos son los utilizados para facilitar la creación de nuevos objetos. Los más conocidos son:	 	
+	 	\item Patrones creacionales: éstos son los utilizados para facilitar la creación de nuevos objetos. Los más conocidos son:	 	
 	 	\begin{itemize}
 	 		\item Abstract Factory: Contiene una interfaz que otorga la creación de objetos relacionados, sin tener que especificar cuáles son las implementaciones concretas.
 	 		\item Factory Method: Contiene un método de creación que delega en las subclases la implementación de dicho método.
 	 		\item Builder: Con un mismo proceso de construcción nos sirve para crear diferentes representaciones, separando la creación de un objeto complejo de su estructura.
-	 		\item Singleton: Solo se permite la creación de una instancia de una clase en nuestro programa y se proporciona un acceso global a el.
-	 		\item Prototype: Un objeto se crea a partir de la clonación de otro objeto, es decir se crea basandose en unas "plantillas"
+	 		\item Singleton: Solo se permite la creación de una instancia de una clase en nuestro programa y se proporciona un acceso global a él.
+	 		\item Prototype: Un objeto se crea a partir de la clonación de otro objeto, es decir, se crea basándose en unas plantillas.
 	 	\end{itemize}
- 	\item Patrones estructurales: estos nos facilitan la modelización de nuestro software, definiendo la forma en que las clases se relacionan entre si. Los más conocidos son:
+ 	\item Patrones estructurales: éstos nos facilitan la modelización de nuestro software, definiendo la forma en que las clases se relacionan entre sí. Los más conocidos son:
  	\begin{itemize}
  		\item Adapter: Mediante un objeto intermedio, se pueden comunicar dos clases con distinta interfaz. 
- 		\item Bridge: Se crea un puente entre la abtracción y la implementación, para puedan evolucionar independientemente.
- 		\item Composite: Sirve para crear objetos contenidos en un arbol, donde todos los elementos emplean una misma interfaz.
+ 		\item Bridge: Se crea un puente entre la abstracción y la implementación, para que puedan evolucionar independientemente.
+ 		\item Composite: Sirve para crear objetos contenidos en un árbol donde todos los elementos emplean una misma interfaz.
  		\item Decorator: Se añade funcionalidad extra a un objeto (de forma dinámica o estática) sin cambiar su comportamiento.
- 		\item Facade: Objeto que crea una interfaz para poder trabajar con otra parte más compleja. Un ejemplo podría ser crear una fachada para trabajar con una librería externa.
+ 		\item Facade: Objeto que crea una interfaz para poder trabajar con otra parte más compleja. Un ejemplo podría ser: crear una fachada para trabajar con una librería externa.
  		\item Flyweight: Para ahorrar memoria, gran cantidad de objetos comparten un objeto con las mismas propiedades.
  		\item Proxy: Clase que funciona como interfaz destinada a cualquier otra cosa: conexión a Internet, archivo en disco, etc.
  	\end{itemize}
@@ -460,7 +459,7 @@ hmargin=3cm
  	\begin{itemize}
  		\item Command: Objetos que necesitan para ejecutarse, contener una acción y sus parámetros. 
  		\item Chain of responsibility: Permite pasar solicitudes a lo largo de una cadena de receptores. Al recibir una solicitud, cada controlador decide procesar la solicitud o pasarla al siguiente de la cadena.
- 		\item Interpreter: Define una representación y el mecanismo para poder evaluar una gramática. El árbol de sintaxis del lenguaje se modela mediante el patrón \textbf{Composite}.
+ 		\item Interpreter: Define una representación y el mecanismo para poder evaluar una gramática. El árbol de sintaxis del lenguaje se modela mediante el patrón Composite.
  		\item Iterator: Nos permite movernos por los elementos de forma secuencial sin necesidad de conocer su implementación.
  		\item Mediator: Objeto que contiene un conjunto de objetos que interactúan y se comunican entre sí.
  		\item Memento: Permite restaurar un objeto a un estado anterior.
@@ -468,15 +467,15 @@ hmargin=3cm
  		\item State: Modifica el comportamiento de un objeto en el tiempo de ejecución.
  		\item Strategy: Selecciona el algoritmo que ejecuta ciertas acciones en tiempo de ejecución.
  		\item Template Method: Nos permite conocer la forma del algoritmo.
- 		\item Visitor: Separa el algoritmo de la estructura de datos que se utilizará a la hora de ejecutarlo. Por lo que se pueden añadir nuevas opciones sin tener que ser modificadas.
+ 		\item Visitor: Separa el algoritmo de la estructura de datos que se utilizará a la hora de ejecutarlo, por lo que se pueden añadir nuevas opciones sin tener que ser modificadas.
  	\end{itemize}
 	 \end{itemize}
  \section{Patrones de arquitectura}
- Por otra parte tambien existen los patrones arquitectonicos o arquetipos, los cuales tienen un nivel superior de abstraccion(explicar). Estos al igual que los patrones de diseño, solucionan problemas recurrentes de una forma reutilizable.
+ Por otra parte también existen los patrones arquitectónicos o arquetipos, los cuales tienen un nivel superior de abstracción, es decir, no especifican cómo escribir el código, pero sí cómo debe estar organizado y que elementos son importantes en la aplicación. Estos al igual que los patrones de diseño, solucionan problemas recurrentes de una forma reutilizable.
  
- Los patrones de arquitectura mas usados son:
+ Los patrones de arquitectura más usados son:
  	\begin{itemize}
- 	\item Programación por capas: Se utiliza para estructurar programas que pueden descomponerse en subtareas. Normalmente cuenta con tres capas, en una de ellas se implementa la lógica de negocio, en otra los datos y en otra la presentación de los datos ya tratados. Es uno de los arquetipos mas usados a día de hoy.
+ 	\item Programación por capas: Utilizada para estructurar programas que pueden descomponerse en subtareas. Normalmente cuenta con tres capas, en una de ellas se implementa la lógica de negocio, en otra los datos y en otra la presentación de los datos ya tratados. Es uno de los arquetipos mas usados a día de hoy.
  	\item Cliente-servidor: Este patrón consta de dos partes: un servidor y múltiples clientes, el servidor será el que de servicio a diversos componentes del cliente y los clientes solicitarán servicio al servidor. En esta arquitectura se separan las capas en varias maquinas físicas, normalmente se utiliza 2 o 3 niveles. Si utilizáramos dos niveles tendríamos la capa de presentación en una maquina del cliente y el tratado de los datos con la base de datos en otra máquina. En la de 3 niveles se pondría cada capa en un servidor diferente con la mejora de escalabilidad.
  	\item Arquitectura orientada a servicios: Es la que da soporte a los requerimentos del negocio mediante la creación de servicios. Un servicio corresponde a un requerimento funcional del negocio, por ejemplo: 
  	Un cliente necesita saber el stock de un determinado producto, por lo que se crea un servicio que consulte en la base de datos la cantidad de producto disponible.
@@ -488,7 +487,7 @@ hmargin=3cm
  		\item \textbf{Fuente de conocimiento:} son módulos especializados. 
  		\item \textbf{Componente de control:} encargado de seleccionar y ejecutar los módulos.
  	\end{itemize}
- 	\item Arquitectura dirigida por eventos: Maneja principalmente los eventos y está formado por cuatro componentes que son: fuente de evento , escucha de evento , canal y bus de evento.
+ 	\item Arquitectura dirigida por eventos: Maneja principalmente los eventos y está formado por cuatro componentes que son: fuente de evento, escucha de evento , canal y bus de evento.
  	\item Peer-to-peer: Se llama pares a las componentes individuales y estos pueden funcionar como servidor, dando servicio a otros pares, o como cliente, pidiendo servicio a otros pares.
  	\item Modelo Vista Controlador: Divide un programa interactivo en tres partes:
  		\begin{itemize}
@@ -500,7 +499,7 @@ hmargin=3cm
  \end{itemize}
 
 \section{Frameworks}
- Otra opción para no tener que diseñar una arquitectura desde cero sería la utilización de frameworks. Estos son estructuras de software ya implementadas en las que un programador puede apoyarse para desarrollar un proyecto propio. Los frameworks están implementados y siguen tanto los patrones de sotfware como los patrones de arquitectura y suelen incluir ficheros de configuración, librerías, etc.
+ Otra opción para no tener que diseñar una arquitectura desde cero sería la utilización de frameworks. Estos son estructuras de software ya implementadas en las que un programador puede apoyarse para desarrollar un proyecto propio. Los frameworks están implementados y siguen tanto los patrones de software como los patrones de arquitectura y suelen incluir ficheros de configuración, librerías, etc.
  
  Existen frameworks para prácticamente todos los lenguajes de programación, con ellos solo se implementarían los requisitos funcionales del producto, eso sí, es importante valorar y elegir el framework que mejor se adapta al problema que vas a resolver.
  
@@ -515,23 +514,23 @@ hmargin=3cm
  
  Spring surgió en 2003 de la mano de Rod Johnson, la idea de este framework es agilizar y estandarizar la creación de proyectos de una misma arquitectura. 
  
- Struts nació en 2001 y está basado en la arquitectura MVC(Modelo vista controlador) el cual permite gracias a las anotaciones poder configurar este modelo. Posteriormente, en 2004, surgió Stripes con la misma arquitectura pero con la finalidad de ser más ligero y eficiente.
+ Struts nació en 2001 y está basado en la arquitectura Modelo vista controlador, el cual, permite gracias a las anotaciones poder configurar este modelo. Posteriormente, en 2004, surgió Stripes con la misma arquitectura pero con la finalidad de ser más ligero y eficiente.
  
  Existen framework de otros lenguajes de programación como por ejemplo Angular lanzado en septiembre de 2016. Está implementado en typescript y orientado al desarrollo del front-end de aplicaciones web. Este framework es propiedad de Google aunque es de código libre.
  
- React es otro framework para el desarrollo de front-end. Contiene una serie de librerias de javascript para construir las aplicaciones web mas fácilmente. Este es propiedad de Facebook.
+ React es otro framework para el desarrollo de front-end. Contiene una serie de librerias de javascript para construir las aplicaciones web mas fácilmente. Éste es propiedad de Facebook.
  
- Ionic surgió en 2013, siempre ha ido de la mano con Angular, desde AngularJs hasta las ultimas versiones del mismo. Ionic está diseñado para desarrollar aplicaciones híbridas, según este articulo de next-u \cite{AppHibridas} "Las aplicaciones híbridas son aplicaciones móviles diseñadas en un lenguaje de programación web (HTML5, CSS o JavaScript), junto con un framework (Cordova) que permite adaptar la vista web a cualquier vista de un dispositivo móvil. Es decir, no son más que una aplicación construida para ser utilizada o implementada en distintos sistemas operativos móviles evitándonos la tarea de crear una aplicación para cada sistema operativo."
+ Ionic surgió en 2013, siempre ha ido de la mano con Angular, desde AngularJs hasta las últimas versiones del mismo. Ionic está diseñado para desarrollar aplicaciones híbridas, según este artículo de next-u \cite{AppHibridas} “Las aplicaciones híbridas son aplicaciones móviles diseñadas en un lenguaje de programación web (HTML5, CSS o JavaScript), junto con un framework (Cordova) que permite adaptar la vista web a cualquier vista de un dispositivo móvil. Es decir, no son más que una aplicación construida para ser utilizada o implementada en distintos sistemas operativos móviles evitándonos la tarea de crear una aplicación para cada sistema operativo.”
  
  \subsection{Frameworks de java para microservicios}
- Por otra parte existen bastantes que se basan en java y ofrecen una arquitectura de microservicios, estan han surgido de las grandes empresas del sector como Oracle, Spring, Eclipse estos son:
+ Por otra parte existen bastantes frameworks que se basan en java y ofrecen una arquitectura de microservicios, éstos han surgido de las grandes empresas del sector como Oracle, Spring, Eclipse. Entre ellos encontramos:
 
  \begin{itemize}
- 	\item Spring Boot: Es una capa de personalización sobre el famoso framework Spring, la cual ofrece un arquetipo de un microservicio básico, ampliable fácilmente con poco desarrollo. Por ejemplo Gustavo Peiretti en el articulo \cite{StrategySpringBoot}, propone una implementación de un patrón strategy desarrollado con Spring Boot.
- 	\item Cricket: Es un framework para implementación de arquitectura dirigida por eventos. Contiene un servidor http incorporado, serialización de Java a json automática, gestión de usuarios y accesos, bases de datos integradas como h2 y un planificador de eventos. Con todo ello se puede construir una aplicación fácilmente.
+ 	\item Spring Boot: Es una capa de personalización sobre el famoso framework Spring, que ofrece un arquetipo de un microservicio básico, ampliable fácilmente con poco desarrollo. Por ejemplo Gustavo Peiretti en el articulo \cite{StrategySpringBoot}, propone una implementación de un patrón strategy desarrollado con Spring Boot.
+ 	\item Cricket: Es un framework para implementación de arquitectura dirigida por eventos. Contiene un servidor HTTP incorporado, serialización de Java a json automática, gestión de usuarios y accesos, bases de datos integradas como H2 y un planificador de eventos. Con todo ello se puede construir una aplicación fácilmente.
  	\item Dropwizard: Es un framework para arquitectura de microservicios por capas, para utilizar este solo es necesario importarlo en la aplicación y usar todas las librerias que este incluye.
  	\item Eclipse MicroProfile: En junio de 2018 consiguió cubrir todas las necesidades de la arquitectura. Cuenta al igual que Spring con una web donde obtener un arquetipo de la aplicación con las dependencias que se necesiten.
- 	\item Helidon: Es de las ultimas incorporaciones en la arquitectura. Pertenece a la compañía Oracle la cual lo utilizó internamente bajo el nombre "Java for Cloud" y que finalmente se ha liberado para todo el publico. 
+ 	\item Helidon: Es de las últimas incorporaciones en la arquitectura. Pertenece a la compañía Oracle que lo utilizó internamente bajo el nombre “Java for Cloud” y que finalmente se ha liberado para todo el público. 
  \end{itemize}
 	
 	\section{Bases de datos}
@@ -539,13 +538,13 @@ hmargin=3cm
 
 	Estas se pueden definir como un conjunto de información relacionada que se encuentra agrupada ó estructurada.
 	
-	El concepto de bases de datos ha estado siempre ligado a la informática, estas son sistemas formados por grupos de datos almacenados en discos, que permiten la consulta, modificación y borrado de los mismos. Se crearon para poder almacenar grandes cantidades de información. 
+	El concepto de bases de datos ha estado siempre ligado a la informática, éstas son sistemas formados por grupos de datos almacenados en discos, que permiten la consulta, modificación y borrado de los mismos. Se crearon para poder almacenar grandes cantidades de información. 
 	
 	En la década de los 70, Edgar Frank Codd, científico informático inglés conocido por sus participación en la teoría de bases de datos relacionales, definió el modelo relacional  a través de su artículo “Un modelo relacional de datos para grandes bancos de datos compartidos”\cite{RelationalModel}.
 	
 	Larry Ellison, basándose en el trabajo de Edgar F. Codd, creó el “Relational Software System” más conocido como Oracle Corporation, el sistema de gestión de bases de datos relacional más conocido actualmente.
 	
-	En la década de los 80 se desarrolló SQL (Structured Query Language) un lenguaje de acceso a bases de datos relacionales que permite realizar consultas y cambios de forma sencilla. En los 90 se actualizó SQL y se agregaron: expresiones regulares, consultas recursivas, triggers y algunas características orientadas a objetos.
+	En la década de los 80 se desarrolló SQL un lenguaje de acceso a bases de datos relacionales que permite realizar consultas y cambios de forma sencilla. En los 90 se actualizó SQL y se agregaron: expresiones regulares, consultas recursivas, disparadores y algunas características orientadas a objetos.
 	
 	En la actualidad, las tres grandes compañías que dominan el mercado de las bases de datos son IBM, Microsoft y Oracle. En el campo de internet, la compañía que más información genera es Google.
 	
@@ -563,9 +562,9 @@ hmargin=3cm
 	\end{itemize}
 	Inconvenientes:
 		 \begin{itemize}
-		\item Estas bases de datos tienden a crecer demasiado por lo que aumenta el tiempo de respuesta.
-		\item	Se tendrá que reestructurar la base de datos de una empresa debido a que esta realice algún cambio en sus sistemas informáticos.
-		\item 	No garantizan el buen funcionamiento si el sistema operativo donde se va a instalar no cumplen con los requerimientos mínimos.
+		\item Estas bases de datos tienden a crecer demasiado, por lo que aumenta el tiempo de respuesta.
+		\item Se tendrá que reestructurar la base de datos de una empresa debido a que ésta realice algún cambio en sus sistemas informáticos.
+		\item No garantizan el buen funcionamiento si el sistema operativo donde se va a instalar no cumplen con los requerimientos mínimos.
 	\end{itemize}
 
 	\subsection{Pros y contras bases de datos no relacionales}
@@ -574,30 +573,30 @@ hmargin=3cm
 		\item Adaptabilidad para crecimientos o cambios a la hora de almacenar la información, si se necesita un nuevo campo en la base, se agrega sobre el documento y el sistema sigue operando sin tener que añadir nuevas configuraciones.
 		\item Crecimiento horizontal. Si la actuación de los servidores disminuye durante la operación, existe la posibilidad de instalar nuevos nodos que distribuyen la carga de trabajo, de ahí, crecimiento horizontal.
 		\item No es necesario contar con servidores con gran cantidad de recursos disponibles para realizar operaciones, si no que pueden empezar con un número de recursos limitado y dependiendo de las necesidades ir creciendo sin tener que detener las operaciones.
-		\item Cuenta con un algoritmo interno que reformule las consultas de los usuarios o de las aplicaciones programadas para no sobrecargar a los servidores.
+		\item Cuenta con un algoritmo interno que reformula las consultas de los usuarios o de las aplicaciones programadas para no sobrecargar a los servidores.
 	\end{itemize}
 	Inconvenientes:
 	\begin{itemize}
 		\item Como no nos garantiza que si la operación falla se complete la información, esta en ocasiones es inconsistente.
-		\item	Dado que es un modelo bastante nuevo, se necesitan conocimientos elevados en el uso de esta herramienta, ya que las operaciones son limitadas.
-		\item 	No tiene un estándar de lenguaje definido.
-		\item 	No contiene una interfaz gráfica por lo que es necesario hacer todo mediante consola.
+		\item Dado que es un modelo bastante nuevo, se necesitan conocimientos elevados en el uso de esta herramienta, ya que las operaciones son limitadas.
+		\item No tiene un estándar de lenguaje definido.
+		\item No contiene una interfaz gráfica por lo que es necesario hacer todo mediante consola.
 	\end{itemize}
 
 \section{Microservicios}
 
-Una “arquitectura de microservicios” es útil para desarrollar una aplicación software dividiéndola en una serie de pequeños servicios, los cuales se ejecutan de forma independiente y se comunican entre sí, por ejemplo, a través de peticiones HTTP a sus API.
+Una arquitectura de microservicios es útil para desarrollar una aplicación software dividiéndola en una serie de pequeños servicios, los cuales se ejecutan de forma independiente y se comunican entre sí, por ejemplo, a través de peticiones HTTP a sus API.
 
 Tiene que haber un número mínimo de servicios encargados de gestionar los procesos en común. Cada microservicio es pequeño y se corresponde con un área de la aplicación. Cada uno es independiente, pudiéndose programar en lenguajes diferentes y su código debe poder ser implementado sin que afecte a los demás.
 
-Cada microservicio no tiene definido ni el tamaño, ni cómo se tiene dividir la aplicación pero en el libro "Building Microservices", \cite{BuildingMicroservices}se caracteriza un microservicio como “algo que a nivel de código podría ser reescrito en dos semanas”.
+Cada microservicio no tiene definido ni el tamaño, ni cómo se tiene dividir la aplicación pero en el libro “Building Microservices”, \cite{BuildingMicroservices}se caracteriza un microservicio como “algo que a nivel de código podría ser reescrito en dos semanas”.
 
 \subsection{Pros y contras de los microservicios}
 Ventajas:
 \begin{itemize}
 	\item Concede a los desarrolladores la libertad de implementar y desplegar los servicios de forma independiente.
 	\item Los microservicios se pueden desarrollar con un equipo de trabajo mínimo.
-	\item Para los diferentes módulos, existe la posibilidad de utilizar lenguajes diferentes.
+	\item Para cada módulo, existe la posibilidad de utilizar lenguajes diferentes.
 	\item Con el uso de contenedores el desarrollo y despliegue de la app es mucho más rápido.
 	\item Son fácilmente escalables.
 \end{itemize}
@@ -628,7 +627,7 @@ Primero surgió la arquitectura orientada objetos y más adelante la orienta a c
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{imagenes/soavsmicroservicios}
-	\caption{Arquitectura Monolítica frente Microservicios}
+	\caption{Arquitectura monolítica frente microservicios}
 	\label{fig:soavsmicroservicios}
 \end{figure}
 
@@ -639,9 +638,9 @@ Todo esto era suficiente para las empresas. A día de hoy cuando una aplicación
 
 La necesidad por resolver todos estos problemas desembocó en la arquitectura de microservicios. La primera vez que se mencionó la palabra "microservicios" fue en 2011 en una conferencia sobre computación en la nube, donde el Dr. Peter Rogers\cite{breveHistoria} se refirió a ello para describir la arquitectura que estaban usando grandes empresas como Netflix, Facebook, Amazon o PayPal. 
 
-Los microservicios gestionan la complejidad granulando funcionalmente en un conjunto de servicios pequeños e independientes. Con esto se consigue que el equipo de desarrollo sea capaz de implementar varias funcionalidades a la vez, sin tocar el código de otra  funcionalidad y desplegar cada módulo por separado tal y como se ve en la figura 2.3 donde cada microservicio está separado del resto, y puede o no tener una base de datos común.
+Los microservicios gestionan la complejidad granulando funcionalmente en un conjunto de servicios pequeños e independientes. Con esto se consigue que el equipo de desarrollo sea capaz de implementar varias funcionalidades a la vez, sin tocar el código de otra  funcionalidad y desplegar cada módulo por separado tal y como se ve en la figura \ref{fig:soavsmicroservicios} donde cada microservicio está separado del resto, y puede o no tener una base de datos común.
 
-El cambio más notable respeto a SOA es que los equipos de desarrollo tienen una mayor responsabilidad, lo que se traduce en una gran facilidad, ya que manejan todo lo siguiente:  proceso de desarrollo, desligues en distintos entornos, gestión de contenedores como Kubernetes, etc. Todo esto antes se tenía que realizar en otros departamentos de la empresa aumentando tiempos de producción. La arquitectura de microservicios resuelve todos los problemas que presenta SOA y cada vez es más popular, pero aún está en su base de inicio como se menciona en el articulo\cite{Dragoni2017} y aun le queda mucho por mejorar y evolucionar.
+El cambio más notable respeto a SOA es que los equipos de desarrollo tienen una mayor responsabilidad, lo que se traduce en una gran facilidad, ya que manejan todo lo siguiente:  proceso de desarrollo, despliegues en distintos entornos, gestión de contenedores como Kubernetes, etc. Todo esto antes se tenía que realizar en otros departamentos de la empresa aumentando tiempos de producción. La arquitectura de microservicios resuelve todos los problemas que presenta SOA y cada vez es más popular, pero aún está en su base de inicio como se menciona en el articulo\cite{Dragoni2017} y aun le queda mucho por mejorar y evolucionar.
  
  
  
@@ -689,19 +688,19 @@ Con respecto a la visión monolítica tenemos:
 
 \chapter{Justificación de la solución}
 
-Analizando los requisitos que tenemos nos quedaríamos con 3 tipos de arquitecturas a usar, una seria la arquitectura en capas, otra la arquitectura orientada a servicios(SOA) y por ultimo la arquitectura de microservicios. 
+Analizando los requisitos que tenemos nos quedaríamos con 3 tipos de arquitecturas candidatas, una seria la arquitectura en capas, otra la arquitectura orientada a servicios(SOA) y por ultimo la arquitectura de microservicios. 
 
-Con cualquiera de ellas podríamos montar un servicio que hiciera lo que nosotros necesitamos, sin embargo la única que ofrece escalabilidad y alta disponibilidad es la arquitectura de microservicios. Ademas se adapta perfectamente a la filosofía de la arquitectura, ya que cada servicio tiene que ser pequeño. Al estar en la nube no necesitamos servidores físicos, contratas en cada momento lo que necesitas y se reducen gastos.
+Con cualquiera de ellas podríamos montar un servicio que hiciera lo que nosotros necesitamos, sin embargo, la única que ofrece escalabilidad y alta disponibilidad es la arquitectura de microservicios. Además se adapta perfectamente a la filosofía de la arquitectura, ya que cada servicio tiene que ser pequeño. Al estar en la nube no necesitamos servidores físicos, se contratará en cada momento lo que se necesite y así se reducen gastos.
 
-Para el desarrollo de la aplicación hemos elegido Spring Boot como framework de microservicios, tiene web para descargar un arquetipo, incluye todas las ventajas de Spring para el desarrollo en capas, que también vamos a necesitar y ademas es el más utilizado a día de hoy, por lo que es el que más soporte tiene.
+Para el desarrollo de la aplicación hemos elegido Spring Boot como framework de microservicios. Éste cuenta con una web donde poder descargar un arquetipo, incluye todas las ventajas de Spring para el desarrollo en capas, que también vamos a necesitar y además es el más utilizado a día de hoy, por lo que es el que más soporte nos ofrece.
 
-Para la gestión de dependencias elegimos Maven ya que es el mas rodado y totalmente dirigido para java. Este nos va a empaquetar la aplicación en un jar compilandola y añadiendo las dependencias que necesite.
+Para la gestión de dependencias elegimos Maven ya que es el más utilizado y totalmente dirigido para java. Éste nos va a empaquetar la aplicación en un archivo jar compilandola y añadiendo las dependencias que necesite.
 
 Vamos a utilizar Lombok para evitar código repetitivo en las clases, como getter, setter y constructores. Mediante anotaciones conseguimos todo esto en tiempo de ejecución. Ademas también nos ofrece una implementación del patrón de diseño builder.
 
-La comunicación con el microservicio va a ser mediante REST, ya que es un protocolo simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria PUT, GET, POST, y DELETE.
+La comunicación con el microservicio va a ser mediante REST que está basado en el protocolo HTTP que es simple y muy eficaz para realizar las distintas operaciones(verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST seria PUT, GET, POST, y DELETE.
 
-Todo servicio Rest necesita un documento(API) donde se describa la entrada salida de él, en este caso vamos a utilizar anotaciones de Swagger para que este documento se autogenere, ademas nos ofrece la posibilidad de llamar a traves de él, que es mas visual que una llamada por Postman(programa para realizar llamadas rest) por ejemplo.
+Todo servicio REST necesita un documento API donde se describa la entrada y salida de él, en este caso vamos a utilizar anotaciones de Swagger para que este documento se autogenere, además nos ofrece la posibilidad de llamar a traves de él, que es más visual que una llamada por Postman.
 
 En la figura \ref{fig:capturaswagger} vemos los métodos a los que podemos llamar y dentro de los métodos tenemos la entrada salida y una descripción de que hace cada uno.
 \begin{figure}
@@ -712,9 +711,9 @@ En la figura \ref{fig:capturaswagger} vemos los métodos a los que podemos llama
 \end{figure}
 
 
-Por otra parte para la base de datos ya que tenemos los datos en formato json lo ideal es una BBDD noSQL para guardar directamente el json sin tener que hacer una conversion a tablas. Ademas es adaptable a cambios para que sea mas mantenible y puede establecerse en la nube al igual que el microservicio para que la comunicación sea muy rápida. Al estar en la nube se adapta fácilmente a los requisitos de cada momento. Por ejemplo si en una campaña se necesita realizar muchas consultas a base de datos se puede ampliar los núcleos de esta para que responda más rápido.
+Por otra parte para la base de datos, como tenemos los datos en formato json, lo ideal es una base de datos noSQL para guardar directamente el json sin tener que hacer una conversión a tablas. Además es adaptable a cambios para que sea más mantenible y puede establecerse en la nube al igual que el microservicio para que la comunicación sea rápida. Al estar en la nube se adapta fácilmente a los requisitos de cada momento. Por ejemplo si en una campaña se necesita realizar muchas consultas a base de datos se puede ampliar los núcleos de esta para que responda más rápido.
 
-Por tanto elegimos MongoDB como BBDD, pero como estamos usando azure se llama CosmosDB, la única diferencia es que se establece una capa de personalización para que sea mas rápida y limitar el número de accesos en función a lo que se tenga contratado. También está preparada para trabajar con un número elevado de datos sin saturarse.
+Por tanto elegimos MongoDB como base de datos que al estar utilizando azure se llama CosmosDB, la única diferencia es que se establece una capa de personalización para que sea más rápida y limitar el número de accesos en función a lo que se tenga contratado. También está preparada para trabajar con un número elevado de datos sin saturarse.
 
 \chapter{Desarrollo de la aplicación}
 
@@ -785,6 +784,95 @@ El arquetipo contiene una clase App la cual hay que ejecutar para levantar el mi
  En esta capa se llaman a los métodos necesarios de la capa anterior y además puedes llamar a métodos de un servicio diferente, por ejemplo si llamas al método de listas y le pasas un idUsuario tienes que  llamar al servicio de usuarios para que te devuelva las canciones de este usuario y así poder filtrar en las listas por esas canciones, además tiene que hacer el mapeo entre los objetos beans y los objetos DTO (Data Transfer Objet), que son los que se exponen en la salida.
  
  La capa de presentación es la encargada de serializar un json a un objeto y en función del recurso, llamar a un service u otro. En ella se definen los recursos y los verbos de la petición. 
+ 
+\chapter{Descripción API microservicio}
+
+Hemos desarrollado una serie de servicios en cada controlador, estos pueden verse en las figuras \ref{fig:controllerlistas} y \ref{fig:controllerusuarios}. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/controllerListas}
+	\caption{Recursos disponibles dentro del controller Listas}
+	\label{fig:controllerlistas}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/controllerUsuarios}
+	\caption{Recursos disponibles dentro del controller Usuarios}
+	\label{fig:controllerusuarios}
+\end{figure}
+
+En el controlador de listas hemos creado un recurso /listas al que es posible acceder mediante el verbo Post  y que su funcion es almacenar en BBDD una lista de reproducción nueva. El json de entrada necesario es el de la figura \ref{fig:jsonlista}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/jsonLista}
+	\caption{Json ejemplo lista reproducción}
+	\label{fig:jsonlista}
+\end{figure}
+
+
+Este corresponde a una lista de reproducción con una única canción. Los campos que aparecen son los proporcionados por Spotify, simplemente se han renombrado para evitar el uso de barra baja.
+
+AL llamar al servicio con el json creara un nuevo documento en BBDD.
+
+En el recurso /listas/\{userId\} mediante el verbo Get, al pasarle el id de usuario y un numero de canciones a coincidir, nos devuelve un listado en formato json con las listas de reproducción en las que el usuario tiene al menos el numero antes indicado de canciones en común con la lista.
+
+Por ultimo en este controlador hemos añadido un recurso /listas/batch su función es la misma que la de /listas pero en la entrada recibe una lista de listas de reproducción y las da de alta en BBDD.
+
+
+En el controlador de usuarios hemos creado el recurso /usuarios al que es posible acceder mediante el verbo Get y nos devuelve un json con todos los usuarios dados de alta en BBDD.
+
+Hemos creado otro recurso en /usuarios esta vez con verbo Put para crear un usuario con las canciones que ha escuchado en BBDD. El json de entrada sería el de la figura \ref{fig:jsonusuario}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/jsonUsuario}
+	\caption{Json ejemplo usuario}
+	\label{fig:jsonusuario}
+\end{figure}
+
+
+Por ultimo hemos creado un recurso /usuarios/\{userId\} con verbo Get el cual al pasarle el id de usuario nos devuelve ese usuario con las canciones que ha escuchado.
+
+\chapter{Despliegue de la aplicación}
+
+Para el despliegue de la aplicación en local lo primero es compilar el código mediante maven. Para ello vamos a la ventana Run Configuration en Eclipse y creamos un nuevo Maven build como vemos en la figura \ref{fig:cleaninstallmaven}. En base directory hay que poner lo que se muestra en la figura \ref{fig:cleaninstallmaven},  en goals vamos a poner clean install para limpiar primero el proyecto y luego compilar, en user settings se puede dejar por defecto si todas las dependencias son de internet o configurar un setting personal donde se establezca a que repositorio ir a buscar las dependencias necesarias en maven runtine se puede utilizar el embebido en eclipse o una versión que nosotros descarguemos.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/cleanInstallMAven}
+	\caption{Configuración compilación mediante Maven}
+	\label{fig:cleaninstallmaven}
+\end{figure}
+
+En la pestaña de JRE es importante seleccionar java 8 o superior y es necesario incluir la JDK y no la JRE como se ve en la figura \ref{fig:jremaven}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/jreMaven}
+	\caption{Configuración JRE proyecto}
+	\label{fig:jremaven}
+\end{figure}
+
+Una vez se tiene todo esto seleccionado se procede a dar a run, se compilara la aplicación desde cero y se pasaran las clases de test que existan, una vez esto pase se va a generar un jar de la aplicación compilada. Este jar se ubica en la carpeta target.
+
+Para levantar la aplicación es necesario tener la base de datos a la que se va a conectar levantada.
+
+De nuevo en la pantalla Run Configuration pero esta vez creamos una nueva configuración de Java Application como se muestra en la figura \ref{fig:configuraciondespliegue}. En project se selecciona la raiz del proyecto y en main class seleccionamos nuestra clase ListasMsApplication.java que es la que contiene el main. Al dar a run se va a desplegar la aplicación. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{imagenes/configuracionDespliegue}
+	\caption{Configuración Run despliegue}
+	\label{fig:configuraciondespliegue}
+\end{figure}
+
+Para acceder a ella se accede desde http://localhost:8080 y se añade el recurso al que quieras acceder, si es un recurso get se puede acceder desde un navegador, sino hay que hacerlo mediante swagger o postman. Todos los recursos están creados en las clases controller.
+
+Ademas de los recursos creados por nosotros, se crean dos recursos de swagger que son /swagger-ui.html\ref{fig:capturaswagger} y /v2/api-docs; el primero es la parte visual de swagger y la segunda es el fichero .yml con el cual se genera la parte visual de swagger.
  
 \chapter{Marco regulador}
 
@@ -911,94 +999,9 @@ Por otra parte se podría dockerizar (contenerizar) la aplicación para poder in
 
 Incluir un gestor de contenedores en Azure para gestionar el escalado y otras configuraciones de las aplicaciones que tengamos dockerizadas.
 
-\chapter{ANEXO I: Despliegue de la aplicación}
-
-Para el despliegue de la aplicación en local lo primero es compilar el código mediante maven. Para ello vamos a la ventana Run Configuration en Eclipse y creamos un nuevo Maven build como vemos en la figura \ref{fig:cleaninstallmaven}. En base directory hay que poner lo que se muestra en la figura \ref{fig:cleaninstallmaven},  en goals vamos a poner clean install para limpiar primero el proyecto y luego compilar, en user settings se puede dejar por defecto si todas las dependencias son de internet o configurar un setting personal donde se establezca a que repositorio ir a buscar las dependencias necesarias en maven runtine se puede utilizar el embebido en eclipse o una versión que nosotros descarguemos.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/cleanInstallMAven}
-	\caption{Configuración compilación mediante Maven}
-	\label{fig:cleaninstallmaven}
-\end{figure}
-
-En la pestaña de JRE es importante seleccionar java 8 o superior y es necesario incluir la JDK y no la JRE como se ve en la figura \ref{fig:jremaven}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/jreMaven}
-	\caption{Configuración JRE proyecto}
-	\label{fig:jremaven}
-\end{figure}
-
-Una vez se tiene todo esto seleccionado se procede a dar a run, se compilara la aplicación desde cero y se pasaran las clases de test que existan, una vez esto pase se va a generar un jar de la aplicación compilada. Este jar se ubica en la carpeta target.
-
-Para levantar la aplicación es necesario tener la base de datos a la que se va a conectar levantada.
-
-De nuevo en la pantalla Run Configuration pero esta vez creamos una nueva configuración de Java Application como se muestra en la figura \ref{fig:configuraciondespliegue}. En project se selecciona la raiz del proyecto y en main class seleccionamos nuestra clase ListasMsApplication.java que es la que contiene el main. Al dar a run se va a desplegar la aplicación. 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/configuracionDespliegue}
-	\caption{Configuración Run despliegue}
-	\label{fig:configuraciondespliegue}
-\end{figure}
-
-Para acceder a ella se accede desde http://localhost:8080 y se añade el recurso al que quieras acceder, si es un recurso get se puede acceder desde un navegador, sino hay que hacerlo mediante swagger o postman. Todos los recursos están creados en las clases controller.
-
-Ademas de los recursos creados por nosotros, se crean dos recursos de swagger que son /swagger-ui.html\ref{fig:capturaswagger} y /v2/api-docs; el primero es la parte visual de swagger y la segunda es el fichero .yml con el cual se genera la parte visual de swagger.
-
-\chapter{ANEXO II: Descripción API microservicio}
-
-Hemos desarrollado una serie de servicios en cada controlador, estos pueden verse en las figuras \ref{fig:controllerlistas} y \ref{fig:controllerusuarios}. 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/controllerListas}
-	\caption{Recursos disponibles dentro del controller Listas}
-	\label{fig:controllerlistas}
-\end{figure}
 
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/controllerUsuarios}
-	\caption{Recursos disponibles dentro del controller Usuarios}
-	\label{fig:controllerusuarios}
-\end{figure}
 
-En el controlador de listas hemos creado un recurso /listas al que es posible acceder mediante el verbo Post  y que su funcion es almacenar en BBDD una lista de reproducción nueva. El json de entrada necesario es el de la figura \ref{fig:jsonlista}.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/jsonLista}
-	\caption{Json ejemplo lista reproducción}
-	\label{fig:jsonlista}
-\end{figure}
-
-
-Este corresponde a una lista de reproducción con una única canción. Los campos que aparecen son los proporcionados por Spotify, simplemente se han renombrado para evitar el uso de barra baja.
-
-AL llamar al servicio con el json creara un nuevo documento en BBDD.
-
-En el recurso /listas/\{userId\} mediante el verbo Get, al pasarle el id de usuario y un numero de canciones a coincidir, nos devuelve un listado en formato json con las listas de reproducción en las que el usuario tiene al menos el numero antes indicado de canciones en común con la lista.
-
-Por ultimo en este controlador hemos añadido un recurso /listas/batch su función es la misma que la de /listas pero en la entrada recibe una lista de listas de reproducción y las da de alta en BBDD.
-
-
-En el controlador de usuarios hemos creado el recurso /usuarios al que es posible acceder mediante el verbo Get y nos devuelve un json con todos los usuarios dados de alta en BBDD.
-
-Hemos creado otro recurso en /usuarios esta vez con verbo Put para crear un usuario con las canciones que ha escuchado en BBDD. El json de entrada sería el de la figura \ref{fig:jsonusuario}.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{imagenes/jsonUsuario}
-	\caption{Json ejemplo usuario}
-	\label{fig:jsonusuario}
-\end{figure}
-
-
-Por ultimo hemos creado un recurso /usuarios/\{userId\} con verbo Get el cual al pasarle el id de usuario nos devuelve ese usuario con las canciones que ha escuchado.
 
 %----------
 %	BIBLIOGRAFÍA
