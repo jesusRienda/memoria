@@ -9,11 +9,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Historia de los Web Frameworks\relax }}{8}{figure.caption.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Arquitectura Monol\IeC {\'\i }tica frente Microservicios\relax }}{13}{figure.caption.8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Arquitectura monol\IeC {\'\i }tica frente microservicios\relax }}{13}{figure.caption.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Eficiencia microservicios frente SOA\relax }}{14}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Ejemplo de arquitectura monolitica(SOA)\relax }}{15}{figure.caption.10}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ejemplo de arquitectura monolitica(SOA)\relax }}{16}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Ejemplo arquitectura microservicios\relax }}{16}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
@@ -35,25 +35,25 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Recursos disponibles dentro del controller Listas\relax }}{24}{figure.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Recursos disponibles dentro del controller Usuarios\relax }}{25}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Json ejemplo lista reproducci\IeC {\'o}n\relax }}{25}{figure.caption.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Json ejemplo usuario\relax }}{25}{figure.caption.21}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Configuraci\IeC {\'o}n compilaci\IeC {\'o}n mediante Maven\relax }}{27}{figure.caption.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Configuraci\IeC {\'o}n JRE proyecto\relax }}{27}{figure.caption.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Configuraci\IeC {\'o}n Run despliegue\relax }}{27}{figure.caption.24}
+\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Configuraci\IeC {\'o}n compilaci\IeC {\'o}n mediante Maven\relax }}{30}{figure.caption.21}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Configuraci\IeC {\'o}n JRE proyecto\relax }}{30}{figure.caption.22}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Configuraci\IeC {\'o}n Run despliegue\relax }}{30}{figure.caption.23}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Recursos disponibles dentro del controller Listas\relax }}{31}{figure.caption.24}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Recursos disponibles dentro del controller Usuarios\relax }}{32}{figure.caption.25}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Json ejemplo lista reproducci\IeC {\'o}n\relax }}{32}{figure.caption.26}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Json ejemplo usuario\relax }}{32}{figure.caption.27}
 \contentsfinish 
