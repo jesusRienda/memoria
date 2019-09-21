@@ -17,6 +17,12 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
+  \entry{Azure}{online}{}
+    \verb{url}
+    \verb https://azure.microsoft.com/
+    \endverb
+  \endentry
+
   \entry{SoftwareEngineeringInstitute}{article}{}
     \name{author}{1}{}{%
       {{hash=ISE}{%

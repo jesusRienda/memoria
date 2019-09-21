@@ -270,18 +270,34 @@ hmargin=3cm
 \mbox{}
 
 %----------
+%	DEDICATORIA
+%----------	
+\chapter*{Dedicatoria}
+
+\setcounter{page}{3}
+
+% ESCRIBIR LA DEDICATORIA AQUÍ	
+
+\vfill
+
+\newpage %página en blanco o de cortesía
+\thispagestyle{empty}
+\mbox{}
+
+
+%----------
 %	RESUMEN Y PALABRAS CLAVE
 %----------	
 \renewcommand\abstractname{\large\bfseries\filcenter\uppercase{Resumen}}
 \begin{abstract}
 \thispagestyle{plain}
-\setcounter{page}{3}
+\setcounter{page}{5}
 	
 	En este trabajo fin de grado se ha realizado un estudio sobre las posibilidades existentes en el desarrollo de aplicaciones web, desde el diseño partiendo de cero hasta el uso de software de terceros como son los frameworks que facilitan el desarrollo y se centran en la funcionalidad.
 	
 	Para el correcto diseño de nuestra arquitectura ha sido necesario descomponer e investigar cada integrante de esta. Por una parte se ha investigado sobre los patrones de diseño existentes y sus funcionalidades, también sobre tipos de arquitecturas, framework y además sobre las bases de datos.
 	
-	Para afianzar todo lo desarrollado en este trabajo se ha implementado un microservicio basado en listas de reproducción de Spotify, utilizando para ello las ultimas tecnologías de desarrollo como Spring Boot, Spring Data y una base de datos muy potente como MongoDB. Este microservicio hace de intermediario con la base de datos filtrando, por ejemplo, las listas de reproducción que contienen canciones que ha escuchado un usuario.
+	Para demostrar todo lo desarrollado en este trabajo se ha implementado un microservicio basado en listas de reproducción de Spotify, utilizando para ello las ultimas tecnologías de desarrollo como Spring Boot, Spring Data y una base de datos muy potente como MongoDB. Este microservicio hace de intermediario con la base de datos filtrando, por ejemplo, las listas de reproducción que contienen canciones que ha escuchado un usuario.
 	
 	\textbf{Palabras clave:}
 	Microservicio, aplicaciones web, SOA, API, Swagger, MongoDb, Lombok, Spring Boot
@@ -292,21 +308,96 @@ hmargin=3cm
 	\thispagestyle{empty}
 	\mbox{}
 
-
+	
 %----------
-%	DEDICATORIA
+%	GLOSARIO
 %----------	
-\chapter*{Dedicatoria}
+\chapter*{Glosarío}
 
-\setcounter{page}{5}
-	
-	% ESCRIBIR LA DEDICATORIA AQUÍ	
-		
-	\vfill
-	
-	\newpage %página en blanco o de cortesía
-	\thispagestyle{empty}
-	\mbox{}
+\setcounter{page}{7}
+
+\textbf{AKS:}
+
+\textbf{API:} Corresponde a Application Programming Interface que en castellano lo traduciríamos como interfaz de programación de aplicaciones. Es un documento en el cual se define la entrada y la salida de cada recurso creado.
+
+\textbf{App:} Corresponde a Application y en castellano lo utilizamos para referirnos a aplicación informática, web o móvil. Es un programa diseñado para que el usuario pueda realizar varios tipos de trabajos.
+
+\textbf{Azure:} Es una nube de pago por uso, en ella se permite desplegar aplicaciones contenerizadas y ofrece servicios como el de bases de datos. \cite{Azure}
+
+\textbf{Back-end:} En el desarrollo de software corresponde al acceso y tratamiento de datos según la lógica de negocio.
+
+\textbf{Controller:} Son las clases de java que pertenecen a la capa de presentación y en ellas se definen los recursos y los verbos disponibles.
+
+\textbf{CosmosDB:}
+
+\textbf{DAO:}	
+
+\textbf{Docker:}
+
+\textbf{Escalabilidad:}
+
+\textbf{Framework:}
+
+\textbf{Front-end:} En el desarrollo de software corresponde a la programación visual y al tratamiento de la entrada del usuari
+
+\textbf{GB:}
+
+\textbf{Getter, setter:}
+
+\textbf{Git:}
+
+\textbf{Github:} mencionar direccion repositorio
+
+\textbf{HTTP:}
+
+\textbf{Java:}
+
+\textbf{Jenkins:}
+
+\textbf{JDK:}
+
+\textbf{JRE:}
+
+\textbf{JSON:}
+
+\textbf{Lombok:}
+
+\textbf{Maven:}
+
+\textbf{MongoDB:}
+
+\textbf{NoSQL:}
+
+\textbf{Nube}:
+
+\textbf{Query:} explicar porque lo mantengo en ingles
+
+\textbf{REST:} \textbf{GET} \textbf{PUT} \textbf{POST} \textbf{DELETE}
+
+\textbf{RU:}
+
+\textbf{SQL:}
+
+\textbf{SOA:}
+
+\textbf{Sonar:}
+
+\textbf{Swagger:}
+
+\textbf{Typescript:}
+
+\textbf{UI:}
+
+\textbf{WAR:}
+
+\textbf{YML:}
+
+
+\vfill
+
+\newpage %página en blanco o de cortesía
+\thispagestyle{empty}
+\mbox{}
 	
 
 %----------
@@ -359,11 +450,11 @@ hmargin=3cm
 	
 	
 	\section{Planteamiento del problema}
-	Contamos con datos reales sobre listas de reproducción de Spotify en formato json, estos contienen información de cada una de las listas y de las canciones que contiene.
+	Contamos con datos reales sobre listas de reproducción de Spotify en formato JSON, estos contienen información de cada una de las listas y de las canciones que contiene.
 	Por otra parte tenemos datos de usuarios con las canciones que escuchan.
 
 	Necesitamos almacenar estos datos en una base de datos para posteriormente consultarla, actualizarla o crear nuevos registros. 
-	Podríamos actuar directamente sobre la base de datos pero no seria admisible para un usuario final, ya que este no tiene por qué tener conocimientos técnicos sobre el lenguaje de gestión de la base de datos.
+	Podríamos actuar directamente sobre la base de datos pero no sería admisible para un usuario final, ya que este no tiene por qué tener conocimientos técnicos sobre el lenguaje de gestión de la base de datos.
 	Por tanto tendremos que crear un programa que haga las consultas a la base de datos y devuelva los datos validados en un formato óptimo para mostrarlos por pantalla. Al invocarlo, nos devolverá los datos almacenados con un tratamiento específico y un formato definido. Necesitamos que sea sencillo y simple para el cliente que va a consumir dicho servicio. 
 	Por ejemplo uno de los tratamientos necesarios sería filtrar las listas en función de las canciones que escuche cada usuario, si ha escuchado más de 3 canciones de una lista, deberíamos devolver dicha lista.
 		
@@ -379,10 +470,10 @@ hmargin=3cm
 	
 	
 	\section{Solución propuesta}
-	Como solución a nuestro problema vamos a diseñar una arquitectura de microservicios.
-	Para ello implementamos un microservicio que se va a desarrollar con java mediante el framework Spring Boot.
+	Una vez analizadas las opciones posibles, adoptamos como solución a nuestro problema el diseño de una arquitectura de microservicios.
+	Para ello implementamos un microservicio que se va a desarrollar con Java mediante el framework Spring Boot.
 	La base de datos estará almacenada en Azure y será CosmosDB.
-	Para llamar al microservicio creado utilizaremos Swagger.
+	Para llamar al microservicio creado utilizaremos Swagger. En los siguientes capítulos describiremos y discutiremos estas opciones.
 	
 	\section{Estructura trabajo}
 	Este trabajo está estructurado de la siguiente forma:
@@ -413,15 +504,15 @@ hmargin=3cm
 	
 	Las \textbf{propiedades internas}  son aquellas que definen el módulo, es decir, el lenguaje en el que está desarrollado y todos los detalles de la implementación de este como pueden ser:
 	
-	- Entidades dinámicas en tiempo de ejecución como objetos e hilos.
-	
-	- Entidades lógicas en tiempo de desarrollo como clases y módulos.
-	
-	- Entidades físicas como nodos o carpetas.	
+	\begin{itemize}
+		\item Entidades dinámicas en tiempo de ejecución como objetos e hilos.
+		\item Entidades lógicas en tiempo de desarrollo como clases y módulos.
+		\item Entidades físicas como nodos o carpetas.
+	\end{itemize}
 	
 	Las \textbf{propiedades externas} son los contratos que existen entre módulos y que permiten a otros módulos establecer dependencias/conexiones entre ellos. Es de vital importancia que las interfaces que definen los contratos estén bien definidas para la perfecta integración de los elementos.
 	
-	Es necesario dividir los requerimientos con los que va a contar el sistema en módulos y definir sus propiedades y como se relacionan entre sí. Por ejemplo en la figura \ref{fig:microservices} podemos ver la estructura de un sistema basado en microservicios donde aparecen bases de datos, que serian un módulo donde habría que definir sus propiedades, tablas, colecciones de datos, etc; para cada microservicio habría que definir un API en el que se indique la entrada y salida del modulo, el lenguaje en el que se va a desarrollar...; por ultimo tendríamos un módulo de presentación UI(Interfaz de usuario).
+	Es necesario dividir los requerimientos con los que va a contar el sistema en módulos y definir sus propiedades y como se relacionan entre sí. Por ejemplo en la figura \ref{fig:microservices} podemos ver la estructura de un sistema basado en microservicios donde aparecen bases de datos, que serían un módulo donde habría que definir sus propiedades, tablas, colecciones de datos, etc; para cada microservicio habría que definir un documento API en el que se indique la entrada y salida del módulo, el lenguaje en el que se va a desarrollar...; por último tendríamos un módulo de presentación UI(Interfaz de usuario).
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/monolithic-vs-microservices}
@@ -510,24 +601,24 @@ hmargin=3cm
  	\label{fig:webFrameworks}
  \end{figure}
 
- Los frameworks de java más utilizados en los últimos tiempos son Spring y Struts.
+ Los frameworks de Java más utilizados en los últimos tiempos son Spring y Struts.
  
  Spring surgió en 2003 de la mano de Rod Johnson, la idea de este framework es agilizar y estandarizar la creación de proyectos de una misma arquitectura. 
  
- Struts nació en 2001 y está basado en la arquitectura Modelo vista controlador, el cual, permite gracias a las anotaciones poder configurar este modelo. Posteriormente, en 2004, surgió Stripes con la misma arquitectura pero con la finalidad de ser más ligero y eficiente.
+ Struts nació en 2001 y está basado en la arquitectura Modelo Vista Controlador, el cual, permite gracias a las anotaciones poder configurar este modelo. Posteriormente, en 2004, surgió Stripes con la misma arquitectura pero con la finalidad de ser más ligero y eficiente.
  
- Existen framework de otros lenguajes de programación como por ejemplo Angular lanzado en septiembre de 2016. Está implementado en typescript y orientado al desarrollo del front-end de aplicaciones web. Este framework es propiedad de Google aunque es de código libre.
+ Existen framework de otros lenguajes de programación como por ejemplo Angular lanzado en septiembre de 2016. Está implementado en Typescript y orientado al desarrollo del Front-end de aplicaciones web. Este framework es propiedad de Google aunque es de código libre.
  
- React es otro framework para el desarrollo de front-end. Contiene una serie de librerias de javascript para construir las aplicaciones web mas fácilmente. Éste es propiedad de Facebook.
+ React es otro framework para el desarrollo de Front-end. Contiene una serie de librerias de Javascript para construir las aplicaciones web mas fácilmente. Éste es propiedad de Facebook.
  
  Ionic surgió en 2013, siempre ha ido de la mano con Angular, desde AngularJs hasta las últimas versiones del mismo. Ionic está diseñado para desarrollar aplicaciones híbridas, según este artículo de next-u \cite{AppHibridas} “Las aplicaciones híbridas son aplicaciones móviles diseñadas en un lenguaje de programación web (HTML5, CSS o JavaScript), junto con un framework (Cordova) que permite adaptar la vista web a cualquier vista de un dispositivo móvil. Es decir, no son más que una aplicación construida para ser utilizada o implementada en distintos sistemas operativos móviles evitándonos la tarea de crear una aplicación para cada sistema operativo.”
  
- \subsection{Frameworks de java para microservicios}
- Por otra parte existen bastantes frameworks que se basan en java y ofrecen una arquitectura de microservicios, éstos han surgido de las grandes empresas del sector como Oracle, Spring, Eclipse. Entre ellos encontramos:
+ \subsection{Frameworks de Java para microservicios}
+ Por otra parte existen bastantes frameworks que se basan en Java y ofrecen una arquitectura de microservicios, éstos han surgido de las grandes empresas del sector como Oracle, Spring, Eclipse. Entre ellos encontramos:
 
  \begin{itemize}
  	\item Spring Boot: Es una capa de personalización sobre el famoso framework Spring, que ofrece un arquetipo de un microservicio básico, ampliable fácilmente con poco desarrollo. Por ejemplo Gustavo Peiretti en el articulo \cite{StrategySpringBoot}, propone una implementación de un patrón strategy desarrollado con Spring Boot.
- 	\item Cricket: Es un framework para implementación de arquitectura dirigida por eventos. Contiene un servidor HTTP incorporado, serialización de Java a json automática, gestión de usuarios y accesos, bases de datos integradas como H2 y un planificador de eventos. Con todo ello se puede construir una aplicación fácilmente.
+ 	\item Cricket: Es un framework para implementación de arquitectura dirigida por eventos. Contiene un servidor HTTP incorporado, serialización de Java a JSON automática, gestión de usuarios y accesos, bases de datos integradas como H2 y un planificador de eventos. Con todo ello se puede construir una aplicación fácilmente.
  	\item Dropwizard: Es un framework para arquitectura de microservicios por capas, para utilizar este solo es necesario importarlo en la aplicación y usar todas las librerias que este incluye.
  	\item Eclipse MicroProfile: En junio de 2018 consiguió cubrir todas las necesidades de la arquitectura. Cuenta al igual que Spring con una web donde obtener un arquetipo de la aplicación con las dependencias que se necesiten.
  	\item Helidon: Es de las últimas incorporaciones en la arquitectura. Pertenece a la compañía Oracle que lo utilizó internamente bajo el nombre “Java for Cloud” y que finalmente se ha liberado para todo el público. 
@@ -536,7 +627,7 @@ hmargin=3cm
 	\section{Bases de datos}
 	En el proceso de diseño de una arquitectura otro módulo fundamental es el almacenamiento de los datos que vamos a utilizar, para ello usamos las bases de datos.
 
-	Estas se pueden definir como un conjunto de información relacionada que se encuentra agrupada ó estructurada.
+	Estas se pueden definir como un conjunto de información relacionada que se encuentra agrupada o estructurada.
 	
 	El concepto de bases de datos ha estado siempre ligado a la informática, éstas son sistemas formados por grupos de datos almacenados en discos, que permiten la consulta, modificación y borrado de los mismos. Se crearon para poder almacenar grandes cantidades de información. 
 	
@@ -548,7 +639,7 @@ hmargin=3cm
 	
 	En la actualidad, las tres grandes compañías que dominan el mercado de las bases de datos son IBM, Microsoft y Oracle. En el campo de internet, la compañía que más información genera es Google.
 	
-	No fue hasta la década de los 2000 cuando surgieron las bases de datos no relacionales(NoSQL) que son las que no contienen un identificador para relacionar un conjunto de datos con otro. La información se organiza en documentos y es útil cuando no tenemos claro lo que se va a almacenar.
+	No fue hasta la década de los 2000 cuando surgieron las bases de datos NoSQL que son las que no contienen un identificador para relacionar un conjunto de datos con otro. La información se organiza en documentos y es útil cuando no tenemos claro lo que se va a almacenar.
 	
 	La más exitosa en bases de datos no relacionales es MongoDB seguida por Redis, Elasticsearch y Cassandra.
 	
@@ -564,7 +655,7 @@ hmargin=3cm
 		 \begin{itemize}
 		\item Estas bases de datos tienden a crecer demasiado, por lo que aumenta el tiempo de respuesta.
 		\item Se tendrá que reestructurar la base de datos de una empresa debido a que ésta realice algún cambio en sus sistemas informáticos.
-		\item No garantizan el buen funcionamiento si el sistema operativo donde se va a instalar no cumplen con los requerimientos mínimos.
+		\item No garantizan el buen funcionamiento si el sistema operativo donde se va a instalar no cumple con los requerimientos mínimos.
 	\end{itemize}
 
 	\subsection{Pros y contras bases de datos no relacionales}
@@ -597,7 +688,7 @@ Ventajas:
 	\item Concede a los desarrolladores la libertad de implementar y desplegar los servicios de forma independiente.
 	\item Los microservicios se pueden desarrollar con un equipo de trabajo mínimo.
 	\item Para cada módulo, existe la posibilidad de utilizar lenguajes diferentes.
-	\item Con el uso de contenedores el desarrollo y despliegue de la app es mucho más rápido.
+	\item Con el uso de contenedores el desarrollo y despliegue de la App es mucho más rápido.
 	\item Son fácilmente escalables.
 \end{itemize}
 Inconvenientes:
@@ -622,7 +713,7 @@ Para poder contemplar hasta dónde ha llegado la arquitectura de microservicios 
 
 
 \section{Comparación de SOA con Microservicios}
-Primero surgió la arquitectura orientada objetos y más adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrolló por primera vez SOA (Service Oriented Architecture) “arquitectura orientada a servicios”. Con esta se desarrollaban todos los servicios necesarios y se empaquetaban en un WAR (Web Application Archive) para poder desplegarse en un servidor de aplicaciones, como tomcat, que se encontraba dentro de una máquina. Esto puede verse en la figura \ref{fig:soavsmicroservicios}.
+Primero surgió la arquitectura orientada objetos y más adelante la orienta a componentes. Pero no fue hasta 1996 cuando se desarrolló por primera vez SOA. Con ésta se desarrollaban todos los servicios necesarios y se empaquetaban en un archivo WAR para poder desplegarse en un servidor de aplicaciones, como por ejemplo Tomcat, que se encontraba dentro de una máquina. Esto puede verse en la figura \ref{fig:soavsmicroservicios}.
 
 \begin{figure}
 	\centering
@@ -631,19 +722,16 @@ Primero surgió la arquitectura orientada objetos y más adelante la orienta a c
 	\label{fig:soavsmicroservicios}
 \end{figure}
 
-Todos estos servicios tenían que estar implementados en el mismo lenguaje y no se les podía asignar más recursos a cada uno de ellos. Era asignado a todo el conjunto, dividiendo el WAR en varias máquinas o réplicas de la misma. Para ello se necesitaba un balanceador de carga que determinaba que máquina iba a atender la petición.
-
+Todos estos servicios tenían que estar implementados en el mismo lenguaje y no se les podía asignar más recursos a cada uno de ellos. Era asignado a todo el conjunto, dividiendo el archivo WAR en varias máquinas o réplicas de la misma. Para ello se necesitaba un balanceador de carga que determinaba que máquina iba a atender la petición.
 
 Todo esto era suficiente para las empresas. A día de hoy cuando una aplicación monolítica (SOA) crece demasiado es difícil mantenerla y añadir nuevas funcionalidades, ya que cada línea modificada implica re-desplegar toda la aplicación, lo que puede llevar mucho tiempo pues en los despliegues están involucrados varios departamentos de la empresa que impide al equipo seguir desarrollando. También es complicado encontrar el origen de algún error en el código.
 
 La necesidad por resolver todos estos problemas desembocó en la arquitectura de microservicios. La primera vez que se mencionó la palabra "microservicios" fue en 2011 en una conferencia sobre computación en la nube, donde el Dr. Peter Rogers\cite{breveHistoria} se refirió a ello para describir la arquitectura que estaban usando grandes empresas como Netflix, Facebook, Amazon o PayPal. 
 
-Los microservicios gestionan la complejidad granulando funcionalmente en un conjunto de servicios pequeños e independientes. Con esto se consigue que el equipo de desarrollo sea capaz de implementar varias funcionalidades a la vez, sin tocar el código de otra  funcionalidad y desplegar cada módulo por separado tal y como se ve en la figura \ref{fig:soavsmicroservicios} donde cada microservicio está separado del resto, y puede o no tener una base de datos común.
+Los microservicios gestionan la complejidad dividiendose funcionalmente en un conjunto de servicios pequeños e independientes. Con esto se consigue que el equipo de desarrollo sea capaz de implementar varias funcionalidades a la vez, sin tocar el código de otra funcionalidad y desplegar cada módulo por separado tal y como se ve en la figura \ref{fig:soavsmicroservicios} donde cada microservicio está separado del resto y pueden o no tener una base de datos común.
 
-El cambio más notable respeto a SOA es que los equipos de desarrollo tienen una mayor responsabilidad, lo que se traduce en una gran facilidad, ya que manejan todo lo siguiente:  proceso de desarrollo, despliegues en distintos entornos, gestión de contenedores como Kubernetes, etc. Todo esto antes se tenía que realizar en otros departamentos de la empresa aumentando tiempos de producción. La arquitectura de microservicios resuelve todos los problemas que presenta SOA y cada vez es más popular, pero aún está en su base de inicio como se menciona en el articulo\cite{Dragoni2017} y aun le queda mucho por mejorar y evolucionar.
- 
- 
- 
+El cambio más notable respeto a SOA es que los equipos de desarrollo tienen una mayor responsabilidad, lo que se traduce en una gran facilidad, ya que manejan todo lo siguiente:  proceso de desarrollo, despliegues en distintos entornos, gestión de contenedores como Kubernetes, etc. Todo esto antes se tenía que realizar en otros departamentos de la empresa aumentando tiempos de producción. La arquitectura de microservicios resuelve todos los problemas que presenta SOA y cada vez es más popular, pero aún está en su base de inicio como se menciona en el articulo\cite{Dragoni2017} y aún le queda mucho por mejorar y evolucionar. 
+
 Rajest RV en su libro "Spring Microservices"\cite{rv2016spring} nos muestra el gráfico \ref{fig:desarrollomonovsmicro} en el que se observa como es más rápido y ágil el desarrollo de aplicaciones con microservicios frente a aplicaciones tradicionales. Menciona que, "Los microservicios prometen más agilidad, velocidad de entrega y escala. En comparación con las aplicaciones monolíticas tradicionales." 
 
 \begin{figure}
@@ -653,25 +741,31 @@ Rajest RV en su libro "Spring Microservices"\cite{rv2016spring} nos muestra el g
 	\label{fig:desarrollomonovsmicro}
 \end{figure}
 
-En un futuro se deberían solucionar problemas debidos a estar poco restringidos, por ejemplo si cada microservicio se desarrollara con un lenguaje diferente no estaría del todo claro los protocolos que se usan en cada uno de ellos y de que la comunicación sea totalmente compatibles. 
-
-Otro aspecto a mejorar es la seguridad, ya que cuando se descompone una aplicación en cientos de microservicios aparecen dificultades en la depuración, monitoreo, auditoría y análisis forense de toda la aplicación. Los atacantes podrían aprovechar esta complejidad para atacar. 
+Un aspecto a mejorar es la seguridad, ya que cuando se descompone una aplicación en cientos de microservicios aparecen dificultades en la depuración, monitoreo, auditoría y análisis de toda la aplicación. Los atacantes podrían aprovechar esta complejidad para atacar. 
 
 Lo que sí es seguro es que han surgido para quedarse y cada vez más empresas están empezando a utilizar los microservicios.
 
-
 \subsection{Ejemplo de visión monolítica vs visión de microservicio}
 
-Accedemos a una página web de una tienda para realizar compras. Hay un servidor que está ejecutando el código de la aplicación y de vez en cuando se conecta a una base de datos para recuperar información.
-Cuando un usuario compra un producto vía web, se mostrarán los productos disponibles. La aplicación responderá según haya sido programada y mostrará el inventario, pagos o envíos esta información se empaqueta en un único archivo ejecutable. De ahí nombrarlo como arquitectura monolítica.
-Si se realiza un cambio en cualquiera de los módulos, se tendrá que subir a producción un código nuevo aunque los otros módulos no hayan sido modificados. 
-Pero si la aplicación no es compleja, la subida será sencilla ya que en este caso tenemos un solo archivo ejecutable.
+Accedemos a una página web de una tienda para realizar compras.
+
+Hay un servidor que está ejecutando el código de la aplicación y de vez en cuando se conecta a una base de datos para recuperar información.
+Cuando un usuario compra un producto vía web, se mostrarán los productos disponibles. La aplicación responderá según haya sido programada y mostrará el inventario, pagos o envíos. Esta información se empaqueta en un único archivo ejecutable. De ahí el nombrarlo como arquitectura monolítica.
+
+Si se realiza un cambio en cualquiera de los módulos, se tendrá que subir a producción un código nuevo aunque los otros módulos no hayan sido modificados. Si la aplicación no es compleja, la subida será sencilla ya que en este caso tenemos un solo archivo ejecutable.
+
 En el caso de microservicios, en vez de tener un único ejecutable, cada componente del sistema es un único servicio que se comunicará con los otros a través de llamadas.
+
 Contamos con una interfaz web en la que interactúan los usuarios y por debajo los servicios de pagos, inventario y envíos.
+
 Con respecto a la visión monolítica tenemos:
-– Los microservicio pueden desplegarse de manera independiente: si realizamos un cambio en uno de los módulos, no se verán afectados los otros módulos y solo tendremos que subir ese módulo.
-– Es fácil de entender y dividir, pues las secciones del negocio están bien separadas.
-– Cada microservicio es multifuncional: tiene una parte de base de datos, de backend y es independiente de los demás. 
+
+\begin{itemize}
+	\item Los microservicio pueden desplegarse de manera independiente: si realizamos un cambio en uno de los módulos, no se verán afectados los otros módulos y solo tendremos que subir ese módulo.
+	\item Es fácil de entender y dividir, pues las secciones del negocio están bien separadas.
+	\item Cada microservicio es multifuncional: tiene una parte de base de datos, de Back-end y es independiente de los demás.
+\end{itemize}
+
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{imagenes/monolithic}
@@ -686,15 +780,15 @@ Con respecto a la visión monolítica tenemos:
 \end{figure}
 
 
-\chapter{Justificación de la solución}
+\chapter{Justificación de la solución propuesta}
 
-Analizando los requisitos que tenemos nos quedaríamos con 3 tipos de arquitecturas candidatas, una seria la arquitectura en capas, otra la arquitectura orientada a servicios(SOA) y por ultimo la arquitectura de microservicios. 
+Analizando los requisitos que tenemos nos quedaríamos con 3 tipos de arquitecturas candidatas, una sería la arquitectura en capas, otra la arquitectura orientada a servicios(SOA) y por ultimo la arquitectura de microservicios. 
 
 Con cualquiera de ellas podríamos montar un servicio que hiciera lo que nosotros necesitamos, sin embargo, la única que ofrece escalabilidad y alta disponibilidad es la arquitectura de microservicios. Además se adapta perfectamente a la filosofía de la arquitectura, ya que cada servicio tiene que ser pequeño. Al estar en la nube no necesitamos servidores físicos, se contratará en cada momento lo que se necesite y así se reducen gastos.
 
 Para el desarrollo de la aplicación hemos elegido Spring Boot como framework de microservicios. Éste cuenta con una web donde poder descargar un arquetipo, incluye todas las ventajas de Spring para el desarrollo en capas, que también vamos a necesitar y además es el más utilizado a día de hoy, por lo que es el que más soporte nos ofrece.
 
-Para la gestión de dependencias elegimos Maven ya que es el más utilizado y totalmente dirigido para java. Éste nos va a empaquetar la aplicación en un archivo jar compilandola y añadiendo las dependencias que necesite.
+Para la gestión de dependencias elegimos Maven ya que es el más utilizado y totalmente dirigido para Java. Éste nos va a empaquetar la aplicación en un archivo jar compilandola y añadiendo las dependencias que necesite.
 
 Vamos a utilizar Lombok para evitar código repetitivo en las clases, como getter, setter y constructores. Mediante anotaciones conseguimos todo esto en tiempo de ejecución. Ademas también nos ofrece una implementación del patrón de diseño builder.
 
@@ -706,18 +800,18 @@ En la figura \ref{fig:capturaswagger} vemos los métodos a los que podemos llama
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{imagenes/CapturaSwagger}
-	\caption{API en swagger}
+	\caption{API en Swagger}
 	\label{fig:capturaswagger}
 \end{figure}
 
 
-Por otra parte para la base de datos, como tenemos los datos en formato json, lo ideal es una base de datos noSQL para guardar directamente el json sin tener que hacer una conversión a tablas. Además es adaptable a cambios para que sea más mantenible y puede establecerse en la nube al igual que el microservicio para que la comunicación sea rápida. Al estar en la nube se adapta fácilmente a los requisitos de cada momento. Por ejemplo si en una campaña se necesita realizar muchas consultas a base de datos se puede ampliar los núcleos de esta para que responda más rápido.
+Por otra parte para la base de datos, como tenemos los datos en formato JSON, lo ideal es una base de datos NoSQL para guardar directamente el JSON sin tener que hacer una conversión a tablas. Además es adaptable a cambios para que sea más mantenible y puede establecerse en la nube al igual que el microservicio para que la comunicación sea rápida. Al estar en la nube se adapta fácilmente a los requisitos de cada momento. Por ejemplo si en una campaña se necesita realizar muchas consultas a base de datos se puede ampliar los núcleos de esta para que responda más rápido.
 
-Por tanto elegimos MongoDB como base de datos que al estar utilizando azure se llama CosmosDB, la única diferencia es que se establece una capa de personalización para que sea más rápida y limitar el número de accesos en función a lo que se tenga contratado. También está preparada para trabajar con un número elevado de datos sin saturarse.
+Por tanto elegimos MongoDB como base de datos que al estar utilizando Azure se llama CosmosDB, la única diferencia es que se establece una capa de personalización para que sea más rápida y limitar el número de accesos en función a lo que se tenga contratado. También está preparada para trabajar con un número elevado de datos sin saturarse.
 
 \chapter{Desarrollo de la aplicación}
 
-El primer paso para desarrollar nuestra aplicación es tener un IDE (Entorno de Desarrollo Integrado) instalado, en este caso usamos Eclipse.
+El primer paso para desarrollar nuestra aplicación es tener un IDE instalado, en este caso usamos Eclipse.
 
 \begin{figure}
 	\centering
@@ -726,9 +820,9 @@ El primer paso para desarrollar nuestra aplicación es tener un IDE (Entorno de 
 	\label{fig:arquetipo}
 \end{figure}
 
-Una vez que tenemos Eclipse instalado nos dirigimos a la web https://start.spring.io/ para obtener un arquetipo de una aplicación usando el framework Spring Boot. Como observamos en la figura \ref{fig:arquetipo} elegimos Maven para el control de dependencias, escogemos java como lenguaje y por ultimo las dependencias que queremos incluir, MongoDB, Spring Web, Lombok y nos faltaría las dependencias de swagger pero esta web no las proporciona así que posteriormente las añadiremos.
+Una vez que tenemos Eclipse instalado, nos dirigimos a la web https://start.spring.io/ para obtener un arquetipo de aplicación usando el framework Spring Boot. Como observamos en la figura \ref{fig:arquetipo} elegimos Maven para el control de dependencias, escogemos Java como lenguaje y por último las dependencias que queremos incluir, MongoDB, Spring Web, Lombok; nos faltarían las dependencias de Swagger pero esta web no las proporciona así que posteriormente las añadiremos.
 
-Importamos en Eclipse como proyecto Maven y al compilar se descargaran todas las dependencias incluidas en el fichero pom.xml, es el momento de añadir las dependencias de swagger que vamos a necesitar.
+Importamos en Eclipse el arquetipo descargado como proyecto Maven y al compilarlo se descargaran todas las dependencias incluidas en el fichero pom.xml, es el momento de añadir las dependencias de Swagger que vamos a necesitar.
 
 \begin{figure}
 	\centering
@@ -737,9 +831,9 @@ Importamos en Eclipse como proyecto Maven y al compilar se descargaran todas las
 	\label{fig:dependenciasswagger}
 \end{figure}
 
-Swagger es un software para diseñar, documentar y consumir servicios Rest. En la figura \ref{fig:dependenciasswagger} podemos ver las dependencias necesarias para poder utilizarlo, la primera dependencia es para poder utilizar anotacciones de Swagger, y las dos siguientes son para que al desplegar la aplicación incorpore un recurso donde visualizar el documento Swagger de nuestro código y poder hacer llamadas a nuestros servicios, este documento lo vemos en la figura \ref{fig:capturaswagger}
+Swagger es un software para diseñar, documentar y consumir servicios REST. En la figura \ref{fig:dependenciasswagger} podemos ver las dependencias necesarias para poder utilizarlo, la primera dependencia es para poder utilizar anotaciones de Swagger, y las dos siguientes son para que al desplegar la aplicación se incorpore un recurso donde visualizar el documento Swagger de nuestro código y así poder hacer llamadas a nuestros servicios, este documento lo vemos en la figura \ref{fig:capturaswagger}
 
-Para configurar Swagger es necesario añadir la clase de configuración de la figura \ref{fig:cofingswagger}. Con la anotacción @EnableSwagger2 habilitamos la generación del dominio antes citado. En el método que tenemos configuramos de que paquete queremos que nos cree el API.
+Para configurar Swagger es necesario añadir la clase de configuración que se muestra en la figura \ref{fig:cofingswagger}. Con la anotación de la clase @EnableSwagger2 habilitamos la generación del dominio antes citado y además esta clase contiene un método donde configuramos de que paquete queremos que nos cree el API.
 
 \begin{figure}
 	\centering
@@ -749,11 +843,11 @@ Para configurar Swagger es necesario añadir la clase de configuración de la fi
 \end{figure}
 
 
-Creamos un repositorio en github (https://github.com/jesusRienda/microservicio) para poder guardar lo que tenemos hasta ahora. Es recomendable subir al repositorio cada poco tiempo y agrupando una funcionalidad para poder volver a un commit concreto y resolver errores.
+Creamos un repositorio en Github !!!!!!!!!!!!!!!!! para poder guardar lo que tenemos hasta ahora. Es recomendable ir subiendo al repositorio cada poco tiempo y agrupando una funcionalidad para poder volver a un commit concreto y resolver errores.
 
-El arquetipo contiene una clase App la cual hay que ejecutar para levantar el microservicio en local, para hacerlo al tener una dependencia de MongoDb tenemos que establecer la conexión con la BBDD.
+El arquetipo contiene una clase App la cual hay que ejecutar para levantar el microservicio en local, para hacerlo, al tener una dependencia de MongoDb tenemos que establecer la conexión con la base de datos.
 
- Existen dos opciones: descargar mongo embebido y levantar una base de datos local o nuestro caso, crear en azure una instancia de CosmosDb (capa de personalización sobre Mongo) y configurar el microservicio para que apunte a esa base de datos. Para esta configuración creamos una clase java llamada MongoDbConfig y mediante la anotación @Value obtenemos de application.properties la conexión a cosmos y el nombre de la BBDD. Una vez hecho esto ya podemos levantar el microservicio. Esta clase de configuración la podemos ver en la figura \ref{fig:configmongo}
+Existen dos opciones: descargar MongoDB embebido y levantar una base de datos local o nuestro caso, crear en Azure una instancia de CosmosDB y configurar el microservicio para que apunte a esa base de datos. Para esta configuración creamos una clase de Java llamada MongoDbConfig y mediante la anotación @Value, obtenemos de application.properties la conexión a CosmosDB y el nombre de la base de datos. Una vez hecho esto ya podemos levantar el microservicio. Esta clase de configuración la podemos ver en la figura \ref{fig:configmongo}
 
 \begin{figure}
 	\centering
@@ -770,21 +864,21 @@ El arquetipo contiene una clase App la cual hay que ejecutar para levantar el mi
 	\label{fig:estructura-microservicio}
 \end{figure}
 
- Lo siguiente es crear las tres capas que vamos a utilizar, la capa de persistence, donde se definen las querys, la capa de service donde se implementa la lógica de negocio y la capa controller donde se implementan los verbos http mediante los que se va a llamar al servicio. En la figura \ref{fig:estructura-microservicio} se puede ver la estructura de capas que hemos utilizado.
- 
- Una buena práctica a la hora de programar en capas es que los objetos de la capa de persistencia no deben exponerse a la capa de presentación. Por ello hemos creado unos objetos Bean que son: ListaBean, UsuarioBean y CancionBean, estos objetos sirven para mapear el contenido de la BBDD, es decir en la base de datos guardamos un json el cual se transforma en una lista de estos objetos.
- Para las querys hemos utilizado el framework Spring Data, hemos creado una interfaz por colección en BBDD y dicha interfaz tiene que extender de MongoRepository, solo por ello tiene todos los métodos más usados como: dame todos los elementos, cuenta cuantos elementos hay, inserta un elemento, inserta muchos elementos, actualiza un elemento. etc. Ademas de ello si en la interfaz definimos un método teniendo en cuenta la sintaxis de Spring Data también funcionará. Por ejemplo en ListasDAO hemos creado el siguiente método:
- 
- 	List<ListaBean> findByTracksTrackUriIn(List<String> trackUris);
- 
- Si lo analizamos vemos que recibe una lista de String y devuelve una lista de ListaBean, el nombre del método define que es lo que va a devolver, find busca dentro del atributo Tracks del ListaBean en el atributo TrackUri que coincida con la lista que entra por parámetro.
- 
- Una vez tenemos los métodos necesarios en la capa de persistencia pasamos a la capa de servicio en la que vamos a crear una interfaz con los métodos que vamos a exponer a la capa de presentación y una implementación de esa interfaz. Nuevamente tenemos una interfaz para listas de reproducción y otra para usuarios. En la de usuarios es importante anotar la clase con @Service y los datos a los que vayamos a llamar con @Autowire para que se instancien.
- 
- En esta capa se llaman a los métodos necesarios de la capa anterior y además puedes llamar a métodos de un servicio diferente, por ejemplo si llamas al método de listas y le pasas un idUsuario tienes que  llamar al servicio de usuarios para que te devuelva las canciones de este usuario y así poder filtrar en las listas por esas canciones, además tiene que hacer el mapeo entre los objetos beans y los objetos DTO (Data Transfer Objet), que son los que se exponen en la salida.
- 
- La capa de presentación es la encargada de serializar un json a un objeto y en función del recurso, llamar a un service u otro. En ella se definen los recursos y los verbos de la petición. 
- 
+El siguiente paso consiste en crear las tres capas que vamos a utilizar; la capa de persistencia, donde se definen las querys, la capa de servicio donde se implementa la lógica de negocio y la capa de presentación donde se implementan los verbos HTTP con los que se va a llamar al servicio. En la figura \ref{fig:estructura-microservicio} se puede ver la estructura de capas que hemos utilizado.
+
+Una buena práctica a la hora de programar en capas es, que los objetos de la capa de persistencia no deben exponerse a la capa de presentación. Por ello hemos creado unos objetos Bean que son: ListaBean, UsuarioBean y CancionBean, que sirven para mapear el contenido de la base de datos, es decir en la base de datos guardamos un JSON que se transforma en una lista de estos objetos.
+Para las querys hemos utilizado el framework Spring Data, hemos creado una interfaz por colección en base de datos y dicha interfaz tiene que extender de MongoRepository, solo por ello tiene todos los métodos más usados como por ejemplo: dame todos los elementos, cuenta cuantos elementos hay, inserta un elemento, inserta muchos elementos, actualiza un elemento, etc. Además de ello si en la interfaz definimos un método teniendo en cuenta la sintaxis de Spring Data también funcionará. Por ejemplo en ListasDAO hemos creado el siguiente método:
+
+List<ListaBean> findByTracksTrackUriIn(List<String> trackUris);
+
+Si lo analizamos vemos que recibe una lista de String y devuelve una lista de ListaBean, Spring data transforma el nombre del método en una query. Con la palabra find indicamos que la operación que se va a realizar en base de datos es una búsqueda. ByTracks nos indica que la búsqueda se va a hacer en el objeto ListaBean  en el campo tracks, que es una lista de CancionBean; a continuación TrackUriIn va a buscar el atributo trackUri en los objetos CancionBean obtenidos y compara este campo con la lista que entra como parámetro. Por tanto lo que hace el método es buscar todas las listas de reproducción que contienen alguna de las canciones que se pasan como parámetro.
+
+Una vez tenemos los métodos necesarios en la capa de persistencia, pasamos a la capa de servicio en la que vamos a crear una interfaz con los métodos que vamos a exponer en la capa de presentación. Nuevamente tenemos una interfaz para listas de reproducción y otra para usuarios. En las implementaciones de las interfaces es importante anotar las clases con @Service y los DAOs a los que vayamos a llamar con @Autowire para que se instancien.
+
+En esta capa se llama a los métodos necesarios de la capa anterior y además puedes llamar a métodos de un servicio diferente, por ejemplo, si llamas al método de listas y le pasas un idUsuario tienes que llamar al servicio de usuarios para que te devuelva las canciones de éste y así poder filtrar en las listas por esas canciones, además tiene que hacer el mapeo entre los objetos beans y los objetos DTO que son los que se exponen en la salida.
+
+La capa de presentación es la encargada de serializar un JSON a un objeto y en función del recurso, llamar a un servicio u otro. En ella se definen los recursos y los verbos de la petición. 
+
 \chapter{Descripción API microservicio}
 
 Hemos desarrollado una serie de servicios en cada controlador, estos pueden verse en las figuras \ref{fig:controllerlistas} y \ref{fig:controllerusuarios}. 
@@ -804,42 +898,42 @@ Hemos desarrollado una serie de servicios en cada controlador, estos pueden vers
 	\label{fig:controllerusuarios}
 \end{figure}
 
-En el controlador de listas hemos creado un recurso /listas al que es posible acceder mediante el verbo Post  y que su funcion es almacenar en BBDD una lista de reproducción nueva. El json de entrada necesario es el de la figura \ref{fig:jsonlista}.
+En el controlador de listas hemos creado un recurso llamado /listas al que es posible acceder mediante el verbo POST y su función es almacenar en la base de datos una lista de reproducción nueva. El JSON de entrada necesario es el de la figura \ref{fig:jsonlista}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{imagenes/jsonLista}
-	\caption{Json ejemplo lista reproducción}
+	\caption{JSON ejemplo lista reproducción}
 	\label{fig:jsonlista}
 \end{figure}
 
 
-Este corresponde a una lista de reproducción con una única canción. Los campos que aparecen son los proporcionados por Spotify, simplemente se han renombrado para evitar el uso de barra baja.
+Este JSON corresponde a una lista de reproducción con una única canción. Los campos que aparecen son los proporcionados por Spotify y simplemente se han renombrado para evitar el uso de caracteres como el guión bajo.
 
-AL llamar al servicio con el json creara un nuevo documento en BBDD.
+Al llamar al servicio con el JSON se creará un nuevo documento en la base de datos.
 
-En el recurso /listas/\{userId\} mediante el verbo Get, al pasarle el id de usuario y un numero de canciones a coincidir, nos devuelve un listado en formato json con las listas de reproducción en las que el usuario tiene al menos el numero antes indicado de canciones en común con la lista.
+En el recurso /listas/\{userId\} mediante el verbo GET, al pasarle el id de usuario y un numero de canciones a coincidir, nos devuelve un listado en formato JSON con las listas de reproducción en las que el usuario tiene al menos el número, antes indicado, de canciones en común con la lista.
 
-Por ultimo en este controlador hemos añadido un recurso /listas/batch su función es la misma que la de /listas pero en la entrada recibe una lista de listas de reproducción y las da de alta en BBDD.
+Por último en este controlador hemos añadido un recurso llamado /listas/batch y su función es la misma que la de /listas pero en la entrada recibe una lista de listas de reproducción y las da de alta en la base de datos.
 
 
-En el controlador de usuarios hemos creado el recurso /usuarios al que es posible acceder mediante el verbo Get y nos devuelve un json con todos los usuarios dados de alta en BBDD.
+En el controlador de usuarios hemos creado el recurso /usuarios al que es posible acceder mediante el verbo GET y nos devuelve un JSON con todos los usuarios dados de alta en base de datos.
 
-Hemos creado otro recurso en /usuarios esta vez con verbo Put para crear un usuario con las canciones que ha escuchado en BBDD. El json de entrada sería el de la figura \ref{fig:jsonusuario}.
+Hemos creado otro recurso en /usuarios esta vez con el verbo PUT para crear un usuario con las canciones que ha escuchado en la base de datos. El JSON de entrada sería el de la figura \ref{fig:jsonusuario}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{imagenes/jsonUsuario}
-	\caption{Json ejemplo usuario}
+	\caption{JSON ejemplo usuario}
 	\label{fig:jsonusuario}
 \end{figure}
 
 
-Por ultimo hemos creado un recurso /usuarios/\{userId\} con verbo Get el cual al pasarle el id de usuario nos devuelve ese usuario con las canciones que ha escuchado.
+Por último hemos creado un recurso llamado /usuarios/\{userId\} con el verbo GET que al pasarle el id de usuario nos devuelve ese usuario con las canciones que ha escuchado.
 
 \chapter{Despliegue de la aplicación}
 
-Para el despliegue de la aplicación en local lo primero es compilar el código mediante maven. Para ello vamos a la ventana Run Configuration en Eclipse y creamos un nuevo Maven build como vemos en la figura \ref{fig:cleaninstallmaven}. En base directory hay que poner lo que se muestra en la figura \ref{fig:cleaninstallmaven},  en goals vamos a poner clean install para limpiar primero el proyecto y luego compilar, en user settings se puede dejar por defecto si todas las dependencias son de internet o configurar un setting personal donde se establezca a que repositorio ir a buscar las dependencias necesarias en maven runtine se puede utilizar el embebido en eclipse o una versión que nosotros descarguemos.
+Para el despliegue de la aplicación en local lo primero es compilar el código mediante Maven. Para ello vamos a la ventana Run Configuration en Eclipse y creamos un nuevo Maven build como vemos en la figura \ref{fig:cleaninstallmaven}. En el campo base directory hay que poner lo que se muestra en la figura \ref{fig:cleaninstallmaven}. En el campo goals vamos a poner clean install para limpiar primero el proyecto y luego compilarlo. En el campo user settings se puede dejar así configurado por defecto si todas las dependencias son de internet o configurar un fichero personal donde se establezca a que repositorio ir a buscar las dependencias necesarias. En el campo Maven runtime se puede utilizar el Maven incluido en eclipse o una versión que nosotros descarguemos.
 
 \begin{figure}
 	\centering
@@ -848,7 +942,7 @@ Para el despliegue de la aplicación en local lo primero es compilar el código 
 	\label{fig:cleaninstallmaven}
 \end{figure}
 
-En la pestaña de JRE es importante seleccionar java 8 o superior y es necesario incluir la JDK y no la JRE como se ve en la figura \ref{fig:jremaven}
+En la pestaña de JRE es importante seleccionar Java 8 o superior ya que utilizamos funcionalidades que no son compatibles con versiones anteriores y es necesario incluir la JDK y no la JRE como se ve en la figura \ref{fig:jremaven}.
 
 \begin{figure}
 	\centering
@@ -857,11 +951,11 @@ En la pestaña de JRE es importante seleccionar java 8 o superior y es necesario
 	\label{fig:jremaven}
 \end{figure}
 
-Una vez se tiene todo esto seleccionado se procede a dar a run, se compilara la aplicación desde cero y se pasaran las clases de test que existan, una vez esto pase se va a generar un jar de la aplicación compilada. Este jar se ubica en la carpeta target.
+Una vez se tiene todo esto seleccionado se procede a dar al botón de Run, la aplicación se compilará desde cero y se ejecutaran las clases de test existentes. Una vez concluido lo anterior, en la carpeta target, se habrá generado un archivo JAR.
 
-Para levantar la aplicación es necesario tener la base de datos a la que se va a conectar levantada.
+Para desplegar la aplicación es necesario tener activa la base de datos a la que se va a conectar.
 
-De nuevo en la pantalla Run Configuration pero esta vez creamos una nueva configuración de Java Application como se muestra en la figura \ref{fig:configuraciondespliegue}. En project se selecciona la raiz del proyecto y en main class seleccionamos nuestra clase ListasMsApplication.java que es la que contiene el main. Al dar a run se va a desplegar la aplicación. 
+De nuevo iremos a la pantalla de Run Configuration, esta vez creamos una nueva configuración de Java Application como se muestra en la figura \ref{fig:configuraciondespliegue}. En el campo project se selecciona la raíz del proyecto y en el campo Main class, seleccionamos la ubicación de nuestra clase llamada ListasMsApplication.java, que es la que contiene el método main. Al dar al botón Run, se desplegará la aplicación. 
 
 \begin{figure}
 	\centering
@@ -870,24 +964,24 @@ De nuevo en la pantalla Run Configuration pero esta vez creamos una nueva config
 	\label{fig:configuraciondespliegue}
 \end{figure}
 
-Para acceder a ella se accede desde http://localhost:8080 y se añade el recurso al que quieras acceder, si es un recurso get se puede acceder desde un navegador, sino hay que hacerlo mediante swagger o postman. Todos los recursos están creados en las clases controller.
+Es posible acceder a la aplicación desde la siguiente dirección http://localhost:8080. Si queremos acceder a un recurso GET se puede hacer desde un navegador, si es otro tipo de recurso hay que hacerlo mediante Swagger o Postman. Todos los recursos están creados en las clases controller.
 
-Ademas de los recursos creados por nosotros, se crean dos recursos de swagger que son /swagger-ui.html\ref{fig:capturaswagger} y /v2/api-docs; el primero es la parte visual de swagger y la segunda es el fichero .yml con el cual se genera la parte visual de swagger.
- 
+Además de los recursos creados por nosotros, se crean dos recursos de Swagger que son los llamados /swagger-ui.html\ref{fig:capturaswagger} y /v2/api-docs; el primero es la parte visual de Swagger y el segundo es el fichero .yml con el que se genera la parte visual de Swagger.
+
 \chapter{Marco regulador}
 
-No existen leyes que se apliquen en el desarrollo de un microservicio, prácticamente todos los software que se utilizan son de código libre. Sin embargo si se ha de tratar con datos de clientes reales hay que tener en cuenta dos leyes:
+No existen leyes que se apliquen en el desarrollo de un microservicio, ya que prácticamente todos los software que se utilizan son de código libre. Sin embargo si se ha de tratar con datos de clientes reales hay que tener en cuenta dos leyes:
 \begin{itemize}
-	\item Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales \cite{LeyProteccion}: En la ley Orgánica 3/2018, de 5 de diciembre, se establen los principios de la protección datos personales: exactitud, confidencialidad, consentimiento.  Ya que vamos almacenar datos de los usuarios, es necesario que cuando se cree un frontal que llame al servicio de insertar usuarios, antes se de consentimiento al uso de sus datos personales siempre bajo la ley. Ademas estos datos hay que almacenarlos cifrados.
+	\item Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales \cite{LeyProteccion}: En la ley Orgánica 3/2018, de 5 de diciembre, se establecen los principios de la protección de datos personales: exactitud, confidencialidad, consentimiento. Ya que vamos a almacenar datos de los usuarios, es necesario que cuando se cree un frontal que llame al servicio de insertar usuarios, antes se de consentimiento al uso de sus datos personales siempre bajo la ley.
 	\item Ley General de Telecomunicaciones \cite{LeyComunicaciones}: En la ley 9/2014, de 9 de mayo, se estable en el articulo 43 que debemos cifrar toda la información que viaje mediante redes de comunicación. 
 \end{itemize}
 
-Por otra parte existen lo que se denomina buenas practicas en el desarrollo, son consejos para que el código sea mas limpio, legible, eficiente y mantenible. Estas buenas practicas se pueden controlar a través de herramientas de calidad de código como Sonar.
+Por otra parte existen lo que se denomina buenas prácticas en el desarrollo que son consejos para que el código sea más limpio, legible, eficiente y mantenible. Estas buenas prácticas se pueden controlar a través de herramientas de calidad de código como por ejemplo Sonar.
 
 \chapter{Entorno socio-económico}	
 
 \section{Presupuesto}
-En este punto vamos a calcular los costes del proyecto. Desde los costes de diseño e implementación hasta los recursos necesarios.
+En este punto vamos a calcular los costes del proyecto. Desde los costes de diseño, implementación y recursos hasta los servicios necesarios.
 
 \subsection{Mano de obra}
 
@@ -895,32 +989,64 @@ El proyecto se ha desarrollado durante 8 meses con un total de 300 horas emplead
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|c|c|r|}
+		\begin{tabular}{|c|c|c|}
 			\hline
-			Coste/Hora(euros) & Horas & Total(euros) \\
+			Coste/Hora & Horas & Total \\
+			(euros) &  & (euros) \\
 			\hline \hline
 			15 & 300 & 4500 \\ \hline
-		
+			
 		\end{tabular}
 		\caption{Coste personal.}		
 		\label{costePersonal}
 	\end{center}
 \end{table}
 
-Si este proyecto se desarrollara en una empresa, contaría con un arquitecto de sistemas que realice el diseño de la arquitectura y con un desarrollador para la implementación.
+Si este proyecto se desarrollara en una empresa, contaría con un arquitecto de sistemas que realice el diseño de la arquitectura y con un desarrollador para la implementación de la aplicación.
 
-\subsection{Servicios}
-Hemos necesitado recurrir a una nube de desarrollo donde almacenar nuestra base de datos y para ello hemos utilizado Microssof Azure. A continuación se muestra el presupuesto que nos ofrece este proveedor para tener una BBDD en la nube con alta disponibilidad. Cuando el servicio afronte menos número de peticiones se reducirá el coste. Al contratar estos servicios, el proveedor nos ofrece soporte gratuito.
+\subsection{Recursos físicos}
+A continuación pasamos a evaluar los gastos relacionados con los recursos amortizables. 
+Para estimar el precio de cada recurso, se ha calculado una media entre los diferentes precios de cada proveedor. 
+
+La amortización corresponde a los meses de vida útil de cada recurso.
+Para poder calcular el precio final hemos realizado las siguientes operaciones; el proyecto se ha desarrollado a lo largo de 8 meses por lo que hemos dividido el precio del recurso entre la amortización en meses y lo multiplicamos por la duración del proyecto.
+
+Los recursos utilizados y sus costes son los siguientes:
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l|l|r|}
+		\begin{tabular}{|l|c|c|c|c|}
 			\hline
-			Tipo de servicio & Descripción & Coste estimado(euros) \\
+			Recurso & Precio & Amortización & Coste mensual & Total \\
+			 &  & (Meses) & (euros) & (euros) \\
 			\hline \hline
-			Azure Cosmos DB & Escritura de una sola región - Europa Occidental; & 534,67 \\ 
-			 &  Pago por uso; 100 x 100 RU x 730 Horas; & \\
-			 & 50 GB de almacenamiento & \\ \hline
+			Ordenador portátil & 700 & 72 & 9,7 & 77,8 \\ 
+			HP Pavilion DV6 &  &  &  &  \\ 
+			\hline
+			TeXstudio & 0 & 12 & 0 & 0 \\ \hline
+			Eclipse & 0 & 12 & 0 & 0 \\ \hline
+			NotePad ++ & 0 & 12 & 0 & 0 \\ \hline \hline
+			Total & & & & 77,8 \\ \hline
+			
+		\end{tabular}
+		\caption{Coste de recursos.}		
+		\label{costeRecursos}
+	\end{center}
+\end{table}
+
+\subsection{Servicios}
+Hemos necesitado recurrir a una nube de desarrollo donde almacenar nuestra base de datos y para ello hemos utilizado Microsoft Azure. A continuación se muestra el presupuesto que nos ofrece este proveedor para tener una base de datos en la nube con alta disponibilidad. Cuando el servicio afronte menos número de peticiones se reducirá el coste. Al contratar estos servicios, el proveedor nos ofrece soporte gratuito.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|l|l|c|}
+			\hline
+			Tipo de servicio & Descripción & Coste estimado \\
+			 &  & (euros) \\
+			\hline \hline
+			Azure CosmosDB & Escritura de una sola región - Europa Occidental; & 534,67 \\ 
+			&  Pago por uso; 100 x 100 RU x 730 Horas; & \\
+			& 50 GB de almacenamiento & \\ \hline \hline
 			Total mensual &  & 534,67 \\ \hline
 			
 		\end{tabular}
@@ -929,21 +1055,23 @@ Hemos necesitado recurrir a una nube de desarrollo donde almacenar nuestra base 
 	\end{center}
 \end{table}
 
-Para trabajos futuros sería necesario contratar Azure Kubernetes Service (AKS) para poder gestionar los contenedores donde se desplegaría cada microservicio. Esto nos supondría un aumento de 87,6 Euros mensuales.
+Para trabajos futuros sería necesario contratar AKS para poder gestionar los contenedores donde se desplegaría cada microservicio. Esto nos supondría un aumento de 87,6 Euros mensuales.
 
 \subsection{Coste total}
 
-Recopilando los presupuestos de mano de obra y servicios utilizados, el coste total de este proyecto sería el siguiente.
+Recopilando los presupuestos de mano de obra, recursos y servicios utilizados, el coste total de este proyecto sería el siguiente.
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l|r|}
+		\begin{tabular}{|l|c|}
 			\hline
-			Concepto & Total(euros) \\
+			Concepto & Total \\
+			 & (euros) \\
 			\hline \hline
 			Mano de obra & 4500 \\ \hline
+			Recursos & 77,8 \\ \hline
 			Servicios & 1069,34 \\ \hline \hline
-			Total & 5569,34 \\ \hline					
+			Total & 5647,14 \\ \hline					
 		\end{tabular}
 		\caption{Costes Totales.}
 		\label{costeTotal}
@@ -952,25 +1080,25 @@ Recopilando los presupuestos de mano de obra y servicios utilizados, el coste to
 
 \section{Impacto socio-económico}
 
-Uno de los objetivos de desarrollar aplicaciones con microservicios es que estas sean fácilmente mantenibles y que puedan evolucionar según las necesidades de la sociedad.
+Uno de los objetivos de desarrollar aplicaciones con microservicios es que éstas sean fácilmente mantenibles y que puedan evolucionar según las necesidades de la sociedad.
 
-Una de las ventajas de implantar los microservicios en la nube es la mejor utilización de los recursos disponibles (energía, servidores) ya que permite aprovechar estos al máximo de una manera eficiente y ademas  se centraliza la ubicación de las maquinas en granjas de servidores, las cuales intentan abastecerse con tecnologías renovables.
+Una de las ventajas de implantar los microservicios en la nube es la mejor utilización de los recursos disponibles (energía, servidores) ya que permite aprovechar éstos al máximo de una manera eficiente y además se centraliza la ubicación de las maquinas en granjas de servidores que intentan abastecerse con tecnologías renovables.
 
-Anteriormente, cuando esperabas un numero grande de peticiones era necesario adquirir un gran número de servidores para poder dar servicio al pico de trabajo, esto suponía que una vez pasado el pico tenías una serie de recursos sin utilizar, esto lo solucionan los microservicios en la nube.
+Anteriormente, cuando esperabas un número grande de peticiones era necesario adquirir un gran número de servidores para poder dar servicio al pico de trabajo, esto suponía que una vez pasado el pico tenías una serie de recursos sin utilizar, esto lo solucionan los microservicios en la nube.
 
-Por otra parte, un inconveniente de esto es que para una aplicación pequeña que va a contar con mucho tráfico de datos, el coste es mucho mayor en la nube que teniendo un par de servidores.
+Por otra parte, un inconveniente de esto es, que para una aplicación pequeña que va a contar con mucho tráfico de datos, el coste es mucho mayor en la nube que teniendo un par de servidores.
 
 \chapter{Conclusiones}
 
 Hemos conseguido cumplir el objetivo de diseñar una arquitectura capaz de recibir multitud de peticiones.
 
-Para la base de datos elegimos una en la nube, aunque esta es la mejor opción, nos hemos dado cuenta que es muy caro para una pequeña aplicación ya que cobran por uso y almacenamiento. Sin embargo si que hemos podido ver que para el problema que teníamos, la base de datos elegida es ideal.
+Para la base de datos elegimos una en la nube, aunque ésta es la mejor opción, nos hemos dado cuenta que tiene un coste muy elevado para una pequeña aplicación ya que cobran por uso y almacenamiento. Sin embargo si que hemos podido ver que para el problema al que nos enfrentamos, la base de datos elegida es la ideal.
 
 Implementar el microservicio ha sido una tarea de investigación ya que todas las tecnologías utilizadas son bastante novedosas y es complicado encontrar información al respecto. Pero gracias a ello hemos conseguido una aplicación limpia y fácilmente mantenible.
 
 \section{Trabajos futuros}
 
-A continuación explicaremos los posibles trabajos futuros que podrían implementarse para mejorar o complementar nuestra aplicación.
+A continuación explicamos los posibles trabajos futuros que podrían implementarse para mejorar o complementar nuestra aplicación.
 
 \textbf{Aplicación Web}
 
@@ -983,7 +1111,7 @@ Añadir nuevas funcionalidades sobre los datos existentes, como por ejemplo un r
 \textbf{Integración continua}
 
 Se podría añadir la aplicación a un circuito de integración continua para su utilización en una empresa.
-Pasaría por este circuito cada vez que se hiciera un cambio en una rama de git:
+La aplicación pasaría por este circuito cada vez que se hiciera un cambio en una rama de Git:
 \begin{itemize}
 	\item Compilación con test del código.
 	\item Validación de la calidad del código con una aplicación como por ejemplo Sonar.
@@ -993,7 +1121,7 @@ Este tipo de circuitos se suelen realizar mediante la herramienta Jenkins
 
 \textbf{Dockerización}
 
-Por otra parte se podría dockerizar (contenerizar) la aplicación para poder integrarla en un contenedor y desplegar el contenedor en la nube.
+Por otra parte se podría dockerizar la aplicación para poder integrarla en un contenedor y desplegar éste en la nube.
 
 \textbf{Gestión de contenedores}
 
