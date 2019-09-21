@@ -17,9 +17,45 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
+  \entry{kubernetes}{online}{}
+    \verb{url}
+    \verb https://azure.microsoft.com/es-es/services/kubernetes-service/
+    \endverb
+  \endentry
+
   \entry{Azure}{online}{}
     \verb{url}
     \verb https://azure.microsoft.com/
+    \endverb
+  \endentry
+
+  \entry{Docker}{online}{}
+    \verb{url}
+    \verb https://www.docker.com
+    \endverb
+  \endentry
+
+  \entry{repositorio}{online}{}
+    \verb{url}
+    \verb https://github.com/jesusRienda/microservicio
+    \endverb
+  \endentry
+
+  \entry{jenkins}{online}{}
+    \verb{url}
+    \verb https://jenkins.io/
+    \endverb
+  \endentry
+
+  \entry{lombok}{online}{}
+    \verb{url}
+    \verb https://projectlombok.org/
+    \endverb
+  \endentry
+
+  \entry{swagger}{online}{}
+    \verb{url}
+    \verb https://swagger.io/
     \endverb
   \endentry
 
@@ -340,6 +376,12 @@
     \verb https://books.google.es/books?id=pwNwDQAAQBAJ
     \endverb
     \field{year}{2016}
+  \endentry
+
+  \entry{startSpring}{online}{}
+    \verb{url}
+    \verb https://start.spring.io/
+    \endverb
   \endentry
 
   \entry{LeyProteccion}{article}{}
