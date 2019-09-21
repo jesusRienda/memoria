@@ -277,11 +277,11 @@ hmargin=3cm
 \thispagestyle{plain}
 \setcounter{page}{3}
 	
-	En este trabajo fin de grado se ha realizado un estudio sobre las posibilidades existentes en el desarrollo de aplicaciones web. Desde el desarrollo partiendo de cero hasta el uso de software de terceros como son los framework para facilitar el desarrollo y centrarse en la funcionalidad.
+	En este trabajo fin de grado se ha realizado un estudio sobre las posibilidades existentes en el desarrollo de aplicaciones web, desde el diseño partiendo de cero hasta el uso de software de terceros como son los frameworks que facilitan el desarrollo y se centran en la funcionalidad.
 	
-	Para el correcto diseño de nuestra arquitectura ha sido necesario descomponer e investigar cada integrante de esta. Por una parte se ha investigado sobre los patrones de diseño existentes y sus funcionalidades, también sobre tipos de arquitecturas, framework y ademas sobre las bases de datos.
+	Para el correcto diseño de nuestra arquitectura ha sido necesario descomponer e investigar cada integrante de esta. Por una parte se ha investigado sobre los patrones de diseño existentes y sus funcionalidades, también sobre tipos de arquitecturas, framework y además sobre las bases de datos.
 	
-	Para afianzar todo lo desarrollado en este trabajo se ha implementado un microservicio basado en listas de reproducción de Spotify. Utilizando para ello las ultimas tecnologías de desarrollo como Spring Boot, Spring Data y una base de datos muy potente como MongoDB. Este microservicio hace de intermediario con la base de datos, filtrando por ejemplo las listas de reproducción que contienen canciones que ha escuchado un usuario.
+	Para afianzar todo lo desarrollado en este trabajo se ha implementado un microservicio basado en listas de reproducción de Spotify, utilizando para ello las ultimas tecnologías de desarrollo como Spring Boot, Spring Data y una base de datos muy potente como MongoDB. Este microservicio hace de intermediario con la base de datos filtrando, por ejemplo, las listas de reproducción que contienen canciones que ha escuchado un usuario.
 	
 	\textbf{Palabras clave:}
 	Microservicio, aplicaciones web, SOA, API, Swagger, MongoDb, Lombok, Spring Boot
@@ -381,6 +381,65 @@ hmargin=3cm
 	La BBDD estará almacenada en Azure y sera CosmosDB
 	\section{Estado del arte}
 	
+	El Instituto de Ingeniera de Software la define la arquitectura de software como:
+	"Representación del sistema que ayuda a comprender cómo se comportará un programa." 
+	
+	La arquitectura es la principal portadora de cualidades del sistema, como el rendimiento, la modificabilidad y la seguridad. El sistema se divide en elementos de software llamados módulos. Las propiedades de estos elementos pueden ser de dos tipos, internas y externas.
+	
+	Las \textbf{propiedades internas}  son las que definen el lenguaje en el que está desarrollado y todos los detalles de la implementación, como pueden ser objetos, clases, modulos, hilos.
+	
+	Las \textbf{propiedades externas} son los contratos que existen entre módulos y que permiten a otros módulos establecer dependencias/conexiones entre ellos.
+	
+	Existen patrones de diseño, arquitectónicos y frameworks que nos proponen soluciones a nuestro problema.
+	
+	\subsection{Patrones de diseño}
+	
+	Los patrones de diseño no aparecieron hasta 1994 en un libro llamado "Patrones de diseño" que a día de hoy sigue siendo un modelo de referencia.		 
+	Los definidos en el libro se dividen en función del problema a resolver, tenemos:
+	
+	\begin{itemize}
+		\item Patrones creacionales: utilizados para facilitar la creación de nuevos objetos. Los más usados son Singleton y Builder
+		\item Patrones estructurales: facilitan la modelización de nuestro software, definiendo la forma en que las clases se relacionan entre sí. Los más conocidos son Facade, Decorator y Proxy.
+		\item Patrones de comportamiento: gestionan algoritmos, relaciones y responsabilidades entre objetos. El más conocido es Strategy 	
+	\end{itemize}
+	
+	\subsection{Patrones de arquitectura}
+	Los patrones de arquitectura definen las cualidades del sistema, éstos al igual que los patrones de diseño, solucionan problemas recurrentes de una forma reutilizable.
+	
+	Los patrones de arquitectura más usados son:
+	\begin{itemize}
+		\item Programación por capas: Estructura programas que pueden descomponerse en subtareas. 
+		\item Cliente-servidor: Cuenta con un servidor y múltiples clientes, el servidor será el que de servicio a diversos componentes del cliente y los clientes solicitarán servicio al servidor.
+		\item Arquitectura orientada a servicios: Da soporte mediante la creación de servicios. 
+		\item Arquitectura de microservicios: Crea aplicaciones usando un conjunto de pequeños servicios que se comunican entre sí pero se ejecutan de forma individual.
+		\item Modelo Vista Controlador: Divide un programa interactivo en tres partes: El modelo formado por los datos básicos y la funcionalidad del programa, la vista que maneja la visualización de la información y el controlador que gestiona la entrada e informa al modelo y la vista de los cambios.
+		
+	\end{itemize}
+	
+	\subsection{Frameworks}
+	Los framework son estructuras de software ya implementadas en las que un programador puede apoyarse para desarrollar un proyecto propio, están implementados y siguen tanto los patrones de sotfware como los patrones de arquitectura; suelen incluir ficheros de configuración, librerías, etc.
+	
+	Existen frameworks para prácticamente todos los lenguajes de programación pero es importante valorar y elegir el framework que mejor se adapta al problema que vas a resolver, por ejemplo serían Angular orientado al desarrollo del front-end o Spring orientado al desarrollo de back-end.
+	
+	Para el desarrollo de aplicaciones en java con microservicios tenemos estos frameworks: Spring Boot que ofrece un arquetipo de un microservicio básico y es ampliable fácilmente con poco desarrollo,  Dropwizard que es un framework para arquitectura de microservicios por capas, Eclipse MicroProfile ofrece un arquetipo de la aplicación con las dependencias necesarias y Helidon que Oracle utilizó internamente bajo el nombre "Java for Cloud" y finalmente se ha liberado para uso público.
+
+	\subsection{Bases de datos}
+	Las bases de datos son sistemas formados por grupos de datos que permiten la consulta, modificación y borrado de los mismos. Se crearon para poder almacenar grandes cantidades de información. 
+
+	Las primeras en surgir fueron las relacionales, en las que los datos están relacionados entre sí.
+	Más tarde surgieron las bases de datos no relacionales(NoSQL) que son las que no contienen un identificador para relacionar un conjunto de datos con otro.	
+	
+	Las ventajas de las bases de datos relacionales son: Tienen los estándares bien definidos, son sencillas a la hora de programar y existe mucha información sobre ellas. Por otra parte los inconvenientes de éstas son: Crecen demasiado por lo que aumenta el tiempo de respuesta y para realizar un cambio normalmente habrá que reestructurarlas.
+	
+	En cuanto a las ventajas de las bases de datos no relacionales podemos encontrar: Se adaptan en crecimientos o cambios sin ningún problema, no es necesario contar con servidores grandes. Los inconvenientes en este caso son: No esta garantizado que si la operación falla se complete la información, se necesitan conocimientos elevados en el uso de la herramienta, no tienen un lenguaje estándar definido y todo has de hacerlo por consola ya que no disponen de interfaz gráfica.
+	
+	\subsection{Microservicios}
+	
+	Son útiles para desarrollar una aplicación, dividiéndola en una serie de pequeños servicios, que se ejecutan de forma independiente y se comunican entre sí. Cada microservicio es pequeño y pertenece a un área de la aplicación. 
+	
+	Las ventajas de éstos son: Ofrecen la libertad de implementar y desplegar los servicios de forma independiente, se pueden desarrollar con un equipo de trabajo mínimo, ofrecen la posibilidad de utilizar lenguajes de programación diferentes y son fácilmente escalables. Éstos también tienen inconvenientes: Las pruebas son complicadas por el despliegue distribuido, tienen un alto consumo de memoria, cuando tienes un gran número de servicios es complicado integrarlos y gestionarlos.
+
+	
 	\section{Justificación de la solución}
 	
 	
@@ -404,7 +463,23 @@ hmargin=3cm
 	
 	
 	\section{Desarrollo de la aplicación}
+	El primer es tener instalado Eclipse, de aquí vamos a la web https://start.spring.io/ usando el framework Spring Boot. Elegimos Maven para el control de dependencias, escogemos java como lenguaje y por ultimo las dependencias que queremos incluir, MongoDB, Spring Web, Lombok.
 	
+	Swagger es un software para diseñar, documentar y consumir servicios Rest.Para configurar Swagger es necesario añadir una clase de configuración con la anotacción @EnableSwagger2 para habilitar la generación del dominio.
+	
+	Creamos un repositorio en github (https://github.com/jesusRienda/microservicio) para poder guardar lo que tenemos hasta ahora.
+	
+	El arquetipo contiene una clase App que hay que ejecutar para levantar el microservicio en local, para hacerlo al tener una dependencia de MongoDb tenemos que establecer la conexión con la BBDD.
+	
+	Crear en azure una instancia de CosmosDb y configurar el microservicio para que apunte a esa base de datos. Creamos una clase java llamada MongoDbConfig y mediante la anotación @Value obtenemos de application.properties la conexión a cosmos y el nombre de la BBDD. Una vez hecho esto ya podemos levantar el microservicio.
+	
+	Lo siguiente es crear las tres capas que vamos a utilizar, la capa de persistence, donde se definen las querys, la capa de service donde se implementa la lógica de negocio y la capa controller donde se implementan los verbos http mediante los que se va a llamar al servicio.
+	
+	Una vez tenemos los métodos necesarios en la capa de persistencia pasamos a la capa de servicio en la que vamos a crear una interfaz con los métodos que vamos a exponer a la capa de presentación y una implementación de esa interfaz. 
+	
+	En esta capa se llaman a los métodos necesarios de la capa anterior y además puedes llamar a métodos de un servicio diferente.
+	
+	La capa de presentación es la encargada de serializar un json a un objeto y en función del recurso, llamar a un service u otro. En ella se definen los recursos y los verbos de la petición.
 	\section{Marco regulador}
 	
 	No existen leyes que se apliquen en el desarrollo de un microservicio. Sin embargo si se trata con datos reales hay que tener en cuenta dos leyes:
@@ -450,175 +525,15 @@ hmargin=3cm
 	
 	-Añadir nuevas funcionalidades sobre los datos existentes.
 	
-	-Dockerizar (contenerizar) la aplicación para integrarla en un contenedor y desplegarlo en la nube.
+	-Dockerizar  la aplicación para integrarla en un contenedor y desplegarlo en la nube.
 	
 	-Incluir un gestor de contenedores en Azure para gestionar el escalado y otras configuraciones de las aplicaciones que tengamos dockerizadas.
 	
-	\section{Estado del arte}
 
-	En la década de los 60 surgió la arquitectura de software, pero hasta 1980 no se integro totalmente en el desarrollo de software. 
 	
-	El Instituto de Ingeniera de Software la define como:
-	"La arquitectura de software es una representación del sistema que ayuda a comprender cómo se comportará un programa." 
-	
-	La arquitectura es la principal portadora de cualidades del sistema, como el rendimiento, la modificabilidad y la seguridad y no se puede lograr sin una visión arquitectónica unificadora.
-	
-	El sistema se divide en elementos de software llamados módulos. Las propiedades de estos elementos pueden ser de dos tipos, internas y externas.
-	
-	Las \textbf{propiedades internas}  son las que definen el lenguaje en el que está desarrollado y todos los detalles de la implementación, como pueden ser:
-	
-	- Entidades dinámicas en tiempo de ejecución como objetos e hilos.
-	
-	- Entidades lógicas en tiempo de desarrollo como clases y módulos.
-	
-	- Entidades físicas como nodos o carpetas.	
-	
-	Las \textbf{propiedades externas} son los contratos que existen entre módulos y que permiten a otros módulos establecer dependencias/conexiones entre ellos.
-	
-	Existen patrones de diseño, arquitectónicos y frameworks que nos proponen soluciones a nuestro problema.
-	
-	\subsection{Patrones de diseño}
-	
-	Los patrones en la arquitectura de software no aparecieron hasta 1994 en un libro llamado "Patrones de diseño" que a día de hoy sigue siendo un modelo de referencia.		 
-	Los patrones definidos en el libro se dividen en función del problema a resolver:
-	 
-	 \begin{itemize}
-	 	\item Patrones creacionales: utilizados para facilitar la creación de nuevos objetos. Los más usados son Singleton y Builder
-	 	\item Patrones estructurales: facilitan la modelización de nuestro software, definiendo la forma en que las clases se relacionan entre si. Los más conocidos son Facade, Decorator y Proxy.
- 	 	\item Patrones de comportamiento: gestionan algoritmos, relaciones y responsabilidades entre objetos. El más conocido es Strategy 	
-	 \end{itemize}
- 
- \subsection{Patrones de arquitectura}
- Estos tienen un alto nivel de abstraccion. Estos al igual que los patrones de diseño, solucionan problemas recurrentes de una forma reutilizable.
- 
- Los patrones de arquitectura mas usados son:
- 	\begin{itemize}
- 	\item Programación por capas: Estructurar programas que pueden descomponerse en subtareas. 
- 	\item Cliente-servidor: Cuenta con un servidor y múltiples clientes, el servidor será el que de servicio a diversos componentes del cliente y los clientes solicitarán servicio al servidor.
- 	\item Arquitectura orientada a servicios: Da soporte mediante la creación de servicios. 
- 	\item Arquitectura de microservicios: Crear aplicaciones usando un conjunto de pequeños servicios que se comunican entre sí pero se ejecutan de forma individual.
- 	\item Pipeline: Oorganizar sistemas que procesan una sucesión de datos que pasan a través de tuberías.
- 	\item Arquitectura en pizarra: Para la resolución de problemas que se desconoce su estrategia. Está formado por tres componentes:
- 	\begin{itemize}
- 		\item \textbf{Pizarra:} memoria que contiene todos los objetos. 
- 		\item \textbf{Fuente de conocimiento:} módulos especializados. 
- 		\item \textbf{Componente de control:} selecciona y ejecuta los módulos.
- 	\end{itemize}
- 	\item Arquitectura dirigida por eventos: Maneja principalmente los eventos y está formado por cuatro componentes que son: fuente de evento , escucha de evento , canal y bus de evento.
- 	\item Peer-to-peer: Se llama pares a las componentes individuales y estos pueden funcionar como servidor, dando servicio a otros pares, o como cliente, pidiendo servicio a otros pares.
- 	\item Modelo Vista Controlador: Divide un programa interactivo en tres partes:
- 		\begin{itemize}
- 			\item \textbf{Modelo:} formado por los datos básicos y la funcionalidad del programa. 
- 			\item \textbf{Vista:} maneja la visualización de la información. 
- 			\item \textbf{Controlador:} controla la entrada (teclado y ratón) e informa al modelo y la vista de los cambios.
- 		\end{itemize}
- 
- \end{itemize}
-
-\section{Frameworks}
-  Estos son estructuras de software ya implementadas en las que un programador puede apoyarse para desarrollar un proyecto propio. Los frameworks están implementados y siguen tanto los patrones de sotfware como los patrones de arquitectura y suelen incluir ficheros de configuración, librerías, etc.
- 
- Existen frameworks para prácticamente todos los lenguajes de programación pero es importante valorar y elegir el framework que mejor se adapta al problema que vas a resolver, por ejemplo Angular orientado al desarrollo del front-end o Spring orientado al desarrollo de back-end.
- 
- \subsection{Frameworks de java para microservicios}
- Encontramos los siguientes orientados a microservicios.
- \begin{itemize}
- 	\item Spring Boot: ofrece un arquetipo de un microservicio básico, ampliable fácilmente con poco desarrollo. 
- 	\item Cricket: framework para implementación de arquitectura dirigida por eventos.
- 	\item Dropwizard: framework para arquitectura de microservicios por capas.
- 	\item Eclipse MicroProfile: arquetipo de la aplicación con las dependencias necesarias.
- 	\item Helidon: Oracle lo utilizó internamente bajo el nombre "Java for Cloud" y finalmente se ha liberado para uso público. 
- \end{itemize}
-	
-	\section{Bases de datos}
-	Para el almacenamiento de los datos que vamos a utilizar bases de datos que se pueden definir como un conjunto de información relacionada que se encuentra agrupada ó estructurada. Son sistemas formados por grupos de datos que permiten la consulta, modificación y borrado de los mismos. Se crearon para poder almacenar grandes cantidades de información. 
-	
-	Actualmente dominan el mercado de las bases de datos IBM, Microsoft y Oracle y en el campo de internet Google.
-	
-	Más tarde surgieron las bases de datos no relacionales(NoSQL) que son las que no contienen un identificador para relacionar un conjunto de datos con otro.	
-	La más exitosa en bases de datos no relacionales es MongoDB seguida por Redis, Elasticsearch y Cassandra.
-	
-	\subsection{Pros y contras bases de datos relacionales}
-	Ventajas:
-	 \begin{itemize}
-		\item Gran variedad de información para poder realizar cualquier consulta.
-		\item La información no se completa si a mitad de una operación ocurre un problema.
-		\item Tiene los estándares bien definidos.
-		\item Es sencillo a la hora de programar.
-	\end{itemize}
-	Inconvenientes:
-		 \begin{itemize}
-		\item Crecen demasiado y aumenta el tiempo de respuesta.
-		\item	Se tendrá que reestructurar si se realiza cualquier cambio.
-		\item 	No garantizan el buen funcionamiento si el sistema operativo no cumple los requerimientos mínimos.
-	\end{itemize}
-
-	\subsection{Pros y contras bases de datos no relacionales}
-		Ventajas:
-	\begin{itemize}
-		\item Adaptabilidad para crecimientos o cambios.
-		\item Crecimiento horizontal. 
-		\item No es necesario contar con servidores de gran cantidad.
-		\item Cuenta con un algoritmo interno que reformule las consultas para no sobrecargar los servidores.
-	\end{itemize}
-	Inconvenientes:
-	\begin{itemize}
-		\item No garantiza que si la operación falla se complete la información.
-		\item	Se necesitan conocimientos elevados en el uso de esta herramienta pues las operaciones son limitadas.
-		\item 	No tiene un estándar de lenguaje definido.
-		\item 	No contiene una interfaz gráfica por lo que es necesario hacer todo mediante consola.
-	\end{itemize}
-
-\section{Microservicios}
-
-Son útiles para desarrollar una aplicación, dividiéndola en una serie de pequeños servicios, que se ejecutan de forma independiente y se comunican entre sí.
-
-Tiene que haber un número mínimo de servicios encargados de gestionar los procesos en común. Cada microservicio es pequeño e independiente y se corresponde con un área de la aplicación. 
-
-\subsection{Pros y contras de los microservicios}
-Ventajas:
-\begin{itemize}
-	\item Libertad de implementar y desplegar los servicios de forma independiente.
-	\item Los microservicios se pueden desarrollar con un equipo de trabajo mínimo.
-	\item Posibilidad de utilizar lenguajes diferentes.
-	\item Con el uso de contenedores el desarrollo y despliegue son más rápidos.
-	\item Fácilmente escalables.
-\end{itemize}
-Inconvenientes:
-\begin{itemize}
-	\item Pruebas complicados por el despliegue distribuido.
-	\item Puede dar lugar a grandes bloques de información para gestionar.
-	\item Con un gran número de servicios, integrarlos y gestionarlos puede resultar complicado.
-	\item Alto consumo de memoria.
-	\item Fragmentar una aplicación en microservicios puede llevar muchas horas de planificación.
-\end{itemize}
-
-\subsection{Ejemplos de empresas que utilizan microservicios}
 
 
-Encontramos estas compañías Netflix, Amazon y Ebay.
 
-
-\chapter{Desarrollo de la aplicación}
-
-El primer es tener instalado Eclipse, de aquí vamos a la web https://start.spring.io/ usando el framework Spring Boot. Elegimos Maven para el control de dependencias, escogemos java como lenguaje y por ultimo las dependencias que queremos incluir, MongoDB, Spring Web, Lombok.
-
-Swagger es un software para diseñar, documentar y consumir servicios Rest.Para configurar Swagger es necesario añadir una clase de configuración con la anotacción @EnableSwagger2 para habilitar la generación del dominio.
-
-Creamos un repositorio en github (https://github.com/jesusRienda/microservicio) para poder guardar lo que tenemos hasta ahora.
-
-El arquetipo contiene una clase App que hay que ejecutar para levantar el microservicio en local, para hacerlo al tener una dependencia de MongoDb tenemos que establecer la conexión con la BBDD.
-
- Crear en azure una instancia de CosmosDb y configurar el microservicio para que apunte a esa base de datos. Creamos una clase java llamada MongoDbConfig y mediante la anotación @Value obtenemos de application.properties la conexión a cosmos y el nombre de la BBDD. Una vez hecho esto ya podemos levantar el microservicio.
-
- Lo siguiente es crear las tres capas que vamos a utilizar, la capa de persistence, donde se definen las querys, la capa de service donde se implementa la lógica de negocio y la capa controller donde se implementan los verbos http mediante los que se va a llamar al servicio.
- 
- Una vez tenemos los métodos necesarios en la capa de persistencia pasamos a la capa de servicio en la que vamos a crear una interfaz con los métodos que vamos a exponer a la capa de presentación y una implementación de esa interfaz. 
- 
- En esta capa se llaman a los métodos necesarios de la capa anterior y además puedes llamar a métodos de un servicio diferente.
- 
- La capa de presentación es la encargada de serializar un json a un objeto y en función del recurso, llamar a un service u otro. En ella se definen los recursos y los verbos de la petición. 
- 
 
 
 
