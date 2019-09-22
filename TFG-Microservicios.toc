@@ -41,9 +41,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Desarrollo de la aplicaci\IeC {\'o}n}{21}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Descripci\IeC {\'o}n API microservicio}{26}{chapter.5}
+\contentsline {chapter}{\numberline {5}Descripci\IeC {\'o}n del documento API del microservicio}{26}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Despliegue de la aplicaci\IeC {\'o}n}{29}{chapter.6}
+\contentsline {chapter}{\numberline {6}Despliegue y prueba de la aplicaci\IeC {\'o}n }{29}{chapter.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {7}Marco regulador}{31}{chapter.7}
 \defcounter {refsection}{0}\relax 
@@ -71,7 +71,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {10.1.1}Problem Statement}{37}{subsection.10.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.1.2}Targets}{37}{subsection.10.1.2}
+\contentsline {subsection}{\numberline {10.1.2}Objectives}{37}{subsection.10.1.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {10.1.3}Proposed solution}{37}{subsection.10.1.3}
 \defcounter {refsection}{0}\relax 
@@ -83,25 +83,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {10.2.3}Frameworks}{39}{subsection.10.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.2.4}Data Base}{39}{subsection.10.2.4}
+\contentsline {subsection}{\numberline {10.2.4}Database}{39}{subsection.10.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {10.2.5}Microservices}{40}{subsection.10.2.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {10.3}Justification of the adopted solution}{40}{section.10.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.4}The app development}{40}{section.10.4}
+\contentsline {section}{\numberline {10.4}The app development}{41}{section.10.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {10.5}Regulatory framework}{41}{section.10.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.6}Socio-economic environment}{41}{section.10.6}
+\contentsline {section}{\numberline {10.6}Socio-economic environment}{42}{section.10.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.6.1}Quotation}{41}{subsection.10.6.1}
+\contentsline {subsection}{\numberline {10.6.1}Budget}{42}{subsection.10.6.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {10.6.2}The socio-economic impact}{42}{subsection.10.6.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {10.7}Conclusions}{42}{section.10.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.7.1}Future works}{42}{subsection.10.7.1}
+\contentsline {subsection}{\numberline {10.7.1}Future works}{43}{subsection.10.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{43}{subsection.10.7.1}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{44}{subsection.10.7.1}
 \contentsfinish 

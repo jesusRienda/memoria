@@ -303,15 +303,13 @@ hmargin=3cm
 	
 	\textbf{Abstract:} This project makes a study of the different ways of developing a web application, from the design to the use of others software such as frameworks which make easier development and is focus in the functionality.
 	
-	To get to the best solution to our architecture it is necessary to invest each part of the
-	architecture. First, the study of the design patterns and their functionalities; then, the study of
-	different types of architecture, after that the study of frameworks and finally about the
-	database.
+	To get to the best solution to our architecture it is necessary to investigate each part of the
+	architecture. First, we do some researches of the design patterns and their functionalities; then, the study of different types of architecture, after that the study of frameworks and finally about the database.
 	
-	To support the project, a microservice based in the Spotify reproduction lists, has been done.
+	We have done a microservice based in the Spotify reproduction liss to demonstrate the project.
 	To implement this project, the latest development technologies such as Spring Boot, Spring
-	Data and Mondongo DB has been used. This microservice act as an intermediary, filtering the
-	reproduction lists in which you can find a song that the user have listen.
+	Data and Mondongo DB has been used. This microservice acts as an intermediary, filtering the
+	reproduction lists in which you can find a song that the user has listen.
 	
 	\textbf{Palabras clave:}
 	Microservicio, aplicaciones web, SOA, API, Swagger, MongoDb, Lombok, Spring Boot
@@ -326,7 +324,7 @@ hmargin=3cm
 %----------
 %	GLOSARIO
 %----------	
-\chapter*{Glosarío}
+\chapter*{Glosario}
 
 \setcounter{page}{7}
 
@@ -387,8 +385,6 @@ hmargin=3cm
 \textbf{NoSQL:} Corresponde a Not Only Structured Query Language o en castellano No Solo Lenguaje de Consulta Estructurada. Es el lenguaje informático utilizado para gestionar bases de datos sin estructura fija.
 
 \textbf{Nube:} Es el nombre que se corresponde con el almacenamiento masivo de datos en servidores de internet.
-
-\textbf{Postman:} Es una herramienta para realizar peticiones HTTP a servicios REST.
 
 \textbf{REST:} Corresponde a Representational State Transfer en castellano se traduce como transferencia de estado representacional. Es el encargado de conectar varios sistemas mediante el protocolo HTTP. Se apoya en los verbos \textbf{GET}, \textbf{PUT}, \textbf{POST} y  \textbf{DELETE}.
 
@@ -801,7 +797,24 @@ Con respecto a la visión monolítica tenemos:
 
 \chapter{Justificación de la solución propuesta}
 
-Analizando el problema planteando obtenemos los siguientes requisitos a cumplir:
+Tenemos datos sobre listas de reproduccion y usuarios almacenados en unos ficheros de texto, para poder explotar estos datos es necesario almacenarlos en una base de datos, ya que la única forma de consultar los datos en el fichero sería de forma manual. El formato de estos datos es JSON y existen bases de datos capaces de explotar datos en este formato sin necesidad de realizar una conversión.
+
+Como el cliente no va a tener un acceso directo a la base de datos, es necesario crear una interfaz que haga de intermediario entre la base de datos y el usuario.
+
+Las acciones que va a realizar el cliente son:
+\begin{itemize}
+	\item Consultar todos los datos de usuarios dados de alta.
+	\item Consultar las canciones que ha escuchado un usuario.
+	\item Dar de alta un usuario con las canciones que ha escuchado.
+	\item Dar de alta nuevas listas de reproducción.
+	\item Consultar las listas de reproduccion en las que un usuario tenga al menos un numero de canciones en común. Este número lo elegirá en cada ocasión el cliente.
+\end{itemize}
+
+El cliente necesitará en determinados momentos realizar consultas masivas al programa, por lo que es necesario que nuestra aplicación soporte ésto con unos tiempos de respuesta bajos. 
+
+En un futuro el cliente necesitará incluir nuevas consultas que vayan surgiendo, por lo tanto es necesario que el código sea fácil de actualizar.
+
+Analizando el problema planteado obtenemos los siguientes requisitos a cumplir:
 \begin{itemize}
 	\item Almacenar los datos en formato JSON en una base de datos.
 	\item Crear un programa que nos permita realizar consultas a la base de datos.
@@ -828,7 +841,7 @@ Como queremos reducir la complejidad del código recurrimos a los Stream de Java
 
 La comunicación con el microservicio va a ser mediante REST que está basado en el protocolo HTTP que es simple y muy eficaz para realizar las distintas operaciones (verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST sería PUT, GET, POST, y DELETE.
 
-Todo servicio REST necesita un documento API donde se describa la entrada y salida de él, en este caso vamos a utilizar anotaciones de Swagger para que este documento se autogenere, además nos ofrece la posibilidad de llamar a través de él, que es más visual para el usuario que una llamada por Postman.
+Todo servicio REST necesita un documento API donde se describa la entrada y salida de él, en este caso vamos a utilizar anotaciones de Swagger para que este documento se autogenere, además nos ofrece la posibilidad de llamar a través de él, que es más visual, justo lo que el cliente necesita.
 
 En la figura \ref{fig:capturaswagger} vemos los métodos a los que podemos llamar y dentro de los métodos tenemos la entrada salida y una descripción de que hace cada uno.
 \begin{figure}
@@ -915,7 +928,7 @@ En esta capa se llama a los métodos necesarios de la capa anterior y además pu
 
 La capa de presentación es la encargada de serializar un JSON a un objeto y en función del recurso, llamar a un servicio u otro. En ella se definen los recursos y los verbos de la petición. 
 
-\chapter{Descripción API microservicio}
+\chapter{Descripción del documento API del microservicio}
 
 Hemos desarrollado una serie de servicios en cada controlador, estos pueden verse en las figuras \ref{fig:controllerlistas} y \ref{fig:controllerusuarios}. 
 
@@ -965,9 +978,9 @@ Hemos creado otro recurso en /usuarios esta vez con el verbo PUT para crear un u
 \end{figure}
 
 
-Por último, hemos creado un recurso llamado /usuarios/\{userId\} con el verbo GET que al pasarle el id de usuario nos devuelve ese usuario con las canciones que ha escuchado.
+Por último, hemos creado un recurso llamado /usuarios/\{userId\} con el verbo GET que al pasarle el id de usuario nos devuelve las canciones que ha escuchado ese usuario.
 
-\chapter{Despliegue de la aplicación}
+\chapter{Despliegue y prueba de la aplicación }
 
 Para el despliegue de la aplicación en local lo primero es compilar el código mediante Maven. Para ello vamos a la ventana Run Configuration en Eclipse y creamos un nuevo Maven build como vemos en la figura \ref{fig:cleaninstallmaven}. En el campo base directory hay que poner lo que se muestra en la figura \ref{fig:cleaninstallmaven}. En el campo goals vamos a poner clean install para limpiar primero el proyecto y luego compilarlo. En el campo user settings se puede dejar así configurado por defecto si todas las dependencias son de internet o configurar un fichero personal donde se establezca a que repositorio ir a buscar las dependencias necesarias. En el campo Maven runtime se puede utilizar el Maven incluido en eclipse o una versión que nosotros descarguemos.
 
@@ -1002,7 +1015,7 @@ De nuevo iremos a la pantalla de Run Configuration, esta vez creamos una nueva c
 
 Es posible acceder a la aplicación desde la siguiente dirección http://localhost:8080. Si queremos acceder a un recurso GET se puede hacer desde un navegador, si es otro tipo de recurso hay que hacerlo mediante Swagger o Postman. Todos los recursos están creados en las clases controller.
 
-Además de los recursos creados por nosotros, se crean dos recursos de Swagger que son los llamados /swagger-ui.html\ref{fig:capturaswagger} y /v2/api-docs; el primero es la parte visual de Swagger y el segundo es el fichero .yml con el que se genera la parte visual de Swagger.
+Además de los recursos creados por nosotros, se crean dos recursos de Swagger que son los llamados /swagger-ui.html (véase en la figura\ref{fig:capturaswagger}) y /v2/api-docs; el primero es la parte visual de Swagger y el segundo es el fichero .yml con el que se genera la parte visual de Swagger.
 
 \chapter{Marco regulador}
 
@@ -1175,21 +1188,19 @@ The cloud doesn’t need Physical Servers, so there is no need to maintain and i
 \subsection{Problem Statement}
 We have real data from Spotify which contains the reproduction lists information. We also have users’ data songs.
 
-We need a data base where we could store all the parameters, and to create a program that allow to query.
+We need a data base where we could store all the parameters and to create a program that allows to query. This program assures a minimum downtime, which allows many people to query at the same time.
 
-This program assures a minimum downtime, which allows many people to query at the same time.
+\subsection{Objectives}
 
-\subsection{Targets}
-
-To design the suitable software architecture.
-
-To create a data base with the lists file data.
-
-To implement a micro-service.
-
+To solve the problem stated before we aim at three main objectives:
+\begin{enumerate}
+	\item To design the suitable software architecture.
+	\item To create a data base with the lists file data.
+	\item To implement a microservice.
+\end{enumerate}
 
 \subsection{Proposed solution}
-As a solution we are going to design a micro-service architecture. We are going to develop a microservice using Java with the Spring Boot framework. To call the micro-service we would use Swagger. 
+After analyzing the possible options, we adopted as a solution to our problem the design of an architecture of microservices. We are going to develop a microservice using Java with the Spring Boot framework. To call the microservice we would use Swagger. 
 
 The data base will be stored in Azure and it would be CosmosDB.
 \section{State of the art}
@@ -1198,11 +1209,12 @@ The software architecture of a system or a collection of systems consists of a
 
 The main carrier of system qualities such as efficiency, modifiability and security; is the architecture. The system is divided in software elements called modules. These modules can have both, internal and external properties. 
 
-Internal properties are the ones which defines the language of the development and the implementation details such as objects, classes, modules, threats.
+Internal properties are the ones that define the language of the development and the implementation details such as objects, classes, modules, threats.
 
-External properties are the contracts between modules and allows other modules to stablish dependencies and connexions between them. 
+External properties are the contracts between modules and allow other modules to stablish dependencies and connexions between them. 
 
-There are architectural pattern designs and frameworks which offer a solution to the project.
+There are architectural pattern, designs pattern and frameworks which offer a solution to the project. In the following sections we are going to explain the different available alternatives for each of the elements we need to solve the problem.
+
 
 \subsection{Design patterns}
 
@@ -1220,117 +1232,129 @@ Architectural pattern defines the quality of the system. Like the design pattern
 
 The most common architectural patterns are:
 \begin{itemize}
-	\item Layer programming: It structure programs which can be decomposed is sub-task. 
+	\item Layer programming: It is an architecture in which presentation, business logic, and data management functions are physically separated.
 	\item Client-server: It has a server and multiple clients. The server will provide service to the different components from the client, and clients will request service from the server.
 	\item Service-oriented architecture: provides functionality by creating services. 
-	\item Micro-services architecture: creates apps using micro services which communicates between them but running in an individual way.
-	\item Model View Controller:  It divides an interactive program in three parts: Model, t directly manages the data, logic and rules of the application. View, represents the information and the controller, who  accepts input and converts it to commands for the model or view.
+	\item Microservices' architecture: creates apps using micro services which communicates between them but running in an individual way.
+	\item Model View Controller:  It divides an interactive program into three parts: A model that directly manages the data, logic and rules of the application, the view that represents the information and the controller that who  accepts input and converts it to commands for the model or view.
 	
 \end{itemize}
 
 \subsection{Frameworks}
 
-Frameworks are implemented software structures that a programmer can used to develop its own project. The frameworks follow not only the software patterns, also the architectural patterns. The frameworks normally include configuration files, libraries...
+Frameworks are implemented software structures that a programmer can used to develop its own project. Frameworks follow not only the software patterns but also the architectural patterns. Frameworks normally include configuration files, libraries...
 
-Most of program languages have frameworks, but is important to choose the solution which better fits to the solution. As an example Angular would be a good solution to a front-end development. Another example is Spring which is oriented to de back-end development.
+Most program languages have frameworks, but is important to choose the best option which better fits to the solution. As an example Angular would be a good framework to a front-end development. Another example is Spring which is oriented to de back-end development.
 
-We can use the following frameworks to the micro-services developments with Java: Spring Boot offers an archetype of a basic micro-service and is easily extensible with a few develop. Dropwizard is a framework for layer micro-service architectures, Eclipse MicroProfile offers an archetype with the necessary dependencies and Helidon, which Oracle used named as "Java for Cloud” and now is for public used. 
+We can use the following frameworks to the microservices developments with Java:
+\begin{itemize}
+	\item Spring Boot, that offers an archetype of a basic microservice and is easily extensible with a
+	few development.
+	\item Dropwizard, which is a framework for layer microservice architectures.
+	\item Eclipse MicroProfile, that offers an archetype with the necessary dependencies.
+	\item Helidon, which Oracle used named as "Java for Cloud” and now is for public used.
+\end{itemize}
 
-\subsection{Data Base}
+\subsection{Database}
+A database is an organized collection of data which allows the query, modification and erase of the data. They were created to storage big quantities of information.
 
-The data base are systems formed by groups of data which allows the query, modification and erase of the data. They were created to storage bf quantities of information.
+The first data bases which appear were the relational ones, in which the data are related. Then, non relational databases, the ones who have an identifier to relate a group of data with another.
 
-The first data bases which appear, were the relational ones, in which the data are related. Then appear the no relational data base (NoSQL), the ones who have an identifier to relate a group of data with another.
+The advantages of the relational databases are: their standards are well-defined, they are easy to program and there exists a lot of information about them. The disadvantages are: They grow to quickly and this makes the response time longer. Another disadvantage is that it is usually necessary to restructure database to make a change.
 
-The advantages of the relational data are: their standards are well-defined, there are easy to program and exist a lot of information about them. The disadvantages are: They grow to quickly and this makes the response time bigger. Another disadvantage is that normally, to make a change it is necessary to re-structure the data base.
-
-Relative to the no relational data base, their advantages are: they adapt without problems to the changes and the growths and that there is no need to have huge servers. Their disadvantages are: there is no guaranty to complete the information if the operation fails, it is necessary to have a large knowledge of the tool, there is no standard language and there is no graphic interface.
+Regarding the non relational data base, their advantages are: they adapt without problems to the changes and the growths and there is no need to have huge servers. Their disadvantages are: there is no guatantee to complete the information if the operation fails, it is necessary to have a large knowledge of the tool, there is no standard language and there is no graphic interface.
 
 \subsection{Microservices}
 
-The microservices are useful to develop an app dividing the service in smaller ones that run in an independence way and that communicate between them. Each micro-service is small and belongs to a part of the app.
+The microservices are useful to develop an app splitting the service in smaller ones that run in an independent way and that communicate between them. Each microservice is small and belongs to a part of the app.
 
-The advantages of the micro-services are: They offer the possibility of deploying in an independence way the services, you can also develop with a minimum tool kit, the offer the possibility of using different program languages and there are easily scalable. The disadvantages of the micro-services are: due to the distributed deployment, test are difficult. They also have a high memory consume. It is complicated to integrity and to manage large quantities of services. 
+The advantages of the microservices are: They offer the possibility of deploying in an independent way the services, you can also develop with a minimum toolkit, they offer the possibility of using different program languages and there are easily scalable. The disadvantages of the microservices are: due to their distributed deployment, test are difficult. They also have a high memory consumption. It is complicated to integrate and to manage large quantities of services. 
 
 
 
 \section{Justification of the adopted solution}
 
-The micro-service architecture was selected because of the scalability and high availability.
+The microservice architecture was selected because of the scalability and high availability.
 
 To the development, it is choose Spring Boot, which is the framework which better fits to our project. This is because it is the most commonly used and older one. It also has the advantages of Sprint such as the functionality, which allows to connect with the data base, and the layers architecture.
 
-Maven is the one selected to the dependencies management. It was selected because it is for Java and it will package the app.
+Maven is the one selected to the dependencies management. It was selected because it is available for Java and it will package the app.
 
 The use of Lombok is to refrain from the duplicity code. It also offer an implementation of the builder design pattern.
 
-The communication with the micro-service is going to be through REST, a simple and efficient protocol to make the different operations.
+The communication with the microservice is going to be through REST, a simple and efficient protocol to make the different operations.
 
 Every REST services needs an API document that describes the inputs and outputs. In this project Swagger is going to be used to auto-generate the API document, and Mondongo DB to store the data. Mondongo DB has no need to adapt the data because they store with the actual format.
 
-To make the data base efficient, they are going to be stored in the cloud and we will use Cosmos DB.
+To make the data base efficient, the data are going to be stored in the cloud and we will use Cosmos DB.
 
 \section{The app development}
 
-The first step is to install Eclipse. The second step is, using Spring Boot, navigate to the link \cite{startSpring}. It is necessary to choose Maven, for dependencies, Java as the language and the dependencies that we need to take (MongoDB, Spring Web and Lombok).
+The first step is to install Eclipse. The second step is, by using Spring Boot, to navigate to the link \cite{startSpring}. It is necessary to choose Maven, for dependencies, Java as the language and the dependencies that we need to take (MongoDB, Spring Web and Lombok).
 
 Swagger is the software to design, document and consume REST services. To configure Swagger it is necessary to add a configuration class with the @EnableSwagger2 notation to enable the domain generation.
 
-The next step is to create a repository in GitHub \cite{repositorio} to keep the development.
+The next step is to create a repository in GitHub \cite{repositorio} to host the development.
 
-The archetype contains an App class to run the micro-service in local. To make it possible, we need to stablish a connexion with the data base because of the Mondongo DB dependency.
+The archetype contains an App class to run the microservice in local. To make it possible, we need to stablish a connexion with the database because of the MongoDB dependency.
 
-The following steps are to create an instance of CosmosDb and configure the micro-service to communicate with that database. Create a class named MongoDbConfig and with the @Value notation, we will have from application.properties the connexion to cosmos and the name of the data base. Once this is done, we can run the micro-service.
+The following steps are to create an instance of CosmosDb and to configure the microservice to communicate with that database. First, create a class named MongoDbConfig and with the @Value notation. Secondly, we will have from application.properties the connexion to cosmos and the name of the data base. Once this is done, we can run the microservice.
 
 The next step is to create the three layers that are going to be used: the persistence layer, where queries are defined, the service layer, where the business logic information is and the controller layer where the http verbs are implemented. With these verbs we will make the connexion with the service.
 
-Once the methods are created in the persistence layer, we create interfaces and their implementations, with the methods that are going to be expose in the presentation layer, in the service layer.
+Once the methods have been created in the persistence layer, we create interfaces and their implementations with the methods that are going to be exhibit in the presentation layer, in the service layer.
 In the service layer you can call the methods from the persistence layer, and also from different services.
 
-The presentation layer is the one which serialized a JSON in an object and depending on the resource, calling one service or another. In this layer are defined the statement verbs and the resources.
+The presentation layer is the one which serialized a JSON in an object and depending on the resource, it will call one service or another. In this layer the statement verbs and the resources, are defined.
 
 \section{Regulatory framework}
 
-There is no regulation that applies in a micro-service development. However, if real data are used it is mandatory to take into account the followings rules:
+There is no regulation that applies to a microservice development. However, if real data are used it is mandatory to take into account the followings rules:
 \begin{itemize}
-	\item The Statutory law Protection of Personal Data.
-	\item General Telecommunications Law.
+	\item General Data Protection Regulation \cite{gdpr}.
+	\item General Telecommunications Law \cite{LeyComunicaciones}.
 \end{itemize}
 
 
 \section{Socio-economic environment}	
 
-\subsection{Quotation}
+\subsection{Budget}
 
-The project has been developing during eight weeks with 300 hours spent, this makes a cost of 4500 euros. The outsourced services, Azure Cosmos DB cost 1069,34 euros. The overall project costs including manpower and outsourced services is 5569,34 euros.
+The project has been developed during eight weeks with 300 hours spent. This makes a cost of 4500 euros. 
+
+The amortizable resources we have needed are: a laptop HP Pavillion DV6, Notepad program, Eclipse program and TeXstudio program. This makes a cost of 77,8 euros. 
+
+The outsourced services, Azure Cosmos DB cost 1069,34 euros. 
+
+The overall project costs including manpower and outsourced services is 5647,14 euros.
 
 \subsection{The socio-economic impact}
 
-One of the goals of micro-services are to develop apps which are easily maintainable and which allows the evolution with the society necessities.
+One of the goals of microservices is to develop apps which are easily maintainable and which allows the evolution with the society necessities.
 
-Setting the micro-services in the cloud, is the most efficiency ways to consume the resources suppling them with renewable technologies.
+One of the advantages of implementing microservices in the cloud is the best use of available resources (energy, servers) as it allows the maximum use of these in an efficient manner and also centralizes the location of machines in server farms that try to be supplied with renewable technologies.
 
-Using the cloud allows to solve the problem that exist with physical servers (when there is a big amount of requests, is it necessary a great amount of servers that are not used when the service is given). 
+Using the cloud allows to solve the problem that exists with physical servers (when there is a big amount of requests, is needed a great amount of servers that are not used when the service is given). 
 
-A disadvantage of micro-services is that the cost is higher for small apps.
+A disadvantage of microservices is that the cost is higher than using physical servers, for small apps.
 
 \section{Conclusions}
 
-We have achieve the goal of designing an architecture which is able to manage a great amount of requests.
+We have achieved the goal of designing an architecture which is able to manage a great amount of requests.
 
-The election of a cloud data base is the best option. However, we have realised that the cost raised when we design a small app because the cost is due to the store and use.
+The election of a cloud data base is the best option for our particular problem. However, due to the cost is for storing and for the use, the price raised when we design small apps.
 
-Deploy a micro-service is an investigation project due to the innovative technologies. It is also hard to find information about them. However, thanks to that, it is a clean application and has and it is easily maintainable. 
+Deploy a microservice is an research project due to its innovative technologies. It is also hard to find information about them. However, thanks to that, it is a clean application and it is easily maintainable. 
 
 \subsection{Future works}
 
-There are the possible future works which can be made to upgrade or complete the app:
+There are the possible future works which can be undertaken to upgrade or complete the app:
 
 \begin{itemize}
-	\item Develop a web app to display the data. 
-	\item Add new functionalities to the existing data.
-	\item Docker the app to integrate in a container and deploy in the cloud.
-	\item Add a Docker manager in Azure to manage the grading and others configurations of the dockers apps.	
+	\item To develop a web app to display the data. 
+	\item To add new functionalities to the existing data.
+	\item To docker the app to integrate it in a container and to deploy it in the cloud.
+	\item To add a Docker manager in Azure to manage the grading and other configurations of the dockers' apps.	
 \end{itemize}
 
 %----------

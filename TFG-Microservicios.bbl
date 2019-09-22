@@ -137,7 +137,6 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{isbn}{9788478290598}
-    \field{series}{Addison-Wesley professional computing series}
     \field{title}{Patrones de dise{\~n}o: elementos de software orientado a
   objetos reutilizable}
     \verb{url}
@@ -148,7 +147,7 @@
 
   \entry{AppHibridas}{article}{}
     \field{labeltitlesource}{title}
-    \field{title}{APLICACIONES HÍBRIDAS: ¿QUÉ SON Y CÓMO USARLAS?}
+    \field{title}{Aplicaciones híbridas: ¿Qué son y cómo usarlas?}
     \verb{url}
     \verb https://www.nextu.com/blog/aplicaciones-hibridas-que-son-y-como-usarl
     \verb as/
@@ -239,26 +238,41 @@
     \warn{\item Invalid format of field 'month'}
   \endentry
 
-  \entry{breveHistoria}{article}{}
-    \name{author}{1}{}{%
-      {{hash=ML}{%
-         family={Mauersberger},
-         familyi={M\bibinitperiod},
-         given={Laura},
-         giveni={L\bibinitperiod},
+  \entry{breveHistoria}{book}{}
+    \name{author}{3}{}{%
+      {{hash=BJ}{%
+         family={Biggs},
+         familyi={B\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=GV}{%
+         family={Garc{\'\i}a},
+         familyi={G\bibinitperiod},
+         given={V.H.},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Salanova},
+         familyi={S\bibinitperiod},
+         given={J.L.C.},
+         giveni={J\bibinitperiod},
       }}%
     }
-    \strng{namehash}{ML1}
-    \strng{fullhash}{ML1}
+    \list{publisher}{1}{%
+      {O'Reilly Media}%
+    }
+    \strng{namehash}{BJGVSJ1}
+    \strng{fullhash}{BJGVSJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{A brief history of microservices}
+    \field{isbn}{9781492052272}
+    \field{title}{Building Intelligent Cloud Applications: Develop Scalable
+  Models Using Serverless Architectures with Azure}
     \verb{url}
-    \verb https://blog.leanix.net/en/a-brief-history-of-microservices
+    \verb https://books.google.es/books?id=NLWuDwAAQBAJ
     \endverb
-    \field{journaltitle}{blog.leanix.net}
-    \field{year}{2017}
-    \warn{\item Invalid format of field 'month'}
+    \field{year}{2019}
   \endentry
 
   \entry{Dragoni2017}{inbook}{}
@@ -359,7 +373,7 @@
       {{hash=RR}{%
          family={RV},
          familyi={R\bibinitperiod},
-         given={R.},
+         given={Rajesh},
          giveni={R\bibinitperiod},
       }}%
     }
@@ -428,6 +442,28 @@
     \verb https://www.boe.es/eli/es/l/2014/05/09/9
     \endverb
     \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{gdpr}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PTE}{%
+         family={Parliament},
+         familyi={P\bibinitperiod},
+         given={The\bibnamedelima European},
+         giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PTE1}
+    \strng{fullhash}{PTE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{General Data Protection Regulation}
+    \verb{url}
+    \verb https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0
+    \verb 679
+    \endverb
+    \field{year}{2016}
     \warn{\item Invalid format of field 'month'}
   \endentry
 \enddatalist
