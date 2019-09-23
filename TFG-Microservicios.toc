@@ -89,23 +89,27 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {10.2.4}Database}{41}{subsection.10.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.2.5}Microservices}{42}{subsection.10.2.5}
+\contentsline {subsection}{\numberline {10.2.5}SOA}{42}{subsection.10.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.3}Justification of the adopted solution}{42}{section.10.3}
+\contentsline {subsection}{\numberline {10.2.6}Microservices}{42}{subsection.10.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.4}The app development}{43}{section.10.4}
+\contentsline {subsection}{\numberline {10.2.7}Development tools}{42}{subsection.10.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.5}Regulatory framework}{43}{section.10.5}
+\contentsline {section}{\numberline {10.3}Justification of the adopted solution}{43}{section.10.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.6}Socio-economic environment}{44}{section.10.6}
+\contentsline {section}{\numberline {10.4}The app development}{44}{section.10.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.6.1}Budget}{44}{subsection.10.6.1}
+\contentsline {section}{\numberline {10.5}Regulatory framework}{45}{section.10.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.6.2}The socio-economic impact}{44}{subsection.10.6.2}
+\contentsline {section}{\numberline {10.6}Socio-economic environment}{45}{section.10.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.7}Conclusions}{44}{section.10.7}
+\contentsline {subsection}{\numberline {10.6.1}Budget}{45}{subsection.10.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.7.1}Future works}{45}{subsection.10.7.1}
+\contentsline {subsection}{\numberline {10.6.2}The socio-economic impact}{45}{subsection.10.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{46}{subsection.10.7.1}
+\contentsline {section}{\numberline {10.7}Conclusions}{46}{section.10.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.7.1}Future works}{46}{subsection.10.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{47}{subsection.10.7.1}
 \contentsfinish 

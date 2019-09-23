@@ -818,7 +818,7 @@ Existen una serie de herramientas orientadas a crear un documento API de un serv
 
 \subsection{Herramientas de desarrollo específicas de Java}
 
-Para la gestión de dependencias en proyectos Java hay dos gestores muy utilizados: Maven y Gradle. Maven se basa en ficheros de XML y tiene como objetivos la compilación del código y la generación del proyecto empaquetado en JAR. Gradle se basa en el lenguaje Groovy, comparte objetivos con Maven y tiene el objetivo de poder ser utilizado en lenguajes diferentes de Java. 
+Para la gestión de dependencias en proyectos Java hay dos gestores muy utilizados: Maven y Gradle. Maven se basa en ficheros de XML y tiene como objetivos la compilación del código y la generación del proyecto empaquetado en JAR. Gradle se basa en el lenguaje Groovy, comparte objetivos con Maven y puede ser utilizado en lenguajes diferentes que Java. 
 
 Existe una librería creada para Java para la eliminación de código repetitivo en objetos y es Lombok.
 Ésta se basa en generar el código en tiempo de ejecución con el ahorro de código repetitivo que esto supone. Lombok no tiene alternativa, ya que no existe nada más parecido.
@@ -827,7 +827,7 @@ Para realizar las consultas a base de datos desde Java existen multitud de frame
 
 \chapter{Justificación de la solución propuesta}
 
-Tenemos datos sobre listas de reproduccion y usuarios almacenados en unos ficheros de texto, para poder explotar estos datos es necesario almacenarlos en una base de datos, ya que la única forma de consultar los datos en el fichero sería de forma manual. El formato de estos datos es JSON y existen bases de datos capaces de explotar datos en este formato sin necesidad de realizar una conversión.
+Tenemos datos sobre listas de reproducción y usuarios almacenados en unos ficheros de texto, para poder explotar estos datos es necesario almacenarlos en una base de datos, ya que la única forma de consultar los datos en el fichero sería de forma manual. El formato de estos datos es JSON y existen bases de datos capaces de explotar datos en este formato sin necesidad de realizar una conversión.
 
 Como el cliente no va a tener un acceso directo a la base de datos, es necesario crear una interfaz que haga de intermediario entre la base de datos y el usuario.
 
@@ -1307,29 +1307,73 @@ The advantages of the relational databases are: their standards are well-defined
 
 Regarding the non relational data base, their advantages are: they adapt without problems to the changes and the growths and there is no need to have huge servers. Their disadvantages are: there is no guatantee to complete the information if the operation fails, it is necessary to have a large knowledge of the tool, there is no standard language and there is no graphic interface.
 
+\subsection{SOA}
+
+In the SOA architecture, all services are developed and packaged in a WAR file to be deployed on an application server. All these services have to be implemented in the same language and resources are assigned to all of them.
+
+When an SOA application grows a lot it is difficult to maintain since each modification implies a redeployment of the whole application.
+
 \subsection{Microservices}
 
 The microservices are useful to develop an app splitting the service in smaller ones that run in an independent way and that communicate between them. Each microservice is small and belongs to a part of the app.
 
 The advantages of the microservices are: They offer the possibility of deploying in an independent way the services, you can also develop with a minimum toolkit, they offer the possibility of using different program languages and there are easily scalable. The disadvantages of the microservices are: due to their distributed deployment, test are difficult. They also have a high memory consumption. It is complicated to integrate and to manage large quantities of services. 
 
+\subsection{Development tools}
 
+Once the architecture is designed you have to choose some development tools. These tools are focused on a particular programming language.
+
+Dependency managers are the ones that are used to easily install and update dependencies. In java exists two possibilities: Maven, which is based on XML files and  as objectives has the compilation of the code and the generation of the project packaged in JAR, . Gradle, that  is based on the Groovy language, shares objectives with Maven and can be used in different languages, not only in Java.
+
+Some of the patterns mentioned above such as Strategy, avoid the code duplications generating it at runtime. As an example in Java, we have Lombok's library.
+
+There are plenty of tools oriented to create a web service's API document: Swagger, that auto-generate the document and RAML, that  manually generates the document.
+
+
+We use the framework to perform database queries from Java.Hibernate, oriented for relational databases using XML files and Spring Data, that works on any type of database and performs queries through annotations in the interfaces.
 
 \section{Justification of the adopted solution}
 
-The microservice architecture was selected because of the scalability and high availability.
+We have playlists and users information stored in text files, in order to use these data, it is necessary to store them in a database.
 
-To the development, it is choose Spring Boot, which is the framework which better fits to our project. This is because it is the most commonly used and older one. It also has the advantages of Sprint such as the functionality, which allows to connect with the data base, and the layers architecture.
+We need to create an interface that acts as an intermediary between the database and the client.
+
+The actions to be performed by the client are:
+\begin{itemize}
+	\item Consult all the data of registered users.
+	\item Consult the songs that a user has listen.
+	\item Register a user and the songs he has listen.
+	\item Register new playlists.
+	\item Consult any playlists in which the user has at least one song in common.
+\end{itemize}
+
+The client will need to make massive queries to the program, so it is necessary that our application supports it.
+
+Analyzing the problem we obtain the following requirements:
+\begin{itemize}
+	\item Store JSON format data in a database.
+	\item Create a program that allows us to make queries to the database.
+	\item Filter the data of the lists or of the users before returning them.
+	\item Create a simple and easily maintainable program.
+	\item Create an interface to make queries easier to the users.
+	\item Obtain low response times.
+	\item Have a high availability and the possibility to scale.
+\end{itemize}
+
+
+The architecture of the microservices was selected because other alternatives meet the first five requirements but only this one is scalable and offers high availability.
+
+To the development, it is choose Spring Boot, which is the framework which better fits to our project. This is because it is the most commonly used and older one. It also has the advantages of Sprint such as the functionality, which allows to connect with the data base, and the layers architecture. Because Spring Boot is oriented to Java, we have to chose Java to develop this project.
 
 Maven is the one selected to the dependencies management. It was selected because it is available for Java and it will package the app.
 
-The use of Lombok is to refrain from the duplicity code. It also offer an implementation of the builder design pattern.
+The use of Lombok is to refrain from the duplicity code. In this way we get that the code is maintainable.
 
 The communication with the microservice is going to be through REST, a simple and efficient protocol to make the different operations.
 
-Every REST services needs an API document that describes the inputs and outputs. In this project Swagger is going to be used to auto-generate the API document, and Mondongo DB to store the data. Mondongo DB has no need to adapt the data because they store with the actual format.
+Every REST services needs an API document that describes the inputs and outputs. In this project Swagger is going to be used to auto-generate the API document, and MongoDB to store the data.
 
-To make the data base efficient, the data are going to be stored in the cloud and we will use Cosmos DB.
+To make the data base efficient, the data are going to be stored in the cloud and we will use Cosmos DB. In addition, this database has no need to adapt the data because they store with the actual format.
 
 \section{The app development}
 
