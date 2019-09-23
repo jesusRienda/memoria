@@ -360,6 +360,10 @@ hmargin=3cm
 
 \textbf{Github:} Es una plataforma de almacenamiento colaborativo para alojar proyectos utilizando Git. Nuestro proyecto se encuentra alojado aquí \cite{repositorio}.
 
+\textbf{Gradle:} Es una herramienta gestionar dependencias en proyectos de desarrollo.
+
+\textbf{Groovy:} Lenguaje de programación orientado a objetos basado en la plataforma de Java.
+
 \textbf{HTTP:} Corresponde a Hypertext Transfer Protocol o es castellano Protocolo de transferencia de hipertexto. Es un protocolo de transmisión de información en la web.
 
 \textbf{JAR:} Corresponde a Java Archive. Es un tipo de archivo en el que se incluye el código Java compilado.
@@ -386,6 +390,8 @@ hmargin=3cm
 
 \textbf{Nube:} Es el nombre que se corresponde con el almacenamiento masivo de datos en servidores de internet.
 
+\textbf{RAML:} Corresponde a Restful Api Modeling Language en castellano sería lenguaje para el modelado de APIs REST.
+
 \textbf{REST:} Corresponde a Representational State Transfer en castellano se traduce como transferencia de estado representacional. Es el encargado de conectar varios sistemas mediante el protocolo HTTP. Se apoya en los verbos \textbf{GET}, \textbf{PUT}, \textbf{POST} y  \textbf{DELETE}.
 
 \textbf{RU:} Corresponde a Request Units, en castellano sería unidades de solicitud. Es una unidad de medida creada por Azure para medir el número de peticiones y uso de almacenamiento que se consume por hora. Está se utiliza en CosmosDB.
@@ -403,6 +409,8 @@ hmargin=3cm
 \textbf{UI:} Corresponde a User Interface o en castellano interfaz de usuario. Es el medio por el cual un usuario se comunica con una máquina o dispositivo.
 
 \textbf{WAR:} Corresponde a Web Application Archive, en castellano significa archivo de aplicación web. Es un archivo que contiene dentro un archivo JAR, una configuración y unos archivos web.
+
+\textbf{XML:} Corresponde a eXtensible Markup Language o en castellano lenguaje de marcado extensible.
 
 \textbf{YML:} También llamado YAML, es un formato de serialización de datos. Sus siglas corresponden a Ain't Markup Language, en castellano sería que no es un lenguaje marcado.
 
@@ -604,6 +612,8 @@ hmargin=3cm
  	Permite desacoplar los componentes y reutilizar código más eficiente. 
  \end{itemize}
 
+Siempre que se desarrolla un servicio web es necesario establecer un protocolo de comunicación con la aplicación, las dos más importantes son SOAP y REST. SOAP es un protocolo que establece que el intercambio de mensajes se va a realizar por medio de XML. REST es un protocolo basado en HTTP que para el intercambio de mensajería utiliza JSON o XML, aunque es más habitual usarlo con JSON ya que es mas rápido.
+
 \section{Frameworks}
  Otra opción para no tener que diseñar una arquitectura desde cero sería la utilización de frameworks. Estos son estructuras de software ya implementadas en las que un programador puede apoyarse para desarrollar un proyecto propio. Los frameworks están implementados y siguen tanto los patrones de software como los patrones de arquitectura y suelen incluir ficheros de configuración, librerías, etc.
  
@@ -794,6 +804,22 @@ Con respecto a la visión monolítica tenemos:
 	\label{fig:microservicesGrafic}
 \end{figure}
 
+\section{Herramientas de desarrollo}
+
+Una vez la arquitectura esta montada, es decir una vez se han elegido todas sus propiedades y relaciones, entran en juego las herramientas de desarrollo. Éstas están enfocadas en un lenguaje de programación en particular.
+
+El número de dependencias en los proyectos se ha disparado en los últimos tiempos, esto hace que cada vez sea más complicado mantener actualizadas dichas dependencias. Para facilitar la tarea de instalación y actualización de dependencias surgieron los gestores de dependencias.
+
+Por otra parte cuando se desarrolla siempre es necesario evitar el código duplicado para esta cuestión existen patrones de diseño como el Strategy, antes mencionado, que al ejecutar acciones en tiempo de ejecución, consigue reducir el código duplicado.
+
+Existen una serie de herramientas orientadas a crear un documento API de un servicio web. Swagger es un ejemplo de ello, es un framework para la documentación de APIs REST y ademas es capaz de autogenerarse por medio de anotaciones en el código. Otra de las herramientas mas utilizadas aunque de reciente incorporación es RAML se trata de un lenguaje para el modelado de documentación.
+
+\subsection{Herramientas de desarrollo especificas de Java}
+
+Para la gestión de dependencias en proyectos Java hay dos gestores muy utilizados: Maven y Gradle. Maven se basa en ficheros de XML y tiene como objetivos la compilación del código y la generación del proyecto empaquetado en JAR. Gradle se basa en el lenguaje Groovy, comparte objetivos con Maven y tiene el objetivo de poder ser utilizado en lenguajes diferentes de Java. 
+
+Existe una librería creada para Java para la eliminación de código repetitivo en objetos y es Lombok.
+Ésta se basa en generar el código en tiempo de ejecución con el ahorro de código repetitivo que esto supone. Lombok no tiene alternativa, ya que no existe nada más parecido.
 
 \chapter{Justificación de la solución propuesta}
 
@@ -1016,6 +1042,19 @@ De nuevo iremos a la pantalla de Run Configuration, esta vez creamos una nueva c
 Es posible acceder a la aplicación desde la siguiente dirección http://localhost:8080. Si queremos acceder a un recurso GET se puede hacer desde un navegador, si es otro tipo de recurso hay que hacerlo mediante Swagger o Postman. Todos los recursos están creados en las clases controller.
 
 Además de los recursos creados por nosotros, se crean dos recursos de Swagger que son los llamados /swagger-ui.html (véase en la figura\ref{fig:capturaswagger}) y /v2/api-docs; el primero es la parte visual de Swagger y el segundo es el fichero .yml con el que se genera la parte visual de Swagger.
+
+Una vez desplegada la aplicación pasamos a probarla para comprobar que todo funciona como lo hemos implementado.
+
+Tenemos que probar todos los recursos que hemos creado en el API. Probamos el recurso de crear usuarios, llamamos a el con el JSON de la figura \ref{fig:jsonusuario}, ahora debemos consultar en base de datos si se ha creado dicho usuario con todos los campos. Hemos añadido una verificación para no insertar dos veces el mismo usuario, si ya existe nos devuelve un error indicándonoslo.
+
+Para probar el servicio de devolver todos los usuarios, consultamos en base de datos todos los creados y al llamar al servicio nos debe devolver los mismos con todos sus datos.
+
+Ahora llamamos al servicio de crear listas con el JSON de la figura \ref{fig:jsonlista} y comprobamos en base de datos que se ha creado. Este servicio tiene la misma validación que el de crear usuarios, debemos comprobarla.
+
+Como el usuario que hemos creado y la lista tienen una canción en común, al llamar al servicio que filtra en listas por usuario si le decimos que tengan una canción en común nos devolverá la lista que acabamos de insertar.
+
+Estas son las pruebas básicas que se han realizado, se puede probar una combinación de ellas para que loo servicios devuelvan lo que deberían en cada caso.
+
 
 \chapter{Marco regulador}
 

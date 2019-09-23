@@ -19,37 +19,37 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces API en Swagger\relax }}{20}{figure.caption.13}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces API en Swagger\relax }}{21}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Ejemplo configuraci\IeC {\'o}n arquetipo\relax }}{22}{figure.caption.14}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Ejemplo configuraci\IeC {\'o}n arquetipo\relax }}{23}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Dependencias Swagger necesarias\relax }}{22}{figure.caption.15}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Dependencias Swagger necesarias\relax }}{23}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Clase configuraci\IeC {\'o}n Swagger\relax }}{22}{figure.caption.16}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Clase configuraci\IeC {\'o}n Swagger\relax }}{23}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Clase de configuraci\IeC {\'o}n MongoDB\relax }}{23}{figure.caption.17}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Clase de configuraci\IeC {\'o}n MongoDB\relax }}{24}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Estructura microservicio\relax }}{24}{figure.caption.18}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Recursos disponibles dentro del controller Listas\relax }}{26}{figure.caption.19}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Recursos disponibles dentro del controller Usuarios\relax }}{27}{figure.caption.20}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces JSON ejemplo lista reproducci\IeC {\'o}n\relax }}{27}{figure.caption.21}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces JSON ejemplo usuario\relax }}{27}{figure.caption.22}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Estructura microservicio\relax }}{25}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Configuraci\IeC {\'o}n compilaci\IeC {\'o}n mediante Maven\relax }}{30}{figure.caption.23}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Recursos disponibles dentro del controller Listas\relax }}{27}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Configuraci\IeC {\'o}n JRE proyecto\relax }}{30}{figure.caption.24}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Recursos disponibles dentro del controller Usuarios\relax }}{28}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Configuraci\IeC {\'o}n Run despliegue\relax }}{30}{figure.caption.25}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces JSON ejemplo lista reproducci\IeC {\'o}n\relax }}{28}{figure.caption.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces JSON ejemplo usuario\relax }}{28}{figure.caption.22}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Configuraci\IeC {\'o}n compilaci\IeC {\'o}n mediante Maven\relax }}{31}{figure.caption.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Configuraci\IeC {\'o}n JRE proyecto\relax }}{31}{figure.caption.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Configuraci\IeC {\'o}n Run despliegue\relax }}{31}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
