@@ -360,9 +360,11 @@ hmargin=3cm
 
 \textbf{Github:} Es una plataforma de almacenamiento colaborativo para alojar proyectos utilizando Git. Nuestro proyecto se encuentra alojado aquí \cite{repositorio}.
 
-\textbf{Gradle:} Es una herramienta gestionar dependencias en proyectos de desarrollo.
+\textbf{Gradle:} Es una herramienta gestionar dependencias en proyectos de desarrollo \cite{gradle}.
 
 \textbf{Groovy:} Lenguaje de programación orientado a objetos basado en la plataforma de Java.
+
+\textbf{Hibernate:} Es un framework para realizar consultas a base de datos en java \cite{hibernate}.
 
 \textbf{HTTP:} Corresponde a Hypertext Transfer Protocol o es castellano Protocolo de transferencia de hipertexto. Es un protocolo de transmisión de información en la web.
 
@@ -821,6 +823,8 @@ Para la gestión de dependencias en proyectos Java hay dos gestores muy utilizad
 Existe una librería creada para Java para la eliminación de código repetitivo en objetos y es Lombok.
 Ésta se basa en generar el código en tiempo de ejecución con el ahorro de código repetitivo que esto supone. Lombok no tiene alternativa, ya que no existe nada más parecido.
 
+Para realizar las consultas a base de datos desde Java existen multitud de framework para esto, los mas utilizados son Hibernate y Spring Data. Hibernate es un framework que mediante ficheros en XML realiza las consultas a base de datos, esta orientado para bases de datos relacionales. Spring Data es un framework de Spring el cual mediante anotaciones en las interfaces se consigue realizar operaciones en base de datos, este puede funcionar sobre cualquier tipo de base de datos sin ninguna variación. 
+
 \chapter{Justificación de la solución propuesta}
 
 Tenemos datos sobre listas de reproduccion y usuarios almacenados en unos ficheros de texto, para poder explotar estos datos es necesario almacenarlos en una base de datos, ya que la única forma de consultar los datos en el fichero sería de forma manual. El formato de estos datos es JSON y existen bases de datos capaces de explotar datos en este formato sin necesidad de realizar una conversión.
@@ -862,8 +866,6 @@ Para el desarrollo de la aplicación hemos elegido Spring Boot como framework de
 Para cualquier proyecto de desarrollo es necesario un software para la gestión de dependencias y así evitarnos tener que incluirlas de forma manual, para esta gestión elegimos Maven ya que es el más utilizado y totalmente dirigido para Java. Éste nos va a empaquetar la aplicación en un archivo JAR compilándola y añadiendo las dependencias que necesite.
 
 Para conseguir un código limpio y mantenible podemos utilizar herramientas que eviten la repetición de código como Lombok que mediante anotaciones consigue generar en tiempo de ejecución los métodos getter, setter y los constructores.
-
-Como queremos reducir la complejidad del código recurrimos a los Stream de Java 8 para que las  interacciones y búsquedas en las listas de datos sean más eficientes y el código quede más limpio.
 
 La comunicación con el microservicio va a ser mediante REST que está basado en el protocolo HTTP que es simple y muy eficaz para realizar las distintas operaciones (verbos) en base de datos: añadir, recuperar, actualizar y eliminar, esto en REST sería PUT, GET, POST, y DELETE.
 
@@ -951,6 +953,8 @@ Si lo analizamos vemos que recibe una lista de String y devuelve una lista de Li
 Una vez tenemos los métodos necesarios en la capa de persistencia, pasamos a la capa de servicio en la que vamos a crear una interfaz con los métodos que vamos a exponer en la capa de presentación. Nuevamente tenemos una interfaz para listas de reproducción y otra para usuarios. En las implementaciones de las interfaces es importante anotar las clases con @Service y los DAOs a los que vayamos a llamar con @Autowire para que se instancien.
 
 En esta capa se llama a los métodos necesarios de la capa anterior y además puedes llamar a métodos de un servicio diferente, por ejemplo, si llamas al método de listas y le pasas un idUsuario tienes que llamar al servicio de usuarios para que te devuelva las canciones de éste y así poder filtrar en las listas por esas canciones, además tiene que hacer el mapeo entre los objetos beans y los objetos DTO que son los que se exponen en la salida.
+
+Para reducir la complejidad del código recurrimos a los Stream de Java 8 para que las interacciones y búsquedas en las listas de datos sean más eficientes y el código quede más limpio.
 
 La capa de presentación es la encargada de serializar un JSON a un objeto y en función del recurso, llamar a un servicio u otro. En ella se definen los recursos y los verbos de la petición. 
 

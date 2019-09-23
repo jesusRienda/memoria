@@ -55,6 +55,24 @@
     \field{urlyear}{2019}
   \endentry
 
+  \entry{gradle}{online}{}
+    \verb{url}
+    \verb https://gradle.org/
+    \endverb
+    \field{urlday}{05}
+    \field{urlmonth}{09}
+    \field{urlyear}{2019}
+  \endentry
+
+  \entry{hibernate}{online}{}
+    \verb{url}
+    \verb http://hibernate.org/
+    \endverb
+    \field{urlday}{05}
+    \field{urlmonth}{09}
+    \field{urlyear}{2019}
+  \endentry
+
   \entry{jenkins}{online}{}
     \verb{url}
     \verb https://jenkins.io/
