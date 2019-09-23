@@ -21,42 +21,65 @@
     \verb{url}
     \verb https://azure.microsoft.com/es-es/services/kubernetes-service/
     \endverb
+    \field{urlday}{05}
+    \field{urlmonth}{09}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{Azure}{online}{}
+    \field{labeltitlesource}{title}
+    \field{title}{Microsoft Azure}
     \verb{url}
     \verb https://azure.microsoft.com/
     \endverb
+    \field{urlday}{01}
+    \field{urlmonth}{09}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{Docker}{online}{}
     \verb{url}
     \verb https://www.docker.com
     \endverb
+    \field{urlday}{10}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{repositorio}{online}{}
     \verb{url}
     \verb https://github.com/jesusRienda/microservicio
     \endverb
+    \field{urlday}{22}
+    \field{urlmonth}{09}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{jenkins}{online}{}
     \verb{url}
     \verb https://jenkins.io/
     \endverb
+    \field{urlday}{07}
+    \field{urlmonth}{09}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{lombok}{online}{}
     \verb{url}
     \verb https://projectlombok.org/
     \endverb
+    \field{urlday}{01}
+    \field{urlmonth}{06}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{swagger}{online}{}
     \verb{url}
     \verb https://swagger.io/
     \endverb
+    \field{urlday}{15}
+    \field{urlmonth}{07}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{SoftwareEngineeringInstitute}{article}{}
@@ -78,6 +101,9 @@
     \verb stomel_datapageid_4050=21328
     \endverb
     \field{year}{2017}
+    \field{urlday}{20}
+    \field{urlmonth}{05}
+    \field{urlyear}{2019}
     \warn{\item Invalid format of field 'month'}
   \endentry
 
@@ -143,6 +169,9 @@
     \verb https://books.google.es/books?id=gap\_AAAACAAJ
     \endverb
     \field{year}{2002}
+    \field{urlday}{23}
+    \field{urlmonth}{05}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{AppHibridas}{article}{}
@@ -152,6 +181,9 @@
     \verb https://www.nextu.com/blog/aplicaciones-hibridas-que-son-y-como-usarl
     \verb as/
     \endverb
+    \field{urlday}{15}
+    \field{urlmonth}{06}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{StrategySpringBoot}{article}{}
@@ -172,6 +204,9 @@
     \verb https://experto.dev/strategy-pattern-spring-boot/
     \endverb
     \field{year}{2017}
+    \field{urlday}{28}
+    \field{urlmonth}{06}
+    \field{urlyear}{2019}
     \warn{\item Invalid format of field 'month'}
   \endentry
 
@@ -212,6 +247,9 @@
     \field{journaltitle}{Commun. ACM}
     \field{month}{01}
     \field{year}{1983}
+    \field{urlday}{28}
+    \field{urlmonth}{06}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{BuildingMicroservices}{book}{}
@@ -235,6 +273,9 @@
     \field{pages}{280}
     \field{title}{Building Microservices: Designing Fine-Grained Systems}
     \field{year}{2015}
+    \field{urlday}{10}
+    \field{urlmonth}{06}
+    \field{urlyear}{2019}
     \warn{\item Invalid format of field 'month'}
   \endentry
 
@@ -273,6 +314,9 @@
     \verb https://books.google.es/books?id=NLWuDwAAQBAJ
     \endverb
     \field{year}{2019}
+    \field{urlday}{25}
+    \field{urlmonth}{05}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{Dragoni2017}{inbook}{}
@@ -377,9 +421,6 @@
          giveni={R\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {Packt Publishing}%
-    }
     \strng{namehash}{RR1}
     \strng{fullhash}{RR1}
     \field{labelnamesource}{author}
@@ -390,12 +431,18 @@
     \verb https://books.google.es/books?id=pwNwDQAAQBAJ
     \endverb
     \field{year}{2016}
+    \field{urlday}{12}
+    \field{urlmonth}{05}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{startSpring}{online}{}
     \verb{url}
     \verb https://start.spring.io/
     \endverb
+    \field{urlday}{01}
+    \field{urlmonth}{05}
+    \field{urlyear}{2019}
   \endentry
 
   \entry{LeyProteccion}{article}{}
@@ -419,6 +466,9 @@
     \verb https://www.boe.es/eli/es/lo/2018/12/05/3
     \endverb
     \field{year}{2018}
+    \field{urlday}{28}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
     \warn{\item Invalid format of field 'month'}
   \endentry
 
@@ -442,6 +492,9 @@
     \verb https://www.boe.es/eli/es/l/2014/05/09/9
     \endverb
     \field{year}{2014}
+    \field{urlday}{28}
+    \field{urlmonth}{08}
+    \field{urlyear}{2019}
     \warn{\item Invalid format of field 'month'}
   \endentry
 
@@ -464,6 +517,9 @@
     \verb 679
     \endverb
     \field{year}{2016}
+    \field{urlday}{20}
+    \field{urlmonth}{09}
+    \field{urlyear}{2019}
     \warn{\item Invalid format of field 'month'}
   \endentry
 \enddatalist
