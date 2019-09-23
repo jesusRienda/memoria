@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  23 SEP 2019 10:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.18)  23 SEP 2019 10:31
 entering extended mode
 **./TFG-Microservicios.tex
 (TFG-Microservicios.tex
@@ -1489,8 +1489,15 @@ LaTeX Info: Redefining \% on input line 30.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1423.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1423.
 
-Package rerunfilecheck Info: File `TFG-Microservicios.out' has not changed.
-(rerunfilecheck)             Checksum: B28B9BB07E8447596117CB434AAD224A;4196.
+
+
+Package rerunfilecheck Warning: File `TFG-Microservicios.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `TFG-Microservicios.out':
+(rerunfilecheck)             Before: B28B9BB07E8447596117CB434AAD224A;4196
+(rerunfilecheck)             After:  869226766462093C994E1E4C2FD09364;4199.
 Package logreq Info: Writing requests to 'TFG-Microservicios.run.xml'.
 \openout1 = `TFG-Microservicios.run.xml'.
 
@@ -1516,7 +1523,7 @@ rams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jesus/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jesus/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Jesus/App
 Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TFG-Microservicios.pdf (64 pages, 827809 bytes).
+Output written on TFG-Microservicios.pdf (64 pages, 827814 bytes).
 PDF statistics:
  960 PDF objects out of 1000 (max. 8388607)
  170 named destinations out of 1000 (max. 500000)
