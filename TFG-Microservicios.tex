@@ -276,7 +276,13 @@ hmargin=3cm
 
 \setcounter{page}{3}
 
-% ESCRIBIR LA DEDICATORIA AQUÍ	
+A Andrea por apoyarme siempre y aguantar mis agobios. 
+
+A mis compañeros de trabajo por siempre animarme a seguir.
+
+A mi familia por estar siempre a mi lado.
+
+A mi tutora Carmen por darme libertad a la hora de desarrollar este proyecto.
 
 \vfill
 
@@ -401,6 +407,8 @@ hmargin=3cm
 \textbf{SQL:} Corresponde a Structured Query Language o en castellano Lenguaje de Consulta Estructurada. Es el lenguaje informático utilizado para gestionar bases de datos relacionales.
 
 \textbf{SOA:} Corresponde a Service Oriented Architecture o en castellano Arquitectura Orientada a Servicios.
+
+\textbf{SOAP:} Corresponde a Simple Object Access Protocol. Es un protocolo para la comunicación de servicios web.
 
 \textbf{Sonar:} Es un analizador de la calidad de código.
 
@@ -808,11 +816,11 @@ Con respecto a la visión monolítica tenemos:
 
 \section{Herramientas de desarrollo}
 
-Una vez la arquitectura está montada, es decir una vez se han elegido todas sus propiedades y relaciones, entran en juego las herramientas de desarrollo. Éstas están enfocadas en un lenguaje de programación en particular.
+Una vez la arquitectura está montada, es decir una vez se han elegido todas sus propiedades y relaciones, entran en juego las herramientas de desarrollo. Éstas están enfocadas a un lenguaje de programación en particular.
 
 El número de dependencias en los proyectos se ha disparado en los últimos tiempos, esto hace que cada vez sea más complicado mantener actualizadas dichas dependencias. Para facilitar la tarea de instalación y actualización de dependencias surgieron los gestores de dependencias.
 
-Por otra parte, cuando se desarrolla siempre es necesario evitar el código duplicado para esta cuestión existen patrones de diseño como el Strategy, antes mencionado, que al ejecutar acciones en tiempo de ejecución, consigue reducir el código duplicado.
+Por otra parte, cuando se desarrolla siempre es necesario evitar el código duplicado. Para esta cuestión existen patrones de diseño como el Strategy, anteriormente mencionado, que al ejecutar acciones en tiempo de ejecución, consigue reducir el código duplicado.
 
 Existen una serie de herramientas orientadas a crear un documento API de un servicio web. Swagger es un ejemplo de ello, es un framework para la documentación de APIs REST y además es capaz de autogenerarse por medio de anotaciones en el código. Otra de las herramientas más utilizadas, aunque de reciente incorporación es RAML se trata de un lenguaje para el modelado de documentación.
 
@@ -821,9 +829,9 @@ Existen una serie de herramientas orientadas a crear un documento API de un serv
 Para la gestión de dependencias en proyectos Java hay dos gestores muy utilizados: Maven y Gradle. Maven se basa en ficheros de XML y tiene como objetivos la compilación del código y la generación del proyecto empaquetado en JAR. Gradle se basa en el lenguaje Groovy, comparte objetivos con Maven y puede ser utilizado en lenguajes diferentes que Java. 
 
 Existe una librería creada para Java para la eliminación de código repetitivo en objetos y es Lombok.
-Ésta se basa en generar el código en tiempo de ejecución con el ahorro de código repetitivo que esto supone. Lombok no tiene alternativa, ya que no existe nada más parecido.
+Ésta se basa en generar el código en tiempo de ejecución con el ahorro de código repetitivo que esto supone. Lombok no tiene competencia, ya que no existe ninguna herramienta para este cometido.
 
-Para realizar las consultas a base de datos desde Java existen multitud de framework para esto, los mas utilizados son Hibernate y Spring Data. Hibernate es un framework que mediante ficheros en XML realiza las consultas a base de datos, esta orientado para bases de datos relacionales. Spring Data es un framework de Spring el cual mediante anotaciones en las interfaces se consigue realizar operaciones en base de datos, este puede funcionar sobre cualquier tipo de base de datos sin ninguna variación. 
+Para realizar las consultas a base de datos desde Java existen multitud de framework para esto, los más utilizados son Hibernate y Spring Data. Hibernate es un framework que mediante ficheros en XML realiza las consultas a base de datos, esta orientado para bases de datos relacionales. Spring Data es un framework de Spring el cual mediante anotaciones en las interfaces se consigue realizar operaciones en base de datos, este puede funcionar sobre cualquier tipo de base de datos sin ninguna variación. 
 
 \chapter{Justificación de la solución propuesta}
 
